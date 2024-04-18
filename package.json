@@ -2,7 +2,7 @@
   "name": "rlt-theme-helper",
   "displayName": "RLT Theme Helper",
   "description": "Description of extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.88.0"
   },
