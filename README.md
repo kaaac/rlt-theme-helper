@@ -39,15 +39,10 @@ Logic for nested block
 ### 0.0.3
 
 Adjusted possible types of data for blocks
-example:
+
+Example:
 - RenderIf - added possible type of value string with patter for variable
 - TextOptions - Removed property Text from required list
 
 
 ---
-
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
