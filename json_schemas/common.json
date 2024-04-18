@@ -171,8 +171,5 @@
           "type": "integer",
           "description": "Spacing of the block"
         }
-    },
-    "required" : [
-      "BlockType"
-    ]
+    }
 }

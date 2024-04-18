@@ -18,74 +18,16 @@
     }],
     "jsonValidation": [
       {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
+        "fileMatch" : [
+          "component/**/*.json"
         ],
-        "url": "./json_schemas/common.json"
+        "url" : "./json_schemas/schema_component.json"
       },
       {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
+        "fileMatch" : [
+          "layer.json"
         ],
-        "url": "./json_schemas/block_image.json"
-      },
-      {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
-        ],
-        "url": "./json_schemas/block_items.json"
-      },
-      {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
-        ],
-        "url": "./json_schemas/block_component.json"
-      },
-      {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
-        ],
-        "url": "./json_schemas/block_text.json"
-      },
-      {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
-        ],
-        "url": "./json_schemas/block_itemstack.json"
-      },
-      {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
-        ],
-        "url": "./json_schemas/block_grid.json"
-      },
-      {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
-        ],
-        "url": "./json_schemas/block_dock_stack.json"
-      },
-      {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
-        ],
-        "url": "./json_schemas/block_canvas.json"
-      },
-      {
-        "fileMatch": [
-          "layer.json",
-          "components/**/*.json"
-        ],
-        "url": "./json_schemas/block_table.json"
+        "url" : "./json_schemas/schema_layer.json"
       },
       {
         "fileMatch": "layout_description.json",

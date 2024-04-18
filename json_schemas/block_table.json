@@ -146,7 +146,20 @@
                           },
                           "Template": {
                             "type": "object",
-                            "description": "Template for each item of the column"
+                            "description": "Template for each item of the column",
+                            "allOf": [
+                              { "$ref": "block_canvas.json" },
+                              { "$ref": "block_component.json" },
+                              { "$ref": "block_dock_stack.json" },
+                              { "$ref": "block_grid.json" },
+                              { "$ref": "block_image.json" },
+                              { "$ref": "block_items.json" },
+                              { "$ref": "block_itemstack.json" },
+                              { "$ref": "block_shape.json" },
+                              { "$ref": "block_table.json" },
+                              { "$ref": "block_text.json" },
+                              { "$ref": "common.json" }
+                            ]
                           },
                           "IsSeparator": {
                             "type": "boolean",
@@ -166,7 +179,20 @@
                           },
                           "MultiColumnHeaderTemplate": {
                             "type": "object",
-                            "description": "Template for each item of multicolumns"
+                            "description": "Template for each item of multicolumns",
+                            "allOf": [
+                              { "$ref": "block_canvas.json" },
+                              { "$ref": "block_component.json" },
+                              { "$ref": "block_dock_stack.json" },
+                              { "$ref": "block_grid.json" },
+                              { "$ref": "block_image.json" },
+                              { "$ref": "block_items.json" },
+                              { "$ref": "block_itemstack.json" },
+                              { "$ref": "block_shape.json" },
+                              { "$ref": "block_table.json" },
+                              { "$ref": "block_text.json" },
+                              { "$ref": "common.json" }
+                            ]
                           }
                       }
                     },

@@ -16,7 +16,10 @@
             "enum" : [ "Dark","Light"]
         },
         "Version" : {
-            "type" : "integer"
+            "oneOf": [
+                { "type": "string" },
+                { "type": "integer" }
+            ]
         },
         "UseDefaultLayouts" : {
             "type" : "boolean",
