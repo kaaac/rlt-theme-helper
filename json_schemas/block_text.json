@@ -89,8 +89,7 @@
                   },
                   "required": ["IsEnabled", "Level"]
                 }
-              },
-              "required": ["Text"]
+              }
             }
         }
     }

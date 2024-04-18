@@ -12,7 +12,14 @@
           "description": "Name of the block"
         },
         "RenderIf": {
-          "type": "boolean",
+          "oneOf": [
+            {"type": "boolean"},
+            {
+              "type" : "string",
+              "pattern" : "^{.*}$"
+            }
+          ],
+          "default" : false,
           "description": "Whether the block should be rendered"
         },
         "Opacity": {
@@ -60,19 +67,43 @@
           "description": "Margin of the block"
         },
         "MarginLeft": {
-          "type": "integer",
+          "oneOf" : [
+            {"type": "integer"},
+            {
+              "type" : "string",
+              "pattern" : "^{.*}$"
+            }
+          ],
           "description": "Left margin of the block"
         },
         "MarginTop": {
-          "type": "integer",
+          "oneOf" : [
+            {"type": "integer"},
+            {
+              "type" : "string",
+              "pattern" : "^{.*}$"
+            }
+          ],
           "description": "Top margin of the block"
         },
         "MarginRight": {
-          "type": "integer",
+          "oneOf" : [
+            {"type": "integer"},
+            {
+              "type" : "string",
+              "pattern" : "^{.*}$"
+            }
+          ],
           "description": "Right margin of the block"
         },
         "MarginBottom": {
-          "type": "integer",
+          "oneOf" : [
+            {"type": "integer"},
+            {
+              "type" : "string",
+              "pattern" : "^{.*}$"
+            }
+          ],
           "description": "Bottom margin of the block"
         },
         "Padding": {
@@ -80,19 +111,43 @@
           "description": "Padding of the block"
         },
         "PaddingLeft": {
-          "type": "integer",
+          "oneOf" : [
+            {"type": "integer"},
+            {
+              "type" : "string",
+              "pattern" : "^{.*}$"
+            }
+          ],
           "description": "Left padding of the block"
         },
         "PaddingTop": {
-          "type": "integer",
+          "oneOf" : [
+            {"type": "integer"},
+            {
+              "type" : "string",
+              "pattern" : "^{.*}$"
+            }
+          ],
           "description": "Top padding of the block"
         },
         "PaddingRight": {
-          "type": "integer",
+          "oneOf" : [
+            {"type": "integer"},
+            {
+              "type" : "string",
+              "pattern" : "^{.*}$"
+            }
+          ],
           "description": "Right padding of the block"
         },
         "PaddingBottom": {
-          "type": "integer",
+          "oneOf" : [
+            {"type": "integer"},
+            {
+              "type" : "string",
+              "pattern" : "^{.*}$"
+            }
+          ],
           "description": "Bottom padding of the block"
         },
         "Background": {
@@ -121,14 +176,6 @@
           "type": "integer",
           "description": "Column number if block is child for grid"
         },
-        "PositionX": {
-          "type": "integer",
-          "description": "X position if block is child for canvas"
-        },
-        "PositionY": {
-          "type": "integer",
-          "description": "Y position if block is child for canvas"
-        },
         "Colorize": {
           "type": "object",
           "description": "Colorize options for the final block image"
@@ -146,7 +193,7 @@
           "description": "List of triggers for properties"
         },
         "Source": {
-          "type": "object",
+          "type": "string",
           "description": "Data source (text, image or collection path)"
         },
         "FontName": {
