@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "if": {
+      "properties": { "BlockType": { "const": "image" } }
+    },
+    "then": {
+      "properties": {
+        "ImageOptions": {
+          "type": "object",
+          "properties": {
+            "Path": {
+              "type": "string",
+              "description": "Path to the image"
+            },
+            "HorizontalAlignment": {
+              "type": "string",
+              "enum": ["Left", "Center", "Right"],
+              "description": "Horizontal alignment of the image"
+            },
+            "VerticalAlignment": {
+              "type": "string",
+              "enum": ["Top", "Center", "Bottom"],
+              "description": "Vertical alignment of the image"
+            },
+            "Opacity": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Opacity of the image (0-100)"
+            }
+          },
+          "description": "Options for the image block"
+        }
+      }
+    }
+  }

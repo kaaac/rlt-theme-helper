@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Name" : {
+            "type" : "string",
+            "description": "Name of the Theme"
+        },
+        "Author" : {
+            "type" : "string",
+            "description": "Author of the Theme"
+        },
+        "ThemeStyle" : {
+            "type" : "string",
+            "description": "Theme style",
+            "enum" : [ "Dark","Light"]
+        },
+        "Version" : {
+            "type" : "integer"
+        },
+        "UseDefaultLayouts" : {
+            "type" : "boolean",
+            "default" : true
+        },
+        "IsNewRenderer" : {
+            "type" : "boolean",
+            "default" : true
+        },
+        "Description" : {
+            "type" : "string",
+            "description": "Description of the Theme"
+        }
+    }
+  }

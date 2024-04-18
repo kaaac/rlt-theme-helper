@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "if": {
+      "anyOf": [
+        {"properties": { "BlockType": { "const": "stack" } }},
+        {"properties": { "BlockType": { "const": "dock" } }}
+      ]
+    },
+    "then": {
+      "properties": {
+        "HorizontalDirection": {
+          "type": "string",
+          "enum" : ["LeftToRight", "RightToLeft"]
+        },
+        "VerticalDirection": {
+            "type": "string",
+            "enum" : ["TopToBottom", "BottomToTop"]
+          }
+      }
+    }
+  }

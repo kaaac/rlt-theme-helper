@@ -1,0 +1,178 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "BlockType": {
+          "type": "string",
+          "description": "Type of the block",
+          "enum": ["image", "text", "stack", "itemstack", "dock", "grid", "table", "canvas", "shape", "component"]
+        },
+        "Name": {
+          "type": "string",
+          "description": "Name of the block"
+        },
+        "RenderIf": {
+          "type": "boolean",
+          "description": "Whether the block should be rendered"
+        },
+        "Opacity": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Opacity of the block (0-100)"
+        },
+        "Width": {
+          "type": ["integer", "string"],
+          "description": "Width of the block in pixels or a string value ('*', 'auto')"
+        },
+        "Height": {
+          "type": ["integer", "string"],
+          "description": "Height of the block in pixels or a string value ('*', 'auto')"
+        },
+        "MaxWidth": {
+          "type": "integer",
+          "description": "Maximum width of the block"
+        },
+        "MaxHeight": {
+          "type": "integer",
+          "description": "Maximum height of the block"
+        },
+        "StretchWidth": {
+          "type": "boolean",
+          "description": "Whether all available space should be filled by width"
+        },
+        "StretchHeight": {
+          "type": "boolean",
+          "description": "Whether all available space should be filled by height"
+        },
+        "HorizontalAlignment": {
+          "type": "string",
+          "enum": ["Left", "Right", "Center"],
+          "description": "Horizontal alignment of the block"
+        },
+        "VerticalAlignment": {
+          "type": "string",
+          "enum": ["Top", "Center", "Bottom"],
+          "description": "Vertical alignment of the block"
+        },
+        "Margin": {
+          "type": "string",
+          "description": "Margin of the block"
+        },
+        "MarginLeft": {
+          "type": "integer",
+          "description": "Left margin of the block"
+        },
+        "MarginTop": {
+          "type": "integer",
+          "description": "Top margin of the block"
+        },
+        "MarginRight": {
+          "type": "integer",
+          "description": "Right margin of the block"
+        },
+        "MarginBottom": {
+          "type": "integer",
+          "description": "Bottom margin of the block"
+        },
+        "Padding": {
+          "type": "string",
+          "description": "Padding of the block"
+        },
+        "PaddingLeft": {
+          "type": "integer",
+          "description": "Left padding of the block"
+        },
+        "PaddingTop": {
+          "type": "integer",
+          "description": "Top padding of the block"
+        },
+        "PaddingRight": {
+          "type": "integer",
+          "description": "Right padding of the block"
+        },
+        "PaddingBottom": {
+          "type": "integer",
+          "description": "Bottom padding of the block"
+        },
+        "Background": {
+          "type": "string",
+          "description": "Background color of the block"
+        },
+        "BackgroundImage": {
+          "type": "string",
+          "description": "Path to the image to be used as block background"
+        },
+        "UseBackgroundCrop": {
+          "type": "boolean",
+          "description": "Whether background image should be cropped"
+        },
+        "BackgroundImageOpacity": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Opacity of the background image (0-100)"
+        },
+        "GridRow": {
+          "type": "integer",
+          "description": "Row number if block is child for grid"
+        },
+        "GridCol": {
+          "type": "integer",
+          "description": "Column number if block is child for grid"
+        },
+        "PositionX": {
+          "type": "integer",
+          "description": "X position if block is child for canvas"
+        },
+        "PositionY": {
+          "type": "integer",
+          "description": "Y position if block is child for canvas"
+        },
+        "Colorize": {
+          "type": "object",
+          "description": "Colorize options for the final block image"
+        },
+        "ColorizeBackground": {
+          "type": "object",
+          "description": "Colorize options for the background of the block"
+        },
+        "Triggers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Triggers for properties"
+          },
+          "description": "List of triggers for properties"
+        },
+        "Source": {
+          "type": "object",
+          "description": "Data source (text, image or collection path)"
+        },
+        "FontName": {
+          "type": "string",
+          "description": "Name of the font"
+        },
+        "FontSize": {
+          "type": "string",
+          "description": "Size of the font"
+        },
+        "Foreground": {
+          "title" : "Fore",
+          "type": "string",
+          "description": "Foreground color"
+        },
+        "Orientation": {
+          "type": "string",
+          "enum": ["Horizontal", "Vertical"],
+          "description": "Orientation of the block"
+        },
+        "Spacing": {
+          "type": "integer",
+          "description": "Spacing of the block"
+        }
+    },
+    "required" : [
+      "BlockType"
+    ]
+}

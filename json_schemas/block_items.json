@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "if": {
+      "anyOf": [
+        {"properties": { "BlockType": { "const": "stack" } }},
+        {"properties": { "BlockType": { "const": "dock" } }},
+        {"properties": { "BlockType": { "const": "grid" } }},
+        {"properties": { "BlockType": { "const": "canvas" } }}
+      ]
+    },
+    "then": {
+      "properties": {
+        "Items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Nested blocks"
+          },
+          "description": "List of nested blocks"
+        }
+      }
+    }
+  }

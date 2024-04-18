@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "if": {
+      "anyOf": [
+        {"properties": { "BlockType": { "const": "canvas" } }}
+      ]
+    },
+    "then": {
+      "properties": {
+        "Items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+                "PositionY": {
+                  "oneOf": [
+                    { "type": "integer" },
+                    { "type": "string" }
+                  ],
+                  "description": "Indicate coordinate for leftmost coordinate"
+                },
+                "PositionX": {
+                    "oneOf": [
+                      { "type": "integer" },
+                      { "type": "string" }
+                    ],
+                    "description": "Indicate coordinate for leftmost coordinate"
+                }
+            }
+          }
+        }
+      }
+    }
+  }

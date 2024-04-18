@@ -1,0 +1,179 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "if": {
+      "anyOf": [
+        {"properties": { "BlockType": { "const": "table" } }}
+      ]
+    },
+    "then": {
+      "properties": {
+        "TableOptions": {
+            "type": "object",
+            "properties": {
+                "ItemSource": {
+                    "type": "string",
+                    "description": "Data access expression for collection/list"
+                  },
+                  "HeaderTemplate": {
+                    "type": "object",
+                    "description": "Template for table headers (located above each column)"
+                  },
+                  "HeaderHeight": {
+                    "type": "integer",
+                    "description": "Height of the table headers"
+                  },
+                  "RowHeight": {
+                    "type": "integer",
+                    "description": "Height of the table rows"
+                  },
+                  "RowCount": {
+                    "type": "integer",
+                    "description": "Number of rows in the table"
+                  },
+                  "ColSpacing": {
+                    "type": "integer",
+                    "description": "Spacing between columns"
+                  },
+                  "RowSpacing": {
+                    "type": "integer",
+                    "description": "Spacing between rows"
+                  },
+                  "SeparatorSpace": {
+                    "type": "integer",
+                    "description": "Additional space if column is separator"
+                  },
+                  "GroupSpaceReduction": {
+                    "type": "integer",
+                    "description": "Space reduction between columns with the same GroupId"
+                  },
+                  "SortMember": {
+                    "type": "string",
+                    "description": "Item's property name for sorting collection"
+                  },
+                  "OrderBy": {
+                    "type": "string",
+                    "description": "Item's property name for sorting collection"
+                  },
+                  "OrderBy2": {
+                    "type": "string",
+                    "description": "Item's property name for sorting collection"
+                  },
+                  "OrderBy3": {
+                    "type": "string",
+                    "description": "Item's property name for sorting collection"
+                  },
+                  "OrderByDescending": {
+                    "type": "string",
+                    "description": "Item's property name for sorting collection in descending order"
+                  },
+                  "OrderByDescending2": {
+                    "type": "string",
+                    "description": "Item's property name for sorting collection in descending order"
+                  },
+                  "OrderByDescending3": {
+                    "type": "string",
+                    "description": "Item's property name for sorting collection in descending order"
+                  },
+                  "FilterMember": {
+                    "type": "string",
+                    "description": "Item's property name for filtering collection"
+                  },
+                  "FilterMemberValue": {
+                    "type": "string",
+                    "description": "Value of the property by which the collection will be filtered"
+                  },
+                  "Reverse": {
+                    "type": "boolean",
+                    "description": "Whether the collection elements should be reversed"
+                  },
+                  "Limit": {
+                    "type": "integer",
+                    "description": "Limiting the number of items in the collection"
+                  },
+                  "IndexStart": {
+                    "type": "integer",
+                    "description": "Starting index of the collection"
+                  },
+                  "IndexEnd": {
+                    "type": "integer",
+                    "description": "Ending index of the collection"
+                  },
+                  "TakeItemIndex": {
+                    "type": "integer",
+                    "description": "Required index of the collection (will consist only of one item by specified index)"
+                  },
+                  "TakeItemsFirst": {
+                    "type": "integer",
+                    "description": "Specifies the number of the first items of the collection to be included"
+                  },
+                  "TakeItemsLast": {
+                    "type": "integer",
+                    "description": "Specifies the number of the last items of the collection to be included"
+                  },
+                  "CollectionPart": {
+                    "type": "string",
+                    "description": "Specify the part of the collection to be used (e.g., '1/3' will be used only first third of the collection)"
+                  },
+                  "Columns": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "Width": {
+                            "type": "integer",
+                            "description": "Width of the specific column"
+                          },
+                          "MarginLeft": {
+                            "type": "integer",
+                            "description": "Left margin of the column"
+                          },
+                          "MarginRight": {
+                            "type": "integer",
+                            "description": "Right margin of the column"
+                          },
+                          "IsStretchWidth": {
+                            "type": "boolean",
+                            "description": "Indicates whether all available space should be filled (by width)"
+                          },
+                          "Header": {
+                            "type": "string",
+                            "description": "Text for header template"
+                          },
+                          "RenderIf": {
+                            "type": "boolean",
+                            "description": "Specifies whether the column should be rendered"
+                          },
+                          "Template": {
+                            "type": "object",
+                            "description": "Template for each item of the column"
+                          },
+                          "IsSeparator": {
+                            "type": "boolean",
+                            "description": "Indicates whether the column is a separator"
+                          },
+                          "GroupId": {
+                            "type": "integer",
+                            "description": "Same group Id (>0) can be set for several columns to bring them closer to each other in the column space"
+                          },
+                          "MultiColumnHeadersSource": {
+                            "type": "string",
+                            "description": "Data access expression for multicolumn headers (only for collection/list)"
+                          },
+                          "MultiColumnItemsSource": {
+                            "type": "string",
+                            "description": "Data access expression for multicolumn items (only for collection/list)"
+                          },
+                          "MultiColumnHeaderTemplate": {
+                            "type": "object",
+                            "description": "Template for each item of multicolumns"
+                          }
+                      }
+                    },
+                    "description": "List of TableColumnDefinition"
+                  }
+            }
+          }
+      }
+    }
+  }

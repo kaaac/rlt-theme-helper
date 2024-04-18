@@ -1,0 +1,122 @@
+{
+  "name": "rlt-theme-helper",
+  "displayName": "RLT Theme Helper",
+  "description": "Description of extension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "rlt-theme-helper.helloWorld",
+      "title": "Hello World"
+    }],
+    "jsonValidation": [
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/common.json"
+      },
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/block_image.json"
+      },
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/block_items.json"
+      },
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/block_component.json"
+      },
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/block_text.json"
+      },
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/block_itemstack.json"
+      },
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/block_grid.json"
+      },
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/block_dock_stack.json"
+      },
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/block_canvas.json"
+      },
+      {
+        "fileMatch": [
+          "layer.json",
+          "components/**/*.json"
+        ],
+        "url": "./json_schemas/block_table.json"
+      },
+      {
+        "fileMatch": "layout_description.json",
+        "url" : "./json_schemas/layout_description.json"
+      },
+      {
+        "fileMatch": "localizations/*.json",
+        "url" : "./json_schemas/localization.json"
+      },
+      {
+        "fileMatch": "mod_description.json",
+        "url" : "./json_schemas/mod_description.json"
+      },
+      {
+        "fileMatch": "global/*_vars.json",
+        "url" : "./json_schemas/public_vars.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
