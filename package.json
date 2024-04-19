@@ -1,8 +1,11 @@
 {
   "name": "rlt-theme-helper",
   "displayName": "RLT Theme Helper",
-  "description": "Description of extension",
-  "version": "0.0.2",
+  "description": "Json Validator for Racing League Tools Themes",
+  "version": "0.0.3",
+  "publisher" : "Kaaac",
+  "author" : "Kaaac",
+  "icon" : "rlt_icon.png",
   "engines": {
     "vscode": "^1.88.0"
   },
