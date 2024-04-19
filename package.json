@@ -6,6 +6,10 @@
   "publisher" : "Kaaac",
   "author" : "Kaaac",
   "icon" : "rlt_icon.png",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/kaaac/rlt-theme-helper.git"
+  },
   "engines": {
     "vscode": "^1.88.0"
   },
