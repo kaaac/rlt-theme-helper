@@ -44,7 +44,7 @@ Example:
 - RenderIf - added possible type of value string with patter for variable
 - TextOptions - Removed property Text from required list
 
-### 0.0.3
+### 0.1.0
 
 Adjustments and additions according to Renderer Api v0.9.5-preview1:
 - changed filematch for layers
