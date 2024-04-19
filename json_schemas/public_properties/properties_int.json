@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "if": {
+    "required" : ["Type"],
+    "properties" : {
+      "Type" : { "enum" : ["Integer","Float"]}
+    }
+  },
+  "then": {
+    "properties": {
+      "MinimumValue": {
+        "type": "number",
+        "description": "Minimum value for integer, float types. Restricts the user input"
+      },
+      "MaximumValue": {
+        "type": "number",
+        "description": "Maximum value for integer, float types. Restricts the user input"
+      }
+    }
+  }
+}

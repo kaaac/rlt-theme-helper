@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "Properties" : {
+        "type" : "array",
+        "items" : {
+          "type" : "object",
+          "allOf" : [
+            { "$ref" : "public_properties/properties_common.json"},
+            { "$ref" : "public_properties/properties_int.json"},
+            { "$ref" : "public_properties/properties_enum.json"}
+          ]
+        }
+      },
+      "Categories" : {
+        "type" : "array",
+        "items" : {
+          "type" : "object",
+          "properties": {
+            "Name" : {
+              "type" : "string",
+              "description": "Required. Any valid string, spaces are allowed. Only affects the UI, not the renderer"
+            },
+            "Order" : {
+              "type" : "integer",
+              "description": "Determines the order in which categories are displayed in the app's UI. Optional."
+            }
+          },
+          "required": ["Name"]
+        },
+        "description": "Categories are used to group a specific set of properties. Use property Category of PublicProperty object to map. If a property is not mapped to any category, it will be displayed at the beginning of the property list"
+      },
+      "Presets" : {
+        "type" : "array",
+        "items" : {
+          "type" : "object",
+          "properties": {
+            "Name" : {
+              "type" : "string",
+              "description": "Preset name, spaces are allowed. Only affects the UI, not the renderer."
+            },
+            "DefinedProperties" : {
+              "type" : "array",
+              "items" : {
+                "type": "object",
+                "additionalProperties": {
+                  "oneOf": [
+                    { "type": "string" },
+                    { "type": "integer" }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "With presets, the end user can quickly define the values of several properties at once. To define a preset, add it to Presets collection, give it a name and set values for the required properties, using DefinedProperties array of key-value pairs."
+      }
+    }
+  }

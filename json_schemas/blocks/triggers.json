@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type" : "array",
+    "items" : {
+        "type" : "object",
+        "properties": {
+            "Condition" : {
+                "type" : "string",
+                "description": "Condition under which the trigger will be used. If “ConditionValue” is not set: it is assumed that “bool” value is used (can be “number” type, 0 = false, >0 = true). If “ConditionValue” is set, “Conditon” can be any type/value (it will be forcibly converted to string type during comparison). "
+            },
+            "ConditionValue" : {
+                "oneOf" : [
+                    { "type" : "string" },
+                    { "type" : "integer" }
+                ],
+                "description": " is used to set the value at which trigger condition will be true. For example, if “Condition” is 25, and “ConditionValue” is “25”, both values will be forcibly converter to string, and final trigger condition will be true."
+            },
+            "ConditionAnd" : {
+                "type" : "string",
+                "description": "additional condition (implement AND logic). If “ConditionAndValue” is not set: it is assumed that “bool” value is used (can be “number” type, 0 = false, >0 = true). If “ConditionAndValue” is set, “ConditonAnd” can be any type/value (it will be forcibly converted to string type during comparison). "
+            },
+            "ConditionAndValue" : {
+                "oneOf" : [
+                    { "type" : "string" },
+                    { "type" : "integer" }
+                ],
+                "description": "similarly to “ConditionValue”"
+            },
+            "ConditionOr" : {
+                "type" : "string",
+                "description": "additional condition (implement OR logic). If “ConditionOrValue” is not set: it is assumed that “bool” value is used (can be “number” type, 0 = false, >0 = true). If “ConditionOrValue” is set, “ConditonOr” can be any type/value (it will be forcibly converted to string type during comparison)"
+            },
+            "ConditionOrValue" : {
+                "oneOf" : [
+                    { "type" : "string" },
+                    { "type" : "integer" }
+                ],
+                "description": "similarly to “ConditionValue”"
+            },
+            "Setters" : {
+                "type" : "array",
+                "items" : {
+                    "type" : "object",
+                    "properties": {
+                        "Property" : {
+                            "type" : "string",
+                            "description": "full path to block’s property name (“Foreground” or “TextOptions.Foreground” as example)"
+                        },
+                        "Value" : {
+                            "oneOf" : [
+                                {
+                                    "type" : "object",
+                                    "additionalProperties" : {
+                                        "anyOf" : [
+                                            {"type" : "string"},
+                                            {"type" : "boolean"},
+                                            {"type" : "integer"}
+                                        ]
+                                    }
+                                },
+                                {"type" : "string"},
+                                {"type" : "boolean"},
+                                {"type" : "integer"}
+                            ],
+                            "description": "value of property. Can be object of (“*Options”, such as ImageOptions, TextOptions, etc) or ColorizeOptions. Overrides the current value of the property."
+                        }
+                    }
+                }
+            },
+            "Value" : {
+                "oneOf" : [
+                    {"type" : "string"},
+                    {"type" : "boolean"},
+                    {"type" : "integer"}
+                ],
+                "description": "For convenience, if it need to override only one property, it can leave TriggerPropertyItem list are empty and specify Property and Value immediately in the trigger"
+            }
+        },
+        "required": [ "Condition"]
+    },
+    "description": "List of triggers for properties"
+}

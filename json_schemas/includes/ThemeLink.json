@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Url" : {
+            "type" : "string"
+        },
+        "Caption" : {
+            "type" : "string"
+        },
+        "Type" : {
+            "type" : "string",
+            "enum" : [
+                "General",
+                "ThemeRepository",
+                "ThemeIssueReport",
+                "ThemeDiscussion",
+                "SupportAuthor"
+            ],
+            "default" : "General"
+        },
+        "Order" : {
+            "type" : "integer",
+            "default" : 0
+        },
+        "RenderCaption" : {
+            "type" : "string",
+            "description": "Caption of layout (displayed in the app UI). If the string starts with a small letter, \"Render \" will automatically be added at the beginning"
+        },
+        "RenderCaptions" : {
+            "type" : "array",
+            "items" : {
+                "type" : "object",
+                "additionalProperties": {
+                    "type" : "string"
+                }
+            },
+            "description": "Specific layout’s captions (optional, only applies to certain RenderType"
+        }
+    },
+    "required": ["Url", "Caption"]
+}

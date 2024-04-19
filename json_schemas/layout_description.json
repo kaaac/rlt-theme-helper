@@ -1,26 +1,10 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
-    "properties": {
-      "LayoutName": {
-        "type": "string",
-        "description": "Name of layout"
-      },
-      "RenderType": {
-        "type": "string",
-        "description": "Render type (affects the data passed to layout and its location in the app UI)"
-      },
-      "RenderCaption": {
-        "type": "string",
-        "description": "Caption of layout (can be displayed in the app UI)"
-      },
-      "Index": {
-        "type": "integer",
-        "description": "Index affecting the order in which layouts are displayed in the app UI",
-        "default": 0,
-        "minimum": 0,
-        "maximum": 4
-      }
-    },
-    "required": ["LayoutName", "RenderType"]
+    "allOf" : [
+      { "$ref" : "layout_description/common.json"},
+      { "$ref" : "layout_description/season.json"},
+      { "$ref" : "layout_description/session.json"}
+    ],
+    "required": ["RenderType"]
   }

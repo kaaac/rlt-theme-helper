@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "if": {
+        "required": ["RenderType"],
+        "properties": { "RenderType": { "const": "DriverSeasonStatistics" } }
+      },
+    "then" : {
+        "properties" : {
+            "RenderDataType" : {
+                "type" : "string",
+                "enum" : [
+                    "AvgPoints",
+                    "AvgQualPos",
+                    "AvgRacePos",
+                    "FinishesBestSeries",
+                    "FinishesPercent",
+                    "GainedPositions",
+                    "PenaltyPoints",
+                    "PenTimeAllAvg",
+                    "PenTimeAllSum",
+                    "PenTimeIngameAvg",
+                    "PenTimeIngameSum",
+                    "PenTimeStewardAvg",
+                    "PenTimeStewardSum",
+                    "PointsBestSeries",
+                    "TotalTyresUsage"
+                ]
+            }
+        },
+        "required": [ "RenderDataType"]
+    }
+  }

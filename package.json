@@ -2,7 +2,7 @@
   "name": "rlt-theme-helper",
   "displayName": "RLT Theme Helper",
   "description": "Json Validator for Racing League Tools Themes",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "publisher" : "Kaaac",
   "author" : "Kaaac",
   "icon" : "rlt_icon.png",
@@ -26,21 +26,32 @@
     "jsonValidation": [
       {
         "fileMatch" : [
-          "component/**/*.json"
+          "components/**/*.json"
         ],
         "url" : "./json_schemas/schema_component.json",
         "icon" : "rlt_icon.svg"
       },
       {
         "fileMatch" : [
-          "layer.json"
+          "layer*.json"
         ],
         "url" : "./json_schemas/schema_layer.json",
         "icon" : "rlt_icon.svg"
       },
       {
+        "fileMatch" : [
+          "theme_description.json"
+        ],
+        "url" : "./json_schemas/theme_description.json"
+      },
+      {
         "fileMatch": "layout_description.json",
         "url" : "./json_schemas/layout_description.json",
+        "icon" : "rlt_icon.svg"
+      },
+      {
+        "fileMatch": "styles/*.json",
+        "url" : "./json_schemas/blocks/style.json",
         "icon" : "rlt_icon.svg"
       },
       {
@@ -49,9 +60,8 @@
         "icon" : "rlt_icon.svg"
       },
       {
-        "fileMatch": "mod_description.json",
-        "url" : "./json_schemas/mod_description.json",
-        "svg" : "rlt_icon.svg"
+        "fileMatch" : "public_properties.json",
+        "url" : "./json_schemas/public_properties.json"
       },
       {
         "fileMatch": "global/*_vars.json",

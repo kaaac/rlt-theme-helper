@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "LayoutName": {
+        "type": "string",
+        "description": "Name of layout"
+      },
+      "RenderType": {
+        "type": "string",
+        "enum" : [
+          "RaceResults",
+          "QualResults",
+          "CombinedQualResults",
+          "DriverStandings",
+          "TeamStandings",
+          "Lineups",
+          "Calendar",
+          "DriverSessionStatistics",
+          "DriverSeasonStatistics",
+          "DriverSession",
+          "DriverInfo",
+          "PenaltySeasonStatistics",
+          "PenaltyItem",
+          "PenaltyItems"
+        ],
+        "description": "Render type (affects the data passed to layout and its location in the app UI)"
+      },
+      "RenderVersion" : {
+        "type" : "integer",
+        "minimum": 1,
+        "default": 1,
+        "description" : "There can be many layouts with the same RenderType and RenderDataType. In this case, you will need to specify an version that affects the order in which layouts are displayed in the app UI. Possible values: 1, 2, 3 (and more), 1 by default"
+      },
+      "RenderCaption": {
+        "type": "string",
+        "description": "Caption of layout (can be displayed in the app UI)"
+      },
+      "RenderCaptions" : {
+        "type" : "array",
+        "items" : {
+            "type" : "object",
+            "additionalProperties": {
+                "type" : "string"
+            }
+        },
+        "description": "Specific layout’s captions (optional, only applies to certain RenderType"
+      }
+    },
+    "required": ["RenderType"]
+  }

@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "if": {
+        "required": ["RenderType"],
+        "properties": { "RenderType": { "const": "DriverSessionStatistics" } }
+      },
+    "then" : {
+        "properties" : {
+            "RenderDataType" : {
+                "type" : "string",
+                "enum" : [
+                    "PureRacePaceRating",
+                    "ConsistancyRating",
+                    "FastestLaps",
+                    "LongestStints",
+                    "AttackRating",
+                    "DefenseRating",
+                    "TopBattles"
+                ]
+            }
+        },
+        "required": [ "RenderDataType"]
+    }
+  }

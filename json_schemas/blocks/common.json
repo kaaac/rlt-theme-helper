@@ -185,12 +185,7 @@
           "description": "Colorize options for the background of the block"
         },
         "Triggers": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "description": "Triggers for properties"
-          },
-          "description": "List of triggers for properties"
+          "$ref" : "triggers.json"
         },
         "Source": {
           "type": "string",
@@ -201,7 +196,7 @@
           "description": "Name of the font"
         },
         "FontSize": {
-          "type": "string",
+          "type": "integer",
           "description": "Size of the font"
         },
         "Foreground": {
@@ -217,6 +212,9 @@
         "Spacing": {
           "type": "integer",
           "description": "Spacing of the block"
+        },
+        "Style" : {
+          "$ref" : "style.json"
         }
     }
 }

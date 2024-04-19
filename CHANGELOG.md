@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.1.0] - 2024-04-20
+
+### Changed and Added
+
+Adjustments and additions to renderer api v0.9.5-preview1:
+- changed filematch for layers
+- support for theme_description.json
+- support for style property
+- support for public_properties.json
+
 ## [0.0.3] - 2024-04-18
 
 ### Changed
