@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+      "Text": {
+        "type": "string",
+        "description": "Text to display"
+      },
+      "FontName": { "$ref" : "FontName.json"},
+      "FontSize": { "$ref" : "FontSize.json"},
+      "FontStyle": {
+        "type": "string",
+        "enum": ["Regular", "Bold", "Italic", "BoldItalic"],
+        "description": "Style of the font"
+      },
+      "Foreground": { "$ref" : "Foreground.json"},
+      "TextAlignment": {
+        "type": "string",
+        "enum": ["Start", "End", "Center"],
+        "description": "Text alignment"
+      },
+      "HorizontalAlignment":    { "$ref" : "HorizontalAlignment.json" },
+      "VerticalAlignment":      { "$ref" : "VerticalAlignment.json" },
+      "LineSpacing": {
+        "type": "integer",
+        "description": "Line spacing"
+      },
+      "Wrap": {
+        "type": "boolean",
+        "description": "Wrap text"
+      },
+      "ColorizeRating": { "$ref" : "ColorizeRating.json"}
+    }
+}

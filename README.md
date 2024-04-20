@@ -16,6 +16,10 @@ Supports:
 ![extension](https://github.com/kaaac/rlt-theme-helper/assets/74159167/4fdfbaae-71fd-4fbb-bb1b-f728f8490696)
 
 
+## How to Install
+
+Go to Extensions in your VSCode, search "RLT Theme Helper", hit Install
+
 ## Requirements
 
 ## Extension Settings
@@ -25,8 +29,6 @@ Supports:
 The project is in an early stage of development. Please report errors
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
 
 ### 0.0.1
 
@@ -52,5 +54,8 @@ Adjustments and additions according to Renderer Api v0.9.5-preview1:
 - support for style property
 - support for public_properties.json
 
+## [0.1.1-0.1.2] 
+
+- Cleaning up the code
 
 ---

@@ -1,0 +1,4 @@
+{
+    "type": "integer",
+    "description": "Column number if block is child for grid"
+}

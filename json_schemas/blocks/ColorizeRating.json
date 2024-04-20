@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+      "IsEnabled": {
+        "type": "boolean",
+        "description": "Enable colorization based on rating value"
+      },
+      "Level": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Rating level (0-100) to determine color"
+      },
+      "GradientStops": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "Color": {
+              "type": "string",
+              "description": "Color"
+            },
+            "Offset": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Offset (0-100)"
+            }
+          },
+          "required": ["Color", "Offset"]
+        },
+        "description": "Gradient stop list for custom color assignment algorithm"
+      }
+    },
+    "required": ["IsEnabled", "Level"]
+}

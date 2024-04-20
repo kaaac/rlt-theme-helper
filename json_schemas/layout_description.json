@@ -7,4 +7,4 @@
       { "$ref" : "layout_description/session.json"}
     ],
     "required": ["RenderType"]
-  }
+}

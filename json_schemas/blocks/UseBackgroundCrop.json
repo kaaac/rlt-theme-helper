@@ -1,0 +1,4 @@
+{
+    "type": "boolean",
+    "description": "Whether background image should be cropped"
+}

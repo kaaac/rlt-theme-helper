@@ -1,0 +1,6 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "string",
+    "description": "Type of the block",
+    "enum": ["image", "text", "stack", "itemstack", "dock", "grid", "table", "canvas", "shape", "component"]
+}

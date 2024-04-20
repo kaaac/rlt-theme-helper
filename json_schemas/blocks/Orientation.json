@@ -1,0 +1,5 @@
+{
+    "type": "string",
+    "enum": ["Horizontal", "Vertical"],
+    "description": "Orientation of the block"
+}

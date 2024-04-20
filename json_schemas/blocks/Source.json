@@ -1,0 +1,4 @@
+{
+    "type": "string",
+    "description": "Data source (text, image or collection path)"
+}

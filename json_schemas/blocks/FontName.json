@@ -1,0 +1,4 @@
+{
+    "type": "string",
+    "description": "Name of the font (if empty, use value of the global variable 'FontNameDefault')"
+}

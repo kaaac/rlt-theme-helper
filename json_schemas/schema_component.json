@@ -2,16 +2,16 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "allOf": [
-    { "$ref": "blocks/block_canvas.json" },
-    { "$ref": "blocks/block_component.json" },
-    { "$ref": "blocks/block_dock_stack.json" },
-    { "$ref": "blocks/block_grid.json" },
-    { "$ref": "blocks/block_image.json" },
-    { "$ref": "blocks/block_items.json" },
-    { "$ref": "blocks/block_itemstack.json" },
-    { "$ref": "blocks/block_shape.json" },
-    { "$ref": "blocks/block_table.json" },
-    { "$ref": "blocks/block_text.json" },
+    { "$ref": "blocks/Canvas.json" },
+    { "$ref": "blocks/Component.json" },
+    { "$ref": "blocks/Dock_Stack.json" },
+    { "$ref": "blocks/Grid.json" },
+    { "$ref": "blocks/Image.json" },
+    { "$ref": "blocks/Items.json" },
+    { "$ref": "blocks/Itemstack.json" },
+    { "$ref": "blocks/Shape.json" },
+    { "$ref": "blocks/Table.json" },
+    { "$ref": "blocks/Text.json" },
     { "$ref": "blocks/common.json" }
   ]
 }

@@ -1,0 +1,6 @@
+{
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 100,
+    "description": "Opacity of the background image (0-100)"
+}

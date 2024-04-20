@@ -2,219 +2,51 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-        "BlockType": {
-          "type": "string",
-          "description": "Type of the block",
-          "enum": ["image", "text", "stack", "itemstack", "dock", "grid", "table", "canvas", "shape", "component"]
-        },
-        "Name": {
-          "type": "string",
-          "description": "Name of the block"
-        },
-        "RenderIf": {
-          "oneOf": [
-            {"type": "boolean"},
-            {
-              "type" : "string",
-              "pattern" : "^{.*}$"
-            }
-          ],
-          "default" : false,
-          "description": "Whether the block should be rendered"
-        },
-        "Opacity": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 100,
-          "description": "Opacity of the block (0-100)"
-        },
-        "Width": {
-          "type": ["integer", "string"],
-          "description": "Width of the block in pixels or a string value ('*', 'auto')"
-        },
-        "Height": {
-          "type": ["integer", "string"],
-          "description": "Height of the block in pixels or a string value ('*', 'auto')"
-        },
-        "MaxWidth": {
-          "type": "integer",
-          "description": "Maximum width of the block"
-        },
-        "MaxHeight": {
-          "type": "integer",
-          "description": "Maximum height of the block"
-        },
-        "StretchWidth": {
-          "type": "boolean",
-          "description": "Whether all available space should be filled by width"
-        },
-        "StretchHeight": {
-          "type": "boolean",
-          "description": "Whether all available space should be filled by height"
-        },
-        "HorizontalAlignment": {
-          "type": "string",
-          "enum": ["Left", "Right", "Center"],
-          "description": "Horizontal alignment of the block"
-        },
-        "VerticalAlignment": {
-          "type": "string",
-          "enum": ["Top", "Center", "Bottom"],
-          "description": "Vertical alignment of the block"
-        },
-        "Margin": {
-          "type": "string",
-          "description": "Margin of the block"
-        },
-        "MarginLeft": {
-          "oneOf" : [
-            {"type": "integer"},
-            {
-              "type" : "string",
-              "pattern" : "^{.*}$"
-            }
-          ],
-          "description": "Left margin of the block"
-        },
-        "MarginTop": {
-          "oneOf" : [
-            {"type": "integer"},
-            {
-              "type" : "string",
-              "pattern" : "^{.*}$"
-            }
-          ],
-          "description": "Top margin of the block"
-        },
-        "MarginRight": {
-          "oneOf" : [
-            {"type": "integer"},
-            {
-              "type" : "string",
-              "pattern" : "^{.*}$"
-            }
-          ],
-          "description": "Right margin of the block"
-        },
-        "MarginBottom": {
-          "oneOf" : [
-            {"type": "integer"},
-            {
-              "type" : "string",
-              "pattern" : "^{.*}$"
-            }
-          ],
-          "description": "Bottom margin of the block"
-        },
-        "Padding": {
-          "type": "string",
-          "description": "Padding of the block"
-        },
-        "PaddingLeft": {
-          "oneOf" : [
-            {"type": "integer"},
-            {
-              "type" : "string",
-              "pattern" : "^{.*}$"
-            }
-          ],
-          "description": "Left padding of the block"
-        },
-        "PaddingTop": {
-          "oneOf" : [
-            {"type": "integer"},
-            {
-              "type" : "string",
-              "pattern" : "^{.*}$"
-            }
-          ],
-          "description": "Top padding of the block"
-        },
-        "PaddingRight": {
-          "oneOf" : [
-            {"type": "integer"},
-            {
-              "type" : "string",
-              "pattern" : "^{.*}$"
-            }
-          ],
-          "description": "Right padding of the block"
-        },
-        "PaddingBottom": {
-          "oneOf" : [
-            {"type": "integer"},
-            {
-              "type" : "string",
-              "pattern" : "^{.*}$"
-            }
-          ],
-          "description": "Bottom padding of the block"
-        },
-        "Background": {
-          "type": "string",
-          "description": "Background color of the block"
-        },
-        "BackgroundImage": {
-          "type": "string",
-          "description": "Path to the image to be used as block background"
-        },
-        "UseBackgroundCrop": {
-          "type": "boolean",
-          "description": "Whether background image should be cropped"
-        },
-        "BackgroundImageOpacity": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 100,
-          "description": "Opacity of the background image (0-100)"
-        },
-        "GridRow": {
-          "type": "integer",
-          "description": "Row number if block is child for grid"
-        },
-        "GridCol": {
-          "type": "integer",
-          "description": "Column number if block is child for grid"
-        },
-        "Colorize": {
-          "type": "object",
-          "description": "Colorize options for the final block image"
-        },
-        "ColorizeBackground": {
-          "type": "object",
-          "description": "Colorize options for the background of the block"
-        },
-        "Triggers": {
-          "$ref" : "triggers.json"
-        },
-        "Source": {
-          "type": "string",
-          "description": "Data source (text, image or collection path)"
-        },
-        "FontName": {
-          "type": "string",
-          "description": "Name of the font"
-        },
-        "FontSize": {
-          "type": "integer",
-          "description": "Size of the font"
-        },
-        "Foreground": {
-          "title" : "Fore",
-          "type": "string",
-          "description": "Foreground color"
-        },
-        "Orientation": {
-          "type": "string",
-          "enum": ["Horizontal", "Vertical"],
-          "description": "Orientation of the block"
-        },
-        "Spacing": {
-          "type": "integer",
-          "description": "Spacing of the block"
-        },
-        "Style" : {
-          "$ref" : "style.json"
-        }
+        "BlockType":              { "$ref" : "BlockType.json" },
+        "Name":                   { "$ref" : "Name.json" },
+        "RenderIf":               { "$ref" : "RenderIf.json" },
+        "Opacity":                { "$ref" : "Opacity.json" },
+        "Width":                  { "$ref" : "Width.json" },
+        "Height":                 { "$ref" : "Height.json" },
+        "MaxWidth":               { "$ref" : "MaxWidth.json" },
+        "MaxHeight":              { "$ref" : "MaxHeight.json" },
+        "StretchWidth":           { "$ref" : "StretchWidth.json" },
+        "StretchHeight":          { "$ref" : "StretchWidth.json"},
+        "HorizontalAlignment":    { "$ref" : "HorizontalAlignment.json" },
+        "VerticalAlignment":      { "$ref" : "VerticalAlignment.json" },
+        "Padding":                { "$ref" : "Padding.json"},
+        "Margin":                 { "$ref" : "Margin.json" },
+        "MarginLeft":             { "$ref" : "Outer_Inner.json",
+                                    "description": "Left margin of the block" },
+        "MarginTop":              { "$ref" : "Outer_Inner.json",
+                                    "description": "Top margin of the block" },
+        "MarginRight":            { "$ref" : "Outer_Inner.json",
+                                    "description": "Right margin of the block" },
+        "MarginBottom":           { "$ref" : "Outer_Inner.json",
+                                    "description": "Bottom margin of the block" },
+        "PaddingLeft":            { "$ref" : "Outer_Inner.json",
+                                    "description": "Left padding of the block" },
+        "PaddingTop":             { "$ref" : "Outer_Inner.json",
+                                    "description": "Top padding of the block" },
+        "PaddingRight":           { "$ref" : "Outer_Inner.json",
+                                    "description": "Right padding of the block" },
+        "PaddingBottom":          { "$ref" : "Outer_Inner.json",
+                                    "description": "Bottom padding of the block" },
+        "Background":             { "$ref" : "../includes/color.json" },
+        "BackgroundImage":        { "$ref" : "BackgroundImage.json"},
+        "UseBackgroundCrop":      { "$ref" : "UseBackgroundCrop.json"},
+        "BackgroundImageOpacity": { "$ref" : "BackgroundImageOpacity.json"},
+        "GridRow":                { "$ref" : "GridRow.json"},
+        "GridCol":                { "$ref" : "GridCol.json"},
+        "Colorize":               { "$ref" : "Colorize.json"},
+        "ColorizeBackground":     { "$ref" : "ColorizeBackground.json"},
+        "Triggers":               { "$ref" : "Triggers.json"},
+        "Source":                 { "$ref" : "Source.json"},
+        "FontName":               { "$ref" : "FontName.json"},
+        "FontSize":               { "$ref" : "FontSize.json"},
+        "Foreground":             { "$ref" : "Foreground.json"},
+        "Orientation":            { "$ref" : "Orientation.json"},
+        "Spacing":                { "$ref" : "Spacing.json"},
+        "Style" :                 { "$ref" : "Style.json"}
     }
 }

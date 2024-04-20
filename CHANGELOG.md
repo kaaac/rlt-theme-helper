@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.1.1-0.1.2] - 2024-04-21
+
+### Changed
+
+- Cleaning up the code
+
 ## [0.1.0] - 2024-04-20
 
 ### Changed and Added

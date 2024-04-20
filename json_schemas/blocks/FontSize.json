@@ -1,0 +1,4 @@
+{
+    "type": "integer",
+    "description": "Size of the font (if empty, use value of the global variable 'FontSizeDefault')"
+}
