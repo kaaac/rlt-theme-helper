@@ -46,7 +46,7 @@
       },
       {
         "fileMatch": "layout_description.json",
-        "url" : "./json_schemas/layout_description.json",
+        "url" : "./json_schemas/layout_description_2.json",
         "icon" : "rlt_icon.svg"
       },
       {

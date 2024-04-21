@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "if" : {
+        "not" : {
+            "required": [ "RenderType"],
+            "allOf": [
+                {"properties": { "RenderType": { "const": "DriverSeasonStatistics" } }},
+                {"properties": { "RenderType": { "const": "DriverSessionStatistics" } }}
+            ]
+        }
+    },
+    "then" : {
+            "$ref": "layout_description/properties.json",
+            "required": ["RenderType"],
+            "additionalProperties": false
+    },
+    "else" : {
+        "oneOf" : [
+            {
+              "if" : {
+                "required": [ "RenderType"],
+                "properties": { "RenderType": { "const": "DriverSeasonStatistics" } }
+              },
+              "then" : {
+                "allOf" : [
+                  {"$ref" : "layout_description/properties.json"},
+                  {"$ref" : "layout_description/RenderDataType__DriverSeason.json"}
+                ],
+                "$comment" : "in ref is standard pack of properties",
+                "required": [ "RenderType","RenderDataType"]
+              }
+            },
+            {
+              "if" : {
+                "required": [ "RenderType"],
+                "properties": { "RenderType": { "const": "DriverSessionStatistics" } }
+              },
+              "then" : {
+                "allOf" : [
+                  {"$ref" : "layout_description/properties.json"},
+                  {"$ref" : "layout_description/RenderDataType__DriverSession.json"}
+                ],
+                "required": [ "RenderType","RenderDataType"]
+              }
+            }
+          ]
+    },
+    "required": ["RenderType"]
+}

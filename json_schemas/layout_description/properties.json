@@ -1,0 +1,10 @@
+{
+    "properties" :
+    {
+        "LayoutName": { "$ref" : "LayoutName.json"},
+        "RenderType": { "$ref" : "RenderType.json" },
+        "RenderVersion" : { "$ref" : "RenderVersion.json"},
+        "RenderCaption": { "$ref" : "RenderCaption.json"},
+        "RenderCaptions" : { "$ref" : "RenderCaption.json"}
+    }
+}

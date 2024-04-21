@@ -1,0 +1,6 @@
+{
+    "type" : "integer",
+    "minimum": 1,
+    "default": 1,
+    "description" : "There can be many layouts with the same RenderType and RenderDataType. In this case, you will need to specify an version that affects the order in which layouts are displayed in the app UI. Possible values: 1, 2, 3 (and more), 1 by default"
+}

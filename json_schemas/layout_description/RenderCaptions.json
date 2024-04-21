@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "additionalProperties": {
+      "anyOf": [
+        { "type": "string" },
+        { "type": "integer" },
+        { "type" : "boolean"}, 
+        { "type" : "number"},
+        { "type" : "null"}
+      ]
+    },
+    "description": "Specific layout’s captions (optional, only applies to certain RenderType"
+}

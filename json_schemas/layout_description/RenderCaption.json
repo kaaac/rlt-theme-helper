@@ -1,0 +1,4 @@
+{
+    "type": "string",
+    "description": "Caption of layout (can be displayed in the app UI)"
+}

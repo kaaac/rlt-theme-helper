@@ -1,0 +1,45 @@
+{
+    "type" : "string",
+    "oneOf" : [
+        {
+            "if" : {
+                "properties": { "RenderType": { "const": "DriverSessionStatistics" } }
+            },
+            "then" : {
+                "enum" : [
+                    "PureRacePaceRating",
+                    "ConsistancyRating",
+                    "FastestLaps",
+                    "LongestStints",
+                    "AttackRating",
+                    "DefenseRating",
+                    "TopBattles"
+                ]
+            }
+        },
+        {
+            "if" : {
+                "properties": { "RenderType": { "const": "DriverSeasonStatistics" } }
+            },
+            "then" : {
+                "enum" : [
+                    "AvgPoints",
+                    "AvgQualPos",
+                    "AvgRacePos",
+                    "FinishesBestSeries",
+                    "FinishesPercent",
+                    "GainedPositions",
+                    "PenaltyPoints",
+                    "PenTimeAllAvg",
+                    "PenTimeAllSum",
+                    "PenTimeIngameAvg",
+                    "PenTimeIngameSum",
+                    "PenTimeStewardAvg",
+                    "PenTimeStewardSum",
+                    "PointsBestSeries",
+                    "TotalTyresUsage"
+                ]
+            }
+        }
+    ]
+}

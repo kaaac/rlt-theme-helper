@@ -1,0 +1,17 @@
+{
+    "properties" : {
+        "RenderDataType" : 
+        {
+            "type" : "string",
+            "enum" : [
+                "PureRacePaceRating",
+                "ConsistancyRating",
+                "FastestLaps",
+                "LongestStints",
+                "AttackRating",
+                "DefenseRating",
+                "TopBattles"
+            ]
+        }
+    }
+}

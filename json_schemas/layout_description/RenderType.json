@@ -1,0 +1,20 @@
+{
+    "type": "string",
+    "enum" : [
+      "RaceResults",
+      "QualResults",
+      "CombinedQualResults",
+      "DriverStandings",
+      "TeamStandings",
+      "Lineups",
+      "Calendar",
+      "DriverSessionStatistics",
+      "DriverSeasonStatistics",
+      "DriverSession",
+      "DriverInfo",
+      "PenaltySeasonStatistics",
+      "PenaltyItem",
+      "PenaltyItems"
+    ],
+    "description": "Render type (affects the data passed to layout and its location in the app UI)"
+}

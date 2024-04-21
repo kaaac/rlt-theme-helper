@@ -1,0 +1,25 @@
+{
+    "properties" : {
+        "RenderDataType" : 
+        {
+            "type" : "string",
+            "enum" : [
+                "AvgPoints",
+                "AvgQualPos",
+                "AvgRacePos",
+                "FinishesBestSeries",
+                "FinishesPercent",
+                "GainedPositions",
+                "PenaltyPoints",
+                "PenTimeAllAvg",
+                "PenTimeAllSum",
+                "PenTimeIngameAvg",
+                "PenTimeIngameSum",
+                "PenTimeStewardAvg",
+                "PenTimeStewardSum",
+                "PointsBestSeries",
+                "TotalTyresUsage"
+            ]
+        }
+    }
+}
