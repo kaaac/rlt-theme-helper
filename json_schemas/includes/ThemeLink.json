@@ -28,13 +28,16 @@
             "description": "Caption of layout (displayed in the app UI). If the string starts with a small letter, \"Render \" will automatically be added at the beginning"
         },
         "RenderCaptions" : {
-            "type" : "array",
-            "items" : {
-                "type" : "object",
-                "additionalProperties": {
-                    "type" : "string"
-                }
-            },
+            "type": "object",
+              "additionalProperties": {
+                "anyOf": [
+                  { "type": "string" },
+                  { "type": "integer" },
+                  { "type" : "boolean"}, 
+                  { "type" : "number"},
+                  { "type" : "null"}
+                ]
+              },
             "description": "Specific layout’s captions (optional, only applies to certain RenderType"
         }
     },

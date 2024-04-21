@@ -54,8 +54,15 @@ Adjustments and additions according to Renderer Api v0.9.5-preview1:
 - support for style property
 - support for public_properties.json
 
-## [0.1.1-0.1.2] 
+## 0.1.1-0.1.2
 
 - Cleaning up the code
+
+
+## 0.1.3 
+
+### Fixed
+
+- Dictionary type and properties
 
 ---

@@ -35,9 +35,11 @@
           }
       },
       "RequiredLogotypeVariants" : {
-        "type" : "object",
+        "type": "object",
         "additionalProperties": {
-          "type" : "string"
+          "anyOf": [
+            { "type": "string" }
+          ]
         }
       },
       "Links" : {

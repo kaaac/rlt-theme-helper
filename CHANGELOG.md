@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.1.3] - 
+
+### Fixed
+
+- Dictionary type and properties
+
 ## [0.1.1-0.1.2] - 2024-04-21
 
 ### Changed

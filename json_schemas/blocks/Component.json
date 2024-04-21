@@ -13,15 +13,7 @@
                     "type": "string",
                     "description": "Name of the component"
                 },
-                "Vars" : {
-                    "type": "object",
-                    "additionalProperties": {
-                      "oneOf": [
-                        { "type": "string" },
-                        { "type": "integer" }
-                      ]
-                    }
-                }
+                "Vars" : { "$ref": "Vars.json"}
             }
         }
       }

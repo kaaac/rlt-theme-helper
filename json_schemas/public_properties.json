@@ -41,15 +41,15 @@
               "description": "Preset name, spaces are allowed. Only affects the UI, not the renderer."
             },
             "DefinedProperties" : {
-              "type" : "array",
-              "items" : {
-                "type": "object",
-                "additionalProperties": {
-                  "oneOf": [
-                    { "type": "string" },
-                    { "type": "integer" }
-                  ]
-                }
+              "type": "object",
+              "additionalProperties": {
+                "anyOf": [
+                  { "type": "string" },
+                  { "type": "integer" },
+                  { "type" : "boolean"}, 
+                  { "type" : "number"},
+                  { "type" : "null"}
+                ]
               }
             }
           }
