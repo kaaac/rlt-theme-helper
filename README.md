@@ -2,6 +2,10 @@
 
 The extension adds hints about possible properties, consistent with the rules applicable to creating/editing themes for Racing League Tools
 
+## Important
+
+Current scope for extension is support for 0.9.5 version of RLT Themes
+
 ## Features
 
 The extension adds hints and validation regarding possible properties, consistent with the rules applicable to creating/editing themes for Racing League Tools
@@ -11,6 +15,7 @@ Supports:
   - components
   - global and public variables
   - layout definitions and theme definition
+  - localization files
   - validation of the correctness of the entered data types
 
 ![extension](https://github.com/kaaac/rlt-theme-helper/assets/74159167/4fdfbaae-71fd-4fbb-bb1b-f728f8490696)
@@ -19,10 +24,6 @@ Supports:
 ## How to Install
 
 Go to Extensions in your VSCode, search "RLT Theme Helper", hit Install
-
-## Requirements
-
-## Extension Settings
 
 ## Known Issues
 
@@ -58,11 +59,15 @@ Adjustments and additions according to Renderer Api v0.9.5-preview1:
 
 - Cleaning up the code
 
-
 ## 0.1.3 
 
 ### Fixed
 
 - Dictionary type and properties
 
+## 0.1.4
+
+### Added
+
+- localization support for 0.9.5
 ---

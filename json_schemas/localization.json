@@ -1,9 +1,34 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
-    "additionalProperties": {
-        "oneOf": [
-          { "type": "string" }
-        ]
+    "properties": {
+      "Id" : {
+        "type" : "string",
+        "description": "Locale identifier, it is recommended to use generally recognized codes such as \"en-US\", \"fr-FR\", etc."
+      },
+      "Name" : {
+        "type" : "string",
+        "description" : "Localization name displayed in the UI"
+      },
+      "Strings" : {
+        "type" : "object",
+        "additionalProperties": {
+          "anyOf": [
+            { "type": "string" }
+          ]
+        }
+      },
+      "Vars" : {
+        "type" : "object",
+        "additionalProperties": {
+          "anyOf": [
+            { "type": "string" },
+            { "type": "integer" },
+            { "type" : "boolean"}, 
+            { "type" : "number"}
+          ]
+        }
       }
+    },
+    "additionalProperties": false
   }

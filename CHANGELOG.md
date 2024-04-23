@@ -1,6 +1,12 @@
 # Change Log
 
-## [0.1.3] - 
+## [0.1.4] - 2024-04-23
+
+### Added
+
+- localization support for 0.9.5
+
+## [0.1.3] - 2024-04-21
 
 ### Fixed
 
