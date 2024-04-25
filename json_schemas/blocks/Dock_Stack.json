@@ -16,7 +16,10 @@
         "VerticalDirection": {
             "type": "string",
             "enum" : ["TopToBottom", "BottomToTop"]
-          }
+        },
+        "Styles" : {
+          "$ref" : "Styles.json"
+        }
       }
     }
   }

@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.1.5] - 2024-01-25
+
+### Changes
+
+More adjustments for 0.9.5 and other possible types of values for specific properties
+
 ## [0.1.4] - 2024-04-23
 
 ### Added

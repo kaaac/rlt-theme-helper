@@ -1,54 +1,57 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "if": {
-      "anyOf": [
-        {"properties": { "BlockType": { "const": "grid" } }}
-      ]
-    },
-    "then": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "if": {
+    "anyOf": [
+      {"properties": { "BlockType": { "const": "grid" } }}
+    ]
+  },
+  "then": {
+    "properties": {
+      "GridOptions": {
+        "type": "object",
         "properties": {
-            "GridOptions": {
-                "type": "object",
-                "properties": {
-                    "Rows": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "Height": {
-                            "type": "integer",
-                            "description": "Height of the specific row"
-                          },
-                          "IsStretchHeight": {
-                            "type": "boolean",
-                            "description": "Indicates whether all available space should be filled (by height)"
-                          }
-                        },
-                        "required": ["Height", "IsStretchHeight"]
-                      },
-                      "description": "List of GridRowDefinition"
-                    },
-                    "Cols": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "Width": {
-                            "type": "integer",
-                            "description": "Width of the specific column"
-                          },
-                          "IsStretchWidth": {
-                            "type": "boolean",
-                            "description": "Indicates whether all available space should be filled (by width)"
-                          }
-                        },
-                        "required": ["Width", "IsStretchWidth"]
-                      },
-                      "description": "List of GridColDefinition"
-                    }
-                  }
-            }
+          "Rows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Height": {
+                  "type": "integer",
+                  "description": "Height of the specific row"
+                },
+                "IsStretchHeight": {
+                  "type": "boolean",
+                  "description": "Indicates whether all available space should be filled (by height)"
+                }
+              },
+              "required": ["Height", "IsStretchHeight"]
+            },
+            "description": "List of GridRowDefinition"
+          },
+          "Cols": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Width": {
+                  "type": "integer",
+                  "description": "Width of the specific column"
+                },
+                "IsStretchWidth": {
+                  "type": "boolean",
+                  "description": "Indicates whether all available space should be filled (by width)"
+                }
+              },
+              "required": ["Width", "IsStretchWidth"]
+            },
+            "description": "List of GridColDefinition"
+          }
         }
+      },
+      "Styles" : {
+        "$ref" : "Styles.json"
+      }
     }
+  }
 }

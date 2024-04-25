@@ -29,6 +29,9 @@
                 }
             }
           }
+        },
+        "Styles" : {
+          "$ref" : "Styles.json"
         }
       }
     }

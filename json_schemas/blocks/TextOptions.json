@@ -29,5 +29,6 @@
         "description": "Wrap text"
       },
       "ColorizeRating": { "$ref" : "ColorizeRating.json"}
-    }
+    },
+    "additionalProperties" : false
 }

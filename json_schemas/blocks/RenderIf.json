@@ -5,8 +5,13 @@
         {
           "type" : "string",
           "pattern" : "^{.*}$"
+        },
+        {
+          "type" : "string",
+          "pattern" : "^<.*>$"
         }
       ],
       "default" : false,
-      "description": "Whether the block should be rendered"
+      "errorMessage" : "Incorrect type. Expected: \"boolean\", \"{Expression}\", \"<Variable>\"",
+      "description": "Whether the block should be rendered\n\nPossible types: \"boolean\", \"{Expression}\", \"<Variable>\""
 }

@@ -1,106 +1,109 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "if": {
-      "properties": { "BlockType": { "const": "itemstack" } }
-    },
-    "then": {
-      "properties": {
-        "ItemStackOptions": {
-          "type": "object",
-          "properties": {
-            "ItemSource": {
-              "type": "string",
-              "description": "Data access expression for collection/list"
-            },
-            "ItemTemplate": {
-              "type": "object",
-              "description": "Template for each inner blocks",
-              "allOf": [
-                { "$ref": "Canvas.json" },
-                { "$ref": "Component.json" },
-                { "$ref": "Dock_Stack.json" },
-                { "$ref": "Grid.json" },
-                { "$ref": "Image.json" },
-                { "$ref": "Items.json" },
-                { "$ref": "Itemstack.json" },
-                { "$ref": "Shape.json" },
-                { "$ref": "Table.json" },
-                { "$ref": "Text.json" },
-                { "$ref": "common.json" }
-              ]
-            },
-            "SortMember": {
-              "type": "string",
-              "description": "Item's property name for sorting collection"
-            },
-            "OrderBy": {
-              "type": "string",
-              "description": "Item's property name for sorting collection"
-            },
-            "OrderBy2": {
-              "type": "string",
-              "description": "Item's property name for sorting collection"
-            },
-            "OrderBy3": {
-              "type": "string",
-              "description": "Item's property name for sorting collection"
-            },
-            "OrderByDescending": {
-              "type": "string",
-              "description": "Item's property name for sorting collection"
-            },
-            "OrderByDescending2": {
-              "type": "string",
-              "description": "Item's property name for sorting collection"
-            },
-            "OrderByDescending3": {
-              "type": "string",
-              "description": "Item's property name for sorting collection"
-            },
-            "FilterMember": {
-              "type": "string",
-              "description": "Item's property name for filtering collection"
-            },
-            "FilterMemberValue": {
-              "type": "string",
-              "description": "Value of the property by which the collection will be filtered"
-            },
-            "Reverse": {
-              "type": "boolean",
-              "description": "Whether the collection elements should be reversed"
-            },
-            "Limit": {
-              "type": "integer",
-              "description": "Limiting the number of items in the collection"
-            },
-            "IndexStart": {
-              "type": "integer",
-              "description": "Starting index of the collection"
-            },
-            "IndexEnd": {
-              "type": "integer",
-              "description": "Ending index of the collection"
-            },
-            "TakeItemIndex": {
-              "type": "integer",
-              "description": "Required index of the collection (will consist only of one item by specified index)"
-            },
-            "TakeItemsFirst": {
-              "type": "integer",
-              "description": "Number of the first items of the collection to be included"
-            },
-            "TakeItemsLast": {
-              "type": "integer",
-              "description": "Number of the last items of the collection to be included"
-            },
-            "CollectionPart": {
-              "type": "string",
-              "description": "Specify the part of the collection to be used (for example: '1/3' will be used only first third of the collection, '3/3' will be used only last third of the collection)"
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "if": {
+    "properties": { "BlockType": { "const": "itemstack" } }
+  },
+  "then": {
+    "properties": {
+      "ItemStackOptions": {
+        "type": "object",
+        "properties": {
+          "ItemSource": {
+            "type": "string",
+            "description": "Data access expression for collection/list"
           },
-          "description": "Options for the itemstack block"
-        }
+          "ItemTemplate": {
+            "type": "object",
+            "description": "Template for each inner blocks",
+            "allOf": [
+              { "$ref": "Canvas.json" },
+              { "$ref": "Component.json" },
+              { "$ref": "Dock_Stack.json" },
+              { "$ref": "Grid.json" },
+              { "$ref": "Image.json" },
+              { "$ref": "Items.json" },
+              { "$ref": "Itemstack.json" },
+              { "$ref": "Shape.json" },
+              { "$ref": "Table.json" },
+              { "$ref": "Text.json" },
+              { "$ref": "common.json" }
+            ]
+          },
+          "SortMember": {
+            "type": "string",
+            "description": "Item's property name for sorting collection"
+          },
+          "OrderBy": {
+            "type": "string",
+            "description": "Item's property name for sorting collection"
+          },
+          "OrderBy2": {
+            "type": "string",
+            "description": "Item's property name for sorting collection"
+          },
+          "OrderBy3": {
+            "type": "string",
+            "description": "Item's property name for sorting collection"
+          },
+          "OrderByDescending": {
+            "type": "string",
+            "description": "Item's property name for sorting collection"
+          },
+          "OrderByDescending2": {
+            "type": "string",
+            "description": "Item's property name for sorting collection"
+          },
+          "OrderByDescending3": {
+            "type": "string",
+            "description": "Item's property name for sorting collection"
+          },
+          "FilterMember": {
+            "type": "string",
+            "description": "Item's property name for filtering collection"
+          },
+          "FilterMemberValue": {
+            "type": "string",
+            "description": "Value of the property by which the collection will be filtered"
+          },
+          "Reverse": {
+            "type": "boolean",
+            "description": "Whether the collection elements should be reversed"
+          },
+          "Limit": {
+            "type": "integer",
+            "description": "Limiting the number of items in the collection"
+          },
+          "IndexStart": {
+            "type": "integer",
+            "description": "Starting index of the collection"
+          },
+          "IndexEnd": {
+            "type": "integer",
+            "description": "Ending index of the collection"
+          },
+          "TakeItemIndex": {
+            "type": "integer",
+            "description": "Required index of the collection (will consist only of one item by specified index)"
+          },
+          "TakeItemsFirst": {
+            "type": "integer",
+            "description": "Number of the first items of the collection to be included"
+          },
+          "TakeItemsLast": {
+            "type": "integer",
+            "description": "Number of the last items of the collection to be included"
+          },
+          "CollectionPart": {
+            "type": "string",
+            "description": "Specify the part of the collection to be used (for example: '1/3' will be used only first third of the collection, '3/3' will be used only last third of the collection)"
+          }
+        },
+        "description": "Options for the itemstack block"
+      },
+      "Styles" : {
+        "$ref" : "Styles.json"
       }
     }
   }
+}

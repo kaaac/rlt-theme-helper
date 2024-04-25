@@ -74,8 +74,13 @@
                     {"type" : "integer"}
                 ],
                 "description": "For convenience, if it need to override only one property, it can leave TriggerPropertyItem list are empty and specify Property and Value immediately in the trigger"
+            },
+            "Property" : {
+                "type" : "string",
+                "description": "full path to block’s property name (“Foreground” or “TextOptions.Foreground” as example)"
             }
         },
+        "additionalProperties": false,
         "required": [ "Condition"]
     },
     "description": "List of triggers for properties"

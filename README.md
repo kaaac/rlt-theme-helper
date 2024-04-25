@@ -70,4 +70,12 @@ Adjustments and additions according to Renderer Api v0.9.5-preview1:
 ### Added
 
 - localization support for 0.9.5
+
+## 0.1.5
+
+### Changes
+
+More adjustments for 0.9.5 and other possible types of values for specific properties
+
+
 ---

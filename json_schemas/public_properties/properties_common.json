@@ -22,8 +22,14 @@
           "description": "Variable type"
         },
         "DefaultValue" : {
-          "type" :"boolean",
-          "description": ""
+          "oneOf": [
+            {"type":"boolean"},
+            {"type":"number"},
+            {"type":"string"},
+            {"type":"array"}
+          ],
+          "errorMessage" : "Incorrect type. Allowed: boolean, number, string, enum",
+          "description" : "Depends of Type, Allowed: boolean, number, string, enum"
         },
         "Description" : {
           "type" : "string"

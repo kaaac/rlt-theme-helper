@@ -6,9 +6,21 @@
         "description": "Enable colorization based on rating value"
       },
       "Level": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 100,
+        "oneOf": [
+          {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "type" : "string",
+            "pattern" : "^{.*}$"
+          },
+          {
+            "type" : "string",
+            "pattern" : "^<.*>$"
+          }
+        ],
         "description": "Rating level (0-100) to determine color"
       },
       "GradientStops": {
