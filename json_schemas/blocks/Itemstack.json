@@ -71,27 +71,99 @@
             "description": "Whether the collection elements should be reversed"
           },
           "Limit": {
-            "type": "integer",
+            "oneOf" : [
+              {
+                "type" : "integer"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^{.*}$"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^<.*>$"
+              }
+            ],
             "description": "Limiting the number of items in the collection"
           },
           "IndexStart": {
-            "type": "integer",
+            "oneOf" : [
+              {
+                "type" : "integer"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^{.*}$"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^<.*>$"
+              }
+            ],
             "description": "Starting index of the collection"
           },
           "IndexEnd": {
-            "type": "integer",
+            "oneOf" : [
+              {
+                "type" : "integer"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^{.*}$"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^<.*>$"
+              }
+            ],
             "description": "Ending index of the collection"
           },
           "TakeItemIndex": {
-            "type": "integer",
+            "oneOf" : [
+              {
+                "type" : "integer"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^{.*}$"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^<.*>$"
+              }
+            ],
             "description": "Required index of the collection (will consist only of one item by specified index)"
           },
           "TakeItemsFirst": {
-            "type": "integer",
+            "oneOf" : [
+              {
+                "type" : "integer"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^{.*}$"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^<.*>$"
+              }
+            ],
             "description": "Number of the first items of the collection to be included"
           },
           "TakeItemsLast": {
-            "type": "integer",
+            "oneOf" : [
+              {
+                "type" : "integer"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^{.*}$"
+              },
+              {
+                "type" : "string",
+                "pattern" : "^<.*>$"
+              }
+            ],
             "description": "Number of the last items of the collection to be included"
           },
           "CollectionPart": {

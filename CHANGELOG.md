@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.1.6] - 2024-01-30
+
+### Changes
+
+- allowed use variable values in paddings, margins, itemstackoptions and more
+- changed logic for layout_description schema
+- changed component logic and properties for 0.9.5 renderer
+- added schema for global_vars.json
+
 ## [0.1.5] - 2024-01-25
 
 ### Changes

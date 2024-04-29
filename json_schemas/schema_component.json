@@ -3,7 +3,7 @@
   "type": "object",
   "allOf": [
     { "$ref": "blocks/Canvas.json" },
-    { "$ref": "blocks/Component.json" },
+    { "$ref": "blocks/Component_item.json" },
     { "$ref": "blocks/Dock_Stack.json" },
     { "$ref": "blocks/Grid.json" },
     { "$ref": "blocks/Image.json" },
@@ -13,5 +13,6 @@
     { "$ref": "blocks/Table.json" },
     { "$ref": "blocks/Text.json" },
     { "$ref": "blocks/common.json" }
-  ]
+  ],
+  "required": ["ComponentName"]
 }

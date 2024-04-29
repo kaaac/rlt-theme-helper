@@ -4,7 +4,7 @@
     "if": {
         "required": ["RenderType"],
         "properties": { "RenderType": { "const": "DriverSeasonStatistics" } }
-      },
+    },
     "then" : {
         "properties" : {
             "RenderDataType" : {

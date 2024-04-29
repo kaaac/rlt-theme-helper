@@ -1,4 +1,17 @@
 {
-    "type": "integer",
-    "description": "Size of the font (if empty, use value of the global variable 'FontSizeDefault')"
+  "description": "Size of the font (if empty, use value of the global variable 'FontSizeDefault')",
+  "oneOf" : [
+    {
+      "type": "integer",
+      "minimum": 0
+    },
+    {
+      "type" : "string",
+      "pattern" : "^{.*}$"
+    },
+    {
+      "type" : "string",
+      "pattern" : "^<.*>$"
+    }
+  ]
 }

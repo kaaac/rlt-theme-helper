@@ -2,9 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "allOf" : [
-      { "$ref" : "layout_description/common.json"},
-      { "$ref" : "layout_description/season.json"},
-      { "$ref" : "layout_description/session.json"}
+      { "$ref" : "layout_description/common.json"}
     ],
     "required": ["RenderType"]
 }

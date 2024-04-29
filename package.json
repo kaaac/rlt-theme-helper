@@ -64,9 +64,8 @@
         "url" : "./json_schemas/public_properties.json"
       },
       {
-        "fileMatch": "global/*_vars.json",
-        "url" : "./json_schemas/public_vars.json",
-        "icon" : "rlt_icon.svg"
+        "fileMatch" : "global_vars.json",
+        "url" : "./json_schemas/global_vars.json"
       }
     ]
   },

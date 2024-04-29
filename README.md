@@ -77,5 +77,13 @@ Adjustments and additions according to Renderer Api v0.9.5-preview1:
 
 More adjustments for 0.9.5 and other possible types of values for specific properties
 
+## 0.1.6
+
+### Changes
+
+- allowed use variable values in paddings, margins, itemstackoptions and more
+- changed logic for layout_description schema
+- changed component logic and properties for 0.9.5 renderer
+- added schema for global_vars.json
 
 ---

@@ -45,7 +45,56 @@
             }
         },
         "description": "Specific layout’s captions (optional, only applies to certain RenderType"
+      },
+      "RenderDataType" : {
+        "type" : "string",
+        "oneOf" : [
+          {
+            "if": {
+              "required": ["RenderType"],
+              "properties": { "RenderType": { "const": "DriverSeasonStatistics" } }
+            },
+            "then" : {
+              "enum" : [
+                "AvgPoints",
+                "AvgQualPos",
+                "AvgRacePos",
+                "FinishesBestSeries",
+                "FinishesPercent",
+                "GainedPositions",
+                "PenaltyPoints",
+                "PenTimeAllAvg",
+                "PenTimeAllSum",
+                "PenTimeIngameAvg",
+                "PenTimeIngameSum",
+                "PenTimeStewardAvg",
+                "PenTimeStewardSum",
+                "PointsBestSeries",
+                "TotalTyresUsage"
+              ]
+            }
+          },
+          {
+            "if": {
+              "required": ["RenderType"],
+              "properties": { "RenderType": { "const": "DriverSessionStatistics" } }
+            },
+            "then" : {
+              "enum" : [
+                "PureRacePaceRating",
+                "ConsistancyRating",
+                "FastestLaps",
+                "LongestStints",
+                "AttackRating",
+                "DefenseRating",
+                "TopBattles"
+              ]
+            }
+          }
+        ]
+        
       }
     },
-    "required": ["RenderType"]
+    "required": ["RenderType"],
+    "additionalProperties": false
   }
