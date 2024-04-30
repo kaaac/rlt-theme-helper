@@ -2,7 +2,7 @@
   "name": "rlt-theme-helper",
   "displayName": "RLT Theme Helper",
   "description": "Json Validator for Racing League Tools Themes",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "publisher" : "Kaaac",
   "author" : "Kaaac",
   "icon" : "rlt_icon.png",
@@ -66,6 +66,10 @@
       {
         "fileMatch" : "global_vars.json",
         "url" : "./json_schemas/global_vars.json"
+      },
+      {
+        "fileMatch": "text_options.json",
+        "url" : "./json_schemas/text_options_deprecated.json"
       }
     ]
   },

@@ -6,7 +6,12 @@
     },
     "then" : {
         "properties": {
-            "TextOptions": { "$ref" : "TextOptions.json" }
+            "TextOptions": { "$ref" : "TextOptions.json" },
+            "TextOptionsExtern" : {
+                "type" : "string",
+                "enum" : [""],
+                "errorMessage" : "TextOptionsExtern is deprecated. Use Styles"
+            }
         }
     }
 }

@@ -10,7 +10,8 @@
           "StyleBasedOn": {
             "type" : "string"
           }
-        }
+        },
+        "required": ["StyleName"]
       },
       {
         "type": "array",
@@ -23,7 +24,8 @@
             "StyleBasedOn": {
               "type" : "string"
             }
-          }
+          },
+          "required": ["StyleName"]
         }
       }
     ]

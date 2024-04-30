@@ -86,4 +86,14 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 - changed component logic and properties for 0.9.5 renderer
 - added schema for global_vars.json
 
+
+## 0.1.7
+
+### Changes
+
+- TextOptionsExtern marked as deprecated
+- Property Component moved from ComponentOptions to main block, disabled additional properties
+- Added Required StyleName for Style Block
+- Added Object as allowed type for Trigger Values [#1](https://github.com/kaaac/rlt-theme-helper/issues/1)
+
 ---

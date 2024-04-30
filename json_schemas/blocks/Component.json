@@ -9,12 +9,9 @@
         "ComponentOptions" : {
             "type" : "object",
             "properties" : {
-                "Component": {
-                    "type": "string",
-                    "description": "Name of the component"
-                },
                 "Vars" : { "$ref": "Vars.json"}
-            }
+            },
+            "additionalProperties": false
         },
         "Component": {
           "type": "string",
