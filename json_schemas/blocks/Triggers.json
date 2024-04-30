@@ -71,7 +71,17 @@
                 "oneOf" : [
                     {"type" : "string"},
                     {"type" : "boolean"},
-                    {"type" : "integer"}
+                    {"type" : "integer"},
+                    {
+                        "type" : "object",
+                        "additionalProperties" : {
+                            "anyOf" : [
+                               {"type" : "string"},
+                               {"type" : "boolean"},
+                               {"type" : "integer"}
+                            ]
+                        }
+                    }
                 ],
                 "description": "For convenience, if it need to override only one property, it can leave TriggerPropertyItem list are empty and specify Property and Value immediately in the trigger"
             },
