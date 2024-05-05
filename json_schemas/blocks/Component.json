@@ -9,14 +9,25 @@
         "ComponentOptions" : {
             "type" : "object",
             "properties" : {
-                "Vars" : { "$ref": "Vars.json"}
-            },
-            "additionalProperties": false
+                "Vars" : { "$ref": "Vars.json"},
+                "ComponentName" : {
+                  "type" : "string",
+                  "deprecated" : true,
+                  "description" : "ComponentName is deprecated. Change to \"Component\" and place it as parent block property"
+                },
+                "Component" : {
+                  "type" : "string",
+                  "deprecated" : true,
+                  "description": "Move this property one level up."
+                }
+            }
         },
         "Component": {
           "type": "string",
           "description": "Name of the component"
         }
-      }
+      },
+      
+      "required" : ["Component"]
     }
   }

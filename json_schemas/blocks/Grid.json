@@ -47,7 +47,8 @@
             },
             "description": "List of GridColDefinition"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Styles" : {
         "$ref" : "Styles.json"

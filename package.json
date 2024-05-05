@@ -2,13 +2,13 @@
   "name": "rlt-theme-helper",
   "displayName": "RLT Theme Helper",
   "description": "Json Validator for Racing League Tools Themes",
-  "version": "0.1.7",
-  "publisher" : "Kaaac",
-  "author" : "Kaaac",
-  "icon" : "rlt_icon.png",
+  "version": "0.1.8",
+  "publisher": "Kaaac",
+  "author": "Kaaac",
+  "icon": "rlt_icon.png",
   "repository": {
     "type": "git",
-    "url" : "https://github.com/kaaac/rlt-theme-helper.git"
+    "url": "https://github.com/kaaac/rlt-theme-helper.git"
   },
   "engines": {
     "vscode": "^1.88.0"
@@ -16,60 +16,69 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartup",
+    "onLanguage:json"
+  ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "rlt-theme-helper.helloWorld",
-      "title": "Hello World"
-    }],
+    "commands": [
+      {
+        "command": "rlt-theme-helper.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "extension.replaceTemplate",
+        "title": "Replace with ItemTemplate"
+      }
+    ],
     "jsonValidation": [
       {
-        "fileMatch" : [
+        "fileMatch": [
           "components/**/*.json"
         ],
-        "url" : "./json_schemas/schema_component.json",
-        "icon" : "rlt_icon.svg"
+        "url": "./json_schemas/schema_component.json",
+        "icon": "rlt_icon.svg"
       },
       {
-        "fileMatch" : [
+        "fileMatch": [
           "layer*.json"
         ],
-        "url" : "./json_schemas/schema_layer.json",
-        "icon" : "rlt_icon.svg"
+        "url": "./json_schemas/schema_layer.json",
+        "icon": "rlt_icon.svg"
       },
       {
-        "fileMatch" : [
+        "fileMatch": [
           "theme_description.json"
         ],
-        "url" : "./json_schemas/theme_description.json"
+        "url": "./json_schemas/theme_description.json"
       },
       {
         "fileMatch": "layout_description.json",
-        "url" : "./json_schemas/layout_description.json",
-        "icon" : "rlt_icon.svg"
+        "url": "./json_schemas/layout_description.json",
+        "icon": "rlt_icon.svg"
       },
       {
         "fileMatch": "styles/*.json",
-        "url" : "./json_schemas/blocks/Styles.json",
-        "icon" : "rlt_icon.svg"
+        "url": "./json_schemas/blocks/Styles.json",
+        "icon": "rlt_icon.svg"
       },
       {
         "fileMatch": "localizations/*.json",
-        "url" : "./json_schemas/localization.json",
-        "icon" : "rlt_icon.svg"
+        "url": "./json_schemas/localization.json",
+        "icon": "rlt_icon.svg"
       },
       {
-        "fileMatch" : "public_properties.json",
-        "url" : "./json_schemas/public_properties.json"
+        "fileMatch": "public_properties.json",
+        "url": "./json_schemas/public_properties.json"
       },
       {
-        "fileMatch" : "global_vars.json",
-        "url" : "./json_schemas/global_vars.json"
+        "fileMatch": "global_vars.json",
+        "url": "./json_schemas/global_vars.json"
       },
       {
         "fileMatch": "text_options.json",
-        "url" : "./json_schemas/text_options_deprecated.json"
+        "url": "./json_schemas/text_options_deprecated.json"
       }
     ]
   },
@@ -79,12 +88,12 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.88.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
-    "eslint": "^8.57.0",
-    "typescript": "^5.3.3",
+    "@types/vscode": "^1.89.0",
     "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9"
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3"
   }
 }

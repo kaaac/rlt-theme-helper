@@ -1,5 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",    
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "type": ["integer", "string"],
-    "description": "Width of the block in pixels or a string value ('*', 'auto')"
+    "description": "Width of the block in pixels or a string value ('*', 'auto')",
+    "examples" : [125,"*","auto"]
 }

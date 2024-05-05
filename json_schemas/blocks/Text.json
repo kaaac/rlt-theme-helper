@@ -8,9 +8,8 @@
         "properties": {
             "TextOptions": { "$ref" : "TextOptions.json" },
             "TextOptionsExtern" : {
-                "type" : "string",
-                "enum" : [""],
-                "errorMessage" : "TextOptionsExtern is deprecated. Use Styles"
+                "deprecated" : true,
+                "description" : "TextOptionsExtern is deprecated. Use Styles instead"
             }
         }
     }

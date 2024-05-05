@@ -96,4 +96,15 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 - Added Required StyleName for Style Block
 - Added Object as allowed type for Trigger Values [#1](https://github.com/kaaac/rlt-theme-helper/issues/1)
 
+## 0.1.8
+
+### Changes
+
+- Adjusted Component related properties logic
+- Disabled addtional properties for GridOptions, ItemStackOptions,
+- Added examples for some properties
+- Added Template deprecation message for ItemStackOptions
+- Added string type value for MaxHeight, MaxWidth,
+- other minor changes
+
 ---

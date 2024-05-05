@@ -30,6 +30,11 @@
               { "$ref": "common.json" }
             ]
           },
+          "Template" : {
+            "type" : "object",
+            "description" : "Template property is deprecated. use ItemTemplate instead.",
+            "deprecated" : true
+          },
           "SortMember": {
             "type": "string",
             "description": "Item's property name for sorting collection"
@@ -171,6 +176,7 @@
             "description": "Specify the part of the collection to be used (for example: '1/3' will be used only first third of the collection, '3/3' will be used only last third of the collection)"
           }
         },
+        "additionalProperties": false,
         "description": "Options for the itemstack block"
       },
       "Styles" : {

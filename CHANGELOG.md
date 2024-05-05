@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.1.8] - 2024-05-05
+
+### Changes
+
+- Adjusted Component related properties logic
+- Disabled addtional properties for GridOptions, ItemStackOptions,
+- Added examples for some properties
+- Added Template deprecation message for ItemStackOptions
+- Added string type value for MaxHeight, MaxWidth,
+- other minor changes
+
 ## [0.1.7] - 2024-05-01
 
 ### Changes

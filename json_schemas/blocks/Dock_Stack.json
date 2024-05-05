@@ -14,8 +14,8 @@
           "enum" : ["LeftToRight", "RightToLeft"]
         },
         "VerticalDirection": {
-            "type": "string",
-            "enum" : ["TopToBottom", "BottomToTop"]
+          "type": "string",
+          "enum" : ["TopToBottom", "BottomToTop"]
         },
         "Styles" : {
           "$ref" : "Styles.json"
