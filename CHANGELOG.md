@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.1.9] - 2024-05-07
+
+### Changes
+
+- Disabled additional properties for public_properties.json
+- Changed schema for TableOptions property
+
 ## [0.1.8] - 2024-05-05
 
 ### Changes

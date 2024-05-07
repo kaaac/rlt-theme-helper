@@ -107,4 +107,11 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 - Added string type value for MaxHeight, MaxWidth,
 - other minor changes
 
+## 0.1.9 - 2024-05-07
+
+### Changes
+
+- Disabled additional properties for public_properties.json
+- Changed schema for TableOptions property
+
 ---

@@ -17,7 +17,17 @@
           },
           "HeaderTemplate": {
             "type": "object",
-            "description": "Template for table headers (located above each column)"
+            "description": "Template for table headers (located above each column)",
+            "allOf": [
+              { "$ref": "Canvas.json" },
+              { "$ref": "Component.json" },
+              { "$ref": "Image.json" },
+              { "$ref": "Items.json" },
+              { "$ref": "Shape.json" },
+              { "$ref": "Table.json" },
+              { "$ref": "Text.json" },
+              { "$ref": "common.json" }
+            ]
           },
           "HeaderHeight": {
             "type": "integer",
@@ -32,12 +42,28 @@
             "description": "Number of rows in the table"
           },
           "ColSpacing": {
-            "type": "integer",
-            "description": "Spacing between columns"
+            "description": "Spacing between columns",
+            "oneOf" : [
+              {
+                "type" : "string",
+                "pattern" : "^{.*}$"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "RowSpacing": {
-            "type": "integer",
-            "description": "Spacing between rows"
+            "description": "Spacing between rows",
+            "oneOf" : [
+              {
+                "type" : "string",
+                "pattern" : "^{.*}$"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "SeparatorSpace": {
             "type": "integer",

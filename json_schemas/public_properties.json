@@ -56,5 +56,6 @@
         },
         "description": "With presets, the end user can quickly define the values of several properties at once. To define a preset, add it to Presets collection, give it a name and set values for the required properties, using DefinedProperties array of key-value pairs."
       }
-    }
+    },
+    "additionalProperties": false
   }
