@@ -19,6 +19,15 @@
           "type": "string",
           "pattern" : "^\\d+(\\.\\d+){2}$"
       },
+      "DefaultLocalizationId" : {
+        "type" : "string",
+        "description" : "Defines the default localization by \"Locale identifier\" from localization file",
+        "markdownDescription" : "Defines the default localization by \"Locale identifier\" from localization file [See docs](https://racingleaguetools.com)"
+      },
+      "DisableUnspecifiedLocalization" : {
+        "type" : "boolean",
+        "description": ""
+      },
       "DownloadUrl" : {
         "type" : "string",
         "pattern" : "^https:\/\/.*\\.zip$"

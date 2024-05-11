@@ -114,4 +114,12 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 - Disabled additional properties for public_properties.json
 - Changed schema for TableOptions property
 
+## 0.1.10 - 2024-05-11
+
+### Changes
+
+- Added Status Bar Item with support information for the currently open file in the active editor
+- Extended theme_description.json properties
+- Changed main icon of extension
+
 ---

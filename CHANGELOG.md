@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.1.10] - 2024-05-11
+
+### Changes
+
+- Added Status Bar Item with support information for the currently open file in the active editor
+- Extended theme_description.json properties
+- Changed main icon of extension
+
 ## [0.1.9] - 2024-05-07
 
 ### Changes

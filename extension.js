@@ -1,6 +1,3 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-
 //const completionProvider = require('./completionProvider');
 const vscode = require('vscode');
 
@@ -15,65 +12,36 @@ const vscode = require('vscode');
  */
 function activate(context) {
 
-	//context.subscriptions.push(
-    //    vscode.languages.registerCodeActionsProvider('json', {
-    //        provideCodeActions: (document, range, context, token) => {
-    //            const actions = [];
-	//			
-    //            // Sprawdź, czy w kontekście jest informacja o błędzie
-    //            if (context.diagnostics && context.diagnostics.length > 0) {
-    //                // Iteruj przez każdy błąd w kontekście
-    //                for (const diagnostic of context.diagnostics) {
-	//					if (diagnostic.code === 2) {
-	//						const textInRange = document.getText(diagnostic.range)
-	//						let jsonObjectInRange;
-	//						try {
-	//							jsonObjectInRange = JSON.parse(textInRange);
-	//						} catch (error) {
-	//							vscode.window.showErrorMessage('Error parsing json: ' + error);
-	//						}
-	//						if ('Template' in jsonObjectInRange) {
-	//							vscode.window.showErrorMessage('Template in jsonObjectIRange');
-	//							actions.push({
-	//								title: 'Replace Template with ItemTemplate',
-	//								command: {
-	//									title: 'Replace Template with ItemTemplate',
-	//									command: 'extension.replaceDeprecatedProperties',
-	//									arguments: [document, diagnostic.range]
-	//								}
-	//							});
-	//						}
-	//					}
-	//				}
-    //            }
-    //            //return actions;
-    //        }
-    //    })
-    //);
+	
+	const myCustomIcon = "$(rlt-iconbar-A)";
+	const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
+	statusBarItem.text = myCustomIcon;
+	statusBarItem.tooltip = "RLT Theme Helper is active!"
+	statusBarItem.show();
+	context.subscriptions.push(statusBarItem);
 
- // Rejestruj komendę do obsługi quick fixa
-	 context.subscriptions.push(
-	    vscode.commands.registerCommand('extension.replaceDeprecatedProperties', (document, range) => {
-	        // Pobierz aktywny edytor
-	        const editor = vscode.window.activeTextEditor;
-	        if (!editor) {
-	            return; // Brak aktywnego edytora
-	        }
-		
-	        // Pobierz tekst w obszarze, który należy zmienić
-	        const textToReplace = editor.document.getText(range);
-		
-	        // Jeśli tekst do zmiany to "Template", zamień go na "ItemTemplate"
-	        if (textToReplace === 'Template') {
-	            // Wstaw "ItemTemplate" w miejsce "Template"
-	            editor.edit(editBuilder => {
-	                editBuilder.replace(range, 'ItemTemplate');
-	            });
-	        } else {
-	            vscode.window.showErrorMessage('Unexpected deprecated property');
-	        }
-	    })
-	);
+	refreshStatusBarIcon(vscode.window.activeTextEditor);
+
+    vscode.window.onDidChangeActiveTextEditor((editor) => {
+		refreshStatusBarIcon(editor);
+    });
+
+	function refreshStatusBarIcon(editor){
+		const filePath = editor.document.uri.fsPath;			
+		const extensionId = 'kaaac.rlt-theme-helper';
+		const extensionConfig = vscode.extensions.getExtension(extensionId).packageJSON.contributes;
+		if (extensionConfig && extensionConfig.jsonValidation) {
+			const jsonValidation = extensionConfig.jsonValidation;
+			const matchedSchema = getMatchedSchema(filePath, jsonValidation);
+			if (matchedSchema) {
+                statusBarItem.tooltip = 'This file is supported by extension!';
+				statusBarItem.text = '$(rlt-iconbar-G)  RLT'
+            } else {
+                statusBarItem.tooltip = 'Sorry! This file is not supported by extension.\nAre you sure you sure it is correct file?';
+				statusBarItem.text = '$(rlt-iconbar-G)! RLT'
+            }
+		}
+	}
 
 	console.log('Congratulations, your extension "rlt-theme-helper" is now active!');
 
@@ -88,6 +56,28 @@ function activate(context) {
 	});
 
 	context.subscriptions.push(disposable);
+}
+
+
+function getMatchedSchema(filePath, jsonValidation) {
+    
+    for (const schema of jsonValidation) {
+		if (schema.fileMatch) {
+			if (Array.isArray(schema.fileMatch)) {
+				for (const fileMatch of schema.fileMatch) {
+					const regex = new RegExp(fileMatch.replace(/\//g, '[\\/\\\\]').replace(/\*{2}/g, '.*').replace(/\*{1}/g, '[^\\/\\\\]*'));
+					if(regex.test(filePath) == true) {return schema;}
+				}
+			} else {
+				const regex = new RegExp(schema.fileMatch.replace(/\//g, '[\\/\\\\]').replace(/\*{2}/g, '.*').replace(/\*{1}/g, '[^\\/\\\\]*'));
+				if(regex.test(filePath) == true){
+					return schema;
+				}
+			}
+		}
+	}
+
+    return null; // If no match found
 }
 
 // This method is called when your extension is deactivated

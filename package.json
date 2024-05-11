@@ -2,10 +2,10 @@
   "name": "rlt-theme-helper",
   "displayName": "RLT Theme Helper",
   "description": "Json Validator for Racing League Tools Themes",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "publisher": "Kaaac",
   "author": "Kaaac",
-  "icon": "rlt_icon.png",
+  "icon": "rlt_mod_icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/kaaac/rlt-theme-helper.git"
@@ -35,22 +35,19 @@
     "jsonValidation": [
       {
         "fileMatch": [
-          "components/**/*.json"
+          "components/**/*.json",
+          "components/*.json"
         ],
         "url": "./json_schemas/schema_component.json",
         "icon": "rlt_icon.svg"
       },
       {
-        "fileMatch": [
-          "layer*.json"
-        ],
+        "fileMatch": "layer*.json",
         "url": "./json_schemas/schema_layer.json",
         "icon": "rlt_icon.svg"
       },
       {
-        "fileMatch": [
-          "theme_description.json"
-        ],
+        "fileMatch": "theme_description.json",
         "url": "./json_schemas/theme_description.json"
       },
       {
@@ -80,7 +77,65 @@
         "fileMatch": "text_options.json",
         "url": "./json_schemas/text_options_deprecated.json"
       }
-    ]
+    ],
+    "icons" :{
+      "rlt-iconbar-A": {
+        "description": "RLT Theme Icon for status bar",
+        "default": {
+          "fontPath": "./font/font_rlt_mod.ttf",
+          "fontCharacter": "\u0041"
+        }
+      },
+      "rlt-iconbar-B": {
+        "description": "RLT Theme Icon for status bar",
+        "default": {
+          "fontPath": "./font/font_rlt_mod.ttf",
+          "fontCharacter": "\u0042"
+        }
+      },
+      "rlt-iconbar-C": {
+        "description": "RLT Theme Icon for status bar",
+        "default": {
+          "fontPath": "./font/font_rlt_mod.ttf",
+          "fontCharacter": "\u0043"
+        }
+      },
+      "rlt-iconbar-D": {
+        "description": "RLT Theme Icon for status bar",
+        "default": {
+          "fontPath": "./font/font_rlt_mod.ttf",
+          "fontCharacter": "\u0044"
+        }
+      },
+      "rlt-iconbar-E": {
+        "description": "RLT Theme Icon for status bar",
+        "default": {
+          "fontPath": "./font/font_rlt_mod.ttf",
+          "fontCharacter": "\u0045"
+        }
+      },
+      "rlt-iconbar-F": {
+        "description": "RLT Theme Icon for status bar",
+        "default": {
+          "fontPath": "./font/font_rlt_mod.ttf",
+          "fontCharacter": "\u0046"
+        }
+      },
+      "rlt-iconbar-G": {
+        "description": "RLT Theme Icon for status bar",
+        "default": {
+          "fontPath": "./font/font_rlt_mod.ttf",
+          "fontCharacter": "\u0047"
+        }
+      },
+      "rlt-iconbar-H": {
+        "description": "RLT Theme Icon for status bar",
+        "default": {
+          "fontPath": "./font/font_rlt_mod.ttf",
+          "fontCharacter": "\u0048"
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
