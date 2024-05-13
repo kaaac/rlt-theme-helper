@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties" : {
+    "Property" : {
+      "type" : "string",
+      "description": "full path to block’s property name (“Foreground” or “TextOptions.Foreground” as example)"
+    },
+    "Var" : {
+      "type" : "string",
+      "description" : "name of block's variable. Used to allow a trigger to override a block's variable."
+    },
+    "ComponentVar" : {
+      "type" : "string",
+      "description" : "name of component's variable. Used to allow a trigger to override a component's variable."
+    },
+    "Value" : {
+      "oneOf" : [
+        {
+          "type" : "object",
+          "additionalProperties" : {
+            "anyOf" : [
+              {"type" : "string"},
+              {"type" : "boolean"},
+              {"type" : "integer"}
+            ]
+          }
+        },
+        {"type" : "string"},
+        {"type" : "boolean"},
+        {"type" : "integer"}
+      ],
+      "description": "value of property. Can be object of (“*Options”, such as ImageOptions, TextOptions, etc) or ColorizeOptions. Overrides the current value of the property."
+    }
+  }
+}
