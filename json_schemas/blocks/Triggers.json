@@ -40,54 +40,20 @@
             "Setters" : {
                 "type" : "array",
                 "items" : {
-                    "type" : "object",
-                    "properties": {
-                        "Property" : {
-                            "type" : "string",
-                            "description": "full path to block’s property name (“Foreground” or “TextOptions.Foreground” as example)"
-                        },
-                        "Value" : {
-                            "oneOf" : [
-                                {
-                                    "type" : "object",
-                                    "additionalProperties" : {
-                                        "anyOf" : [
-                                            {"type" : "string"},
-                                            {"type" : "boolean"},
-                                            {"type" : "integer"}
-                                        ]
-                                    }
-                                },
-                                {"type" : "string"},
-                                {"type" : "boolean"},
-                                {"type" : "integer"}
-                            ],
-                            "description": "value of property. Can be object of (“*Options”, such as ImageOptions, TextOptions, etc) or ColorizeOptions. Overrides the current value of the property."
-                        }
-                    }
+                    "$ref" : "./TriggerPropertyItem.json"
                 }
             },
-            "Value" : {
-                "oneOf" : [
-                    {"type" : "string"},
-                    {"type" : "boolean"},
-                    {"type" : "integer"},
-                    {
-                        "type" : "object",
-                        "additionalProperties" : {
-                            "anyOf" : [
-                               {"type" : "string"},
-                               {"type" : "boolean"},
-                               {"type" : "integer"}
-                            ]
-                        }
-                    }
-                ],
-                "description": "For convenience, if it need to override only one property, it can leave TriggerPropertyItem list are empty and specify Property and Value immediately in the trigger"
-            },
             "Property" : {
-                "type" : "string",
-                "description": "full path to block’s property name (“Foreground” or “TextOptions.Foreground” as example)"
+                "$ref" : "./TriggerPropertyItem.json#Property"
+            },
+            "Var" : {
+                "$ref" : "./TriggerPropertyItem.json#Var"
+            },
+            "ComponentVar" : {
+                "$ref" : "./TriggerPropertyItem.json#ComponentVar"
+            },
+            "Value" : {
+                "$ref" : "./TriggerPropertyItem.json#Value"
             }
         },
         "additionalProperties": false,
