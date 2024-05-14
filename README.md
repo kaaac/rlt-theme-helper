@@ -122,4 +122,11 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 - Extended theme_description.json properties
 - Changed main icon of extension
 
+## 0.1.11 - 2024-05-14
+
+### Changes
+
+- Extended TriggerPropertyItem properties
+
+
 ---

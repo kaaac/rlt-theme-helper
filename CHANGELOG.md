@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.1.11] - 2024-05-14
+
+### Changes
+
+- Extended TriggerPropertyItem properties
+
 ## [0.1.10] - 2024-05-11
 
 ### Changes
