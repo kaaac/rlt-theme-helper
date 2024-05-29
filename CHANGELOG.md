@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.1.12] - 2024-05-29
+
+### Changes
+
+- Fixed properties for RequiredLogotypeVariants in theme_description.json
+
 ## [0.1.11] - 2024-05-14
 
 ### Changes

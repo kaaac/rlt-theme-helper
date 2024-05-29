@@ -47,7 +47,7 @@
         "type": "object",
         "additionalProperties": {
           "anyOf": [
-            { "type": "string" }
+            { "type": "array" }
           ]
         }
       },
