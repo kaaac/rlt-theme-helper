@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type" : "array",
+    "items" : {
+        "type" : "object",
+        "properties": {
+            "Condition" : {
+                "type" : "string",
+                "description": "Condition under which the trigger will be used. If “ConditionValue” is not set: it is assumed that “bool” value is used (can be “number” type, 0 = false, >0 = true). If “ConditionValue” is set, “Conditon” can be any type/value (it will be forcibly converted to string type during comparison). "
+            },
+            "ConditionValue" : {
+                "oneOf" : [
+                    { "type" : "string" },
+                    { "type" : "integer" }
+                ],
+                "description": " is used to set the value at which trigger condition will be true. For example, if “Condition” is 25, and “ConditionValue” is “25”, both values will be forcibly converter to string, and final trigger condition will be true."
+            },
+            "ConditionAnd" : {
+                "type" : "string",
+                "description": "additional condition (implement AND logic). If “ConditionAndValue” is not set: it is assumed that “bool” value is used (can be “number” type, 0 = false, >0 = true). If “ConditionAndValue” is set, “ConditonAnd” can be any type/value (it will be forcibly converted to string type during comparison). "
+            },
+            "ConditionAndValue" : {
+                "oneOf" : [
+                    { "type" : "string" },
+                    { "type" : "integer" }
+                ],
+                "description": "similarly to “ConditionValue”"
+            },
+            "ConditionOr" : {
+                "type" : "string",
+                "description": "additional condition (implement OR logic). If “ConditionOrValue” is not set: it is assumed that “bool” value is used (can be “number” type, 0 = false, >0 = true). If “ConditionOrValue” is set, “ConditonOr” can be any type/value (it will be forcibly converted to string type during comparison)"
+            },
+            "ConditionOrValue" : {
+                "oneOf" : [
+                    { "type" : "string" },
+                    { "type" : "integer" }
+                ],
+                "description": "similarly to “ConditionValue”"
+            },
+            "Setters" : {
+                "type" : "array",
+                "items" : {
+                    "$ref" : "./TriggerPropertyItem.json"
+                }
+            },
+            "Property": {
+                "$ref": "./TriggerPropertyItem.json#/definitions/Property"
+            },
+            "Var": {
+                "$ref": "./TriggerPropertyItem.json#/definitions/Var"
+            },
+            "ComponentVar": {
+                "$ref": "./TriggerPropertyItem.json#/definitions/ComponentVar"
+            },
+            "Value": {
+                "$ref": "./TriggerPropertyItem.json#/definitions/Value"
+            }
+        },
+        "additionalProperties": false,
+        "required": [ "Condition"]
+    },
+    "description": "List of triggers for properties"
+}
