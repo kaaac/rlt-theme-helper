@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.1.13] - 2024-06-11
+
+### Changes
+
+- Fixed wrong $ref to TriggerPropertyItem properties
+
 ## [0.1.12] - 2024-05-29
 
 ### Changes

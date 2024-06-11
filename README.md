@@ -134,4 +134,10 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 
 - Fixed properties for RequiredLogotypeVariants in theme_description.json
 
+## 0.1.13 - 2024-06-11
+
+### Changes
+
+- Fixed wrong $ref to TriggerPropertyItem properties
+
 ---
