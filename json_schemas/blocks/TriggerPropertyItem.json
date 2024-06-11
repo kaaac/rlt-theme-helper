@@ -31,5 +31,19 @@
       ],
       "description": "value of property. Can be object of (“*Options”, such as ImageOptions, TextOptions, etc) or ColorizeOptions. Overrides the current value of the property."
     }
+  },
+  "definitions": {
+    "Property": {
+      "$ref": "#/properties/Property"
+    },
+    "Var": {
+      "$ref": "#/properties/Var"
+    },
+    "ComponentVar": {
+      "$ref": "#/properties/ComponentVar"
+    },
+    "Value": {
+      "$ref": "#/properties/Value"
+    }
   }
 }
