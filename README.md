@@ -10,13 +10,18 @@ Current scope for extension is support for 0.9.5 version of RLT Themes
 
 The extension adds hints and validation regarding possible properties, consistent with the rules applicable to creating/editing themes for Racing League Tools
 
-Supports:
+### Json Validation with detailed properties for
+
   - blocks in layer.json files
   - components
   - global and public variables
   - layout definitions and theme definition
   - localization files
-  - validation of the correctness of the entered data types
+
+### Completion Providers
+
+  - global variables - list of global variables with currently set values
+  - global components - list of global components
 
 ![extension](https://github.com/kaaac/rlt-theme-helper/assets/74159167/4fdfbaae-71fd-4fbb-bb1b-f728f8490696)
 
@@ -140,4 +145,11 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 
 - Fixed wrong $ref to TriggerPropertyItem properties
 
+## 0.2.0 - 2024-06-28
+
+### Changes
+
+- Added completion provider for global components
+- Added completion provider for global variables
+- Added ForceLiveriesLoading property to theme_description.json
 ---

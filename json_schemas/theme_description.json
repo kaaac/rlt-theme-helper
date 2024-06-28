@@ -51,6 +51,9 @@
           ]
         }
       },
+      "ForceLiveriesLoading" : {
+        "type" : "boolean"
+      },
       "Links" : {
         "type" : "array",
         "items" : {

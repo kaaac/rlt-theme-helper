@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.2.0] - 2024-06-28
+
+### Changes
+
+- Added completion provider for global components
+- Added completion provider for global variables
+- Added ForceLiveriesLoading property to theme_description.json
+
 ## [0.1.13] - 2024-06-11
 
 ### Changes
