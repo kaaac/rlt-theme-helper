@@ -21,7 +21,13 @@ The extension adds hints and validation regarding possible properties, consisten
 ### Completion Providers
 
   - global variables - list of global variables with currently set values
+    (hit Ctrl + Space to see list)
+    ![image](https://github.com/kaaac/rlt-theme-helper/assets/74159167/64c94b7f-5af7-48d2-8384-cf1f0e958e47)
+
+
   - global components - list of global components
+    (hit Ctrl + Space to see list)
+    ![image](https://github.com/kaaac/rlt-theme-helper/assets/74159167/cbfb9788-0c76-41f9-885a-aff59e7d7656)
 
 ![extension](https://github.com/kaaac/rlt-theme-helper/assets/74159167/4fdfbaae-71fd-4fbb-bb1b-f728f8490696)
 
