@@ -1,25 +1,30 @@
 const vscode = require('vscode');
 const getComponentNames = require('./getComponentNames');
+
 class ComponentNameCompletionProvider {
-	provideCompletionItems(document, position, token, context){
-		const linePrefix = document.lineAt(position).text.substr(0, position.character);
-		const keyPrefix = linePrefix.trim().split(':')[0].trim();
+    async provideCompletionItems(document, position, token, context) {
+        const line = document.lineAt(position);
+        const lineText = line.text.substring(0, position.character);
+        const linePrefix = document.lineAt(position).text.substr(0, position.character);
+        const keyPrefix = linePrefix.trim().split(':')[0].trim();
 
-		if(!keyPrefix.endsWith('"Component"')){
-			return undefined;
-		}
+        if (!keyPrefix.endsWith('"Component"')) {
+            return undefined;
+        }
 
-		const componentNames = getComponentNames();
-		const completionItems = [];
-
-		componentNames.forEach(component => {
-			const completionItem = new vscode.CompletionItem(component.name, vscode.CompletionItemKind.Value);
-			completionItem.detail = component.details + " Component";
-			completionItems.push(completionItem);
-		});
-
-		return completionItems;
-	}
+        try {
+            const componentNames = await getComponentNames();
+            const completionItems = componentNames.map(component => {
+                const item = new vscode.CompletionItem(component.name, vscode.CompletionItemKind.Value);
+                item.detail = component.details + " Component";
+                return item;
+            });
+            return completionItems;
+        } catch (error) {
+            //console.error('Error fetching component names:', error);
+            return undefined;
+        }
+    }
 }
 
 module.exports = ComponentNameCompletionProvider;

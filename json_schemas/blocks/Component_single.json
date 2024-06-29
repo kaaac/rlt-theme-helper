@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "allOf": [
+      { "$ref": "Canvas.json" },
+      { "$ref": "Component_item.json" },
+      { "$ref": "Dock_Stack.json" },
+      { "$ref": "Grid.json" },
+      { "$ref": "Image.json" },
+      { "$ref": "Items.json" },
+      { "$ref": "Itemstack.json" },
+      { "$ref": "Shape.json" },
+      { "$ref": "Table.json" },
+      { "$ref": "Text.json" },
+      { "$ref": "common.json" }
+    ],
+    "required": ["ComponentName"]
+  }

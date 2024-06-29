@@ -19,6 +19,13 @@
         },
         "Styles" : {
           "$ref" : "Styles.json"
+        },
+        "Components" : {
+          "type" :"array",
+          "items" : {
+            "type" : "object",
+            "$ref" : "Component_single.json"
+          }
         }
       }
     }

@@ -25,7 +25,7 @@ The extension adds hints and validation regarding possible properties, consisten
     ![image](https://github.com/kaaac/rlt-theme-helper/assets/74159167/64c94b7f-5af7-48d2-8384-cf1f0e958e47)
 
 
-  - global components - list of global components
+  - components - list of global and local components
     (hit Ctrl + Space to see list)
     ![image](https://github.com/kaaac/rlt-theme-helper/assets/74159167/cbfb9788-0c76-41f9-885a-aff59e7d7656)
 
@@ -158,4 +158,13 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 - Added completion provider for global components
 - Added completion provider for global variables
 - Added ForceLiveriesLoading property to theme_description.json
+
+## 0.2.1 - 2024-06-29
+
+### Changes
+
+- Added completion provider for Data Converters
+- Extended json schema to allow define Components in block-containers
+- Extended completion provider for global components to allow use with array of components in single file
+- Extended completion provider for components defined in block-containers
 ---

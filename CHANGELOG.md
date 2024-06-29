@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.2.1] - 2024-06-29
+
+### Changes
+
+- Added completion provider for Data Converters
+- Extended json schema to allow define Components in block-containers
+- Extended completion provider for global components to allow use with array of components in single file
+- Extended completion provider for components defined in block-containers
+
 ## [0.2.0] - 2024-06-28
 
 ### Changes

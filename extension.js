@@ -4,84 +4,7 @@ const vscode = require('vscode');
 //const getGlobalVars = require('./completionProviders/getGlobalVars');
 const ComponentNameCompletionProvider = require('./completionProviders/ComponentNameCompletionProvider');
 const GlobalVarsCompletionProvider = require('./completionProviders/GlobalVarsCompletionProvider');
-//const path = require('path');
-//const fs = require('fs');
-
-//function removeCommentsFromJSON(jsonString) {
-//    
-//    return jsonString
-//        .replace(/\/\*[\s\S]*?\*\//g, '')
-//        .replace(/\/\/.*/g, '');
-//}
-
-//function getComponentNames(){
-//	const workspaceFolders = vscode.workspace.workspaceFolders;
-//	const componentNames = [];
-//
-//	if(workspaceFolders){
-//		const folderPath = workspaceFolders[0].uri.fsPath;
-//		const componentsFolderPath = path.join(folderPath, 'components');
-//		if(fs.existsSync(componentsFolderPath)){
-//			const files = fs.readdirSync(componentsFolderPath);
-//			files.forEach(file => {
-//				const filePath = path.join(componentsFolderPath, file);
-//				console.log(`We are here ${file}`);
-//				if(path.extname(filePath) === '.json'){
-//					const content = fs.readFileSync(filePath, 'utf8');
-//					const json = JSON.parse(removeCommentsFromJSON(content));
-//					if (json.ComponentName){
-//						componentNames.push(json.ComponentName);
-//					}
-//				}
-//			});
-//		}
-//	}
-//	return componentNames;
-//}
-
-//class ComponentNameCompletionProvider {
-//	provideCompletionItems(document, position, token, context){
-//		const linePrefix = document.lineAt(position).text.substr(0, position.character);
-//		const keyPrefix = linePrefix.trim().split(':')[0].trim();
-//
-//		if(!keyPrefix.endsWith('"Component"')){
-//			return undefined;
-//		}
-//
-//		const componentNames = getComponentNames();
-//		const completionItems = [];
-//
-//		componentNames.forEach(name => {
-//			const completionItem = new vscode.CompletionItem(name, vscode.CompletionItemKind.Value);
-//			completionItem.detail = "Component";
-//			completionItems.push(completionItem);
-//		});
-//
-//		return completionItems;
-//	}
-//}
-
-
-//class GlobalVarsCompletionProvider {
-//	provideCompletionItems(document, position, token, context){
-//		const linePrefix = document.lineAt(position).text.substr(0, position.character);
-//		if (!linePrefix.endsWith('"{')){
-//			return undefined;
-//		}
-//		const globalVars = getGlobalVars();
-//		const completionItems = [];
-//
-//		for(const key in globalVars){
-//			const completionItem = new vscode.CompletionItem(key, vscode.CompletionItemKind.Variable);
-//			completionItem.detail = `Value: ${globalVars[key]}`;
-//			completionItems.push(completionItem);
-//		}
-//		return completionItems;
-//	}
-//}
-
-
-//console.log("FindMe");
+const DataConvertersCompletionProvider = require('./completionProviders/DataConvertersCompletionProvider');
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -106,6 +29,11 @@ function activate(context) {
 		'"'
 	);
 	context.subscriptions.push(componentNameProviderDisposable);
+
+	const dataConvertersProvider = new DataConvertersCompletionProvider();
+	context.subscriptions.push(
+		vscode.languages.registerCompletionItemProvider({ scheme: 'file', language: 'json'}, dataConvertersProvider, '"')
+	);
 
 	const myCustomIcon = "$(rlt-iconbar-A)";
 	const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
