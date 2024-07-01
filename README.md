@@ -29,6 +29,9 @@ The extension adds hints and validation regarding possible properties, consisten
     (hit Ctrl + Space to see list)
     ![image](https://github.com/kaaac/rlt-theme-helper/assets/74159167/cbfb9788-0c76-41f9-885a-aff59e7d7656)
 
+  - styles
+  - data converters
+
 ![extension](https://github.com/kaaac/rlt-theme-helper/assets/74159167/4fdfbaae-71fd-4fbb-bb1b-f728f8490696)
 
 
@@ -167,4 +170,10 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 - Extended json schema to allow define Components in block-containers
 - Extended completion provider for global components to allow use with array of components in single file
 - Extended completion provider for components defined in block-containers
+
+## 0.2.2 - 2024-07-01
+
+### Changes
+
+- Added completion provider for styles defined globally and inside block-containers
 ---

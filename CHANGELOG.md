@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.2] - 2024-07-01
+
+### Changes
+
+- Added completion provider for styles defined globally and inside block-containers
+
 ## [0.2.1] - 2024-06-29
 
 ### Changes

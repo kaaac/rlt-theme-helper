@@ -1,11 +1,9 @@
 
 const vscode = require('vscode');
-//const getComponentNames = require('./completionProviders/getComponentNames');
-//const getGlobalVars = require('./completionProviders/getGlobalVars');
 const ComponentNameCompletionProvider = require('./completionProviders/ComponentNameCompletionProvider');
 const GlobalVarsCompletionProvider = require('./completionProviders/GlobalVarsCompletionProvider');
 const DataConvertersCompletionProvider = require('./completionProviders/DataConvertersCompletionProvider');
-
+const StyleNameCompletionProvider = require('./completionProviders/StyleNameCompletionProvider');
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 
@@ -14,26 +12,44 @@ const DataConvertersCompletionProvider = require('./completionProviders/DataConv
  */
 function activate(context) {
 
-	const globalVarsProvider = new GlobalVarsCompletionProvider();
-	const globalVarsProviderDisposable = vscode.languages.registerCompletionItemProvider(
-        { scheme: 'file', language: 'json' },
-        globalVarsProvider,
-        '"'
-    );
-	context.subscriptions.push(globalVarsProviderDisposable);
+	const providers = [
+		new GlobalVarsCompletionProvider(),
+		new ComponentNameCompletionProvider(),
+		new DataConvertersCompletionProvider(),
+		new StyleNameCompletionProvider()
+	]
+	for (const provider of providers){
+		context.subscriptions.push(vscode.languages.registerCompletionItemProvider({ scheme: 'file', language: 'json'}, provider, '"'));
+	}
 
-	const componentNameProvider = new ComponentNameCompletionProvider();
-	const componentNameProviderDisposable = vscode.languages.registerCompletionItemProvider(
-		{ scheme: 'file', language: 'json'},
-		componentNameProvider,
-		'"'
-	);
-	context.subscriptions.push(componentNameProviderDisposable);
-
-	const dataConvertersProvider = new DataConvertersCompletionProvider();
-	context.subscriptions.push(
-		vscode.languages.registerCompletionItemProvider({ scheme: 'file', language: 'json'}, dataConvertersProvider, '"')
-	);
+	//const globalVarsProvider = new GlobalVarsCompletionProvider();
+	//const globalVarsProviderDisposable = vscode.languages.registerCompletionItemProvider(
+    //    { scheme: 'file', language: 'json' },
+    //    globalVarsProvider,
+    //    '"'
+    //);
+	//context.subscriptions.push(globalVarsProviderDisposable);
+//
+	//const componentNameProvider = new ComponentNameCompletionProvider();
+	//const componentNameProviderDisposable = vscode.languages.registerCompletionItemProvider(
+	//	{ scheme: 'file', language: 'json'},
+	//	componentNameProvider,
+	//	'"'
+	//);
+	//context.subscriptions.push(componentNameProviderDisposable);
+//
+	//const dataConvertersProvider = new DataConvertersCompletionProvider();
+	//context.subscriptions.push(
+	//	vscode.languages.registerCompletionItemProvider({ scheme: 'file', language: 'json'}, dataConvertersProvider, '"')
+	//);
+//
+	//const styleNameProvider = new StyleNameCompletionProvider();
+	//const styleNameProviderDisposable = vscode.languages.registerCompletionItemProvider(
+	//	{ scheme: 'file', language: 'json' },
+	//	styleNameProvider,
+	//	'"'
+	//);
+	//context.subscriptions.push(styleNameProviderDisposable)
 
 	const myCustomIcon = "$(rlt-iconbar-A)";
 	const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
