@@ -22,35 +22,6 @@ function activate(context) {
 		context.subscriptions.push(vscode.languages.registerCompletionItemProvider({ scheme: 'file', language: 'json'}, provider, '"'));
 	}
 
-	//const globalVarsProvider = new GlobalVarsCompletionProvider();
-	//const globalVarsProviderDisposable = vscode.languages.registerCompletionItemProvider(
-    //    { scheme: 'file', language: 'json' },
-    //    globalVarsProvider,
-    //    '"'
-    //);
-	//context.subscriptions.push(globalVarsProviderDisposable);
-//
-	//const componentNameProvider = new ComponentNameCompletionProvider();
-	//const componentNameProviderDisposable = vscode.languages.registerCompletionItemProvider(
-	//	{ scheme: 'file', language: 'json'},
-	//	componentNameProvider,
-	//	'"'
-	//);
-	//context.subscriptions.push(componentNameProviderDisposable);
-//
-	//const dataConvertersProvider = new DataConvertersCompletionProvider();
-	//context.subscriptions.push(
-	//	vscode.languages.registerCompletionItemProvider({ scheme: 'file', language: 'json'}, dataConvertersProvider, '"')
-	//);
-//
-	//const styleNameProvider = new StyleNameCompletionProvider();
-	//const styleNameProviderDisposable = vscode.languages.registerCompletionItemProvider(
-	//	{ scheme: 'file', language: 'json' },
-	//	styleNameProvider,
-	//	'"'
-	//);
-	//context.subscriptions.push(styleNameProviderDisposable)
-
 	const myCustomIcon = "$(rlt-iconbar-A)";
 	const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
 	statusBarItem.text = myCustomIcon;
