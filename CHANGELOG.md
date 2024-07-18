@@ -1,5 +1,30 @@
 # Change Log
 
+## [0.3.0] - 2024-07-18
+
+- Added properties for ColorizeBackground json schema
+- Added Snippet provider for blocks:
+    - BlockRoot
+    - Canvas
+    - ColorizeBackground
+    - Component (create)
+    - Component (use)
+    - Dock
+    - Image
+    - ItemStack
+    - Public Property
+    - Shape
+    - Stack
+    - Style (definition)
+    - Table
+    - Table - Column
+    - Table - MultiColumn
+    - Text
+    - Theme Description
+    - Theme Link
+    - Trigger (single)
+    - Trigger - Setter
+
 ## [0.2.2] - 2024-07-01
 
 ### Changes

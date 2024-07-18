@@ -4,6 +4,8 @@ const ComponentNameCompletionProvider = require('./completionProviders/Component
 const GlobalVarsCompletionProvider = require('./completionProviders/GlobalVarsCompletionProvider');
 const DataConvertersCompletionProvider = require('./completionProviders/DataConvertersCompletionProvider');
 const StyleNameCompletionProvider = require('./completionProviders/StyleNameCompletionProvider');
+const { showSnippets } = require('./completionProviders/SnippetCommandProvider');
+//const SnippetCompletionProvider = require('./completionProviders/SnippetCompletionProvider');
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 
@@ -21,6 +23,13 @@ function activate(context) {
 	for (const provider of providers){
 		context.subscriptions.push(vscode.languages.registerCompletionItemProvider({ scheme: 'file', language: 'json'}, provider, '"'));
 	}
+	//const snippetProvider = vscode.languages.registerCompletionItemProvider('json', new SnippetCompletionProvider(), 'r');
+	//context.subscriptions.push(snippetProvider);
+
+	let disposable = vscode.commands.registerCommand('extension.showSnippets', showSnippets);
+	context.subscriptions.push(disposable);
+
+
 
 	const myCustomIcon = "$(rlt-iconbar-A)";
 	const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
@@ -57,14 +66,14 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('rlt-theme-helper.helloWorld', function () {
+	//let disposable = vscode.commands.registerCommand('rlt-theme-helper.helloWorld', function () {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
 		//vscode.window.showInformationMessage('Hello World from RLT Theme Helper!');
-	});
+	//});
 
-	context.subscriptions.push(disposable);
+	//context.subscriptions.push(disposable);
 }
 
 

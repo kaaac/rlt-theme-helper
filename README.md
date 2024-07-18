@@ -10,6 +10,32 @@ Current scope for extension is support for 0.9.5 version of RLT Themes
 
 The extension adds hints and validation regarding possible properties, consistent with the rules applicable to creating/editing themes for Racing League Tools
 
+### NEW! Snippet Provider
+
+Place your cursor in place where you want to start new block - in place where should be { and hit Ctrl+Alt+R. Choose block of your choice, navigate through defined placeholders using Tab.
+
+Supported blocks:
+  - BlockRoot
+  - Canvas
+  - ColorizeBackground
+  - Component (create)
+  - Component (use)
+  - Dock
+  - Image
+  - ItemStack
+  - Public Property
+  - Shape
+  - Stack
+  - Style (definition)
+  - Table
+  - Table - Column
+  - Table - MultiColumn
+  - Text
+  - Theme Description
+  - Theme Link
+  - Trigger (single)
+  - Trigger - Setter
+
 ### Json Validation with detailed properties for
 
   - blocks in layer.json files
@@ -176,4 +202,30 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
 ### Changes
 
 - Added completion provider for styles defined globally and inside block-containers
+
+## 0.3.0 - 2024-07-18
+
+- Added properties for ColorizeBackground json schema
+- Added Snippet provider for blocks:
+    - BlockRoot
+    - Canvas
+    - ColorizeBackground
+    - Component (create)
+    - Component (use)
+    - Dock
+    - Image
+    - ItemStack
+    - Public Property
+    - Shape
+    - Stack
+    - Style (definition)
+    - Table
+    - Table - Column
+    - Table - MultiColumn
+    - Text
+    - Theme Description
+    - Theme Link
+    - Trigger (single)
+    - Trigger - Setter
+
 ---
