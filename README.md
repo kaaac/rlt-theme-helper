@@ -10,7 +10,11 @@ Current scope for extension is support for 0.9.5 version of RLT Themes
 
 The extension adds hints and validation regarding possible properties, consistent with the rules applicable to creating/editing themes for Racing League Tools
 
-### NEW! Snippet Provider
+### Hover Color Provider
+
+Hover your mouse over color value to see result color
+
+### Snippet Provider
 
 Place your cursor in place where you want to start new block - in place where should be { and hit Ctrl+Alt+R. Choose block of your choice, navigate through defined placeholders using Tab.
 
@@ -227,5 +231,14 @@ More adjustments for 0.9.5 and other possible types of values for specific prope
     - Theme Link
     - Trigger (single)
     - Trigger - Setter
+
+
+## 0.3.1 - 2024-10-25
+
+- Removed unused commands
+- Added hover color provider
+- extended common scheme by HeightPercent and WidthPercent properties
+- extended Trigger scheme by Trigger property for name
+- some cleaning work on code
 
 ---

@@ -2,7 +2,7 @@
   "name": "rlt-theme-helper",
   "displayName": "RLT Theme Helper",
   "description": "Json Validator for Racing League Tools Themes",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "publisher": "Kaaac",
   "author": "Kaaac",
   "icon": "rlt_mod_icon.png",
@@ -24,23 +24,9 @@
   "contributes": {
     "keybindings" : [
       {
-        "command" : "extension.showSnippets",
+        "command" : "rlt-theme-helper.showSnippets",
         "key" : "ctrl+alt+r",
         "when" : "editorTextFocus"
-      }
-    ],
-    "commands": [
-      {
-        "command" : "extension.showSnippets",
-        "title" : "Show Snippets"
-      },
-      {
-        "command": "rlt-theme-helper.helloWorld",
-        "title": "Hello World"
-      },
-      {
-        "command": "extension.replaceTemplate",
-        "title": "Replace with ItemTemplate"
       }
     ],
     "jsonValidation": [

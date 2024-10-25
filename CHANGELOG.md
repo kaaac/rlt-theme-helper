@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.3.1] - 2024-10-25
+
+- Removed unused commands
+- Added hover color provider
+- extended common scheme by HeightPercent and WidthPercent properties
+- extended Trigger scheme by Trigger property for name
+- some cleaning work on code
+
 ## [0.3.0] - 2024-07-18
 
 - Added properties for ColorizeBackground json schema

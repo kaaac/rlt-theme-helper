@@ -4,6 +4,10 @@
     "items" : {
         "type" : "object",
         "properties": {
+            "Trigger" : {
+                "type" : "string",
+                "description": "Trigger name defined externally"
+            },
             "Condition" : {
                 "type" : "string",
                 "description": "Condition under which the trigger will be used. If “ConditionValue” is not set: it is assumed that “bool” value is used (can be “number” type, 0 = false, >0 = true). If “ConditionValue” is set, “Conditon” can be any type/value (it will be forcibly converted to string type during comparison). "
@@ -56,8 +60,8 @@
                 "$ref": "./TriggerPropertyItem.json#/definitions/Value"
             }
         },
-        "additionalProperties": false,
-        "required": [ "Condition"]
+        "additionalProperties": false//,
+        //"required": [ "Condition"]
     },
     "description": "List of triggers for properties"
 }

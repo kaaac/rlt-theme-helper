@@ -59,7 +59,7 @@ const snippets = {
         body: [
             '{',
             '\t"BlockType" : "image",',
-            '\t"Path" : "$1",',
+            '\t"Source" : "$1",',
             '\t"ImageOptions" : {',
             '\t\t$2',
             '\t}',

@@ -47,6 +47,10 @@
         "Foreground":             { "$ref" : "Foreground.json"},
         "Orientation":            { "$ref" : "Orientation.json"},
         "Spacing":                { "$ref" : "Spacing.json"},
-        "Style" :                 { "$ref" : "Style.json"}
+        "Style" :                 { "$ref" : "Style.json"},
+        "WidthPercent":           { "$ref" : "WidthPercent.json",
+                                    "description": "Determines the percentage of the width of the parent block's available space. A value of 100 is equivalent to setting StretchWidth to true"},
+        "HeightPercent":          { "$ref" : "WidthPercent.json",
+                                    "description": "Determines the percentage of the height of the parent block's available space. A value of 100 is equivalent to setting StretchHeight to true"}
     }
 }
