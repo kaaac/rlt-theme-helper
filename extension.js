@@ -1,5 +1,6 @@
 
 const vscode = require('vscode');
+const EXTENSION_ID = 'kaaac.rlt-theme-helper';
 const ComponentNameCompletionProvider = require('./Providers/ComponentNameCompletionProvider');
 const GlobalVarsCompletionProvider = require('./Providers/GlobalVarsCompletionProvider');
 const DataConvertersCompletionProvider = require('./Providers/DataConvertersCompletionProvider');
@@ -41,9 +42,12 @@ function activate(context) {
     });
 
 	function refreshStatusBarIcon(editor){
-		const filePath = editor.document.uri.fsPath;			
-		const extensionId = 'kaaac.rlt-theme-helper';
-		const extensionConfig = vscode.extensions.getExtension(extensionId).packageJSON.contributes;
+		if (!editor) {
+			statusBarItem.hide();
+			return;
+		}
+		const filePath = editor.document.uri.fsPath;
+		const extensionConfig = vscode.extensions.getExtension(EXTENSION_ID).packageJSON.contributes;
 		if (extensionConfig && extensionConfig.jsonValidation) {
 			const jsonValidation = extensionConfig.jsonValidation;
 			const matchedSchema = getMatchedSchema(filePath, jsonValidation);
