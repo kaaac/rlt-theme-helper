@@ -21,11 +21,11 @@
       "Variant" : {
         "type" : "string",
         "enum" : [
-            "default",
-            "alternative",
-            "dark",
-            "light",
-            "grayed"
+            "Default",
+            "Alternative",
+            "Dark",
+            "Light",
+            "Grayed"
         ]
       },
       "UseFallbackVariant" : {

@@ -3,7 +3,13 @@
   "type": "object",
   "if": {
     "anyOf": [
-      {"properties": { "BlockType": { "const": "table" } }}
+      {
+        "properties": {
+          "BlockType": {
+            "const": "table"
+          }
+        }
+      }
     ]
   },
   "then": {
@@ -12,21 +18,37 @@
         "type": "object",
         "properties": {
           "ItemsSource": {
-              "type": "string",
-              "description": "Data access expression for collection/list"
+            "type": "string",
+            "description": "Data access expression for collection/list"
           },
           "HeaderTemplate": {
             "type": "object",
             "description": "Template for table headers (located above each column)",
             "allOf": [
-              { "$ref": "Canvas.json" },
-              { "$ref": "Component.json" },
-              { "$ref": "Image.json" },
-              { "$ref": "Items.json" },
-              { "$ref": "Shape.json" },
-              { "$ref": "Table.json" },
-              { "$ref": "Text.json" },
-              { "$ref": "common.json" }
+              {
+                "$ref": "Canvas.json"
+              },
+              {
+                "$ref": "Component.json"
+              },
+              {
+                "$ref": "Image.json"
+              },
+              {
+                "$ref": "Items.json"
+              },
+              {
+                "$ref": "Shape.json"
+              },
+              {
+                "$ref": "Table.json"
+              },
+              {
+                "$ref": "Text.json"
+              },
+              {
+                "$ref": "common.json"
+              }
             ]
           },
           "HeaderHeight": {
@@ -43,10 +65,10 @@
           },
           "ColSpacing": {
             "description": "Spacing between columns",
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               },
               {
                 "type": "integer"
@@ -55,10 +77,10 @@
           },
           "RowSpacing": {
             "description": "Spacing between rows",
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               },
               {
                 "type": "integer"
@@ -114,50 +136,50 @@
             "description": "Whether the collection elements should be reversed"
           },
           "Limit": {
-            "type": "integer",
             "description": "Limiting the number of items in the collection",
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$",
+                "description": "Variable placeholder in format {VariableName}"
               }
             ]
           },
           "IndexStart": {
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               }
             ],
             "description": "Starting index of the collection"
           },
           "IndexEnd": {
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               }
             ],
             "description": "Ending index of the collection"
           },
           "TakeItemIndex": {
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               }
             ],
             "description": "Required index of the collection (will consist only of one item by specified index)"
@@ -207,17 +229,39 @@
                   "type": "object",
                   "description": "Template for each item of the column",
                   "allOf": [
-                    { "$ref": "Canvas.json" },
-                    { "$ref": "Component.json" },
-                    { "$ref": "Dock_Stack.json" },
-                    { "$ref": "Grid.json" },
-                    { "$ref": "Image.json" },
-                    { "$ref": "Items.json" },
-                    { "$ref": "Itemstack.json" },
-                    { "$ref": "Shape.json" },
-                    { "$ref": "Table.json" },
-                    { "$ref": "Text.json" },
-                    { "$ref": "common.json" }
+                    {
+                      "$ref": "Canvas.json"
+                    },
+                    {
+                      "$ref": "Component.json"
+                    },
+                    {
+                      "$ref": "Dock_Stack.json"
+                    },
+                    {
+                      "$ref": "Grid.json"
+                    },
+                    {
+                      "$ref": "Image.json"
+                    },
+                    {
+                      "$ref": "Items.json"
+                    },
+                    {
+                      "$ref": "Itemstack.json"
+                    },
+                    {
+                      "$ref": "Shape.json"
+                    },
+                    {
+                      "$ref": "Table.json"
+                    },
+                    {
+                      "$ref": "Text.json"
+                    },
+                    {
+                      "$ref": "common.json"
+                    }
                   ]
                 },
                 "IsSeparator": {
@@ -226,8 +270,8 @@
                       "type": "boolean"
                     },
                     {
-                      "type" : "string",
-                      "pattern" : "^{.*}$"
+                      "type": "string",
+                      "pattern": "^{.*}$"
                     }
                   ],
                   "description": "Indicates whether the column is a separator"
@@ -238,8 +282,8 @@
                       "type": "integer"
                     },
                     {
-                      "type" : "string",
-                      "pattern" : "^{.*}$"
+                      "type": "string",
+                      "pattern": "^{.*}$"
                     }
                   ],
                   "description": "Same group Id (>0) can be set for several columns to bring them closer to each other in the column space"
@@ -256,17 +300,39 @@
                   "type": "object",
                   "description": "Template for each item of multicolumns",
                   "allOf": [
-                    { "$ref": "Canvas.json" },
-                    { "$ref": "Component.json" },
-                    { "$ref": "Dock_Stack.json" },
-                    { "$ref": "Grid.json" },
-                    { "$ref": "Image.json" },
-                    { "$ref": "Items.json" },
-                    { "$ref": "Itemstack.json" },
-                    { "$ref": "Shape.json" },
-                    { "$ref": "Table.json" },
-                    { "$ref": "Text.json" },
-                    { "$ref": "common.json" }
+                    {
+                      "$ref": "Canvas.json"
+                    },
+                    {
+                      "$ref": "Component.json"
+                    },
+                    {
+                      "$ref": "Dock_Stack.json"
+                    },
+                    {
+                      "$ref": "Grid.json"
+                    },
+                    {
+                      "$ref": "Image.json"
+                    },
+                    {
+                      "$ref": "Items.json"
+                    },
+                    {
+                      "$ref": "Itemstack.json"
+                    },
+                    {
+                      "$ref": "Shape.json"
+                    },
+                    {
+                      "$ref": "Table.json"
+                    },
+                    {
+                      "$ref": "Text.json"
+                    },
+                    {
+                      "$ref": "common.json"
+                    }
                   ]
                 }
               }
@@ -276,14 +342,14 @@
         },
         "additionalProperties": false
       },
-      "Styles" : {
-        "$ref" : "Styles.json"
+      "Styles": {
+        "$ref": "Styles.json"
       },
-      "Components" : {
-        "type" :"array",
-        "items" : {
-          "type" : "object",
-          "$ref" : "Component_single.json"
+      "Components": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Component_single.json"
         }
       }
     }

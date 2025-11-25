@@ -28,7 +28,12 @@
         "type": "boolean",
         "description": "Wrap text"
       },
-      "ColorizeRating": { "$ref" : "ColorizeRating.json"}
+      "ColorizeRating": { "$ref" : "ColorizeRating.json"},
+      "Rotation": 
+      {
+        "type": "integer",
+        "description": "Rotation angle in degrees"
+      }
     },
     "additionalProperties" : false
 }

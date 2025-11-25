@@ -1,15 +1,21 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "oneOf": [
-      {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 100
-      },
-      {
-        "type" : "string",
-        "pattern" : "^{.*}$"
-      }
-    ],
-    "description": "Opacity of the block (0-100)"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "oneOf": [
+    {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    {
+      "type": "string",
+      "pattern": "^{.*}$",
+      "description": "Variable placeholder in format {VariableName}"
+    },
+    {
+      "type": "string",
+      "pattern": "^<[^>]+>$",
+      "description": "Variable placeholder in format <VariableName>"
+    }
+  ],
+  "description": "Opacity of the block (0-100)"
 }

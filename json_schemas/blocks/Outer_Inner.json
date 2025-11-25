@@ -3,11 +3,33 @@
         {"type": "integer"},
         {
           "type" : "string",
-          "pattern" : "^{.*}$"
+          "pattern" : "^{.*}$",
+          "description": "Braces variable: {VariableName}"
         },
         {
           "type" : "string",
-          "pattern" : "^<.*>$"
+          "pattern" : "^.*\\{\\{[^}]+\\}[^}]+\\}.*$",
+          "description": "Mixed double/single braces variable: {{VariableName}OtherPart} with optional text before/after"
+        },
+        {
+          "type" : "string",
+          "pattern" : "^.*\\{[^{]+\\{[^}]+\\}\\}.*$",
+          "description": "Mixed single/double braces variable: {VariableName{OtherPart}} with optional text before/after"
+        },
+        {
+          "type" : "string",
+          "pattern" : "^.+<.*>$",
+          "description": "Mixed braces variable: Something<VariableName> (text before angle brackets)"
+        },
+        {
+          "type" : "string",
+          "pattern" : "^<.*>.+$",
+          "description": "Mixed braces variable: <VariableName>Something (text after angle brackets)"
+        },
+        {
+          "type" : "string",
+          "pattern" : "^<.*>$",
+          "description": "Angle brackets variable: <VariableName> (only angle brackets)"
         }
     ]    
 }
