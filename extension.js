@@ -5,8 +5,10 @@ const ComponentNameCompletionProvider = require('./Providers/ComponentNameComple
 const GlobalVarsCompletionProvider = require('./Providers/GlobalVarsCompletionProvider');
 const DataConvertersCompletionProvider = require('./Providers/DataConvertersCompletionProvider');
 const StyleNameCompletionProvider = require('./Providers/StyleNameCompletionProvider');
+const ColorPickerProvider = require('./Providers/ColorPickerProvider');
+const GlobalVarsInlayHintsProvider = require('./Providers/GlobalVarsInlayHintsProvider');
 const { showSnippets } = require('./Providers/SnippetCommandProvider');
-const { provideHover } = require('./Providers/hoverColorProvider');
+const addGlobalVariable = require('./Providers/addGlobalVariableCommand');
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -26,47 +28,84 @@ function activate(context) {
 	let disposable = vscode.commands.registerCommand('rlt-theme-helper.showSnippets', showSnippets);
 	context.subscriptions.push(disposable);
 
+	let addGlobalVarDisposable = vscode.commands.registerCommand('rlt-theme-helper.addGlobalVariable', addGlobalVariable);
+	context.subscriptions.push(addGlobalVarDisposable);
+
 
 
 	const myCustomIcon = "$(rlt-iconbar-A)";
 	const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
 	statusBarItem.text = myCustomIcon;
 	statusBarItem.tooltip = "RLT Theme Helper is active!"
-	statusBarItem.show();
 	context.subscriptions.push(statusBarItem);
 
+	// Initial update
 	refreshStatusBarIcon(vscode.window.activeTextEditor);
 
+	// Update on editor change
     vscode.window.onDidChangeActiveTextEditor((editor) => {
 		refreshStatusBarIcon(editor);
-    });
+    }, null, context.subscriptions);
+
+	// Update on document change (e.g., when file is saved with new name)
+	vscode.workspace.onDidOpenTextDocument((document) => {
+		if (vscode.window.activeTextEditor && vscode.window.activeTextEditor.document === document) {
+			refreshStatusBarIcon(vscode.window.activeTextEditor);
+		}
+	}, null, context.subscriptions);
 
 	function refreshStatusBarIcon(editor){
 		if (!editor) {
 			statusBarItem.hide();
 			return;
 		}
+
+		// Only show for JSON files
+		if (editor.document.languageId !== 'json') {
+			statusBarItem.hide();
+			return;
+		}
+
 		const filePath = editor.document.uri.fsPath;
 		const extensionConfig = vscode.extensions.getExtension(EXTENSION_ID).packageJSON.contributes;
+		
 		if (extensionConfig && extensionConfig.jsonValidation) {
 			const jsonValidation = extensionConfig.jsonValidation;
 			const matchedSchema = getMatchedSchema(filePath, jsonValidation);
+			
 			if (matchedSchema) {
-                statusBarItem.tooltip = 'This file is supported by extension!';
-				statusBarItem.text = '$(rlt-iconbar-G)  RLT'
+                statusBarItem.tooltip = 'This file is supported by RLT Theme Helper extension!';
+				statusBarItem.text = '$(rlt-iconbar-G)  RLT';
+				statusBarItem.show();
             } else {
-                statusBarItem.tooltip = 'Sorry! This file is not supported by extension.\nAre you sure you sure it is correct file?';
-				statusBarItem.text = '$(rlt-iconbar-G)! RLT'
+                statusBarItem.tooltip = 'This file is not supported by RLT Theme Helper.\nAre you sure it is a correct RLT theme file?';
+				statusBarItem.text = '$(rlt-iconbar-G)! RLT';
+				statusBarItem.show();
             }
+		} else {
+			statusBarItem.hide();
 		}
 	}
 
+	// Register Color Picker Provider
+	const colorPickerProvider = new ColorPickerProvider();
 	context.subscriptions.push(
-		vscode.languages.registerHoverProvider(
-			{ language: 'json', scheme: 'file'},
-			{ provideHover }
+		vscode.languages.registerColorProvider(
+			{ language: 'json', scheme: 'file' },
+			colorPickerProvider
 		)
 	);
+	context.subscriptions.push(colorPickerProvider);
+
+	// Register Global Variables Inlay Hints Provider
+	const inlayHintsProvider = new GlobalVarsInlayHintsProvider();
+	context.subscriptions.push(
+		vscode.languages.registerInlayHintsProvider(
+			{ language: 'json', scheme: 'file' },
+			inlayHintsProvider
+		)
+	);
+	context.subscriptions.push(inlayHintsProvider);
 
 	console.log('Congratulations, your extension "rlt-theme-helper" is now active!');
 

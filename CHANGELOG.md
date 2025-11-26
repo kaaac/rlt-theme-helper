@@ -1,5 +1,60 @@
 # Change Log
 
+## [0.4.0] - 2025-11-26
+
+### ✨ Major Features
+
+#### 🎨 Interactive Color Picker
+
+- Click on color box next to any color value to open color picker
+- Support for multiple color formats:
+  - `#RRGGBB` - Standard hex format
+  - `#AARRGGBB` - RLT format with alpha channel first
+  - `RRGGBB` / `AARRGGBB` - Hex without # (for Color/Foreground/Background properties)
+  - `R,G,B` - Comma-separated RGB values
+  - `R,G,B,A` - Comma-separated RGBA values
+- Easy conversion between color formats via dropdown
+- Visual color indicators appear next to all color values
+- Smart detection excludes layout properties from color recognition
+- Global variables that resolve to colors show as read-only color indicators
+
+#### 💡 Global Variables Inline Hints
+
+- Shows resolved values of variables as grayed-out inline hints
+- Supports complex variable patterns:
+  - `{VariableName}` - Simple variable reference
+  - `{{VariableName}}` - Double brace format
+  - `{Variable.Property}` - Nested property access with dot notation
+  - `{Some{Nested}Value}` - Complex nested variable resolution
+  - `[LocalizationKey]` - Localization strings from `localizations/*.json`
+- Smart localization file selection based on `DefaultLocalizationId` in theme_description.json
+- Color indicators for variables that resolve to color values
+- Clickable links in tooltips to quickly navigate to source files
+- Real-time updates when global_vars.json or localization files change
+
+#### ⌨️ New Commands & Shortcuts
+
+- **`Ctrl+K Ctrl+S`** - Show RLT Snippets (improved from old `Ctrl+Alt+R`)
+- **`Ctrl+K Ctrl+V`** - Add Global Variable
+  - Smart insertion: replaces selection with `{VariableName}` and uses selected text as value
+  - Creates/updates `globals/global_vars.json` automatically
+  - Opens file with value selected, ready to edit
+
+### 🔧 Improvements
+
+- Enhanced layout property detection with comprehensive keyword matching:
+  - Excludes properties/variables containing: margin, padding, spacing, gap, offset, indent, size, width, height, radius, border, thickness, distance, position, coordinate
+  - Case-insensitive matching prevents false color detection on layout values
+- Improved JSON parsing with better error handling for files with comments
+- Removed deprecated hover color provider (fully replaced by color picker)
+
+### 📦 Technical Changes
+
+- Refactored color detection logic with `isLayoutProperty()` method
+- Added `ColorPickerProvider` with support for 8+ color formats
+- Added `GlobalVarsInlayHintsProvider` with nested resolution support
+- File watchers for automatic updates on configuration changes
+
 ## [0.3.2] - 2025-11-25
 
 - Extended support for variables combinations
