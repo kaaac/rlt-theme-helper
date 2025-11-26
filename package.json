@@ -1,8 +1,8 @@
 {
   "name": "rlt-theme-helper",
   "displayName": "RLT Theme Helper",
-  "description": "Json Validator for Racing League Tools Themes",
-  "version": "0.3.2",
+  "description": "Complete development toolkit for Racing League Tools Themes with color picker, variable hints, JSON validation and snippets",
+  "version": "0.4.0",
   "publisher": "Kaaac",
   "author": "Kaaac",
   "icon": "rlt_mod_icon.png",
@@ -22,11 +22,26 @@
   ],
   "main": "./extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "rlt-theme-helper.showSnippets",
+        "title": "RLT: Show Snippets"
+      },
+      {
+        "command": "rlt-theme-helper.addGlobalVariable",
+        "title": "RLT: Add Global Variable"
+      }
+    ],
     "keybindings" : [
       {
         "command" : "rlt-theme-helper.showSnippets",
-        "key" : "ctrl+alt+r",
+        "key" : "ctrl+k ctrl+s",
         "when" : "editorTextFocus"
+      },
+      {
+        "command" : "rlt-theme-helper.addGlobalVariable",
+        "key" : "ctrl+k ctrl+v",
+        "when" : "editorTextFocus && editorLangId == json"
       }
     ],
     "jsonValidation": [
