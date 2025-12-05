@@ -4,7 +4,23 @@
 
 ### ✨ Major Features
 
-#### 🎨 Interactive Color Picker
+#### � Component Tree View (NEW!)
+
+- **Sidebar panel** showing hierarchical structure of RLT theme files
+- **Smart file detection** - automatically recognizes file type and displays relevant sections
+- **Supported files:**
+  - `theme_description.json` - Shows theme info, layouts, localization
+  - `component.json` - Shows component structure, blocks, styles, triggers
+  - `layer.json` - Shows layer structure and blocks
+  - `layout_description.json` - Shows all layouts with dimensions
+  - `global_vars.json` - Shows all variables with values
+- **Expandable tree structure** - drill down into nested objects and arrays
+- **Smart icons** - different icons for components (🧩), blocks (📦), styles (💅), colors (🎨), etc.
+- **Auto-refresh** - updates when switching files or saving changes
+- **Quick navigation** - click on items to see their structure
+- **Refresh button** - manual refresh option in toolbar
+
+#### �🎨 Interactive Color Picker
 
 - Click on color box next to any color value to open color picker
 - Support for multiple color formats:
@@ -47,13 +63,22 @@
   - Case-insensitive matching prevents false color detection on layout values
 - Improved JSON parsing with better error handling for files with comments
 - Removed deprecated hover color provider (fully replaced by color picker)
+- **Fixed status bar icon visibility issues:**
+  - Icon now properly shows/hides based on file type
+  - Shows only for JSON files
+  - Added `show()` calls that were missing
+  - Added refresh on document open events
+  - Better subscription management for proper cleanup
 
 ### 📦 Technical Changes
 
 - Refactored color detection logic with `isLayoutProperty()` method
 - Added `ColorPickerProvider` with support for 8+ color formats
 - Added `GlobalVarsInlayHintsProvider` with nested resolution support
+- Added `ComponentTreeProvider` for hierarchical structure view
 - File watchers for automatic updates on configuration changes
+- Improved error handling with try-catch blocks in color provider
+- Fixed `getValueFromGlobalVars` to handle object values correctly
 
 ## [0.3.2] - 2025-11-25
 

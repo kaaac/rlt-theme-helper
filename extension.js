@@ -7,6 +7,7 @@ const DataConvertersCompletionProvider = require('./Providers/DataConvertersComp
 const StyleNameCompletionProvider = require('./Providers/StyleNameCompletionProvider');
 const ColorPickerProvider = require('./Providers/ColorPickerProvider');
 const GlobalVarsInlayHintsProvider = require('./Providers/GlobalVarsInlayHintsProvider');
+const RLTDocumentSymbolProvider = require('./Providers/RLTDocumentSymbolProvider');
 const { showSnippets } = require('./Providers/SnippetCommandProvider');
 const addGlobalVariable = require('./Providers/addGlobalVariableCommand');
 
@@ -106,6 +107,15 @@ function activate(context) {
 		)
 	);
 	context.subscriptions.push(inlayHintsProvider);
+
+	// Register RLT Document Symbol Provider (for Outline view)
+	const symbolProvider = new RLTDocumentSymbolProvider();
+	context.subscriptions.push(
+		vscode.languages.registerDocumentSymbolProvider(
+			{ language: 'json', scheme: 'file' },
+			symbolProvider
+		)
+	);
 
 	console.log('Congratulations, your extension "rlt-theme-helper" is now active!');
 

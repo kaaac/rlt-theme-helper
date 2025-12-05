@@ -11,7 +11,33 @@ Powerful VS Code extension that enhances your RLT theme development workflow wit
 
 ## ✨ Features
 
-### 🎨 Interactive Color Picker
+### � Component Tree View
+
+Navigate your RLT theme structure with ease using the sidebar panel that automatically displays the hierarchy of your theme files.
+
+**Smart File Detection:**
+
+The tree view automatically recognizes file types and shows relevant structure:
+
+- 📝 **theme_description.json** - Theme name, version, layouts, localization settings
+- 🧩 **component.json** - Component structure, blocks, styles, triggers
+- 📄 **layer.json** - Layer structure and block hierarchy  
+- 📐 **layout_description.json** - All layouts with dimensions
+- 🔗 **global_vars.json** - All global variables with their values
+
+**Key Features:**
+
+- 🔍 **Expandable tree** - Drill down into nested objects and arrays
+- 🎨 **Smart icons** - Different icons for components, blocks, styles, colors, dimensions
+- ⚡ **Auto-refresh** - Updates when switching files or saving changes
+- 🔄 **Manual refresh** - Refresh button in toolbar
+- 👁️ **Quick overview** - See component counts, property counts at a glance
+
+Located in the Explorer sidebar as **"RLT Structure"** panel.
+
+> 💡 **Tip:** After creating demo screenshots, place them in `docs/images/` folder and they will appear here automatically.
+
+### �🎨 Interactive Color Picker
 
 Click on the color box next to any color value to open an interactive color picker with instant preview.
 
