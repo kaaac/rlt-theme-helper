@@ -157,9 +157,15 @@ Comprehensive JSON schema validation with detailed property hints for:
 Smart auto-completion for:
 
 - **Global Variables** - Shows list with current values (press `Ctrl+Space`)
-- **Component Names** - Available components in your theme
-- **Style Names** - Defined styles
+- **Component Names** - Available components in your theme with clickable links to source files
+- **Style Names** - Defined styles with clickable links to source files
+- **Trigger Names** - Available triggers in your theme with clickable links to source files
 - **Data Converters** - Built-in converter functions
+
+**Enhanced Documentation:**
+- 🔗 Clickable links to source files for Components, Styles, and Triggers
+- 📍 Displays whether item is defined globally or locally
+- 🎨 Color icon for Style completions
 
 ![Completion Demo](https://github.com/kaaac/rlt-theme-helper/assets/74159167/64c94b7f-5af7-48d2-8384-cf1f0e958e47)
 

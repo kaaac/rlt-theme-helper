@@ -1,5 +1,24 @@
 # Change Log
 
+## [0.5.1] - 2026-03-06
+
+### ✨ New Features
+
+- **Trigger Name Autocomplete** - Smart completion for `"Trigger"` property with suggestions from `triggers/` directory
+
+### 🎯 Improvements
+
+- **Source File Links** - Completion items for Components, Styles, and Triggers now include clickable links to their source files
+- **Better Icons** - Style completions now display with color icon instead of generic value icon
+- **Enhanced Documentation** - Completion items show whether they are defined globally (in dedicated folders) or locally (in current file)
+
+### 🔧 Technical Changes
+
+- Extended source tracking system for all completion providers
+- Added `TriggerNameCompletionProvider` with Event completion kind
+- Updated `extractPropertyNames` and `extractPropertyNamesFromCurrentFile` to track file paths
+- Modified `getPropertyNames` to calculate and pass relative file paths
+
 ## [0.5.0] - 2026-03-06
 
 ### ✨ Major Features
