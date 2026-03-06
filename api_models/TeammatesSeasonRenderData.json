@@ -1,0 +1,66 @@
+{
+  "className": "TeammatesSeasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Teammates",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Team",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Team property"
+    },
+    {
+      "name": "Drivers",
+      "type": "TeammateDriverRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Drivers property"
+    },
+    {
+      "name": "SeasonProgressPercent",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonProgressPercent property"
+    },
+    {
+      "name": "Driver1",
+      "type": "TeammateDriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver1 property"
+    },
+    {
+      "name": "Driver2",
+      "type": "TeammateDriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver2 property"
+    },
+    {
+      "name": "Driver3",
+      "type": "TeammateDriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver3 property"
+    },
+    {
+      "name": "Driver4",
+      "type": "TeammateDriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver4 property"
+    }
+  ]
+}

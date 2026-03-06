@@ -1,0 +1,146 @@
+{
+  "className": "TrackMultiseasonRaceDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "FastestLapTime",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "FastestLapDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestLapDriver property"
+    },
+    {
+      "name": "FastestLapTeam",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestLapTeam property"
+    },
+    {
+      "name": "FastestLapSeason",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestLapSeason property"
+    },
+    {
+      "name": "FastestLapSeasonName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestLapSeasonName property"
+    },
+    {
+      "name": "MostWinsDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostWinsDriver property"
+    },
+    {
+      "name": "MostWinsDriverCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of most wins driver"
+    },
+    {
+      "name": "MostWinsTeam",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostWinsTeam property"
+    },
+    {
+      "name": "MostWinsTeamCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of most wins team"
+    },
+    {
+      "name": "MostPodiumsDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostPodiumsDriver property"
+    },
+    {
+      "name": "MostPodiumsDriverCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of most podiums driver"
+    },
+    {
+      "name": "MostPodiumsTeam",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostPodiumsTeam property"
+    },
+    {
+      "name": "MostPodiumsTeamCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of most podiums team"
+    },
+    {
+      "name": "AvgPitstops",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AvgPitstops property"
+    },
+    {
+      "name": "AvgOvertakes",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AvgOvertakes property"
+    },
+    {
+      "name": "AvgDuration",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AvgDuration property"
+    },
+    {
+      "name": "IsHaveOvertakesData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have overtakes data"
+    }
+  ]
+}

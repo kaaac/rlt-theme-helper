@@ -1,0 +1,306 @@
+{
+  "className": "PenaltyItemRenderData",
+  "namespace": "",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "PenaltyId",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyId property"
+    },
+    {
+      "name": "Driver",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "Issuer",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Issuer property"
+    },
+    {
+      "name": "Submitter",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Submitter property"
+    },
+    {
+      "name": "Team",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Team property"
+    },
+    {
+      "name": "Car",
+      "type": "CarRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Car property"
+    },
+    {
+      "name": "Season",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Season property"
+    },
+    {
+      "name": "Session",
+      "type": "SessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Session property"
+    },
+    {
+      "name": "DriverSession",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverSession property"
+    },
+    {
+      "name": "PenaltyPoints",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPoints property"
+    },
+    {
+      "name": "PenaltySeconds",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltySeconds property"
+    },
+    {
+      "name": "PenaltyPositions",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "PenaltyWarnings",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyWarnings property"
+    },
+    {
+      "name": "IsDisqualified",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether disqualified"
+    },
+    {
+      "name": "PenaltySecondsOverall",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltySecondsOverall property"
+    },
+    {
+      "name": "PenaltyPositionsOverall",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "IsDisqualifiedOverall",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether disqualified overall"
+    },
+    {
+      "name": "PenaltyWarningsOverall",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyWarningsOverall property"
+    },
+    {
+      "name": "IsNoPunishment",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether no punishment"
+    },
+    {
+      "name": "IsCancelled",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether cancelled"
+    },
+    {
+      "name": "PenaltyOffense",
+      "type": "PenaltyOffenseRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PenaltyOffense property"
+    },
+    {
+      "name": "Offense",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Offense property"
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Description property"
+    },
+    {
+      "name": "Verdict",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Verdict property"
+    },
+    {
+      "name": "Lap",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Lap property"
+    },
+    {
+      "name": "Turn",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Turn property"
+    },
+    {
+      "name": "Date",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Date property"
+    },
+    {
+      "name": "DateEvent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DateEvent property"
+    },
+    {
+      "name": "IsCreatedByUser",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether created by user"
+    },
+    {
+      "name": "SameOffenseRepeatedCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of same offense repeated"
+    },
+    {
+      "name": "DriversInvolved",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "DriversInvolved property"
+    },
+    {
+      "name": "DriversInvolvedString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DriversInvolvedString property"
+    },
+    {
+      "name": "IsInnerPenalty",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether inner penalty"
+    },
+    {
+      "name": "IsHavePenaltyActions",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have penalty actions"
+    },
+    {
+      "name": "PenaltyActions",
+      "type": "PenaltyActionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "PenaltyActions property"
+    },
+    {
+      "name": "Decision",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Decision property"
+    },
+    {
+      "name": "Details",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Details property"
+    }
+  ]
+}

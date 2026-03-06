@@ -1,0 +1,186 @@
+{
+  "className": "EventRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Track",
+      "type": "TrackRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Track property"
+    },
+    {
+      "name": "IsTrackDefined",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether track defined"
+    },
+    {
+      "name": "IsRandomEvent",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether random event"
+    },
+    {
+      "name": "IsBreak",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether break"
+    },
+    {
+      "name": "Position",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "TrackName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TrackName property"
+    },
+    {
+      "name": "TrackCountryName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TrackCountryName property"
+    },
+    {
+      "name": "EventStatus",
+      "type": "EventStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "EventStatus property"
+    },
+    {
+      "name": "IsChampionshipStatus",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether championship status"
+    },
+    {
+      "name": "CompletedStatus",
+      "type": "CompletedStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "CompletedStatus property"
+    },
+    {
+      "name": "Color",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Color property"
+    },
+    {
+      "name": "SecondaryColor",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SecondaryColor property"
+    },
+    {
+      "name": "Date",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Date property"
+    },
+    {
+      "name": "DateLocal",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DateLocal property"
+    },
+    {
+      "name": "DateGmt",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DateGmt property"
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Description property"
+    },
+    {
+      "name": "Races",
+      "type": "SessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Races property"
+    },
+    {
+      "name": "Quals",
+      "type": "SessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Quals property"
+    },
+    {
+      "name": "Practices",
+      "type": "SessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Practices property"
+    },
+    {
+      "name": "IsFullQual",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether full qual"
+    },
+    {
+      "name": "IsHaveSprintSessions",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have sprint sessions"
+    },
+    {
+      "name": "WinnerString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "WinnerString property"
+    }
+  ]
+}

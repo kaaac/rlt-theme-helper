@@ -1,0 +1,114 @@
+{
+  "className": "PenaltyOffenseRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Position",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "Paragraph",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Paragraph property"
+    },
+    {
+      "name": "Offense",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Offense property"
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Description property"
+    },
+    {
+      "name": "PenaltyPoints",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPoints property"
+    },
+    {
+      "name": "PenaltySeconds",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltySeconds property"
+    },
+    {
+      "name": "PenaltyPositions",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "PenaltyWarnings",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyWarnings property"
+    },
+    {
+      "name": "IsDisqualification",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether disqualification"
+    },
+    {
+      "name": "PenaltyActionType",
+      "type": "PenaltyActionType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PenaltyActionType property"
+    },
+    {
+      "name": "PenaltyActionValue",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyActionValue property"
+    },
+    {
+      "name": "PenaltyActionType2",
+      "type": "PenaltyActionType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PenaltyActionType2 property"
+    },
+    {
+      "name": "PenaltyActionValue2",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyActionValue2 property"
+    }
+  ]
+}

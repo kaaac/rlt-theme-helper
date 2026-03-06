@@ -1,0 +1,74 @@
+{
+  "className": "RacingClassInfo",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "UniqueName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "UniqueName property"
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Name property"
+    },
+    {
+      "name": "Abbreviation",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Abbreviation property"
+    },
+    {
+      "name": "Color",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Color property"
+    },
+    {
+      "name": "SecondaryColor",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SecondaryColor property"
+    },
+    {
+      "name": "TertiaryColor",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TertiaryColor property"
+    },
+    {
+      "name": "Factors",
+      "type": "RacingClassFactor",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Factors property"
+    },
+    {
+      "name": "FirstFactor",
+      "type": "RacingClassFactor",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FirstFactor property"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "className": "DriverMultiseasonRaceDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "TotalOvertakes",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalOvertakes property"
+    },
+    {
+      "name": "AverageOvertakesPerRace",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AverageOvertakesPerRace property"
+    },
+    {
+      "name": "FastestLapCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of fastest lap"
+    },
+    {
+      "name": "TotalLaps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalLaps property"
+    },
+    {
+      "name": "TotalLeadLaps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalLeadLaps property"
+    },
+    {
+      "name": "IsHasOvertakesData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether has overtakes data"
+    },
+    {
+      "name": "IsHasLeadData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether has lead data"
+    }
+  ]
+}

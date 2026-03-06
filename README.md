@@ -59,6 +59,34 @@ See resolved values of your variables directly in the editor as grayed-out inlin
 
 ![Inline Hints Demo](docs/images/inline-hints-demo.png)
 
+### 🔮 Item Property Autocomplete
+
+Get intelligent autocomplete for `Item.*` properties based on your `ItemsSource` context - powered by real C# API models from RacingLeagueTools.
+
+**Supported Patterns:**
+
+- `{Item.` - Autocomplete based on detected `ItemsSource` in parent blocks or layouts
+- `{Session.`, `{Event.`, `{DriverInfo.` - Direct root object access without `Item`
+- `{Item.Team.Nation.Code}` - Full nested navigation with autocomplete at each level
+- `{Item.Driver0.Name}` - Collection indexing support (Driver0, Driver1, etc.)
+
+**Key Features:**
+
+- 🎯 Context-aware suggestions based on actual C# data types
+- 📦 Works in components - automatically finds `ItemsSource` from layout usage
+- 🔗 Shows inherited properties from base classes
+- 📝 Rich documentation with property types (string, int, bool, collections)
+- 🌐 Supports 46 API classes with 1000+ properties
+- 📊 Context info display - see which object type you're working with
+
+**Coverage:**
+
+Session, Season, Standings, Championship, Statistics, Penalties, League roles, and more - with full inheritance chains and nested object navigation.
+
+![ItemPropertyAutocompleteExample](docs/images/ItemPropertyAutocompleteExample.png)
+
+![RootPropertyAutocompleteExample](docs/images/RootPropertyAutocompleteExample.png)
+
 ### ⌨️ Keyboard Shortcuts
 
 Boost your productivity with convenient keyboard shortcuts:

@@ -1,0 +1,138 @@
+{
+  "className": "LineupRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Driver",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "Team",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Team property"
+    },
+    {
+      "name": "Car",
+      "type": "CarRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Car property"
+    },
+    {
+      "name": "SeatType",
+      "type": "DriverStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SeatType property"
+    },
+    {
+      "name": "SeatPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "Badge",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Badge property"
+    },
+    {
+      "name": "DriverRaces",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DriverRaces property"
+    },
+    {
+      "name": "DriverSkips",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DriverSkips property"
+    },
+    {
+      "name": "IsDriverSet",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether driver set"
+    },
+    {
+      "name": "IsCarSet",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether car set"
+    },
+    {
+      "name": "Season",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Season property"
+    },
+    {
+      "name": "IsNextTeam",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether next team"
+    },
+    {
+      "name": "LineupsBasedType",
+      "type": "LineupsBasedType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LineupsBasedType property"
+    },
+    {
+      "name": "DriverFeatures",
+      "type": "DriverFeatureInfo",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "DriverFeatures property"
+    },
+    {
+      "name": "PrimaryDriverFeature",
+      "type": "DriverFeatureInfo",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PrimaryDriverFeature property"
+    },
+    {
+      "name": "IsHaveDriverFeature",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have driver feature"
+    }
+  ]
+}

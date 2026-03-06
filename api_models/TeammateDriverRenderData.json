@@ -1,0 +1,202 @@
+{
+  "className": "TeammateDriverRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Teammates",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "IsExist",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether exist"
+    },
+    {
+      "name": "Driver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "TeamPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TeamPoints property"
+    },
+    {
+      "name": "EventsForTeam",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "EventsForTeam property"
+    },
+    {
+      "name": "RacesForTeam",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RacesForTeam property"
+    },
+    {
+      "name": "QualsForTeam",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "QualsForTeam property"
+    },
+    {
+      "name": "BestRacePosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "BestQualPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "CountP1",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of p1"
+    },
+    {
+      "name": "CountP3",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of p3"
+    },
+    {
+      "name": "CountQualP1",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of qual p1"
+    },
+    {
+      "name": "IsTeamPointsBest",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether team points best"
+    },
+    {
+      "name": "IsRacesForTeamBest",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether races for team best"
+    },
+    {
+      "name": "IsQualsForTeamBest",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether quals for team best"
+    },
+    {
+      "name": "IsEventsForTeamBest",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether events for team best"
+    },
+    {
+      "name": "IsBestRacePositionBest",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether best race position best"
+    },
+    {
+      "name": "IsBestQualPositionBest",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether best qual position best"
+    },
+    {
+      "name": "IsCountP1Best",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether count p1 best"
+    },
+    {
+      "name": "IsCountP3Best",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether count p3 best"
+    },
+    {
+      "name": "IsCountQualP1Best",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether count qual p1 best"
+    },
+    {
+      "name": "RaceH2H",
+      "type": "TeammateH2HDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceH2H property"
+    },
+    {
+      "name": "QualH2H",
+      "type": "TeammateH2HDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "QualH2H property"
+    },
+    {
+      "name": "AbsoluteRaceH2H",
+      "type": "TeammateH2HDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "AbsoluteRaceH2H property"
+    },
+    {
+      "name": "AbsoluteQualH2H",
+      "type": "TeammateH2HDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "AbsoluteQualH2H property"
+    }
+  ]
+}

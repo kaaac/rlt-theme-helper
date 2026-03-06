@@ -1,0 +1,42 @@
+{
+  "className": "EventPenaltiesRenderHost",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Event",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Event property"
+    },
+    {
+      "name": "Penalties",
+      "type": "PenaltyItemRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Penalties property"
+    },
+    {
+      "name": "IsFullPenaltiesForEvent",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether full penalties for event"
+    },
+    {
+      "name": "IsSinglePenalty",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether single penalty"
+    }
+  ]
+}

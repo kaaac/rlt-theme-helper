@@ -1,5 +1,37 @@
 # Change Log
 
+## [0.5.0] - 2026-03-06
+
+### ✨ Major Features
+
+#### 🔮 Item Property Autocomplete
+
+- Intelligent autocomplete for `Item.*` properties based on `ItemsSource` context
+- Powered by real C# API models from RacingLeagueTools renderer
+- Support for 46 API classes with 1000+ properties:
+  - Session: `DriverSessionRenderData`, `SessionRenderData`, `StandingsSessionRenderData`
+  - Season: `DriverSeasonRenderData`, `TeamSeasonRenderData`, `EventRenderData`, `LineupRenderData`
+  - Standings: `StandingsSeasonRenderData`, `DriverEventRenderData`, `TeamEventRenderData`
+  - Championship: `DriverRenderData`, `TeamRenderData`, `CarRenderData`, `TrackRenderData`
+  - Statistics, Penalties, League roles, and more
+- Root object support: `{Session.`, `{Event.`, `{DriverInfo.`, `{Season.`, `{Standings.`
+- Nested navigation with autocomplete at each level: `{Item.Team.Nation.Code}`
+- Collection indexing: `{Item.Driver0.Name}`, `{Item.Driver1.Name}`
+- Component → Layout discovery: finds `ItemsSource` from component usage in layouts
+- Inheritance support: shows properties from base classes
+- Context information display: shows object type, source, and navigation path
+- Rich documentation with property types (string, int, bool, collections)
+- Debug output panel "RLT Item Provider" for troubleshooting
+- 36 ItemsSource → Class mappings for context detection
+- Expression-bodied properties support (Driver0, Driver1, etc.)
+- Fallback mappings for helper classes
+
+### 📝 New Files
+
+- `Providers/ItemPropertyCompletionProvider.js` - Main autocomplete provider
+- `api_models/*.json` - 46 class schemas + mapping.json
+- `Providers/ITEM_PROVIDER_README.md` - Detailed documentation
+
 ## [0.4.0] - 2025-11-26
 
 ### ✨ Major Features

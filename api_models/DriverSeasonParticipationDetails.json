@@ -1,0 +1,114 @@
+{
+  "className": "DriverSeasonParticipationDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "EventsParticipated",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "EventsParticipated property"
+    },
+    {
+      "name": "TotalEventsExpected",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalEventsExpected property"
+    },
+    {
+      "name": "EventCompletionRatePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "EventCompletionRatePercent property"
+    },
+    {
+      "name": "TotalRacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of total races"
+    },
+    {
+      "name": "TotalMajorRacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of total major races"
+    },
+    {
+      "name": "TotalRacesFinished",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalRacesFinished property"
+    },
+    {
+      "name": "TotalMajorRacesFinished",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalMajorRacesFinished property"
+    },
+    {
+      "name": "RaceCompletionRatePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RaceCompletionRatePercent property"
+    },
+    {
+      "name": "MajorRaceCompletionRatePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "MajorRaceCompletionRatePercent property"
+    },
+    {
+      "name": "TotalQualsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of total quals"
+    },
+    {
+      "name": "TotalMajorQualsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of total major quals"
+    },
+    {
+      "name": "TotalPracticesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of total practices"
+    },
+    {
+      "name": "TotalSessionsParticipated",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalSessionsParticipated property"
+    }
+  ]
+}

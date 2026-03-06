@@ -1,0 +1,82 @@
+{
+  "className": "StandingsSessionRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "DriverSession",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverSession property"
+    },
+    {
+      "name": "IsSessionMajorForSeason",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether session major for season"
+    },
+    {
+      "name": "IsSessionMajor",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether session major"
+    },
+    {
+      "name": "Points",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Points property"
+    },
+    {
+      "name": "DiscardedPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DiscardedPoints property"
+    },
+    {
+      "name": "IsSessionOnlyPointsDiscarded",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether session only points discarded"
+    },
+    {
+      "name": "IsSessionFullyDiscarded",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether session fully discarded"
+    },
+    {
+      "name": "Session",
+      "type": "SessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Session property"
+    },
+    {
+      "name": "IsSessionDiscarded",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether session discarded"
+    }
+  ]
+}

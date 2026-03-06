@@ -1,0 +1,122 @@
+{
+  "className": "DriverSeasonTeamDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "LineUpTeam",
+      "type": "TeamRenderData",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LineUpTeam property"
+    },
+    {
+      "name": "LastRaceTeam",
+      "type": "TeamRenderData",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LastRaceTeam property"
+    },
+    {
+      "name": "MostFrequentTeam",
+      "type": "TeamRenderData",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostFrequentTeam property"
+    },
+    {
+      "name": "TotalTeamsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of total teams"
+    },
+    {
+      "name": "HasTeamChanges",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "HasTeamChanges property"
+    },
+    {
+      "name": "HasMultipleTeams",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "HasMultipleTeams property"
+    },
+    {
+      "name": "TeamChangesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of team changes"
+    },
+    {
+      "name": "LineUpStatus",
+      "type": "DriverStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LineUpStatus property"
+    },
+    {
+      "name": "LastRaceStatus",
+      "type": "DriverStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LastRaceStatus property"
+    },
+    {
+      "name": "MostFrequentStatus",
+      "type": "DriverStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostFrequentStatus property"
+    },
+    {
+      "name": "HasStatusChanges",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "HasStatusChanges property"
+    },
+    {
+      "name": "StatusChangesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of status changes"
+    },
+    {
+      "name": "IsPrimaryDriver",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether primary driver"
+    },
+    {
+      "name": "IsReserveDriver",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether reserve driver"
+    }
+  ]
+}

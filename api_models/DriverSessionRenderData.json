@@ -1,0 +1,610 @@
+{
+  "className": "DriverSessionRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "LiveryPath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveryPath property"
+    },
+    {
+      "name": "Position",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "String",
+      "type": "string Pos",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "String property"
+    },
+    {
+      "name": "IncludeStatus",
+      "type": "string Pos",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "IncludeStatus property"
+    },
+    {
+      "name": "ClassificationPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "Driver",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "Team",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Team property"
+    },
+    {
+      "name": "Car",
+      "type": "CarRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Car property"
+    },
+    {
+      "name": "SeatType",
+      "type": "DriverStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SeatType property"
+    },
+    {
+      "name": "SeatPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "Status",
+      "type": "DriverSessionStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Status property"
+    },
+    {
+      "name": "Time",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "TimeMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value in milliseconds"
+    },
+    {
+      "name": "IntervalRace",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "IntervalRace property"
+    },
+    {
+      "name": "AbsoluteTime",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "AbsoluteTimeMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value in milliseconds"
+    },
+    {
+      "name": "FastestLapTime",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "FastestLapTimeMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value in milliseconds"
+    },
+    {
+      "name": "FastestLapTyres",
+      "type": "TyresType",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestLapTyres property"
+    },
+    {
+      "name": "FastestLapNumLap",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestLapNumLap property"
+    },
+    {
+      "name": "FastestLapSector1Ms",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestLapSector1Ms property"
+    },
+    {
+      "name": "FastestLapSector2Ms",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestLapSector2Ms property"
+    },
+    {
+      "name": "FastestLapSector3Ms",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestLapSector3Ms property"
+    },
+    {
+      "name": "FastestLapSector1",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestLapSector1 property"
+    },
+    {
+      "name": "FastestLapSector2",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestLapSector2 property"
+    },
+    {
+      "name": "FastestLapSector3",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestLapSector3 property"
+    },
+    {
+      "name": "IsOverallFastestSector1",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether overall fastest sector1"
+    },
+    {
+      "name": "IsOverallFastestSector2",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether overall fastest sector2"
+    },
+    {
+      "name": "IsOverallFastestSector3",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether overall fastest sector3"
+    },
+    {
+      "name": "QualQ1Time",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "QualQ2Time",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "QualQ3Time",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "QualQ1TimeMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value in milliseconds"
+    },
+    {
+      "name": "QualQ2TimeMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value in milliseconds"
+    },
+    {
+      "name": "QualQ3TimeMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value in milliseconds"
+    },
+    {
+      "name": "LapsCountQ1",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of laps q1"
+    },
+    {
+      "name": "LapsCountQ2",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of laps q2"
+    },
+    {
+      "name": "LapsCountQ3",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of laps q3"
+    },
+    {
+      "name": "IsFinished",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether finished"
+    },
+    {
+      "name": "IsRaceFastestLap",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether race fastest lap"
+    },
+    {
+      "name": "IsRaceDriverOfDay",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether race driver of day"
+    },
+    {
+      "name": "IsBestMomentDriver",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether best moment driver"
+    },
+    {
+      "name": "PenaltyTimeIngame",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyTimeIngame property"
+    },
+    {
+      "name": "PenaltyPosIngame",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPosIngame property"
+    },
+    {
+      "name": "PenaltyTimeStewards",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyTimeStewards property"
+    },
+    {
+      "name": "PenaltyPosStewards",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPosStewards property"
+    },
+    {
+      "name": "PenaltyTimeTotal",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyTimeTotal property"
+    },
+    {
+      "name": "PenaltyPosTotal",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPosTotal property"
+    },
+    {
+      "name": "PenaltyPoints",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPoints property"
+    },
+    {
+      "name": "PenaltyTimeStringLeftPart",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "PenaltyTimeStringRightPart",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "DriverPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverPoints property"
+    },
+    {
+      "name": "TeamPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TeamPoints property"
+    },
+    {
+      "name": "Session",
+      "type": "SessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Session property"
+    },
+    {
+      "name": "RaceNumber",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RaceNumber property"
+    },
+    {
+      "name": "IsHaveRaceNumber",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have race number"
+    },
+    {
+      "name": "LapsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of laps"
+    },
+    {
+      "name": "GridPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "PositionJump",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "PitsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of pits"
+    },
+    {
+      "name": "Stints",
+      "type": "TyresStint",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Stints property"
+    },
+    {
+      "name": "OvertakesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of overtakes"
+    },
+    {
+      "name": "LosePositionsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of lose positions"
+    },
+    {
+      "name": "MaxSpeed",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "MaxSpeed property"
+    },
+    {
+      "name": "LeadLaps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LeadLaps property"
+    },
+    {
+      "name": "LeadDistance",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LeadDistance property"
+    },
+    {
+      "name": "RaceDistancePercentage",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RaceDistancePercentage property"
+    },
+    {
+      "name": "LiveryPath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveryPath property"
+    },
+    {
+      "name": "DriverFeatures",
+      "type": "DriverFeatureInfo",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "DriverFeatures property"
+    },
+    {
+      "name": "RacingClass",
+      "type": "RacingClassInfo",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RacingClass property"
+    },
+    {
+      "name": "DriverPointsString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DriverPointsString property"
+    },
+    {
+      "name": "TeamPointsString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TeamPointsString property"
+    },
+    {
+      "name": "PrimaryDriverFeature",
+      "type": "DriverFeatureInfo",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PrimaryDriverFeature property"
+    },
+    {
+      "name": "IsHaveDriverFeature",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have driver feature"
+    },
+    {
+      "name": "IsHaveRacingClass",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have racing class"
+    }
+  ]
+}

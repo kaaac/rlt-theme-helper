@@ -1,0 +1,122 @@
+{
+  "className": "DriverRenderHost",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Driver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "DriverSeason",
+      "type": "DriverSeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverSeason property"
+    },
+    {
+      "name": "Team",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Team property"
+    },
+    {
+      "name": "Car",
+      "type": "CarRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Car property"
+    },
+    {
+      "name": "Teammates",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Teammates property"
+    },
+    {
+      "name": "TeammatesSeason",
+      "type": "DriverSeasonRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "TeammatesSeason property"
+    },
+    {
+      "name": "Teammate0",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Teammate0 property"
+    },
+    {
+      "name": "Teammate1",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Teammate1 property"
+    },
+    {
+      "name": "Teammate2",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Teammate2 property"
+    },
+    {
+      "name": "Teammate3",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Teammate3 property"
+    },
+    {
+      "name": "TeammateSeason0",
+      "type": "DriverSeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TeammateSeason0 property"
+    },
+    {
+      "name": "TeammateSeason1",
+      "type": "DriverSeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TeammateSeason1 property"
+    },
+    {
+      "name": "TeammateSeason2",
+      "type": "DriverSeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TeammateSeason2 property"
+    },
+    {
+      "name": "TeammateSeason3",
+      "type": "DriverSeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TeammateSeason3 property"
+    }
+  ]
+}

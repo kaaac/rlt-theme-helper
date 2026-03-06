@@ -1,0 +1,58 @@
+{
+  "className": "DriverSessionRenderHost",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Driver",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "Teammates",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Teammates property"
+    },
+    {
+      "name": "Teammate0",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Teammate0 property"
+    },
+    {
+      "name": "Teammate1",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Teammate1 property"
+    },
+    {
+      "name": "Teammate2",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Teammate2 property"
+    },
+    {
+      "name": "Teammate3",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Teammate3 property"
+    }
+  ]
+}

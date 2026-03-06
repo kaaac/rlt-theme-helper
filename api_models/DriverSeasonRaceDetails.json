@@ -1,0 +1,274 @@
+{
+  "className": "DriverSeasonRaceDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "FastestLapWinsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of fastest lap wins"
+    },
+    {
+      "name": "AverageFastestLapPosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "AverageFastestLapGapToLeader",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AverageFastestLapGapToLeader property"
+    },
+    {
+      "name": "IsHasFastestLapData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether has fastest lap data"
+    },
+    {
+      "name": "BestMaxSpeed",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "BestMaxSpeed property"
+    },
+    {
+      "name": "AverageMaxSpeed",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AverageMaxSpeed property"
+    },
+    {
+      "name": "AverageMaxSpeedPosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "AverageMaxSpeedGapToLeaderKmh",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AverageMaxSpeedGapToLeaderKmh property"
+    },
+    {
+      "name": "AverageMaxSpeedGapToLeaderPercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AverageMaxSpeedGapToLeaderPercent property"
+    },
+    {
+      "name": "MaxSpeedWinsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of max speed wins"
+    },
+    {
+      "name": "IsHasMaxSpeedData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether has max speed data"
+    },
+    {
+      "name": "TotalOvertakes",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalOvertakes property"
+    },
+    {
+      "name": "AverageOvertakesPerRace",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AverageOvertakesPerRace property"
+    },
+    {
+      "name": "BestOvertakesInRace",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "BestOvertakesInRace property"
+    },
+    {
+      "name": "IsHasOvertakesData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether has overtakes data"
+    },
+    {
+      "name": "TotalPositionsLost",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "AveragePositionsLostPerRace",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "IsHasDefenseData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether has defense data"
+    },
+    {
+      "name": "TotalLaps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalLaps property"
+    },
+    {
+      "name": "TotalPossibleLaps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalPossibleLaps property"
+    },
+    {
+      "name": "LapCompletionPercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LapCompletionPercent property"
+    },
+    {
+      "name": "SeasonLapCoveragePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonLapCoveragePercent property"
+    },
+    {
+      "name": "TotalLeadLaps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalLeadLaps property"
+    },
+    {
+      "name": "TotalLeadDistance",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalLeadDistance property"
+    },
+    {
+      "name": "TotalLeadDistanceKm",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalLeadDistanceKm property"
+    },
+    {
+      "name": "IsHasLeadData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether has lead data"
+    },
+    {
+      "name": "TotalPitStops",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalPitStops property"
+    },
+    {
+      "name": "AveragePitStopsPerRace",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AveragePitStopsPerRace property"
+    },
+    {
+      "name": "IsHasPitData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether has pit data"
+    },
+    {
+      "name": "TotalStintCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of total stint"
+    },
+    {
+      "name": "TotalStintLaps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalStintLaps property"
+    },
+    {
+      "name": "AverageStintLaps",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AverageStintLaps property"
+    },
+    {
+      "name": "MostUsedTyre",
+      "type": "TyreTypeInfo",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostUsedTyre property"
+    }
+  ]
+}

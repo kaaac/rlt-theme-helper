@@ -1,0 +1,34 @@
+{
+  "className": "EventSessionPreset",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Name property"
+    },
+    {
+      "name": "Sessions",
+      "type": "EventSessionDescription",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Sessions property"
+    },
+    {
+      "name": "IsPrimary",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether primary"
+    }
+  ]
+}

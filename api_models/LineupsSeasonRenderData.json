@@ -1,0 +1,34 @@
+{
+  "className": "LineupsSeasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Lineups",
+      "type": "LineupRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Lineups property"
+    },
+    {
+      "name": "LineupsReserves",
+      "type": "LineupRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "LineupsReserves property"
+    },
+    {
+      "name": "Teams",
+      "type": "LineupTeamCarRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Teams property"
+    }
+  ]
+}

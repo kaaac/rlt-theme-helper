@@ -1,0 +1,82 @@
+{
+  "className": "TrackMultiseasonQualDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "FastestQualLapTime",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "FastestQualLapDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestQualLapDriver property"
+    },
+    {
+      "name": "FastestQualLapTeam",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestQualLapTeam property"
+    },
+    {
+      "name": "FastestQualLapSeason",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestQualLapSeason property"
+    },
+    {
+      "name": "FastestQualLapSeasonName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestQualLapSeasonName property"
+    },
+    {
+      "name": "MostPolesDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostPolesDriver property"
+    },
+    {
+      "name": "MostPolesDriverCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of most poles driver"
+    },
+    {
+      "name": "MostPolesTeam",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostPolesTeam property"
+    },
+    {
+      "name": "MostPolesTeamCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of most poles team"
+    }
+  ]
+}
