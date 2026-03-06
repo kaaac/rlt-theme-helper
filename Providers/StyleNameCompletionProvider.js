@@ -15,8 +15,28 @@ class StyleNameCompletionProvider {
         try {
             const componentNames = await getPropertyNames('StyleName', 'styles')
             const completionItems = componentNames.map(component => {
-                const item = new vscode.CompletionItem(component.name, vscode.CompletionItemKind.Value);
+                const item = new vscode.CompletionItem(component.name, vscode.CompletionItemKind.Color);
                 item.detail = component.details + " Style";
+                
+                const markdown = new vscode.MarkdownString();
+                
+                if (component.source) {
+                    const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
+                    if (workspaceFolder) {
+                        const absolutePath = vscode.Uri.joinPath(workspaceFolder.uri, component.source);
+                        markdown.appendMarkdown(`Style defined in [${component.source}](${absolutePath})\n\n`);
+                    }
+                }
+                
+                // Dodaj definicję stylu
+                if (component.definition && !component.isPath) {
+                    markdown.appendMarkdown('**Definition:**\n');
+                    markdown.appendCodeblock(JSON.stringify(component.definition, null, 2), 'json');
+                }
+                
+                markdown.isTrusted = true;
+                item.documentation = markdown;
+                
                 return item;
             });
             return completionItems;

@@ -5,6 +5,7 @@ const ComponentNameCompletionProvider = require('./Providers/ComponentNameComple
 const GlobalVarsCompletionProvider = require('./Providers/GlobalVarsCompletionProvider');
 const DataConvertersCompletionProvider = require('./Providers/DataConvertersCompletionProvider');
 const StyleNameCompletionProvider = require('./Providers/StyleNameCompletionProvider');
+const TriggerNameCompletionProvider = require('./Providers/TriggerNameCompletionProvider');
 const ItemPropertyCompletionProvider = require('./Providers/ItemPropertyCompletionProvider');
 const ColorPickerProvider = require('./Providers/ColorPickerProvider');
 const GlobalVarsInlayHintsProvider = require('./Providers/GlobalVarsInlayHintsProvider');
@@ -20,7 +21,8 @@ function activate(context) {
 		new GlobalVarsCompletionProvider(),
 		new ComponentNameCompletionProvider(),
 		new DataConvertersCompletionProvider(),
-		new StyleNameCompletionProvider()
+		new StyleNameCompletionProvider(),
+		new TriggerNameCompletionProvider()
 	]
 	for (const provider of providers){
 		context.subscriptions.push(vscode.languages.registerCompletionItemProvider({ scheme: 'file', language: 'json'}, provider, '"'));
