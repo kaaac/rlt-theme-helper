@@ -1,0 +1,26 @@
+{
+  "className": "EventsSeasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Events",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Events property"
+    },
+    {
+      "name": "EventsIncludingBreaks",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "EventsIncludingBreaks property"
+    }
+  ]
+}

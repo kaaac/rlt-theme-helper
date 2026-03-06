@@ -1,0 +1,122 @@
+{
+  "className": "DriverMultiseasonSeasonEntry",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Season",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Season property"
+    },
+    {
+      "name": "SeasonName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonName property"
+    },
+    {
+      "name": "IsParticipated",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether participated"
+    },
+    {
+      "name": "Points",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Points property"
+    },
+    {
+      "name": "Position",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "PositionString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "Wins",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Wins property"
+    },
+    {
+      "name": "Podiums",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Podiums property"
+    },
+    {
+      "name": "BestRacePosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "AverageRacePosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "AverageQualPosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "RacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of races"
+    },
+    {
+      "name": "EventsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of events"
+    },
+    {
+      "name": "IsSeasonCompleted",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether season completed"
+    }
+  ]
+}

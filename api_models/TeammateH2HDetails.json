@@ -1,0 +1,90 @@
+{
+  "className": "TeammateH2HDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Teammates",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "ContraDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "ContraDriver property"
+    },
+    {
+      "name": "Wins",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Wins property"
+    },
+    {
+      "name": "Losses",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Losses property"
+    },
+    {
+      "name": "Draws",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Draws property"
+    },
+    {
+      "name": "Total",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Total property"
+    },
+    {
+      "name": "WinsString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "WinsString property"
+    },
+    {
+      "name": "LossesString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LossesString property"
+    },
+    {
+      "name": "DrawsString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DrawsString property"
+    },
+    {
+      "name": "WinPercentageString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "WinPercentageString property"
+    },
+    {
+      "name": "IsWinning",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether winning"
+    }
+  ]
+}

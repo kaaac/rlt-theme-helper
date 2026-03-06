@@ -1,0 +1,18 @@
+{
+  "className": "MulticlassConfiguration",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "RacingClasses",
+      "type": "RacingClassInfo",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "RacingClasses property"
+    }
+  ]
+}

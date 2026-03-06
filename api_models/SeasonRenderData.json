@@ -1,0 +1,324 @@
+{
+  "className": "SeasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "NamedRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "LeagueInfo",
+      "type": "LeagueRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LeagueInfo property"
+    },
+    {
+      "name": "FullName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FullName property"
+    },
+    {
+      "name": "CompletedStatus",
+      "type": "CompletedStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "CompletedStatus property"
+    },
+    {
+      "name": "Color",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Color property"
+    },
+    {
+      "name": "SecondaryColor",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SecondaryColor property"
+    },
+    {
+      "name": "TertiaryColor",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TertiaryColor property"
+    },
+    {
+      "name": "Championship",
+      "type": "ChampionshipRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Championship property"
+    },
+    {
+      "name": "MainLeagueCategory",
+      "type": "LeagueCategoryRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MainLeagueCategory property"
+    },
+    {
+      "name": "LeagueCategories",
+      "type": "LeagueCategoryRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "LeagueCategories property"
+    },
+    {
+      "name": "LineupsBasedType",
+      "type": "LineupsBasedType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LineupsBasedType property"
+    },
+    {
+      "name": "GridSize",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "GridSize property"
+    },
+    {
+      "name": "IsSeparateReservesAtStandings",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether separate reserves at standings"
+    },
+    {
+      "name": "IsShowTimesInsteadGapInQual",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether show times instead gap in qual"
+    },
+    {
+      "name": "IsStandingsShowAllLineups",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether standings show all lineups"
+    },
+    {
+      "name": "IsStandingsShowArchiveDrivers",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether standings show archive drivers"
+    },
+    {
+      "name": "IsStandingsShowReserves",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether standings show reserves"
+    },
+    {
+      "name": "SeasonProgressPercent",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonProgressPercent property"
+    },
+    {
+      "name": "SeasonProgressPercentString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonProgressPercentString property"
+    },
+    {
+      "name": "SeasonLeader",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SeasonLeader property"
+    },
+    {
+      "name": "SeasonLeaderString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonLeaderString property"
+    },
+    {
+      "name": "SeasonCurrentNumberEvent",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonCurrentNumberEvent property"
+    },
+    {
+      "name": "SeasonCurrentNumberEventExcludingNonChampionship",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonCurrentNumberEventExcludingNonChampionship property"
+    },
+    {
+      "name": "SeasonOverallNumberEvents",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonOverallNumberEvents property"
+    },
+    {
+      "name": "SeasonOverallNumberEventsExcludingNonChampionship",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonOverallNumberEventsExcludingNonChampionship property"
+    },
+    {
+      "name": "SeatsPerTeam",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeatsPerTeam property"
+    },
+    {
+      "name": "IsProFeaturesEnabled",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether pro features enabled"
+    },
+    {
+      "name": "DefaultEventStartTime",
+      "type": "TimeOnly",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DefaultEventStartTime property"
+    },
+    {
+      "name": "IsEventDateOnly",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether event date only"
+    },
+    {
+      "name": "IsSessionDateOnly",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether session date only"
+    },
+    {
+      "name": "EventFormat",
+      "type": "EventFormat",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "EventFormat property"
+    },
+    {
+      "name": "MulticlassConfiguration",
+      "type": "MulticlassConfiguration",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MulticlassConfiguration property"
+    },
+    {
+      "name": "IsHaveMulticlassConfiguration",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have multiclass configuration"
+    }
+  ],
+  "inheritedProperties": [
+    {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypeVariants",
+      "type": "Dictionary<LogotypeVariant, string>",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true
+    },
+    {
+      "name": "DefaultLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "AlternativeLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "DarkLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LightLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "GrayedLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    }
+  ]
+}

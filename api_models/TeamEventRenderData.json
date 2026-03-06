@@ -1,0 +1,226 @@
+{
+  "className": "TeamEventRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Event",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Event property"
+    },
+    {
+      "name": "Races",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Races property"
+    },
+    {
+      "name": "Quals",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Quals property"
+    },
+    {
+      "name": "Practices",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Practices property"
+    },
+    {
+      "name": "MajorRaces",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "MajorRaces property"
+    },
+    {
+      "name": "MajorQuals",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "MajorQuals property"
+    },
+    {
+      "name": "StandingsRaces",
+      "type": "StandingsSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "StandingsRaces property"
+    },
+    {
+      "name": "StandingsQuals",
+      "type": "StandingsSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "StandingsQuals property"
+    },
+    {
+      "name": "StandingsPractices",
+      "type": "StandingsSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "StandingsPractices property"
+    },
+    {
+      "name": "Points",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Points property"
+    },
+    {
+      "name": "RacesClassificationPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "RacesMajorClassificationPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "QualsClassificationPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "RacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of races"
+    },
+    {
+      "name": "RacesAllCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of races all"
+    },
+    {
+      "name": "QualsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of quals"
+    },
+    {
+      "name": "RacesFinish",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RacesFinish property"
+    },
+    {
+      "name": "RacesAllFinish",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RacesAllFinish property"
+    },
+    {
+      "name": "PenaltyPoints",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPoints property"
+    },
+    {
+      "name": "PenaltyTimeGame",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyTimeGame property"
+    },
+    {
+      "name": "PenaltyTimeStewards",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyTimeStewards property"
+    },
+    {
+      "name": "PenaltyPosGame",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPosGame property"
+    },
+    {
+      "name": "PenaltyPosStewards",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPosStewards property"
+    },
+    {
+      "name": "PenaltyTimeSum",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyTimeSum property"
+    },
+    {
+      "name": "PenaltyPosSum",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPosSum property"
+    },
+    {
+      "name": "AllStandingsSessions",
+      "type": "StandingsSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "AllStandingsSessions property"
+    },
+    {
+      "name": "PointsValue",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PointsValue property"
+    }
+  ]
+}

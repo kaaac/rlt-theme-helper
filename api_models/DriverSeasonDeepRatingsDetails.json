@@ -1,0 +1,242 @@
+{
+  "className": "DriverSeasonDeepRatingsDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "IsRatingsAvailable",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether ratings available"
+    },
+    {
+      "name": "RacePaceRating",
+      "type": "RatingValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RacePaceRating property"
+    },
+    {
+      "name": "RacePacePosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "RacePaceAveragePosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "RacePaceRatingsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of race pace ratings"
+    },
+    {
+      "name": "RacePaceRatingChange",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RacePaceRatingChange property"
+    },
+    {
+      "name": "IsRacePaceRatingChangePositive",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether race pace rating change positive"
+    },
+    {
+      "name": "IsRacePaceRatingChangeNegative",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether race pace rating change negative"
+    },
+    {
+      "name": "ConsistencyRating",
+      "type": "RatingValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "ConsistencyRating property"
+    },
+    {
+      "name": "ConsistencyPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "ConsistencyAveragePosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "ConsistencyRatingsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of consistency ratings"
+    },
+    {
+      "name": "ConsistencyRatingChange",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ConsistencyRatingChange property"
+    },
+    {
+      "name": "IsConsistencyRatingChangePositive",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether consistency rating change positive"
+    },
+    {
+      "name": "IsConsistencyRatingChangeNegative",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether consistency rating change negative"
+    },
+    {
+      "name": "AttackRating",
+      "type": "RatingValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "AttackRating property"
+    },
+    {
+      "name": "AttackPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "AttackAveragePosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "AttackRatingsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of attack ratings"
+    },
+    {
+      "name": "AttackRatingChange",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AttackRatingChange property"
+    },
+    {
+      "name": "IsAttackRatingChangePositive",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether attack rating change positive"
+    },
+    {
+      "name": "IsAttackRatingChangeNegative",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether attack rating change negative"
+    },
+    {
+      "name": "DefenseRating",
+      "type": "RatingValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DefenseRating property"
+    },
+    {
+      "name": "DefensePosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "DefenseAveragePosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "DefenseRatingsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of defense ratings"
+    },
+    {
+      "name": "DefenseRatingChange",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DefenseRatingChange property"
+    },
+    {
+      "name": "IsDefenseRatingChangePositive",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether defense rating change positive"
+    },
+    {
+      "name": "IsDefenseRatingChangeNegative",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether defense rating change negative"
+    }
+  ]
+}

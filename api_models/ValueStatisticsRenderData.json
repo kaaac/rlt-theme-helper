@@ -1,0 +1,90 @@
+{
+  "className": "ValueStatisticsRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Value",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Value property"
+    },
+    {
+      "name": "IsEnabled",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether enabled"
+    },
+    {
+      "name": "IsHighlighted",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether highlighted"
+    },
+    {
+      "name": "RawValue",
+      "type": "any",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RawValue property"
+    },
+    {
+      "name": "Type",
+      "type": "ValueStatisticsType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Type property"
+    },
+    {
+      "name": "Level",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Level property"
+    },
+    {
+      "name": "Stints",
+      "type": "TyresStint",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Stints property"
+    },
+    {
+      "name": "Tyres",
+      "type": "TyresType",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Tyres property"
+    },
+    {
+      "name": "IsBig",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether big"
+    },
+    {
+      "name": "IsSmall",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether small"
+    }
+  ]
+}

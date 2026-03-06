@@ -1,0 +1,504 @@
+{
+  "generated": "2026-03-06T08:05:42.651Z",
+  "totalClasses": 79,
+  "classes": {
+    "EventFormat": {
+      "file": "EventFormat.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 2
+    },
+    "EventSessionDescription": {
+      "file": "EventSessionDescription.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 3
+    },
+    "EventSessionPreset": {
+      "file": "EventSessionPreset.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 3
+    },
+    "MulticlassConfiguration": {
+      "file": "MulticlassConfiguration.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 1
+    },
+    "NamedRenderData": {
+      "file": "NamedRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 8
+    },
+    "RacingClassFactor": {
+      "file": "RacingClassFactor.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 3
+    },
+    "RacingClassInfo": {
+      "file": "RacingClassInfo.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 8
+    },
+    "BaseRenderData": {
+      "file": "BaseRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 0
+    },
+    "CarClassRenderData": {
+      "file": "CarClassRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 0
+    },
+    "CarRenderData": {
+      "file": "CarRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 12
+    },
+    "ChampionshipRenderData": {
+      "file": "ChampionshipRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 9
+    },
+    "DriverRenderData": {
+      "file": "DriverRenderData.json",
+      "namespace": "",
+      "propertyCount": 18
+    },
+    "DriverRenderHost": {
+      "file": "DriverRenderHost.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 14
+    },
+    "GameRenderData": {
+      "file": "GameRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 0
+    },
+    "NationRenderData": {
+      "file": "NationRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 4
+    },
+    "TeamRenderData": {
+      "file": "TeamRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 15
+    },
+    "TrackRenderData": {
+      "file": "TrackRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 10
+    },
+    "VendorRenderData": {
+      "file": "VendorRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 1
+    },
+    "DeepRatingsSeasonRenderData": {
+      "file": "DeepRatingsSeasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DeepRatingsSeason",
+      "propertyCount": 4
+    },
+    "DriverMultiseasonDisciplineDetails": {
+      "file": "DriverMultiseasonDisciplineDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+      "propertyCount": 6
+    },
+    "DriverMultiseasonParticipationDetails": {
+      "file": "DriverMultiseasonParticipationDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+      "propertyCount": 9
+    },
+    "DriverMultiseasonRaceDetails": {
+      "file": "DriverMultiseasonRaceDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+      "propertyCount": 7
+    },
+    "DriverMultiseasonPointsDetails": {
+      "file": "DriverMultiseasonPointsDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+      "propertyCount": 8
+    },
+    "DriverMultiseasonPositionsDetails": {
+      "file": "DriverMultiseasonPositionsDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+      "propertyCount": 12
+    },
+    "DriverMultiseasonStandingsDetails": {
+      "file": "DriverMultiseasonStandingsDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+      "propertyCount": 9
+    },
+    "DriverMultiseasonSeasonEntry": {
+      "file": "DriverMultiseasonSeasonEntry.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason",
+      "propertyCount": 14
+    },
+    "DriverMultiseasonTrackEntry": {
+      "file": "DriverMultiseasonTrackEntry.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason",
+      "propertyCount": 8
+    },
+    "DriverStatisticsMultiseasonRenderData": {
+      "file": "DriverStatisticsMultiseasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason",
+      "propertyCount": 17
+    },
+    "DriversStatisticsMultiseasonRenderData": {
+      "file": "DriversStatisticsMultiseasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason",
+      "propertyCount": 5
+    },
+    "LeagueCategoryRenderData": {
+      "file": "LeagueCategoryRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 6
+    },
+    "LeagueRenderData": {
+      "file": "LeagueRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 4
+    },
+    "LeagueRoleRenderData": {
+      "file": "LeagueRoleRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 6
+    },
+    "DriverPenaltiesSeasonRenderData": {
+      "file": "DriverPenaltiesSeasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 17
+    },
+    "EventPenaltiesRenderHost": {
+      "file": "EventPenaltiesRenderHost.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 4
+    },
+    "PenaltyActionRenderData": {
+      "file": "PenaltyActionRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 21
+    },
+    "PenaltyItemRenderData": {
+      "file": "PenaltyItemRenderData.json",
+      "namespace": "",
+      "propertyCount": 37
+    },
+    "PenaltyOffenseRenderData": {
+      "file": "PenaltyOffenseRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 13
+    },
+    "SeasonPenaltiesRenderHost": {
+      "file": "SeasonPenaltiesRenderHost.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 2
+    },
+    "EventRenderData": {
+      "file": "EventRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 22
+    },
+    "EventsSeasonRenderData": {
+      "file": "EventsSeasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 2
+    },
+    "LineupRenderData": {
+      "file": "LineupRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 16
+    },
+    "LineupTeamCarRenderData": {
+      "file": "LineupTeamCarRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 7
+    },
+    "LineupsSeasonRenderData": {
+      "file": "LineupsSeasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 3
+    },
+    "SeasonRenderData": {
+      "file": "SeasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 32
+    },
+    "DriverSessionRenderData": {
+      "file": "DriverSessionRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 75
+    },
+    "DriverSessionRenderHost": {
+      "file": "DriverSessionRenderHost.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 6
+    },
+    "SessionRenderData": {
+      "file": "SessionRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 51
+    },
+    "DriverSeasonChampionshipDetails": {
+      "file": "DriverSeasonChampionshipDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+      "propertyCount": 11
+    },
+    "DriverSeasonDeepRatingsDetails": {
+      "file": "DriverSeasonDeepRatingsDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+      "propertyCount": 29
+    },
+    "DriverSeasonDiscardingDetails": {
+      "file": "DriverSeasonDiscardingDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+      "propertyCount": 11
+    },
+    "DriverSeasonParticipationDetails": {
+      "file": "DriverSeasonParticipationDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+      "propertyCount": 13
+    },
+    "DriverSeasonPenaltiesDetails": {
+      "file": "DriverSeasonPenaltiesDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+      "propertyCount": 9
+    },
+    "DriverSeasonPositionsDetails": {
+      "file": "DriverSeasonPositionsDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+      "propertyCount": 18
+    },
+    "DriverSeasonQualDetails": {
+      "file": "DriverSeasonQualDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+      "propertyCount": 10
+    },
+    "DriverSeasonRaceDetails": {
+      "file": "DriverSeasonRaceDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+      "propertyCount": 33
+    },
+    "DriverSeasonTeamDetails": {
+      "file": "DriverSeasonTeamDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+      "propertyCount": 14
+    },
+    "DriverEventRenderData": {
+      "file": "DriverEventRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 41
+    },
+    "DriverSeasonRenderData": {
+      "file": "DriverSeasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 55
+    },
+    "StandingsSeasonRenderData": {
+      "file": "StandingsSeasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 11
+    },
+    "StandingsSessionRenderData": {
+      "file": "StandingsSessionRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 9
+    },
+    "TeamEventRenderData": {
+      "file": "TeamEventRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 27
+    },
+    "TeamSeasonRenderData": {
+      "file": "TeamSeasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models",
+      "propertyCount": 43
+    },
+    "DriverCompactRenderData": {
+      "file": "DriverCompactRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 2
+    },
+    "DriverStatisticsRenderData": {
+      "file": "DriverStatisticsRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 16
+    },
+    "StatisticsRenderHost": {
+      "file": "StatisticsRenderHost.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 17
+    },
+    "ValueStatisticsColumnRenderData": {
+      "file": "ValueStatisticsColumnRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 5
+    },
+    "ValueStatisticsRenderData": {
+      "file": "ValueStatisticsRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 10
+    },
+    "TeamMultiseasonRenderData": {
+      "file": "TeamMultiseasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStandingsMultiseason",
+      "propertyCount": 26
+    },
+    "TeamMultiseasonSeasonEntry": {
+      "file": "TeamMultiseasonSeasonEntry.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStandingsMultiseason",
+      "propertyCount": 25
+    },
+    "TeamStandingsMultiseasonRenderData": {
+      "file": "TeamStandingsMultiseasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStandingsMultiseason",
+      "propertyCount": 5
+    },
+    "TeammateDriverRenderData": {
+      "file": "TeammateDriverRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Teammates",
+      "propertyCount": 24
+    },
+    "TeammateH2HDetails": {
+      "file": "TeammateH2HDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Teammates",
+      "propertyCount": 10
+    },
+    "TeammatesSeasonRenderData": {
+      "file": "TeammatesSeasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Teammates",
+      "propertyCount": 7
+    },
+    "TrackMultiseasonQualDetails": {
+      "file": "TrackMultiseasonQualDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason.Details",
+      "propertyCount": 9
+    },
+    "TrackMultiseasonRaceDetails": {
+      "file": "TrackMultiseasonRaceDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason.Details",
+      "propertyCount": 17
+    },
+    "TrackMultiseasonRecordsDetails": {
+      "file": "TrackMultiseasonRecordsDetails.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason.Details",
+      "propertyCount": 7
+    },
+    "TrackMultiseasonSeasonEntry": {
+      "file": "TrackMultiseasonSeasonEntry.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason",
+      "propertyCount": 8
+    },
+    "TrackStatisticsMultiseasonRenderData": {
+      "file": "TrackStatisticsMultiseasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason",
+      "propertyCount": 12
+    },
+    "TracksStatisticsMultiseasonRenderData": {
+      "file": "TracksStatisticsMultiseasonRenderData.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason",
+      "propertyCount": 5
+    }
+  },
+  "namespaces": {
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects": [
+      "EventFormat",
+      "EventSessionDescription",
+      "EventSessionPreset",
+      "MulticlassConfiguration",
+      "NamedRenderData",
+      "RacingClassFactor",
+      "RacingClassInfo",
+      "BaseRenderData",
+      "DriverRenderHost",
+      "LeagueRenderData",
+      "LeagueRoleRenderData",
+      "DriverPenaltiesSeasonRenderData",
+      "EventPenaltiesRenderHost",
+      "PenaltyActionRenderData",
+      "PenaltyOffenseRenderData",
+      "SeasonPenaltiesRenderHost",
+      "EventsSeasonRenderData",
+      "LineupTeamCarRenderData",
+      "LineupsSeasonRenderData",
+      "DriverSessionRenderHost",
+      "DriverEventRenderData",
+      "StandingsSessionRenderData",
+      "DriverCompactRenderData",
+      "DriverStatisticsRenderData",
+      "StatisticsRenderHost",
+      "ValueStatisticsColumnRenderData",
+      "ValueStatisticsRenderData"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models": [
+      "CarClassRenderData",
+      "CarRenderData",
+      "ChampionshipRenderData",
+      "GameRenderData",
+      "NationRenderData",
+      "TeamRenderData",
+      "TrackRenderData",
+      "VendorRenderData",
+      "LeagueCategoryRenderData",
+      "EventRenderData",
+      "LineupRenderData",
+      "SeasonRenderData",
+      "DriverSessionRenderData",
+      "SessionRenderData",
+      "DriverSeasonRenderData",
+      "StandingsSeasonRenderData",
+      "TeamEventRenderData",
+      "TeamSeasonRenderData"
+    ],
+    "": [
+      "DriverRenderData",
+      "PenaltyItemRenderData"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DeepRatingsSeason": [
+      "DeepRatingsSeasonRenderData"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details": [
+      "DriverMultiseasonDisciplineDetails",
+      "DriverMultiseasonParticipationDetails",
+      "DriverMultiseasonRaceDetails",
+      "DriverMultiseasonPointsDetails",
+      "DriverMultiseasonPositionsDetails",
+      "DriverMultiseasonStandingsDetails"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason": [
+      "DriverMultiseasonSeasonEntry",
+      "DriverMultiseasonTrackEntry",
+      "DriverStatisticsMultiseasonRenderData",
+      "DriversStatisticsMultiseasonRenderData"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details": [
+      "DriverSeasonChampionshipDetails",
+      "DriverSeasonDeepRatingsDetails",
+      "DriverSeasonDiscardingDetails",
+      "DriverSeasonParticipationDetails",
+      "DriverSeasonPenaltiesDetails",
+      "DriverSeasonPositionsDetails",
+      "DriverSeasonQualDetails",
+      "DriverSeasonRaceDetails",
+      "DriverSeasonTeamDetails"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStandingsMultiseason": [
+      "TeamMultiseasonRenderData",
+      "TeamMultiseasonSeasonEntry",
+      "TeamStandingsMultiseasonRenderData"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Teammates": [
+      "TeammateDriverRenderData",
+      "TeammateH2HDetails",
+      "TeammatesSeasonRenderData"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason.Details": [
+      "TrackMultiseasonQualDetails",
+      "TrackMultiseasonRaceDetails",
+      "TrackMultiseasonRecordsDetails"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason": [
+      "TrackMultiseasonSeasonEntry",
+      "TrackStatisticsMultiseasonRenderData",
+      "TracksStatisticsMultiseasonRenderData"
+    ]
+  }
+}

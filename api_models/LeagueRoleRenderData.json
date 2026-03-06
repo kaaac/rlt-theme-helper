@@ -1,0 +1,116 @@
+{
+  "className": "LeagueRoleRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "NamedRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "LeagueRoleBuiltIn",
+      "type": "LeagueRoleBuiltIn",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LeagueRoleBuiltIn property"
+    },
+    {
+      "name": "IsBuiltInRole",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether built in role"
+    },
+    {
+      "name": "Color",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Color property"
+    },
+    {
+      "name": "SecondaryColor",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SecondaryColor property"
+    },
+    {
+      "name": "TertiaryColor",
+      "type": "Color",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TertiaryColor property"
+    },
+    {
+      "name": "Priority",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Priority property"
+    }
+  ],
+  "inheritedProperties": [
+    {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypeVariants",
+      "type": "Dictionary<LogotypeVariant, string>",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true
+    },
+    {
+      "name": "DefaultLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "AlternativeLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "DarkLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LightLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "GrayedLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    }
+  ]
+}

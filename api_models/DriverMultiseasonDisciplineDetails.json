@@ -1,0 +1,58 @@
+{
+  "className": "DriverMultiseasonDisciplineDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "DnfCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of dnf"
+    },
+    {
+      "name": "DsqCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of dsq"
+    },
+    {
+      "name": "TotalPenaltyPoints",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalPenaltyPoints property"
+    },
+    {
+      "name": "CleanRacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of clean races"
+    },
+    {
+      "name": "CleanRacePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "CleanRacePercent property"
+    },
+    {
+      "name": "ReliabilityPercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ReliabilityPercent property"
+    }
+  ]
+}

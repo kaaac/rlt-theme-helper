@@ -5,6 +5,7 @@ const ComponentNameCompletionProvider = require('./Providers/ComponentNameComple
 const GlobalVarsCompletionProvider = require('./Providers/GlobalVarsCompletionProvider');
 const DataConvertersCompletionProvider = require('./Providers/DataConvertersCompletionProvider');
 const StyleNameCompletionProvider = require('./Providers/StyleNameCompletionProvider');
+const ItemPropertyCompletionProvider = require('./Providers/ItemPropertyCompletionProvider');
 const ColorPickerProvider = require('./Providers/ColorPickerProvider');
 const GlobalVarsInlayHintsProvider = require('./Providers/GlobalVarsInlayHintsProvider');
 const { showSnippets } = require('./Providers/SnippetCommandProvider');
@@ -24,6 +25,16 @@ function activate(context) {
 	for (const provider of providers){
 		context.subscriptions.push(vscode.languages.registerCompletionItemProvider({ scheme: 'file', language: 'json'}, provider, '"'));
 	}
+
+	// Register ItemPropertyProvider with '.' trigger for Item.Property completion
+	const itemPropertyProvider = new ItemPropertyCompletionProvider();
+	context.subscriptions.push(
+		vscode.languages.registerCompletionItemProvider(
+			{ scheme: 'file', language: 'json' }, 
+			itemPropertyProvider, 
+			'.' // Trigger on dot
+		)
+	);
 
 	let disposable = vscode.commands.registerCommand('rlt-theme-helper.showSnippets', showSnippets);
 	context.subscriptions.push(disposable);

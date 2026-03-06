@@ -1,0 +1,106 @@
+{
+  "className": "TrackStatisticsMultiseasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Track",
+      "type": "TrackRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Track property"
+    },
+    {
+      "name": "MultiSeasonName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "MultiSeasonName property"
+    },
+    {
+      "name": "SeasonsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of seasons"
+    },
+    {
+      "name": "TotalEvents",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalEvents property"
+    },
+    {
+      "name": "TotalRaces",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalRaces property"
+    },
+    {
+      "name": "TotalQualifications",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalQualifications property"
+    },
+    {
+      "name": "FirstVisitDate",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FirstVisitDate property"
+    },
+    {
+      "name": "LastVisitDate",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LastVisitDate property"
+    },
+    {
+      "name": "RaceDetails",
+      "type": "TrackMultiseasonRaceDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceDetails property"
+    },
+    {
+      "name": "QualDetails",
+      "type": "TrackMultiseasonQualDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "QualDetails property"
+    },
+    {
+      "name": "RecordsDetails",
+      "type": "TrackMultiseasonRecordsDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RecordsDetails property"
+    },
+    {
+      "name": "Seasons",
+      "type": "TrackMultiseasonSeasonEntry",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Seasons property"
+    }
+  ]
+}

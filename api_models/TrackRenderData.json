@@ -1,0 +1,148 @@
+{
+  "className": "TrackRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "NamedRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "CircuitName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "CircuitName property"
+    },
+    {
+      "name": "CircuitFullName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "CircuitFullName property"
+    },
+    {
+      "name": "LocationName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LocationName property"
+    },
+    {
+      "name": "Years",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Years property"
+    },
+    {
+      "name": "Length",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Length property"
+    },
+    {
+      "name": "CountryName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "CountryName property"
+    },
+    {
+      "name": "Nation",
+      "type": "NationRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Nation property"
+    },
+    {
+      "name": "NumberTurns",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "NumberTurns property"
+    },
+    {
+      "name": "RaceLapRecordTime",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "RaceLapRecordDriverName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RaceLapRecordDriverName property"
+    }
+  ],
+  "inheritedProperties": [
+    {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypeVariants",
+      "type": "Dictionary<LogotypeVariant, string>",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true
+    },
+    {
+      "name": "DefaultLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "AlternativeLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "DarkLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LightLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "GrayedLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    }
+  ]
+}

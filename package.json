@@ -2,7 +2,7 @@
   "name": "rlt-theme-helper",
   "displayName": "RLT Theme Helper",
   "description": "Complete development toolkit for Racing League Tools Themes with color picker, variable hints, JSON validation and snippets",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "publisher": "Kaaac",
   "author": "Kaaac",
   "icon": "rlt_mod_icon.png",
@@ -152,7 +152,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "generate:models": "node scripts/generate.js"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",

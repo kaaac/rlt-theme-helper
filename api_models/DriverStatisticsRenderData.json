@@ -1,0 +1,138 @@
+{
+  "className": "DriverStatisticsRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Driver",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "Team",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Team property"
+    },
+    {
+      "name": "Car",
+      "type": "CarRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Car property"
+    },
+    {
+      "name": "Position",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "Values",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Values property"
+    },
+    {
+      "name": "Value0",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value0 property"
+    },
+    {
+      "name": "Value1",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value1 property"
+    },
+    {
+      "name": "Value2",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value2 property"
+    },
+    {
+      "name": "Value3",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value3 property"
+    },
+    {
+      "name": "Value4",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value4 property"
+    },
+    {
+      "name": "Value5",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value5 property"
+    },
+    {
+      "name": "Value6",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value6 property"
+    },
+    {
+      "name": "Value7",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value7 property"
+    },
+    {
+      "name": "Value8",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value8 property"
+    },
+    {
+      "name": "Value9",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value9 property"
+    },
+    {
+      "name": "Value10",
+      "type": "ValueStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Value10 property"
+    }
+  ]
+}

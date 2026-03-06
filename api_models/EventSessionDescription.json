@@ -1,0 +1,34 @@
+{
+  "className": "EventSessionDescription",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "SessionType",
+      "type": "SessionType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SessionType property"
+    },
+    {
+      "name": "RaceType",
+      "type": "RaceType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceType property"
+    },
+    {
+      "name": "QualificationType",
+      "type": "QualificationType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "QualificationType property"
+    }
+  ]
+}

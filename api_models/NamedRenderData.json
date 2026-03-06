@@ -1,0 +1,74 @@
+{
+  "className": "NamedRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Name property"
+    },
+    {
+      "name": "LogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LogotypePath property"
+    },
+    {
+      "name": "LogotypeVariants",
+      "type": "Dictionary<LogotypeVariant, string>",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LogotypeVariants property"
+    },
+    {
+      "name": "DefaultLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DefaultLogotypePath property"
+    },
+    {
+      "name": "AlternativeLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AlternativeLogotypePath property"
+    },
+    {
+      "name": "DarkLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DarkLogotypePath property"
+    },
+    {
+      "name": "LightLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LightLogotypePath property"
+    },
+    {
+      "name": "GrayedLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "GrayedLogotypePath property"
+    }
+  ]
+}

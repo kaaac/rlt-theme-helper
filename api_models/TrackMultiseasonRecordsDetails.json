@@ -1,0 +1,66 @@
+{
+  "className": "TrackMultiseasonRecordsDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "ClosestWinMargin",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ClosestWinMargin property"
+    },
+    {
+      "name": "LargestWinMargin",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LargestWinMargin property"
+    },
+    {
+      "name": "MaxSpeed",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "MaxSpeed property"
+    },
+    {
+      "name": "TotalSafetyCars",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalSafetyCars property"
+    },
+    {
+      "name": "TotalVirtualSafetyCars",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalVirtualSafetyCars property"
+    },
+    {
+      "name": "AvgSafetyCarsPerRace",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AvgSafetyCarsPerRace property"
+    },
+    {
+      "name": "AvgVirtualSafetyCarsPerRace",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AvgVirtualSafetyCarsPerRace property"
+    }
+  ]
+}

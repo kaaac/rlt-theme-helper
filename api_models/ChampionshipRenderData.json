@@ -1,0 +1,140 @@
+{
+  "className": "ChampionshipRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "NamedRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Teams",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Teams property"
+    },
+    {
+      "name": "Cars",
+      "type": "CarRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Cars property"
+    },
+    {
+      "name": "Games",
+      "type": "GameRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Games property"
+    },
+    {
+      "name": "Tracks",
+      "type": "TrackRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Tracks property"
+    },
+    {
+      "name": "IsFastestLapPointsOnlyForScored",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether fastest lap points only for scored"
+    },
+    {
+      "name": "IsMinorRacesEqualsMajor",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether minor races equals major"
+    },
+    {
+      "name": "EventFormat",
+      "type": "EventFormat",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "EventFormat property"
+    },
+    {
+      "name": "MulticlassConfiguration",
+      "type": "MulticlassConfiguration",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MulticlassConfiguration property"
+    },
+    {
+      "name": "IsHaveMulticlassConfiguration",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have multiclass configuration"
+    }
+  ],
+  "inheritedProperties": [
+    {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypeVariants",
+      "type": "Dictionary<LogotypeVariant, string>",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true
+    },
+    {
+      "name": "DefaultLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "AlternativeLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "DarkLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LightLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "GrayedLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "className": "TrackMultiseasonSeasonEntry",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Season",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Season property"
+    },
+    {
+      "name": "SeasonName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonName property"
+    },
+    {
+      "name": "TotalEvents",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalEvents property"
+    },
+    {
+      "name": "TotalRaces",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalRaces property"
+    },
+    {
+      "name": "FastestLapTime",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "FastestLapDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestLapDriver property"
+    },
+    {
+      "name": "RaceWinnerDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceWinnerDriver property"
+    },
+    {
+      "name": "RaceWinnerTeam",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceWinnerTeam property"
+    }
+  ]
+}

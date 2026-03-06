@@ -1,0 +1,154 @@
+{
+  "className": "DriverSeasonPositionsDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "BestMajorRacePosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "WorstMajorRacePosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "AverageMajorRacePosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "BestMajorQualPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "WorstMajorQualPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "AverageMajorQualPosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "BestAllRacePosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "WorstAllRacePosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "AverageAllRacePosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "BestAllQualPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "WorstAllQualPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "AverageAllQualPosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "AveragePositionChange",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "AveragePointsPerMajorRace",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "AveragePointsPerMajorRace property"
+    },
+    {
+      "name": "AveragePointsPerMajorRaceString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AveragePointsPerMajorRaceString property"
+    },
+    {
+      "name": "ScoringMajorRacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of scoring major races"
+    },
+    {
+      "name": "TotalMajorRacesForScoring",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalMajorRacesForScoring property"
+    },
+    {
+      "name": "ScoringRatePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ScoringRatePercent property"
+    }
+  ]
+}

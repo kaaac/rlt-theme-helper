@@ -1,0 +1,146 @@
+{
+  "className": "DriverPenaltiesSeasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Driver",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "Team",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Team property"
+    },
+    {
+      "name": "Car",
+      "type": "CarRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Car property"
+    },
+    {
+      "name": "AllPenalties",
+      "type": "PenaltyItemRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "AllPenalties property"
+    },
+    {
+      "name": "AllActions",
+      "type": "PenaltyActionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "AllActions property"
+    },
+    {
+      "name": "PenaltyPointsActive",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPointsActive property"
+    },
+    {
+      "name": "PenaltyPointsOverall",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPointsOverall property"
+    },
+    {
+      "name": "PenaltySeconds",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltySeconds property"
+    },
+    {
+      "name": "PenaltyPositions",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "PenaltyIngameSeconds",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyIngameSeconds property"
+    },
+    {
+      "name": "PenaltyIngamePositions",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "PenaltyWarningsActive",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyWarningsActive property"
+    },
+    {
+      "name": "PenaltyWarningsOverall",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyWarningsOverall property"
+    },
+    {
+      "name": "DisqualificationsOverall",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DisqualificationsOverall property"
+    },
+    {
+      "name": "DisqualificationsStewardsOnly",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DisqualificationsStewardsOnly property"
+    },
+    {
+      "name": "PenaltyActionsActiveSum",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyActionsActiveSum property"
+    },
+    {
+      "name": "PenaltyActionsSum",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyActionsSum property"
+    }
+  ]
+}

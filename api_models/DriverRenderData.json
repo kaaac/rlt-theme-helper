@@ -1,0 +1,212 @@
+{
+  "className": "DriverRenderData",
+  "namespace": "",
+  "inheritance": {
+    "base": "NamedRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "RealName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RealName property"
+    },
+    {
+      "name": "InGameName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "InGameName property"
+    },
+    {
+      "name": "DiscordName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DiscordName property"
+    },
+    {
+      "name": "DiscordLink",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DiscordLink property"
+    },
+    {
+      "name": "SteamName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SteamName property"
+    },
+    {
+      "name": "SteamLink",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SteamLink property"
+    },
+    {
+      "name": "BadgeText",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "BadgeText property"
+    },
+    {
+      "name": "BadgeImages",
+      "type": "byte",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "BadgeImages property"
+    },
+    {
+      "name": "Nationality",
+      "type": "NationRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Nationality property"
+    },
+    {
+      "name": "DriverStatus",
+      "type": "DriverStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverStatus property"
+    },
+    {
+      "name": "LeagueRoles",
+      "type": "LeagueRoleRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "LeagueRoles property"
+    },
+    {
+      "name": "RaceNumber",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RaceNumber property"
+    },
+    {
+      "name": "NationalityIngame",
+      "type": "NationRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "NationalityIngame property"
+    },
+    {
+      "name": "GamePlatform",
+      "type": "GamePlatform",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "GamePlatform property"
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Description property"
+    },
+    {
+      "name": "DriverFeatures",
+      "type": "DriverFeatureInfo",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "DriverFeatures property"
+    },
+    {
+      "name": "PrimaryDriverFeature",
+      "type": "DriverFeatureInfo",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PrimaryDriverFeature property"
+    },
+    {
+      "name": "IsHaveDriverFeature",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have driver feature"
+    }
+  ],
+  "inheritedProperties": [
+    {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LogotypeVariants",
+      "type": "Dictionary<LogotypeVariant, string>",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true
+    },
+    {
+      "name": "DefaultLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "AlternativeLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "DarkLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "LightLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    },
+    {
+      "name": "GrayedLogotypePath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false
+    }
+  ]
+}

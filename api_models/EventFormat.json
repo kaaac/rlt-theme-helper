@@ -1,0 +1,26 @@
+{
+  "className": "EventFormat",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Presets",
+      "type": "EventSessionPreset",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Presets property"
+    },
+    {
+      "name": "PrimaryPreset",
+      "type": "EventSessionPreset",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PrimaryPreset property"
+    }
+  ]
+}

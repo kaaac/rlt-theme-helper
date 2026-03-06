@@ -1,0 +1,50 @@
+{
+  "className": "TracksStatisticsMultiseasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TrackStatisticsMultiseason",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "MultiSeasonName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "MultiSeasonName property"
+    },
+    {
+      "name": "SeasonsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of seasons"
+    },
+    {
+      "name": "TracksCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of tracks"
+    },
+    {
+      "name": "Seasons",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Seasons property"
+    },
+    {
+      "name": "Tracks",
+      "type": "TrackStatisticsMultiseasonRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Tracks property"
+    }
+  ]
+}

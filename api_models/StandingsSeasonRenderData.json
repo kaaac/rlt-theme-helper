@@ -1,0 +1,98 @@
+{
+  "className": "StandingsSeasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Drivers",
+      "type": "DriverSeasonRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Drivers property"
+    },
+    {
+      "name": "Teams",
+      "type": "TeamSeasonRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Teams property"
+    },
+    {
+      "name": "LastEvent",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LastEvent property"
+    },
+    {
+      "name": "SeasonProgressPercent",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonProgressPercent property"
+    },
+    {
+      "name": "DriverSeasonLeader",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverSeasonLeader property"
+    },
+    {
+      "name": "TeamSeasonLeader",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TeamSeasonLeader property"
+    },
+    {
+      "name": "Events",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Events property"
+    },
+    {
+      "name": "IsPositionJumpForDriversExists",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether position jump for drivers exists"
+    },
+    {
+      "name": "IsPositionJumpForTeamsExists",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether position jump for teams exists"
+    },
+    {
+      "name": "RacingClass",
+      "type": "RacingClassInfo",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RacingClass property"
+    },
+    {
+      "name": "IsHaveRacingClass",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have racing class"
+    }
+  ]
+}

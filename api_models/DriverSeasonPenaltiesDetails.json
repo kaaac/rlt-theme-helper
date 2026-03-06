@@ -1,0 +1,82 @@
+{
+  "className": "DriverSeasonPenaltiesDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "TotalPenaltyPoints",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalPenaltyPoints property"
+    },
+    {
+      "name": "TotalPenaltySecsIngame",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalPenaltySecsIngame property"
+    },
+    {
+      "name": "TotalPenaltySecsStewards",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalPenaltySecsStewards property"
+    },
+    {
+      "name": "TotalPenaltyTime",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalPenaltyTime property"
+    },
+    {
+      "name": "TotalPenaltyPosIngame",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalPenaltyPosIngame property"
+    },
+    {
+      "name": "TotalPenaltyPosStewards",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalPenaltyPosStewards property"
+    },
+    {
+      "name": "TotalPenaltyPositions",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "DnfCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of dnf"
+    },
+    {
+      "name": "DsqCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of dsq"
+    }
+  ]
+}

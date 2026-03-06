@@ -1,0 +1,98 @@
+{
+  "className": "DriverSeasonDiscardingDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Standings.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "IsDiscardEnabled",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether discard enabled"
+    },
+    {
+      "name": "IsEventsDiscardMode",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether events discard mode"
+    },
+    {
+      "name": "IsRacesDiscardMode",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether races discard mode"
+    },
+    {
+      "name": "ConfiguredDiscardEventsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of configured discard events"
+    },
+    {
+      "name": "ConfiguredDiscardRacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of configured discard races"
+    },
+    {
+      "name": "IsEventsFullDiscard",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether events full discard"
+    },
+    {
+      "name": "IsRacesFullDiscard",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether races full discard"
+    },
+    {
+      "name": "DiscardedEventsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of discarded events"
+    },
+    {
+      "name": "DiscardedRacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of discarded races"
+    },
+    {
+      "name": "TotalDiscardedPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TotalDiscardedPoints property"
+    },
+    {
+      "name": "TotalDiscardedPointsString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalDiscardedPointsString property"
+    }
+  ]
+}

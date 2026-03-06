@@ -1,0 +1,42 @@
+{
+  "className": "DeepRatingsSeasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DeepRatingsSeason",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Drivers",
+      "type": "DriverSeasonRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Drivers property"
+    },
+    {
+      "name": "LastEvent",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LastEvent property"
+    },
+    {
+      "name": "SeasonProgressPercent",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonProgressPercent property"
+    },
+    {
+      "name": "Events",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Events property"
+    }
+  ]
+}

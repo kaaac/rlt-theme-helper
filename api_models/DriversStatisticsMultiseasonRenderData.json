@@ -1,0 +1,50 @@
+{
+  "className": "DriversStatisticsMultiseasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "MultiSeasonName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "MultiSeasonName property"
+    },
+    {
+      "name": "SeasonsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of seasons"
+    },
+    {
+      "name": "DriversCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of drivers"
+    },
+    {
+      "name": "Seasons",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Seasons property"
+    },
+    {
+      "name": "Drivers",
+      "type": "DriverStatisticsMultiseasonRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Drivers property"
+    }
+  ]
+}

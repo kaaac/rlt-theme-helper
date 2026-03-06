@@ -1,0 +1,50 @@
+{
+  "className": "ValueStatisticsColumnRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Header",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Header property"
+    },
+    {
+      "name": "IsEnabled",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether enabled"
+    },
+    {
+      "name": "Type",
+      "type": "ValueStatisticsType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Type property"
+    },
+    {
+      "name": "GroupId",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "GroupId property"
+    },
+    {
+      "name": "Index",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Index property"
+    }
+  ]
+}

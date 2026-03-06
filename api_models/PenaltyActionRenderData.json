@@ -1,0 +1,178 @@
+{
+  "className": "PenaltyActionRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Type",
+      "type": "PenaltyActionType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Type property"
+    },
+    {
+      "name": "TypeString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TypeString property"
+    },
+    {
+      "name": "TypeAbbreviature",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TypeAbbreviature property"
+    },
+    {
+      "name": "TypeShortDescription",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TypeShortDescription property"
+    },
+    {
+      "name": "IsHaveValue",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have value"
+    },
+    {
+      "name": "Value",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Value property"
+    },
+    {
+      "name": "ValueDescription",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ValueDescription property"
+    },
+    {
+      "name": "FullValueOnlyDescription",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FullValueOnlyDescription property"
+    },
+    {
+      "name": "FullTypeAndValueDescription",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FullTypeAndValueDescription property"
+    },
+    {
+      "name": "Status",
+      "type": "PenaltyActionStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Status property"
+    },
+    {
+      "name": "IsActive",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether active"
+    },
+    {
+      "name": "IsApplied",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether applied"
+    },
+    {
+      "name": "IsCancelled",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether cancelled"
+    },
+    {
+      "name": "IsFailed",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether failed"
+    },
+    {
+      "name": "TargetSeason",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TargetSeason property"
+    },
+    {
+      "name": "IsHaveOnlyOneSeasonAreaUi",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have only one season area ui"
+    },
+    {
+      "name": "SeasonsAreaStringUi",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonsAreaStringUi property"
+    },
+    {
+      "name": "SeasonsArea",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "SeasonsArea property"
+    },
+    {
+      "name": "TargetDriverSession",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TargetDriverSession property"
+    },
+    {
+      "name": "PenaltyItem",
+      "type": "PenaltyItemRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PenaltyItem property"
+    },
+    {
+      "name": "Driver",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    }
+  ]
+}

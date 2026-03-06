@@ -1,0 +1,82 @@
+{
+  "className": "DriverMultiseasonStandingsDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Championships",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Championships property"
+    },
+    {
+      "name": "ChampionshipWinsString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ChampionshipWinsString property"
+    },
+    {
+      "name": "BestStandingsPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "WorstStandingsPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "AverageStandingsPosition",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "RunnerUpFinishes",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RunnerUpFinishes property"
+    },
+    {
+      "name": "TopThreeFinishes",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TopThreeFinishes property"
+    },
+    {
+      "name": "TopFiveFinishes",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TopFiveFinishes property"
+    },
+    {
+      "name": "TotalRoundsLeading",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalRoundsLeading property"
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "className": "DriverSeasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Driver",
+      "type": "DriverRenderObject",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "DriverStatus",
+      "type": "DriverStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverStatus property"
+    },
+    {
+      "name": "IsReserve",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether reserve"
+    },
+    {
+      "name": "SeatPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "Events",
+      "type": "DriverEventRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Events property"
+    },
+    {
+      "name": "IsShow",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether show"
+    },
+    {
+      "name": "Team",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Team property"
+    },
+    {
+      "name": "Car",
+      "type": "CarRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Car property"
+    },
+    {
+      "name": "MajorRaces",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "MajorRaces property"
+    },
+    {
+      "name": "MajorQuals",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "MajorQuals property"
+    },
+    {
+      "name": "PositionPrev",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "Position",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "PositionString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position as formatted string"
+    },
+    {
+      "name": "PositionJump",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "Points",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Points property"
+    },
+    {
+      "name": "PointsToLeaderDiff",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PointsToLeaderDiff property"
+    },
+    {
+      "name": "PointsToAboveDiff",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PointsToAboveDiff property"
+    },
+    {
+      "name": "PointsToBeyondDiff",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PointsToBeyondDiff property"
+    },
+    {
+      "name": "CountP1",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of p1"
+    },
+    {
+      "name": "CountP2",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of p2"
+    },
+    {
+      "name": "CountP3",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of p3"
+    },
+    {
+      "name": "BestPos",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "BestPos property"
+    },
+    {
+      "name": "BestPos1",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "BestPos1 property"
+    },
+    {
+      "name": "BestPos2",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "BestPos2 property"
+    },
+    {
+      "name": "BestPos3",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "BestPos3 property"
+    },
+    {
+      "name": "BestPos1Count",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of best pos1"
+    },
+    {
+      "name": "BestPos2Count",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of best pos2"
+    },
+    {
+      "name": "BestPos3Count",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of best pos3"
+    },
+    {
+      "name": "RacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of races"
+    },
+    {
+      "name": "QualCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of qual"
+    },
+    {
+      "name": "EventsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of events"
+    },
+    {
+      "name": "RaceFastestLapCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of race fastest lap"
+    },
+    {
+      "name": "RaceDriverDayCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of race driver day"
+    },
+    {
+      "name": "RaceBestMomentCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of race best moment"
+    },
+    {
+      "name": "CountQualP1",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of qual p1"
+    },
+    {
+      "name": "BestPosQual",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "BestPosQual property"
+    },
+    {
+      "name": "PenaltyPoints",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PenaltyPoints property"
+    },
+    {
+      "name": "CountDnf",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of dnf"
+    },
+    {
+      "name": "CountDns",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of dns"
+    },
+    {
+      "name": "CountNotClassified",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of not classified"
+    },
+    {
+      "name": "CountTop3",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of top3"
+    },
+    {
+      "name": "CountTop5",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of top5"
+    },
+    {
+      "name": "CountTop10",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of top10"
+    },
+    {
+      "name": "LiveryPath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveryPath property"
+    },
+    {
+      "name": "RacingClass",
+      "type": "RacingClassInfo",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RacingClass property"
+    },
+    {
+      "name": "RaceDetails",
+      "type": "DriverSeasonRaceDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceDetails property"
+    },
+    {
+      "name": "QualDetails",
+      "type": "DriverSeasonQualDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "QualDetails property"
+    },
+    {
+      "name": "ParticipationDetails",
+      "type": "DriverSeasonParticipationDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "ParticipationDetails property"
+    },
+    {
+      "name": "PenaltiesDetails",
+      "type": "DriverSeasonPenaltiesDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PenaltiesDetails property"
+    },
+    {
+      "name": "PositionsDetails",
+      "type": "DriverSeasonPositionsDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PositionsDetails property"
+    },
+    {
+      "name": "DiscardingDetails",
+      "type": "DriverSeasonDiscardingDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DiscardingDetails property"
+    },
+    {
+      "name": "TeamDetails",
+      "type": "DriverSeasonTeamDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TeamDetails property"
+    },
+    {
+      "name": "DeepRatingsDetails",
+      "type": "DriverSeasonDeepRatingsDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DeepRatingsDetails property"
+    },
+    {
+      "name": "ChampionshipDetails",
+      "type": "DriverSeasonChampionshipDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "ChampionshipDetails property"
+    },
+    {
+      "name": "IsHaveRacingClass",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have racing class"
+    }
+  ]
+}

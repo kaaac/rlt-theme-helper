@@ -1,0 +1,146 @@
+{
+  "className": "StatisticsRenderHost",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Header",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Header property"
+    },
+    {
+      "name": "SubHeader",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SubHeader property"
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Description property"
+    },
+    {
+      "name": "StatisticsTypeString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "StatisticsTypeString property"
+    },
+    {
+      "name": "Drivers",
+      "type": "DriverStatisticsRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Drivers property"
+    },
+    {
+      "name": "Columns",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Columns property"
+    },
+    {
+      "name": "Column0",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column0 property"
+    },
+    {
+      "name": "Column1",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column1 property"
+    },
+    {
+      "name": "Column2",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column2 property"
+    },
+    {
+      "name": "Column3",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column3 property"
+    },
+    {
+      "name": "Column4",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column4 property"
+    },
+    {
+      "name": "Column5",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column5 property"
+    },
+    {
+      "name": "Column6",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column6 property"
+    },
+    {
+      "name": "Column7",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column7 property"
+    },
+    {
+      "name": "Column8",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column8 property"
+    },
+    {
+      "name": "Column9",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column9 property"
+    },
+    {
+      "name": "Column10",
+      "type": "ValueStatisticsColumnRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Column10 property"
+    }
+  ]
+}

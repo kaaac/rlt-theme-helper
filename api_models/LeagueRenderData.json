@@ -1,0 +1,42 @@
+{
+  "className": "LeagueRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "LeagueName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LeagueName property"
+    },
+    {
+      "name": "LeagueFullName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LeagueFullName property"
+    },
+    {
+      "name": "LeagueShortName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LeagueShortName property"
+    },
+    {
+      "name": "LeagueLogo",
+      "type": "byte",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "LeagueLogo property"
+    }
+  ]
+}

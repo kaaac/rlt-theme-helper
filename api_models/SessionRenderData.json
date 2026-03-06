@@ -1,0 +1,418 @@
+{
+  "className": "SessionRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Track",
+      "type": "TrackRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Track property"
+    },
+    {
+      "name": "SessionType",
+      "type": "SessionType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SessionType property"
+    },
+    {
+      "name": "RaceType",
+      "type": "RaceType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceType property"
+    },
+    {
+      "name": "QualType",
+      "type": "QualificationType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "QualType property"
+    },
+    {
+      "name": "SessionTypeString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SessionTypeString property"
+    },
+    {
+      "name": "CompletedStatus",
+      "type": "CompletedStatus",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "CompletedStatus property"
+    },
+    {
+      "name": "FastestLapDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestLapDriver property"
+    },
+    {
+      "name": "FastestLapTime",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "FastestLapTimeMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value in milliseconds"
+    },
+    {
+      "name": "FastestLapTyres",
+      "type": "TyresType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestLapTyres property"
+    },
+    {
+      "name": "FastestLapNumLap",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestLapNumLap property"
+    },
+    {
+      "name": "IsRaceFastestLapCanBeAwardedPoints",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether race fastest lap can be awarded points"
+    },
+    {
+      "name": "RaceFastestLapAwardedDriverPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceFastestLapAwardedDriverPoints property"
+    },
+    {
+      "name": "RaceFastestLapAwardedTeamPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceFastestLapAwardedTeamPoints property"
+    },
+    {
+      "name": "DriverDayDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverDayDriver property"
+    },
+    {
+      "name": "BestMomentDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "BestMomentDriver property"
+    },
+    {
+      "name": "IsLiveData",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether live data"
+    },
+    {
+      "name": "LiveId",
+      "type": "UInt64",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "LiveId property"
+    },
+    {
+      "name": "LiveStartDate",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveStartDate property"
+    },
+    {
+      "name": "LiveEndDate",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveEndDate property"
+    },
+    {
+      "name": "LiveStartDateGmt",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveStartDateGmt property"
+    },
+    {
+      "name": "LiveEndDateGmt",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveEndDateGmt property"
+    },
+    {
+      "name": "LiveStartDateLocal",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveStartDateLocal property"
+    },
+    {
+      "name": "LiveEndDateLocal",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveEndDateLocal property"
+    },
+    {
+      "name": "IsSingleplayerMode",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether singleplayer mode"
+    },
+    {
+      "name": "ChampionshipType",
+      "type": "ChampionshipType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "ChampionshipType property"
+    },
+    {
+      "name": "WeatherType",
+      "type": "WeatherType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "WeatherType property"
+    },
+    {
+      "name": "AirTemperature",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AirTemperature property"
+    },
+    {
+      "name": "AirTemperatureString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AirTemperatureString property"
+    },
+    {
+      "name": "TrackTemperature",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TrackTemperature property"
+    },
+    {
+      "name": "TotalLaps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalLaps property"
+    },
+    {
+      "name": "SessionDuration",
+      "type": "TimeSpan",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "SessionDuration property"
+    },
+    {
+      "name": "SessionDurationMinutes",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SessionDurationMinutes property"
+    },
+    {
+      "name": "IsCombinedQual",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether combined qual"
+    },
+    {
+      "name": "IsMajorTypeRace",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether major type race"
+    },
+    {
+      "name": "SafetyCarCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of safety car"
+    },
+    {
+      "name": "VirtualSafetyCarCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of virtual safety car"
+    },
+    {
+      "name": "Drivers",
+      "type": "DriverSessionRenderData",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Drivers property"
+    },
+    {
+      "name": "FastestOverallSector1",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestOverallSector1 property"
+    },
+    {
+      "name": "FastestOverallSector2",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestOverallSector2 property"
+    },
+    {
+      "name": "FastestOverallSector3",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FastestOverallSector3 property"
+    },
+    {
+      "name": "OverallSessionFastestLap",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "OverallSessionFastestLap property"
+    },
+    {
+      "name": "OverallSessionFastestLapMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "OverallSessionFastestLapMs property"
+    },
+    {
+      "name": "OverallSessionFastestLapDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "OverallSessionFastestLapDriver property"
+    },
+    {
+      "name": "SessionName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SessionName property"
+    },
+    {
+      "name": "RacingClass",
+      "type": "RacingClassInfo",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RacingClass property"
+    },
+    {
+      "name": "IsVirtualSession",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether virtual session"
+    },
+    {
+      "name": "DriversCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of drivers"
+    },
+    {
+      "name": "TotalPitsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of total pits"
+    },
+    {
+      "name": "IsHaveRacingClass",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have racing class"
+    },
+    {
+      "name": "IsRealSession",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether real session"
+    }
+  ]
+}

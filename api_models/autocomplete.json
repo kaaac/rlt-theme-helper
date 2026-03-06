@@ -1,0 +1,4297 @@
+{
+  "Session.Drivers": {
+    "className": "DriverSessionRenderData",
+    "properties": [
+      {
+        "name": "LiveryPath",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Position",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "String",
+        "type": "string Pos",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IncludeStatus",
+        "type": "string Pos",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "ClassificationPosition",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Driver",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Car",
+        "type": "CarRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SeatType",
+        "type": "DriverStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SeatPosition",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Status",
+        "type": "DriverSessionStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Time",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TimeMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IntervalRace",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "AbsoluteTime",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "AbsoluteTimeMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapTime",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapTimeMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapTyres",
+        "type": "TyresType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "FastestLapNumLap",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapSector1Ms",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapSector2Ms",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapSector3Ms",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapSector1",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapSector2",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapSector3",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsOverallFastestSector1",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsOverallFastestSector2",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsOverallFastestSector3",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualQ1Time",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualQ2Time",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualQ3Time",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualQ1TimeMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualQ2TimeMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualQ3TimeMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LapsCountQ1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LapsCountQ2",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LapsCountQ3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsFinished",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsRaceFastestLap",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsRaceDriverOfDay",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsBestMomentDriver",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeIngame",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPosIngame",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeStewards",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPosStewards",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeTotal",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPosTotal",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPoints",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeStringLeftPart",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeStringRightPart",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DriverPoints",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TeamPoints",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Session",
+        "type": "SessionRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "RaceNumber",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsHaveRaceNumber",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LapsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "GridPosition",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionJump",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PitsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Stints",
+        "type": "TyresStint",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "OvertakesCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LosePositionsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "MaxSpeed",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LeadLaps",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LeadDistance",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceDistancePercentage",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryPath",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DriverFeatures",
+        "type": "DriverFeatureInfo",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "RacingClass",
+        "type": "RacingClassInfo",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DriverPointsString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TeamPointsString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PrimaryDriverFeature",
+        "type": "DriverFeatureInfo",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsHaveDriverFeature",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsHaveRacingClass",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Session.Teams": {
+    "className": "TeamRenderData",
+    "properties": [
+      {
+        "name": "FullName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Abbreviation",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Origin",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Color",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SecondaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TertiaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Nation",
+        "type": "NationRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Car",
+        "type": "CarRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Badge",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Position",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryPath",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryVariants",
+        "type": "string",
+        "isCollection": true,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryDefaultVariantPath",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryVariant2Path",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryVariant3Path",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Standings.Drivers": {
+    "className": "DriverSeasonRenderData",
+    "properties": [
+      {
+        "name": "Driver",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DriverStatus",
+        "type": "DriverStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsReserve",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeatPosition",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Events",
+        "type": "DriverEventRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "IsShow",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Car",
+        "type": "CarRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "MajorRaces",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "MajorQuals",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "PositionPrev",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Position",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionJump",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Points",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToLeaderDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToAboveDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToBeyondDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "CountP1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountP2",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountP3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos2",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos1Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos2Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos3Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacesCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EventsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceFastestLapCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceDriverDayCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceBestMomentCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountQualP1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPosQual",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPoints",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountDnf",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountDns",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountNotClassified",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop5",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop10",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryPath",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacingClass",
+        "type": "RacingClassInfo",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "RaceDetails",
+        "type": "DriverSeasonRaceDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "QualDetails",
+        "type": "DriverSeasonQualDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "ParticipationDetails",
+        "type": "DriverSeasonParticipationDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PenaltiesDetails",
+        "type": "DriverSeasonPenaltiesDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PositionsDetails",
+        "type": "DriverSeasonPositionsDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DiscardingDetails",
+        "type": "DriverSeasonDiscardingDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TeamDetails",
+        "type": "DriverSeasonTeamDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DeepRatingsDetails",
+        "type": "DriverSeasonDeepRatingsDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "ChampionshipDetails",
+        "type": "DriverSeasonChampionshipDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsHaveRacingClass",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Standings.Teams": {
+    "className": "TeamSeasonRenderData",
+    "properties": [
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Events",
+        "type": "TeamEventRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "IsShow",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "MajorRaces",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "MajorQuals",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "PositionPrev",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Position",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionJump",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Points",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToLeaderDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToAboveDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToBeyondDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "CountP1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountP2",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountP3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos2",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos1Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos2Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos3Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacesCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EventsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceFastestLapCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceDriverDayCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceBestMomentCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountQualP1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPosQual",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPoints",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountDnf",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountDns",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountNotClassified",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop5",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop10",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Drivers",
+        "type": "DriverSeasonRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Driver0",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Driver1",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Driver2",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Driver3",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      }
+    ]
+  },
+  "Season.Drivers": {
+    "className": "DriverSeasonRenderData",
+    "properties": [
+      {
+        "name": "Driver",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DriverStatus",
+        "type": "DriverStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsReserve",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeatPosition",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Events",
+        "type": "DriverEventRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "IsShow",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Car",
+        "type": "CarRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "MajorRaces",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "MajorQuals",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "PositionPrev",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Position",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionJump",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Points",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToLeaderDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToAboveDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToBeyondDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "CountP1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountP2",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountP3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos2",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos1Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos2Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos3Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacesCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EventsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceFastestLapCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceDriverDayCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceBestMomentCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountQualP1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPosQual",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPoints",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountDnf",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountDns",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountNotClassified",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop5",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop10",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryPath",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacingClass",
+        "type": "RacingClassInfo",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "RaceDetails",
+        "type": "DriverSeasonRaceDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "QualDetails",
+        "type": "DriverSeasonQualDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "ParticipationDetails",
+        "type": "DriverSeasonParticipationDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PenaltiesDetails",
+        "type": "DriverSeasonPenaltiesDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PositionsDetails",
+        "type": "DriverSeasonPositionsDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DiscardingDetails",
+        "type": "DriverSeasonDiscardingDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TeamDetails",
+        "type": "DriverSeasonTeamDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DeepRatingsDetails",
+        "type": "DriverSeasonDeepRatingsDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "ChampionshipDetails",
+        "type": "DriverSeasonChampionshipDetails",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsHaveRacingClass",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Season.Teams": {
+    "className": "TeamSeasonRenderData",
+    "properties": [
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Events",
+        "type": "TeamEventRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "IsShow",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "MajorRaces",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "MajorQuals",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "PositionPrev",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Position",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionJump",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Points",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToLeaderDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToAboveDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PointsToBeyondDiff",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "CountP1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountP2",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountP3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos2",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos1Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos2Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPos3Count",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacesCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EventsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceFastestLapCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceDriverDayCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceBestMomentCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountQualP1",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BestPosQual",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPoints",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountDnf",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountDns",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountNotClassified",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop3",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop5",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CountTop10",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Drivers",
+        "type": "DriverSeasonRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Driver0",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Driver1",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Driver2",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Driver3",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      }
+    ]
+  },
+  "Championship.Drivers": {
+    "className": "DriverRenderData",
+    "properties": [
+      {
+        "name": "RealName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "InGameName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DiscordName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DiscordLink",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SteamName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SteamLink",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BadgeText",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "BadgeImages",
+        "type": "byte",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Nationality",
+        "type": "NationRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DriverStatus",
+        "type": "DriverStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "LeagueRoles",
+        "type": "LeagueRoleRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "RaceNumber",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "NationalityIngame",
+        "type": "NationRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "GamePlatform",
+        "type": "GamePlatform",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Description",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DriverFeatures",
+        "type": "DriverFeatureInfo",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "PrimaryDriverFeature",
+        "type": "DriverFeatureInfo",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsHaveDriverFeature",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Championship.Teams": {
+    "className": "TeamRenderData",
+    "properties": [
+      {
+        "name": "FullName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Abbreviation",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Origin",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Color",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SecondaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TertiaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Nation",
+        "type": "NationRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Car",
+        "type": "CarRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Badge",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Position",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryPath",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryVariants",
+        "type": "string",
+        "isCollection": true,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryDefaultVariantPath",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryVariant2Path",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveryVariant3Path",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Driver.LeagueRoles": {
+    "className": "LeagueRoleRenderData",
+    "properties": [
+      {
+        "name": "LeagueRoleBuiltIn",
+        "type": "LeagueRoleBuiltIn",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsBuiltInRole",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Color",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SecondaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TertiaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Priority",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Item.LeagueRoles": {
+    "className": "LeagueRoleRenderData",
+    "properties": [
+      {
+        "name": "LeagueRoleBuiltIn",
+        "type": "LeagueRoleBuiltIn",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsBuiltInRole",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Color",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SecondaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TertiaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Priority",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "League.Categories": {
+    "className": "LeagueCategoryRenderData",
+    "properties": [
+      {
+        "name": "ShortName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Color",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SecondaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TertiaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DriversCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeasonsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "League.Roles": {
+    "className": "LeagueRoleRenderData",
+    "properties": [
+      {
+        "name": "LeagueRoleBuiltIn",
+        "type": "LeagueRoleBuiltIn",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsBuiltInRole",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Color",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SecondaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TertiaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Priority",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Season.Events": {
+    "className": "EventRenderData",
+    "properties": [
+      {
+        "name": "Track",
+        "type": "TrackRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsTrackDefined",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsRandomEvent",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsBreak",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Position",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TrackName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TrackCountryName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EventStatus",
+        "type": "EventStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsChampionshipStatus",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CompletedStatus",
+        "type": "CompletedStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Color",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SecondaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Date",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DateLocal",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DateGmt",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Description",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Races",
+        "type": "SessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Quals",
+        "type": "SessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Practices",
+        "type": "SessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "IsFullQual",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsHaveSprintSessions",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "WinnerString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Season.Lineups": {
+    "className": "LineupRenderData",
+    "properties": [
+      {
+        "name": "Driver",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Car",
+        "type": "CarRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SeatType",
+        "type": "DriverStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SeatPosition",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Badge",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DriverRaces",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DriverSkips",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsDriverSet",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsCarSet",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Season",
+        "type": "SeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsNextTeam",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LineupsBasedType",
+        "type": "LineupsBasedType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DriverFeatures",
+        "type": "DriverFeatureInfo",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "PrimaryDriverFeature",
+        "type": "DriverFeatureInfo",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsHaveDriverFeature",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Session": {
+    "className": "SessionRenderData",
+    "properties": [
+      {
+        "name": "Track",
+        "type": "TrackRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SessionType",
+        "type": "SessionType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "RaceType",
+        "type": "RaceType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "QualType",
+        "type": "QualificationType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SessionTypeString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CompletedStatus",
+        "type": "CompletedStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "FastestLapDriver",
+        "type": "DriverRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "FastestLapTime",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapTimeMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestLapTyres",
+        "type": "TyresType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "FastestLapNumLap",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsRaceFastestLapCanBeAwardedPoints",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceFastestLapAwardedDriverPoints",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "RaceFastestLapAwardedTeamPoints",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DriverDayDriver",
+        "type": "DriverRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "BestMomentDriver",
+        "type": "DriverRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsLiveData",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveId",
+        "type": "UInt64",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "LiveStartDate",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveEndDate",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveStartDateGmt",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveEndDateGmt",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveStartDateLocal",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LiveEndDateLocal",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsSingleplayerMode",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "ChampionshipType",
+        "type": "ChampionshipType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "WeatherType",
+        "type": "WeatherType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "AirTemperature",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "AirTemperatureString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TrackTemperature",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TotalLaps",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SessionDuration",
+        "type": "TimeSpan",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SessionDurationMinutes",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsCombinedQual",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsMajorTypeRace",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SafetyCarCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "VirtualSafetyCarCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Drivers",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "FastestOverallSector1",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestOverallSector2",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "FastestOverallSector3",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "OverallSessionFastestLap",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "OverallSessionFastestLapMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "OverallSessionFastestLapDriver",
+        "type": "DriverRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SessionName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacingClass",
+        "type": "RacingClassInfo",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsVirtualSession",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DriversCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TotalPitsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsHaveRacingClass",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsRealSession",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Event": {
+    "className": "EventRenderData",
+    "properties": [
+      {
+        "name": "Track",
+        "type": "TrackRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsTrackDefined",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsRandomEvent",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsBreak",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Position",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TrackName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TrackCountryName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EventStatus",
+        "type": "EventStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsChampionshipStatus",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CompletedStatus",
+        "type": "CompletedStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Color",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SecondaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Date",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DateLocal",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DateGmt",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Description",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Races",
+        "type": "SessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Quals",
+        "type": "SessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Practices",
+        "type": "SessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "IsFullQual",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsHaveSprintSessions",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "WinnerString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Season": {
+    "className": "SeasonRenderData",
+    "properties": [
+      {
+        "name": "LeagueInfo",
+        "type": "LeagueRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "FullName",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "CompletedStatus",
+        "type": "CompletedStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Color",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SecondaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TertiaryColor",
+        "type": "Color",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Championship",
+        "type": "ChampionshipRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "MainLeagueCategory",
+        "type": "LeagueCategoryRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "LeagueCategories",
+        "type": "LeagueCategoryRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "LineupsBasedType",
+        "type": "LineupsBasedType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "GridSize",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsSeparateReservesAtStandings",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsShowTimesInsteadGapInQual",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsStandingsShowAllLineups",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsStandingsShowArchiveDrivers",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsStandingsShowReserves",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeasonProgressPercent",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeasonProgressPercentString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeasonLeader",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SeasonLeaderString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeasonCurrentNumberEvent",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeasonCurrentNumberEventExcludingNonChampionship",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeasonOverallNumberEvents",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeasonOverallNumberEventsExcludingNonChampionship",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SeatsPerTeam",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsProFeaturesEnabled",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DefaultEventStartTime",
+        "type": "TimeOnly",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsEventDateOnly",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsSessionDateOnly",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EventFormat",
+        "type": "EventFormat",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "MulticlassConfiguration",
+        "type": "MulticlassConfiguration",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsHaveMulticlassConfiguration",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Standings": {
+    "className": "StandingsSeasonRenderData",
+    "properties": [
+      {
+        "name": "Drivers",
+        "type": "DriverSeasonRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Teams",
+        "type": "TeamSeasonRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "LastEvent",
+        "type": "EventRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SeasonProgressPercent",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DriverSeasonLeader",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TeamSeasonLeader",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Events",
+        "type": "EventRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "IsPositionJumpForDriversExists",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPositionJumpForTeamsExists",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacingClass",
+        "type": "RacingClassInfo",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsHaveRacingClass",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Events": {
+    "className": "EventsSeasonRenderData",
+    "properties": [
+      {
+        "name": "Events",
+        "type": "EventRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "EventsIncludingBreaks",
+        "type": "EventRenderData",
+        "isCollection": true,
+        "isComplex": true
+      }
+    ]
+  },
+  "Lineups": {
+    "className": "LineupsSeasonRenderData",
+    "properties": [
+      {
+        "name": "Lineups",
+        "type": "LineupRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "LineupsReserves",
+        "type": "LineupRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Teams",
+        "type": "LineupTeamCarRenderData",
+        "isCollection": true,
+        "isComplex": true
+      }
+    ]
+  },
+  "Statistics": {
+    "className": "StatisticsRenderHost",
+    "properties": [
+      {
+        "name": "Header",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SubHeader",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Description",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "StatisticsTypeString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Drivers",
+        "type": "DriverStatisticsRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Columns",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Column0",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column1",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column2",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column3",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column4",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column5",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column6",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column7",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column8",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column9",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Column10",
+        "type": "ValueStatisticsColumnRenderData",
+        "isCollection": false,
+        "isComplex": true
+      }
+    ]
+  },
+  "DriverInfo": {
+    "className": "DriverRenderHost",
+    "properties": [
+      {
+        "name": "Driver",
+        "type": "DriverRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DriverSeason",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Car",
+        "type": "CarRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Teammates",
+        "type": "DriverRenderObject",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "TeammatesSeason",
+        "type": "DriverSeasonRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Teammate0",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Teammate1",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Teammate2",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Teammate3",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TeammateSeason0",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TeammateSeason1",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TeammateSeason2",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TeammateSeason3",
+        "type": "DriverSeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      }
+    ]
+  },
+  "Penalty": {
+    "className": "PenaltyItemRenderData",
+    "properties": [
+      {
+        "name": "PenaltyId",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Driver",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Issuer",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Submitter",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Car",
+        "type": "CarRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Season",
+        "type": "SeasonRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Session",
+        "type": "SessionRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DriverSession",
+        "type": "DriverSessionRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "PenaltyPoints",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltySeconds",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPositions",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyWarnings",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsDisqualified",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltySecondsOverall",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPositionsOverall",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsDisqualifiedOverall",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyWarningsOverall",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsNoPunishment",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsCancelled",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyOffense",
+        "type": "PenaltyOffenseRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Offense",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Description",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Verdict",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Lap",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Turn",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Date",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DateEvent",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsCreatedByUser",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SameOffenseRepeatedCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DriversInvolved",
+        "type": "DriverRenderObject",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "DriversInvolvedString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsInnerPenalty",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsHavePenaltyActions",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyActions",
+        "type": "PenaltyActionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Decision",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Details",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Penalties": {
+    "className": "EventPenaltiesRenderHost",
+    "properties": [
+      {
+        "name": "Event",
+        "type": "EventRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Penalties",
+        "type": "PenaltyItemRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "IsFullPenaltiesForEvent",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsSinglePenalty",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Season.DeepRatings": {
+    "className": "DeepRatingsSeasonRenderData",
+    "properties": [
+      {
+        "name": "Drivers",
+        "type": "DriverSeasonRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "LastEvent",
+        "type": "EventRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SeasonProgressPercent",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Events",
+        "type": "EventRenderData",
+        "isCollection": true,
+        "isComplex": true
+      }
+    ]
+  },
+  "Season.DriverPenalties": {
+    "className": "DriverPenaltiesSeasonRenderData",
+    "properties": [
+      {
+        "name": "Driver",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Car",
+        "type": "CarRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "AllPenalties",
+        "type": "PenaltyItemRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "AllActions",
+        "type": "PenaltyActionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "PenaltyPointsActive",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPointsOverall",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltySeconds",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPositions",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyIngameSeconds",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyIngamePositions",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyWarningsActive",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyWarningsOverall",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DisqualificationsOverall",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DisqualificationsStewardsOnly",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyActionsActiveSum",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyActionsSum",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Event.Drivers": {
+    "className": "DriverEventRenderData",
+    "properties": [
+      {
+        "name": "Event",
+        "type": "EventRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Races",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Quals",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Practices",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "MajorRaces",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "MajorQuals",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "StandingsRaces",
+        "type": "StandingsSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "StandingsQuals",
+        "type": "StandingsSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "StandingsPractices",
+        "type": "StandingsSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "MajorRace",
+        "type": "DriverSessionRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "MajorQual",
+        "type": "DriverSessionRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Points",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "RacesClassificationPosition",
+        "type": "number",
+        "isCollection": true,
+        "isComplex": false
+      },
+      {
+        "name": "RacesMajorClassificationPosition",
+        "type": "number",
+        "isCollection": true,
+        "isComplex": false
+      },
+      {
+        "name": "QualsClassificationPosition",
+        "type": "number",
+        "isCollection": true,
+        "isComplex": false
+      },
+      {
+        "name": "RacesCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacesAllCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsParticipiedEvent",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceMajorStatus",
+        "type": "DriverSessionStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "QualMajorStatus",
+        "type": "DriverSessionStatus",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsRaceMajorParticipied",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsQualMajorParticipied",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsRaceMajorClassified",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsQualMajorClassified",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceMajorPosition",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualMajorPosition",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RaceMajorPositionString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualMajorPositionString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPoints",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeGame",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeStewards",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPosGame",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPosStewards",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeSum",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPosSum",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsWorstEvent",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsMajorRaceFastestLap",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsMajorQualPole",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "AllStandingsSessions",
+        "type": "StandingsSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "PointsString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Season.Standings": {
+    "className": "StandingsSeasonRenderData",
+    "properties": [
+      {
+        "name": "Drivers",
+        "type": "DriverSeasonRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Teams",
+        "type": "TeamSeasonRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "LastEvent",
+        "type": "EventRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "SeasonProgressPercent",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "DriverSeasonLeader",
+        "type": "DriverRenderObject",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "TeamSeasonLeader",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Events",
+        "type": "EventRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "IsPositionJumpForDriversExists",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPositionJumpForTeamsExists",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacingClass",
+        "type": "RacingClassInfo",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsHaveRacingClass",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Session.Standings": {
+    "className": "StandingsSessionRenderData",
+    "properties": [
+      {
+        "name": "DriverSession",
+        "type": "DriverSessionRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsSessionMajorForSeason",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsSessionMajor",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Points",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "DiscardedPoints",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsSessionOnlyPointsDiscarded",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsSessionFullyDiscarded",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Session",
+        "type": "SessionRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsSessionDiscarded",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Event.Teams": {
+    "className": "TeamEventRenderData",
+    "properties": [
+      {
+        "name": "Event",
+        "type": "EventRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Races",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Quals",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Practices",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "MajorRaces",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "MajorQuals",
+        "type": "DriverSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "StandingsRaces",
+        "type": "StandingsSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "StandingsQuals",
+        "type": "StandingsSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "StandingsPractices",
+        "type": "StandingsSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "Points",
+        "type": "PointsValue",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "RacesClassificationPosition",
+        "type": "number",
+        "isCollection": true,
+        "isComplex": false
+      },
+      {
+        "name": "RacesMajorClassificationPosition",
+        "type": "number",
+        "isCollection": true,
+        "isComplex": false
+      },
+      {
+        "name": "QualsClassificationPosition",
+        "type": "number",
+        "isCollection": true,
+        "isComplex": false
+      },
+      {
+        "name": "RacesCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacesAllCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "QualsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacesFinish",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "RacesAllFinish",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPoints",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeGame",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeStewards",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPosGame",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPosStewards",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyTimeSum",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PenaltyPosSum",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "AllStandingsSessions",
+        "type": "StandingsSessionRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "PointsValue",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Season.Teammates": {
+    "className": "TeammatesSeasonRenderData",
+    "properties": [
+      {
+        "name": "Team",
+        "type": "TeamRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Drivers",
+        "type": "TeammateDriverRenderData",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "SeasonProgressPercent",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Driver1",
+        "type": "TeammateDriverRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Driver2",
+        "type": "TeammateDriverRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Driver3",
+        "type": "TeammateDriverRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Driver4",
+        "type": "TeammateDriverRenderData",
+        "isCollection": false,
+        "isComplex": true
+      }
+    ]
+  }
+}

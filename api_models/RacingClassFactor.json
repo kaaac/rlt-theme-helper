@@ -1,0 +1,34 @@
+{
+  "className": "RacingClassFactor",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Type",
+      "type": "RacingClassFactorType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Type property"
+    },
+    {
+      "name": "DriverFeature",
+      "type": "DriverFeatures",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverFeature property"
+    },
+    {
+      "name": "CarClass",
+      "type": "CarClassRenderData",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "CarClass property"
+    }
+  ]
+}
