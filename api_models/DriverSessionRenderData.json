@@ -7,14 +7,6 @@
   },
   "properties": [
     {
-      "name": "LiveryPath",
-      "type": "string",
-      "isNullable": false,
-      "isCollection": false,
-      "isComplex": false,
-      "description": "LiveryPath property"
-    },
-    {
       "name": "Position",
       "type": "number",
       "isNullable": false,
@@ -23,20 +15,20 @@
       "description": "Position value"
     },
     {
-      "name": "String",
-      "type": "string Pos",
+      "name": "PositionString",
+      "type": "string",
       "isNullable": false,
       "isCollection": false,
-      "isComplex": true,
-      "description": "String property"
+      "isComplex": false,
+      "description": "Position as formatted string"
     },
     {
-      "name": "IncludeStatus",
-      "type": "string Pos",
+      "name": "PositionIncludeStatus",
+      "type": "string",
       "isNullable": false,
       "isCollection": false,
-      "isComplex": true,
-      "description": "IncludeStatus property"
+      "isComplex": false,
+      "description": "Position as formatted string"
     },
     {
       "name": "ClassificationPosition",
@@ -152,11 +144,19 @@
     },
     {
       "name": "FastestLapTyres",
-      "type": "TyresType",
+      "type": "TyreType",
       "isNullable": true,
       "isCollection": false,
       "isComplex": true,
       "description": "FastestLapTyres property"
+    },
+    {
+      "name": "FastestLapTyresInfo",
+      "type": "TyreTypeInfo",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestLapTyresInfo property"
     },
     {
       "name": "FastestLapNumLap",
@@ -237,6 +237,14 @@
       "isCollection": false,
       "isComplex": false,
       "description": "Indicates whether overall fastest sector3"
+    },
+    {
+      "name": "Segments",
+      "type": "Dictionary<QualificationType, DriverSessionRenderData>",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Segments property"
     },
     {
       "name": "QualQ1Time",
@@ -343,6 +351,14 @@
       "description": "Indicates whether best moment driver"
     },
     {
+      "name": "IsMostLapsLedDriver",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether most laps led driver"
+    },
+    {
       "name": "PenaltyTimeIngame",
       "type": "number",
       "isNullable": false,
@@ -440,7 +456,7 @@
     },
     {
       "name": "RaceNumber",
-      "type": "number",
+      "type": "string",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
@@ -488,11 +504,19 @@
     },
     {
       "name": "Stints",
-      "type": "TyresStint",
+      "type": "TyreStintInfo",
       "isNullable": false,
       "isCollection": true,
       "isComplex": true,
       "description": "Stints property"
+    },
+    {
+      "name": "Laps",
+      "type": "LapInfo",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Laps property"
     },
     {
       "name": "OvertakesCount",
@@ -581,6 +605,94 @@
       "isCollection": false,
       "isComplex": false,
       "description": "TeamPointsString property"
+    },
+    {
+      "name": "Stint0",
+      "type": "TyreStintInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Stint0 property"
+    },
+    {
+      "name": "Stint1",
+      "type": "TyreStintInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Stint1 property"
+    },
+    {
+      "name": "Stint2",
+      "type": "TyreStintInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Stint2 property"
+    },
+    {
+      "name": "Stint3",
+      "type": "TyreStintInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Stint3 property"
+    },
+    {
+      "name": "Stint4",
+      "type": "TyreStintInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Stint4 property"
+    },
+    {
+      "name": "Lap0",
+      "type": "LapInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Lap0 property"
+    },
+    {
+      "name": "Lap1",
+      "type": "LapInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Lap1 property"
+    },
+    {
+      "name": "Lap2",
+      "type": "LapInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Lap2 property"
+    },
+    {
+      "name": "Lap3",
+      "type": "LapInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Lap3 property"
+    },
+    {
+      "name": "Lap4",
+      "type": "LapInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Lap4 property"
+    },
+    {
+      "name": "Lap5",
+      "type": "LapInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Lap5 property"
     },
     {
       "name": "PrimaryDriverFeature",

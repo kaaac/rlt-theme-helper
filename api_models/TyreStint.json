@@ -1,6 +1,6 @@
 {
-  "className": "TyresStint",
-  "namespace": "",
+  "className": "TyreStint",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
   "inheritance": {
     "base": null,
     "interfaces": []

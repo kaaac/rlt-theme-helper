@@ -47,6 +47,14 @@
       "description": "Position value"
     },
     {
+      "name": "RaceNumber",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RaceNumber property"
+    },
+    {
       "name": "Badge",
       "type": "string",
       "isNullable": false,
@@ -117,6 +125,14 @@
       "isCollection": true,
       "isComplex": true,
       "description": "DriverFeatures property"
+    },
+    {
+      "name": "LiveryPath",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LiveryPath property"
     },
     {
       "name": "PrimaryDriverFeature",

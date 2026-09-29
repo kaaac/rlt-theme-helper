@@ -1,0 +1,5 @@
+{
+    "ComponentName": "StintCell",
+    "BlockType": "text",
+    "Source": "{Item.Laps}"
+}

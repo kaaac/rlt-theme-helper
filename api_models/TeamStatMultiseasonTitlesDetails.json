@@ -1,90 +1,82 @@
 {
-  "className": "DriverMultiseasonDisciplineDetails",
-  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+  "className": "TeamStatMultiseasonTitlesDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStatisticsMultiseason.Details",
   "inheritance": {
     "base": null,
     "interfaces": []
   },
   "properties": [
     {
-      "name": "DnfCount",
+      "name": "ConstructorsTitles",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "Number of dnf"
+      "description": "ConstructorsTitles property"
     },
     {
-      "name": "DsqCount",
-      "type": "number",
-      "isNullable": false,
-      "isCollection": false,
-      "isComplex": false,
-      "description": "Number of dsq"
-    },
-    {
-      "name": "TotalPenaltyPoints",
-      "type": "number",
-      "isNullable": false,
-      "isCollection": false,
-      "isComplex": false,
-      "description": "TotalPenaltyPoints property"
-    },
-    {
-      "name": "CleanRacesCount",
-      "type": "number",
-      "isNullable": false,
-      "isCollection": false,
-      "isComplex": false,
-      "description": "Number of clean races"
-    },
-    {
-      "name": "CleanRacePercent",
+      "name": "ConstructorsTitlesString",
       "type": "string",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "CleanRacePercent property"
+      "description": "ConstructorsTitlesString property"
     },
     {
-      "name": "ReliabilityPercent",
+      "name": "BestStandingsPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "WorstStandingsPosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "AverageStandingsPosition",
       "type": "string",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "ReliabilityPercent property"
+      "description": "Position as formatted string"
     },
     {
-      "name": "DnfRate",
+      "name": "RunnerUpFinishes",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "DnfRate property"
+      "description": "RunnerUpFinishes property"
     },
     {
-      "name": "CleanRaceRate",
+      "name": "TopThreeFinishes",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "CleanRaceRate property"
+      "description": "TopThreeFinishes property"
     },
     {
-      "name": "TotalStewardsPenaltySecs",
+      "name": "TopFiveFinishes",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "TotalStewardsPenaltySecs property"
+      "description": "TopFiveFinishes property"
     },
     {
-      "name": "StewardsPenaltySecsPerRace",
+      "name": "TotalRoundsLeading",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "StewardsPenaltySecsPerRace property"
+      "description": "TotalRoundsLeading property"
     }
   ]
 }

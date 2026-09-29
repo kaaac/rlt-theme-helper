@@ -1,0 +1,50 @@
+{
+  "className": "TeamStatMultiseasonRosterDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "UniqueDriversCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of unique drivers"
+    },
+    {
+      "name": "PrimaryDriversCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of primary drivers"
+    },
+    {
+      "name": "TopScorerName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TopScorerName property"
+    },
+    {
+      "name": "TopScorerPoints",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TopScorerPoints property"
+    },
+    {
+      "name": "Drivers",
+      "type": "TeamStatMultiseasonRosterEntry",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Drivers property"
+    }
+  ]
+}

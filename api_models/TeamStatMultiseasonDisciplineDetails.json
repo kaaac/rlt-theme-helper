@@ -1,6 +1,6 @@
 {
-  "className": "DriverMultiseasonDisciplineDetails",
-  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+  "className": "TeamStatMultiseasonDisciplineDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStatisticsMultiseason.Details",
   "inheritance": {
     "base": null,
     "interfaces": []

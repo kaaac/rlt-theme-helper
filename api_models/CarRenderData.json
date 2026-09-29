@@ -7,6 +7,14 @@
   },
   "properties": [
     {
+      "name": "UniqueId",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "UniqueId property"
+    },
+    {
       "name": "CarClass",
       "type": "CarClassRenderData",
       "isNullable": false,

@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### 🔮 Data completion (Renderer API v0.9.8)
+
+- **API models updated to v0.9.8** - 14 new classes (team multiseason statistics, `LapInfo`, `DisplayNamePart`, `TeamSeasonChampionshipDetails`, ...) and new properties, e.g. driver `DisplayName` / `FirstName` / `LastName` / `Gender`, session `MostLapsLedDriver` / `Date`, driver session `Laps`, `Lap0`–`Lap5`, `Stint0`–`Stint4`, track `Type` / `Layout`, event `Name` / `EventType`
+- **All root objects** - `DeepRatings`, `Teammates`, `TeamStandingsMultiseason`, `TeamStatistics`, `TeamsStatistics`, `DriverStatistics`, `DriversStatistics`, `TrackStatistics`, `TracksStatistics`
+- **Render type aware** - `DriverInfo` and `Penalties` use the class of the layout's `RenderType` (`DriverSession`, `PenaltySeasonStatistics`)
+- **`ParentItem.`** completion in nested tables and item stacks
+- **Nested sources resolved by type** - `Item.Stints`, `Item.Laps` etc. are resolved through the class of the outer item instead of guessing by name, also for components used inside nested iterations (e.g. `Lineups.Teams` items are `LineupTeamCarRenderData`, not `TeamRenderData`)
+- Model generator: single API request for the file list (no rate limit issues), optional `GITHUB_TOKEN`, fails instead of generating from a partial download, removes models of deleted classes
+
 ### ✅ Validation (no more false errors on valid themes)
 
 - **All render types** - `DeepRatingsSeason`, `Teammates`, `TeamStandingsMultiseason`, `TeamStatistics`, `TeamsStatistics`, `DriverStatistics`, `DriversStatistics`, `TrackStatistics` and `TracksStatistics` are accepted in `layout_description.json` (the default theme failed validation)

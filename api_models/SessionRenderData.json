@@ -80,11 +80,19 @@
     },
     {
       "name": "FastestLapTyres",
-      "type": "TyresType",
+      "type": "TyreType",
       "isNullable": false,
       "isCollection": false,
       "isComplex": true,
       "description": "FastestLapTyres property"
+    },
+    {
+      "name": "FastestLapTyresInfo",
+      "type": "TyreTypeInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "FastestLapTyresInfo property"
     },
     {
       "name": "FastestLapNumLap",
@@ -127,12 +135,124 @@
       "description": "DriverDayDriver property"
     },
     {
+      "name": "IsRaceDriverDayCanBeAwardedPoints",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether race driver day can be awarded points"
+    },
+    {
+      "name": "RaceDriverDayAwardedDriverPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceDriverDayAwardedDriverPoints property"
+    },
+    {
+      "name": "RaceDriverDayAwardedTeamPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceDriverDayAwardedTeamPoints property"
+    },
+    {
       "name": "BestMomentDriver",
       "type": "DriverRenderData",
       "isNullable": false,
       "isCollection": false,
       "isComplex": true,
       "description": "BestMomentDriver property"
+    },
+    {
+      "name": "IsRaceBestMomentCanBeAwardedPoints",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether race best moment can be awarded points"
+    },
+    {
+      "name": "RaceBestMomentAwardedDriverPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceBestMomentAwardedDriverPoints property"
+    },
+    {
+      "name": "RaceBestMomentAwardedTeamPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceBestMomentAwardedTeamPoints property"
+    },
+    {
+      "name": "MostLapsLedDriver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "MostLapsLedDriver property"
+    },
+    {
+      "name": "MostLapsLedCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of most laps led"
+    },
+    {
+      "name": "IsRaceMostLapsLedCanBeAwardedPoints",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether race most laps led can be awarded points"
+    },
+    {
+      "name": "RaceMostLapsLedAwardedDriverPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceMostLapsLedAwardedDriverPoints property"
+    },
+    {
+      "name": "RaceMostLapsLedAwardedTeamPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceMostLapsLedAwardedTeamPoints property"
+    },
+    {
+      "name": "Date",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Date property"
+    },
+    {
+      "name": "DateLocal",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DateLocal property"
+    },
+    {
+      "name": "DateGmt",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DateGmt property"
     },
     {
       "name": "IsLiveData",

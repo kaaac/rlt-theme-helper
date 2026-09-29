@@ -1,0 +1,74 @@
+{
+  "className": "TeamStatMultiseasonPointsDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "AveragePointsPerSeason",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "AveragePointsPerSeason property"
+    },
+    {
+      "name": "AveragePointsPerRace",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "AveragePointsPerRace property"
+    },
+    {
+      "name": "AveragePointsPerEvent",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "AveragePointsPerEvent property"
+    },
+    {
+      "name": "BestSeasonPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "BestSeasonPoints property"
+    },
+    {
+      "name": "WorstSeasonPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "WorstSeasonPoints property"
+    },
+    {
+      "name": "BestRacePoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "BestRacePoints property"
+    },
+    {
+      "name": "ScoringRacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of scoring races"
+    },
+    {
+      "name": "ScoringRatePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ScoringRatePercent property"
+    }
+  ]
+}

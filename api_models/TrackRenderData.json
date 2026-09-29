@@ -31,12 +31,52 @@
       "description": "LocationName property"
     },
     {
+      "name": "CircuitOrigin",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "CircuitOrigin property"
+    },
+    {
+      "name": "UniqueId",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "UniqueId property"
+    },
+    {
       "name": "Years",
       "type": "string",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
       "description": "Years property"
+    },
+    {
+      "name": "YearStart",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "YearStart property"
+    },
+    {
+      "name": "YearEnd",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "YearEnd property"
+    },
+    {
+      "name": "IsHaveYearEnd",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have year end"
     },
     {
       "name": "Length",
@@ -85,6 +125,22 @@
       "isCollection": false,
       "isComplex": false,
       "description": "RaceLapRecordDriverName property"
+    },
+    {
+      "name": "Type",
+      "type": "TrackType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Type property"
+    },
+    {
+      "name": "Layout",
+      "type": "TrackLayout",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Layout property"
     }
   ],
   "inheritedProperties": [

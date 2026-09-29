@@ -1,0 +1,146 @@
+{
+  "className": "TeamStatisticsMultiseasonRenderData",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStatisticsMultiseason",
+  "inheritance": {
+    "base": "BaseRenderData",
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Team",
+      "type": "TeamRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Team property"
+    },
+    {
+      "name": "MultiSeasonName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "MultiSeasonName property"
+    },
+    {
+      "name": "SeasonsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of seasons"
+    },
+    {
+      "name": "TotalPoints",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TotalPoints property"
+    },
+    {
+      "name": "Wins",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Wins property"
+    },
+    {
+      "name": "Podiums",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Podiums property"
+    },
+    {
+      "name": "Poles",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Poles property"
+    },
+    {
+      "name": "RacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of races"
+    },
+    {
+      "name": "EventsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of events"
+    },
+    {
+      "name": "ParticipationDetails",
+      "type": "TeamStatMultiseasonParticipationDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "ParticipationDetails property"
+    },
+    {
+      "name": "PositionsDetails",
+      "type": "TeamStatMultiseasonPositionsDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PositionsDetails property"
+    },
+    {
+      "name": "PointsDetails",
+      "type": "TeamStatMultiseasonPointsDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "PointsDetails property"
+    },
+    {
+      "name": "TitlesDetails",
+      "type": "TeamStatMultiseasonTitlesDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TitlesDetails property"
+    },
+    {
+      "name": "DisciplineDetails",
+      "type": "TeamStatMultiseasonDisciplineDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DisciplineDetails property"
+    },
+    {
+      "name": "RaceDetails",
+      "type": "TeamStatMultiseasonRaceDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RaceDetails property"
+    },
+    {
+      "name": "RosterDetails",
+      "type": "TeamStatMultiseasonRosterDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RosterDetails property"
+    },
+    {
+      "name": "Seasons",
+      "type": "TeamStatMultiseasonSeasonEntry",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "Seasons property"
+    }
+  ]
+}
