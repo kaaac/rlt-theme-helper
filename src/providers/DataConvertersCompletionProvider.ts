@@ -1,6 +1,6 @@
-const vscode = require('vscode');
+import * as vscode from 'vscode';
 
-const dataConverters = [
+const dataConverters: { name: string, description: string }[] = [
     { name: 'StringToLowerString', description: '' },
     { name: 'StringToUpperString', description: '' },
     { name: 'StringEquals', description: 'string comparison' },
@@ -37,8 +37,8 @@ const dataConverters = [
     { name: 'DateCustomFormat', description: 'Custom format of date and/or time.' },
 ];
 
-class DataConvertersCompletionProvider {
-    provideCompletionItems(document, position){
+export class DataConvertersCompletionProvider implements vscode.CompletionItemProvider {
+    provideCompletionItems(document: vscode.TextDocument, position: vscode.Position): vscode.CompletionItem[] | undefined {
         const linePrefix = document.lineAt(position).text.substring(0, position.character);
 
         if(!linePrefix.endsWith('Converter=')){
@@ -52,5 +52,3 @@ class DataConvertersCompletionProvider {
         return completionItems;
     }
 }
-
-module.exports = DataConvertersCompletionProvider;

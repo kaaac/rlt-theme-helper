@@ -1,26 +1,29 @@
+import { Localization } from './themeContext';
+
 const NESTED_VARIABLE = /\{([a-zA-Z0-9._]+)\}/g;
 const MAX_NESTING = 10;
+
+function hasOwn(object: object, key: string): boolean {
+    return Object.prototype.hasOwnProperty.call(object, key);
+}
 
 /**
  * Look up a primitive value by key: first as a flat key ("Theme.Background"), then as a dot path.
  * Objects are not values, they return null.
- * @param {Object} source
- * @param {string} key
- * @returns {string|null}
  */
-function lookupValue(source, key) {
+function lookupValue(source: unknown, key: string): string | null {
     if (!source || typeof source !== 'object') {
         return null;
     }
 
-    let value;
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-        value = source[key];
+    let value: unknown;
+    if (hasOwn(source, key)) {
+        value = (source as Record<string, unknown>)[key];
     } else {
         value = source;
         for (const part of key.split('.')) {
-            if (value && typeof value === 'object' && Object.prototype.hasOwnProperty.call(value, part)) {
-                value = value[part];
+            if (value && typeof value === 'object' && hasOwn(value, part)) {
+                value = (value as Record<string, unknown>)[part];
             } else {
                 return null;
             }
@@ -36,14 +39,11 @@ function lookupValue(source, key) {
 /**
  * Resolve a global variable expression (the text between the outer braces),
  * including nested references like `{Colors.{Team}}`.
- * @param {string} expression
- * @param {Object} globalVars
- * @returns {string|null}
  */
-function resolveGlobalVariable(expression, globalVars) {
-    let resolved = expression.replace(/^\{|\}$/g, '');
+export function resolveGlobalVariable(expression: string, globalVars: Record<string, unknown>): string | null {
+    let resolved = stripOuterBraces(expression);
     const pattern = new RegExp(NESTED_VARIABLE.source, 'g');
-    let match;
+    let match: RegExpExecArray | null;
     let iterations = 0;
 
     while ((match = pattern.exec(resolved)) !== null && iterations < MAX_NESTING) {
@@ -59,16 +59,26 @@ function resolveGlobalVariable(expression, globalVars) {
 }
 
 /**
- * Resolve a `[Key]` localization reference against the theme's default localization.
- * @param {string} key
- * @param {{ strings: Object } | null} localization
- * @returns {string|null}
+ * "{Primary}" -> "Primary", but "Colors.{Team}" and "{A}.{B}" stay as they are.
  */
-function resolveLocalizationKey(key, localization) {
-    return localization ? lookupValue(localization.strings, key) : null;
+function stripOuterBraces(expression: string): string {
+    if (!expression.startsWith('{') || !expression.endsWith('}')) {
+        return expression;
+    }
+    const inner = expression.slice(1, -1);
+    let depth = 0;
+    for (const char of inner) {
+        depth += char === '{' ? 1 : char === '}' ? -1 : 0;
+        if (depth < 0) {
+            return expression;
+        }
+    }
+    return depth === 0 ? inner : expression;
 }
 
-module.exports = {
-    resolveGlobalVariable,
-    resolveLocalizationKey
-};
+/**
+ * Resolve a `[Key]` localization reference against the theme's default localization.
+ */
+export function resolveLocalizationKey(key: string, localization: Localization | null): string | null {
+    return localization ? lookupValue(localization.strings, key) : null;
+}

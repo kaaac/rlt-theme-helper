@@ -1,48 +1,41 @@
-const vscode = require('vscode');
-const path = require('path');
-const { getThemeContext, onDidChangeTheme } = require('../core/themeContext');
-const { resolveGlobalVariable, resolveLocalizationKey } = require('../core/variables');
-const { isColorValue } = require('../core/colors');
+import * as vscode from 'vscode';
+import * as path from 'path';
+import { getThemeContext, onDidChangeTheme } from '../core/themeContext';
+import { resolveGlobalVariable, resolveLocalizationKey } from '../core/variables';
+import { isColorValue } from '../core/colors';
+
+// Patterns for variable references
+// (variables live inside JSON strings, so they never span quotes or lines)
+const PATTERNS = [
+    // {VariableName} or {Variable.Property} or {Variable.Nested.Property}
+    /\{([a-zA-Z0-9._]+)\}/g,
+    // {{VariableName}}
+    /\{\{([^}"\n]+)\}\}/g,
+    // {Variable{NestedVar}}, {{Variable}OtherPart} or {some{nice}value}
+    /\{([^}"\n]*\{[^}"\n]+\}[^}"\n]*)\}/g,
+    // [LocalizationKey] - localization strings
+    /\[([a-zA-Z0-9._]+)\]/g
+];
 
 /**
  * Inlay Hints Provider for Global Variables
  * Shows resolved values of global variables and localization keys inline in the editor
  */
-class GlobalVarsInlayHintsProvider {
+export class GlobalVarsInlayHintsProvider implements vscode.InlayHintsProvider {
 
-    constructor() {
-        // Re-render hints when global_vars.json or localizations change
-        this.onDidChangeInlayHints = onDidChangeTheme;
-    }
+    // Re-render hints when global_vars.json or localizations change
+    readonly onDidChangeInlayHints: vscode.Event<void> = (listener, thisArgs, disposables) =>
+        onDidChangeTheme(() => listener.call(thisArgs), null, disposables);
 
-    /**
-     * Provide inlay hints for the document
-     * @param {vscode.TextDocument} document
-     * @param {vscode.Range} range
-     * @returns {vscode.ProviderResult<vscode.InlayHint[]>}
-     */
-    provideInlayHints(document, range) {
-        const hints = [];
-        const seen = new Set();
+    provideInlayHints(document: vscode.TextDocument, range: vscode.Range): vscode.InlayHint[] {
+        const hints: vscode.InlayHint[] = [];
+        const seen = new Set<string>();
         const text = document.getText();
         const theme = getThemeContext(document);
 
-        // Patterns for variable references
-        const patterns = [
-            // {VariableName} or {Variable.Property} or {Variable.Nested.Property}
-            /\{([a-zA-Z0-9._]+)\}/g,
-            // {{VariableName}}
-            /\{\{([^}]+)\}\}/g,
-            // {Variable{NestedVar}} or {{Variable}OtherPart}
-            /\{([^}]*\{[^}]+\}[^}]*)\}/g,
-            // Mixed patterns like {some{nice}value}
-            /\{([a-zA-Z0-9._]*\{[^}]+\}[a-zA-Z0-9._]*)\}/g,
-            // [LocalizationKey] - localization strings
-            /\[([a-zA-Z0-9._]+)\]/g
-        ];
-
-        for (const pattern of patterns) {
-            let match;
+        for (const source of PATTERNS) {
+            const pattern = new RegExp(source.source, 'g');
+            let match: RegExpExecArray | null;
             while ((match = pattern.exec(text)) !== null) {
                 const fullMatch = match[0];
                 const startOffset = match.index;
@@ -78,10 +71,10 @@ class GlobalVarsInlayHintsProvider {
                     ? new vscode.Position(matchStart.line, matchEnd.character + quoteMatch[0].length)
                     : matchEnd;
 
-                const hint = new vscode.InlayHint(hintPosition, this.formatHintLabel(resolvedValue), vscode.InlayHintKind.Type);
+                const hint = new vscode.InlayHint(hintPosition, formatHintLabel(resolvedValue), vscode.InlayHintKind.Type);
                 hint.paddingLeft = true;
 
-                const filePath = isLocalization ? (localization && localization.path) : theme.globalVarsPath;
+                const filePath = isLocalization ? localization?.path : theme.globalVarsPath;
                 const fileName = isLocalization ? 'localization file' : 'global_vars.json';
                 const tooltip = new vscode.MarkdownString();
                 tooltip.appendMarkdown(`**Resolved from ${fileName}:**\n\n\`${resolvedValue}\`\n\n`);
@@ -97,17 +90,13 @@ class GlobalVarsInlayHintsProvider {
 
         return hints;
     }
-
-    /**
-     * Format the hint label with a color indicator if applicable
-     * @param {string} value
-     * @returns {string}
-     */
-    formatHintLabel(value) {
-        const trimmedValue = value.trim();
-        // InlayHint can't render colored text, the color picker shows the actual color
-        return isColorValue(trimmedValue) ? `🎨 ${trimmedValue}` : `= ${trimmedValue}`;
-    }
 }
 
-module.exports = GlobalVarsInlayHintsProvider;
+/**
+ * Hint label, with a color indicator for color values
+ * (InlayHint can't render colored text, the color picker shows the actual color)
+ */
+export function formatHintLabel(value: string): string {
+    const trimmedValue = value.trim();
+    return isColorValue(trimmedValue) ? `🎨 ${trimmedValue}` : `= ${trimmedValue}`;
+}

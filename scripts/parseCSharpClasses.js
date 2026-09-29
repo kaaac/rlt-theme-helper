@@ -151,7 +151,7 @@ class CSharpParser {
         // 2. Expression-bodied properties: public Type Name => expression;
         
         // Pattern 1: Regular properties with { get; set; }
-        const propertyRegex = /public\s+(\??[\w<>,\s\[\]?]+?)\s+(\w+)\s*\{[^}]*\}/g;
+        const propertyRegex = /public\s+(\??[\w<>,\s[\]?]+?)\s+(\w+)\s*\{[^}]*\}/g;
         
         let match;
         while ((match = propertyRegex.exec(classBody)) !== null) {
@@ -174,7 +174,7 @@ class CSharpParser {
         }
 
         // Pattern 2: Expression-bodied properties (public Type Name => expression;)
-        const expressionPropertyRegex = /public\s+(\??[\w<>,\s\[\]?]+?)\s+(\w+)\s*=>/g;
+        const expressionPropertyRegex = /public\s+(\??[\w<>,\s[\]?]+?)\s+(\w+)\s*=>/g;
         
         while ((match = expressionPropertyRegex.exec(classBody)) !== null) {
             const rawType = match[1].trim();

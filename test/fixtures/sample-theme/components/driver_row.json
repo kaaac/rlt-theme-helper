@@ -1,0 +1,10 @@
+{
+    "ComponentName": "DriverRow",
+    "BlockType": "stack",
+    "Styles": [
+        { "StyleName": "RowInline", "FontSize": 10 }
+    ],
+    "Items": [
+        { "BlockType": "text", "Source": "{Item.Position}" }
+    ]
+}
