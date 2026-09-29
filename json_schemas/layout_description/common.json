@@ -2,99 +2,137 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-      "LayoutName": {
-        "type": "string",
-        "description": "Name of layout"
-      },
-      "RenderType": {
-        "type": "string",
-        "enum" : [
-          "RaceResults",
-          "QualResults",
-          "CombinedQualResults",
-          "DriverStandings",
-          "TeamStandings",
-          "Lineups",
-          "Calendar",
-          "DriverSessionStatistics",
-          "DriverSeasonStatistics",
-          "DriverSession",
-          "DriverInfo",
-          "PenaltySeasonStatistics",
-          "PenaltyItem",
-          "PenaltyItems"
-        ],
-        "description": "Render type (affects the data passed to layout and its location in the app UI)"
-      },
-      "RenderVersion" : {
-        "type" : "integer",
-        "minimum": 1,
-        "default": 1,
-        "description" : "There can be many layouts with the same RenderType and RenderDataType. In this case, you will need to specify an version that affects the order in which layouts are displayed in the app UI. Possible values: 1, 2, 3 (and more), 1 by default"
-      },
-      "RenderCaption": {
-        "type": "string",
-        "description": "Caption of layout (can be displayed in the app UI)"
-      },
-      "RenderCaptions" : {
-        "type" : "array",
-        "items" : {
-            "type" : "object",
-            "additionalProperties": {
-                "type" : "string"
+        "LayoutName": {
+            "type": "string",
+            "description": "Friendly name of the layout shown in tooling (optional)"
+        },
+        "RenderType": {
+            "type": "string",
+            "enum": [
+                "RaceResults",
+                "QualResults",
+                "CombinedQualResults",
+                "DriverStandings",
+                "TeamStandings",
+                "Lineups",
+                "Calendar",
+                "DriverSessionStatistics",
+                "DriverSeasonStatistics",
+                "DriverSession",
+                "DriverInfo",
+                "PenaltySeasonStatistics",
+                "PenaltyItem",
+                "PenaltyItems",
+                "DeepRatingsSeason",
+                "Teammates",
+                "TeamStandingsMultiseason",
+                "TeamStatistics",
+                "TeamsStatistics",
+                "DriverStatistics",
+                "DriversStatistics",
+                "TrackStatistics",
+                "TracksStatistics"
+            ],
+            "description": "Render type (determines the data passed to the layout and its location in the app UI)"
+        },
+        "RenderDataType": {
+            "type": "string",
+            "description": "Narrows the data to a specific variant for the chosen RenderType (DriverSessionStatistics, DriverSeasonStatistics). If not set, the layout is used for all data types."
+        },
+        "RenderVersion": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1,
+            "description": "There can be many layouts with the same RenderType and RenderDataType. In this case, you will need to specify an version that affects the order in which layouts are displayed in the app UI. Possible values: 1, 2, 3 (and more), 1 by default"
+        },
+        "RenderCaption": {
+            "type": "string",
+            "description": "Caption of layout shown in the app UI. When it starts with a lowercase letter, the prefix \"Render \" is added automatically."
+        },
+        "RenderCaptions": {
+            "type": "object",
+            "properties": {
+                "QualSegment": {
+                    "type": "string",
+                    "description": "QualResults: caption for qualification segments (default \"Render segment\")"
+                },
+                "EventPenalties": {
+                    "type": "string",
+                    "description": "PenaltyItems: caption for penalties of a specific event"
+                },
+                "EventPenaltiesWithSelection": {
+                    "type": "string",
+                    "description": "PenaltyItems: caption for user-selected penalties of a specific event"
+                },
+                "LastEventPenalties": {
+                    "type": "string",
+                    "description": "PenaltyItems: caption for penalties of the last event"
+                },
+                "LastEventPenaltiesWithSelection": {
+                    "type": "string",
+                    "description": "PenaltyItems: caption for user-selected penalties of the last event"
+                }
+            },
+            "description": "Context-specific captions keyed by usage scenario (QualResults, PenaltyItems). For DriverSessionStatistics and DriverSeasonStatistics also per-stat captions keyed by RenderDataType."
+        },
+        "IsShowsAsSegmentQual": {
+            "type": "boolean",
+            "default": true,
+            "description": "For QualResults only: whether the layout is available for qualification segments (Q1, Q2, Q3)"
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "required": ["RenderType"],
+                "properties": { "RenderType": { "const": "DriverSessionStatistics" } }
+            },
+            "then": {
+                "properties": {
+                    "RenderDataType": {
+                        "enum": [
+                            "PureRacePaceRating",
+                            "ConsistancyRating",
+                            "FastestLaps",
+                            "LongestStints",
+                            "AttackRating",
+                            "DefenseRating",
+                            "TopBattles"
+                        ]
+                    }
+                }
             }
         },
-        "description": "Specific layout’s captions (optional, only applies to certain RenderType"
-      },
-      "RenderDataType" : {
-        "type" : "string",
-        "oneOf" : [
-          {
+        {
             "if": {
-              "required": ["RenderType"],
-              "properties": { "RenderType": { "const": "DriverSeasonStatistics" } }
+                "required": ["RenderType"],
+                "properties": { "RenderType": { "const": "DriverSeasonStatistics" } }
             },
-            "then" : {
-              "enum" : [
-                "AvgPoints",
-                "AvgQualPos",
-                "AvgRacePos",
-                "FinishesBestSeries",
-                "FinishesPercent",
-                "GainedPositions",
-                "PenaltyPoints",
-                "PenTimeAllAvg",
-                "PenTimeAllSum",
-                "PenTimeIngameAvg",
-                "PenTimeIngameSum",
-                "PenTimeStewardAvg",
-                "PenTimeStewardSum",
-                "PointsBestSeries",
-                "TotalTyresUsage"
-              ]
+            "then": {
+                "properties": {
+                    "RenderDataType": {
+                        "enum": [
+                            "AvgPoints",
+                            "AvgQualPos",
+                            "AvgRacePos",
+                            "FinishesBestSeries",
+                            "FinishesPercent",
+                            "GainedPositions",
+                            "PenaltyPoints",
+                            "PenTimeAllAvg",
+                            "PenTimeAllSum",
+                            "PenTimeIngameAvg",
+                            "PenTimeIngameSum",
+                            "PenTimeStewardAvg",
+                            "PenTimeStewardSum",
+                            "PointsBestSeries",
+                            "TotalTyresUsage"
+                        ]
+                    }
+                }
             }
-          },
-          {
-            "if": {
-              "required": ["RenderType"],
-              "properties": { "RenderType": { "const": "DriverSessionStatistics" } }
-            },
-            "then" : {
-              "enum" : [
-                "PureRacePaceRating",
-                "ConsistancyRating",
-                "FastestLaps",
-                "LongestStints",
-                "AttackRating",
-                "DefenseRating",
-                "TopBattles"
-              ]
-            }
-          }
-        ]
-        
-      }
-    },
+        }
+    ],
     "required": ["RenderType"],
     "additionalProperties": false
-  }
+}

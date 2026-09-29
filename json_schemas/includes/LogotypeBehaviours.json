@@ -13,32 +13,48 @@
           "Team",
           "Track",
           "Championship",
-          "Season",
           "Event",
           "Driver"
-        ]
+        ],
+        "description": "Logotype category"
       },
       "Variant" : {
-        "type" : "string",
-        "enum" : [
-            "Default",
-            "Alternative",
-            "Dark",
-            "Light",
-            "Grayed"
-        ]
+        "anyOf" : [
+          {
+            "type" : "string",
+            "enum" : [
+              "Default",
+              "Alternative",
+              "Dark",
+              "Light",
+              "Outline",
+              "AlternativeDark",
+              "AlternativeLight"
+            ]
+          },
+          {
+            "type" : "string",
+            "pattern" : "^([Dd][Ee][Ff][Aa][Uu][Ll][Tt]|[Aa][Ll][Tt][Ee][Rr][Nn][Aa][Tt][Ii][Vv][Ee]([Dd][Aa][Rr][Kk]|[Ll][Ii][Gg][Hh][Tt])?|[Dd][Aa][Rr][Kk]|[Ll][Ii][Gg][Hh][Tt]|[Oo][Uu][Tt][Ll][Ii][Nn][Ee])$"
+          }
+        ],
+        "default" : "Default",
+        "description" : "Variant to configure: default, alternative, dark, light, outline, alternativedark, alternativelight (case-insensitive)"
       },
       "UseFallbackVariant" : {
         "type" : "boolean",
-        "default" : true
+        "default" : true,
+        "description" : "If true, searches for the default variant if the specified variant is missing"
       },
       "UseFallbackSource" : {
         "type" : "boolean",
-        "default" : true
+        "default" : true,
+        "description" : "If true, searches the default folder if the logo is not found in the theme folder"
       },
       "SetVariantByDefault" : {
         "type" : "boolean",
-        "default" : true
+        "default" : false,
+        "description" : "If true, this variant becomes the default for the object ({Team.LogotypePath} returns it)"
       }
-    }
+    },
+    "required": ["Category"]
   }

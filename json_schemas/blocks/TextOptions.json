@@ -1,39 +1,105 @@
 {
     "type": "object",
     "properties": {
-      "Text": {
-        "type": "string",
-        "description": "Text to display"
-      },
-      "FontName": { "$ref" : "FontName.json"},
-      "FontSize": { "$ref" : "FontSize.json"},
-      "FontStyle": {
-        "type": "string",
-        "enum": ["Regular", "Bold", "Italic", "BoldItalic"],
-        "description": "Style of the font"
-      },
-      "Foreground": { "$ref" : "Foreground.json"},
-      "TextAlignment": {
-        "type": "string",
-        "enum": ["Start", "End", "Center"],
-        "description": "Text alignment"
-      },
-      "HorizontalAlignment":    { "$ref" : "HorizontalAlignment.json" },
-      "VerticalAlignment":      { "$ref" : "VerticalAlignment.json" },
-      "LineSpacing": {
-        "type": "integer",
-        "description": "Line spacing"
-      },
-      "Wrap": {
-        "type": "boolean",
-        "description": "Wrap text"
-      },
-      "ColorizeRating": { "$ref" : "ColorizeRating.json"},
-      "Rotation": 
-      {
-        "type": "integer",
-        "description": "Rotation angle in degrees"
-      }
+        "Text": {
+            "type": "string",
+            "description": "Text to display"
+        },
+        "FontName": {
+            "$ref": "FontName.json"
+        },
+        "FontSize": {
+            "$ref": "FontSize.json"
+        },
+        "FontStyle": {
+            "description": "Style of the font",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "Regular",
+                        "Bold",
+                        "Italic",
+                        "BoldItalic"
+                    ]
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "Foreground": {
+            "$ref": "Foreground.json"
+        },
+        "TextAlignment": {
+            "description": "Text alignment",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "Start",
+                        "End",
+                        "Center"
+                    ]
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "HorizontalAlignment": {
+            "$ref": "HorizontalAlignment.json"
+        },
+        "VerticalAlignment": {
+            "$ref": "VerticalAlignment.json"
+        },
+        "LineSpacing": {
+            "description": "Line spacing",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "Wrap": {
+            "description": "Wrap text",
+            "anyOf": [
+                {
+                    "type": "boolean"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "ColorizeRating": {
+            "$ref": "ColorizeRating.json"
+        },
+        "Rotation": {
+            "description": "Rotation angle in degrees",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "RotateAroundCenter": {
+            "description": "Rotate around the center of the block instead of the top-left corner",
+            "anyOf": [
+                {
+                    "type": "boolean"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        }
     },
-    "additionalProperties" : false
+    "additionalProperties": false
 }

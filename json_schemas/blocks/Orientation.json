@@ -1,5 +1,15 @@
 {
-    "type": "string",
-    "enum": ["Horizontal", "Vertical"],
-    "description": "Orientation of the block"
+    "description": "Orientation of the block",
+    "anyOf": [
+        {
+            "type": "string",
+            "enum": [
+                "Horizontal",
+                "Vertical"
+            ]
+        },
+        {
+            "$ref": "../includes/expression.json"
+        }
+    ]
 }

@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### ✅ Validation (no more false errors on valid themes)
+
+- **All render types** - `DeepRatingsSeason`, `Teammates`, `TeamStandingsMultiseason`, `TeamStatistics`, `TeamsStatistics`, `DriverStatistics`, `DriversStatistics`, `TrackStatistics` and `TracksStatistics` are accepted in `layout_description.json` (the default theme failed validation)
+- **layout_description** - `RenderCaptions` is an object with known keys, new `IsShowsAsSegmentQual`, `RenderDataType` values are checked against the `RenderType`
+- **Expressions everywhere** - numeric, boolean and enum block properties (e.g. `Orientation`, `Spacing`, `HorizontalAlignment`, table column `Width`, `ColorizeOptions.Enabled`, `TextOptions.Wrap`) accept `{Expression}` and `<PublicProperty>`, including nested expressions in margins and paddings
+- **Triggers** - `TriggerName` is allowed, conditions and values accept any type (e.g. `true`, `0.5`), setter values can be nested options objects
+- **Logotypes** - variants `outline`, `alternativedark`, `alternativelight` (any letter case), removed `Grayed` variant and `Season` category, `Category` is required, `SetVariantByDefault` defaults to `false`
+- **Other** - `TextOptions.RotateAroundCenter`, grid rows/columns without all fields, any `Version` format, single-file components referenced by path without `ComponentName`
+
 ### 🐛 Bug Fixes
 
 - **Completions work while typing** - Component/Style/Trigger and `Item.` suggestions no longer disappear when the file is temporarily invalid JSON

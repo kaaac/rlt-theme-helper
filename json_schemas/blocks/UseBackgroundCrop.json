@@ -1,4 +1,11 @@
 {
-    "type": "boolean",
-    "description": "Whether background image should be cropped"
+    "description": "Whether background image should be cropped",
+    "anyOf": [
+        {
+            "type": "boolean"
+        },
+        {
+            "$ref": "../includes/expression.json"
+        }
+    ]
 }

@@ -3,7 +3,13 @@
   "type": "object",
   "if": {
     "anyOf": [
-      {"properties": { "BlockType": { "const": "grid" } }}
+      {
+        "properties": {
+          "BlockType": {
+            "const": "grid"
+          }
+        }
+      }
     ]
   },
   "then": {
@@ -17,15 +23,28 @@
               "type": "object",
               "properties": {
                 "Height": {
-                  "type": "integer",
-                  "description": "Height of the specific row"
+                  "description": "Height of the specific row",
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 },
                 "IsStretchHeight": {
-                  "type": "boolean",
-                  "description": "Indicates whether all available space should be filled (by height)"
+                  "description": "Indicates whether all available space should be filled (by height)",
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 }
-              },
-              "required": ["Height", "IsStretchHeight"]
+              }
             },
             "description": "List of GridRowDefinition"
           },
@@ -35,23 +54,36 @@
               "type": "object",
               "properties": {
                 "Width": {
-                  "type": "integer",
-                  "description": "Width of the specific column"
+                  "description": "Width of the specific column",
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 },
                 "IsStretchWidth": {
-                  "type": "boolean",
-                  "description": "Indicates whether all available space should be filled (by width)"
+                  "description": "Indicates whether all available space should be filled (by width)",
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 }
-              },
-              "required": ["Width", "IsStretchWidth"]
+              }
             },
             "description": "List of GridColDefinition"
           }
         },
         "additionalProperties": false
       },
-      "Styles" : {
-        "$ref" : "Styles.json"
+      "Styles": {
+        "$ref": "Styles.json"
       }
     }
   }

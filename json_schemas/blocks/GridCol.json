@@ -1,4 +1,11 @@
 {
-    "type": "integer",
-    "description": "Column number if block is child for grid"
+    "description": "Column number if block is child for grid",
+    "anyOf": [
+        {
+            "type": "integer"
+        },
+        {
+            "$ref": "../includes/expression.json"
+        }
+    ]
 }

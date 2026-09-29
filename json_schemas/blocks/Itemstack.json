@@ -2,7 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "if": {
-    "properties": { "BlockType": { "const": "itemstack" } }
+    "properties": {
+      "BlockType": {
+        "const": "itemstack"
+      }
+    }
   },
   "then": {
     "properties": {
@@ -17,23 +21,45 @@
             "type": "object",
             "description": "Template for each inner blocks",
             "allOf": [
-              { "$ref": "Canvas.json" },
-              { "$ref": "Component.json" },
-              { "$ref": "Dock_Stack.json" },
-              { "$ref": "Grid.json" },
-              { "$ref": "Image.json" },
-              { "$ref": "Items.json" },
-              { "$ref": "Itemstack.json" },
-              { "$ref": "Shape.json" },
-              { "$ref": "Table.json" },
-              { "$ref": "Text.json" },
-              { "$ref": "common.json" }
+              {
+                "$ref": "Canvas.json"
+              },
+              {
+                "$ref": "Component.json"
+              },
+              {
+                "$ref": "Dock_Stack.json"
+              },
+              {
+                "$ref": "Grid.json"
+              },
+              {
+                "$ref": "Image.json"
+              },
+              {
+                "$ref": "Items.json"
+              },
+              {
+                "$ref": "Itemstack.json"
+              },
+              {
+                "$ref": "Shape.json"
+              },
+              {
+                "$ref": "Table.json"
+              },
+              {
+                "$ref": "Text.json"
+              },
+              {
+                "$ref": "common.json"
+              }
             ]
           },
-          "Template" : {
-            "type" : "object",
-            "description" : "Template property is deprecated. use ItemTemplate instead.",
-            "deprecated" : true
+          "Template": {
+            "type": "object",
+            "description": "Template property is deprecated. use ItemTemplate instead.",
+            "deprecated": true
           },
           "SortMember": {
             "type": "string",
@@ -72,101 +98,108 @@
             "description": "Value of the property by which the collection will be filtered"
           },
           "Reverse": {
-            "type": "boolean",
-            "description": "Whether the collection elements should be reversed"
+            "description": "Whether the collection elements should be reversed",
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           },
           "Limit": {
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               },
               {
-                "type" : "string",
-                "pattern" : "^<.*>$"
+                "type": "string",
+                "pattern": "^<.*>$"
               }
             ],
             "description": "Limiting the number of items in the collection"
           },
           "IndexStart": {
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               },
               {
-                "type" : "string",
-                "pattern" : "^<.*>$"
+                "type": "string",
+                "pattern": "^<.*>$"
               }
             ],
             "description": "Starting index of the collection"
           },
           "IndexEnd": {
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               },
               {
-                "type" : "string",
-                "pattern" : "^<.*>$"
+                "type": "string",
+                "pattern": "^<.*>$"
               }
             ],
             "description": "Ending index of the collection"
           },
           "TakeItemIndex": {
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               },
               {
-                "type" : "string",
-                "pattern" : "^<.*>$"
+                "type": "string",
+                "pattern": "^<.*>$"
               }
             ],
             "description": "Required index of the collection (will consist only of one item by specified index)"
           },
           "TakeItemsFirst": {
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               },
               {
-                "type" : "string",
-                "pattern" : "^<.*>$"
+                "type": "string",
+                "pattern": "^<.*>$"
               }
             ],
             "description": "Number of the first items of the collection to be included"
           },
           "TakeItemsLast": {
-            "oneOf" : [
+            "oneOf": [
               {
-                "type" : "integer"
+                "type": "integer"
               },
               {
-                "type" : "string",
-                "pattern" : "^{.*}$"
+                "type": "string",
+                "pattern": "^{.*}$"
               },
               {
-                "type" : "string",
-                "pattern" : "^<.*>$"
+                "type": "string",
+                "pattern": "^<.*>$"
               }
             ],
             "description": "Number of the last items of the collection to be included"
@@ -179,14 +212,14 @@
         "additionalProperties": false,
         "description": "Options for the itemstack block"
       },
-      "Styles" : {
-        "$ref" : "Styles.json"
+      "Styles": {
+        "$ref": "Styles.json"
       },
-      "Components" : {
-        "type" :"array",
-        "items" : {
-          "type" : "object",
-          "$ref" : "Component_single.json"
+      "Components": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Component_single.json"
         }
       }
     }
