@@ -12,6 +12,7 @@
 - Style suggestions no longer include component names from `Components` arrays
 - Inlay hints: no duplicate hints for nested variables, no `[object Object]` values, hints refresh after editing `global_vars.json` or localizations
 - **Add Global Variable** keeps comments and formatting of `global_vars.json` (and can be undone)
+- **Missing API models** - the model generator now also reads C# `struct` and `record` types, adding `TyresStint`, `TyreStintInfo`, `TyreTypeInfo`, `TyreWear`, `DriverFeatureInfo`, `LayoutInfo`, `PointsValue` and `RatingValue` — `Item.` completion now works for stints and driver features, and `LayoutInfo.` completion works
 
 ### 🔧 Technical Changes
 

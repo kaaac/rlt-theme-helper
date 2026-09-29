@@ -1953,6 +1953,29 @@
       }
     ]
   },
+  "Driver.Features": {
+    "className": "DriverFeatureInfo",
+    "properties": [
+      {
+        "name": "DriverFeature",
+        "type": "DriverFeatures",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Abbreviation",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Name",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
   "Driver.LeagueRoles": {
     "className": "LeagueRoleRenderData",
     "properties": [
@@ -1989,6 +2012,123 @@
       {
         "name": "Priority",
         "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Driver.Stints": {
+    "className": "TyresStint",
+    "properties": [
+      {
+        "name": "Tyres",
+        "type": "TyresType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Laps",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Percentage",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPercentage",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "StartLapNumber",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EndLapNumber",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EndLapRaw",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Item.Stints": {
+    "className": "TyresStint",
+    "properties": [
+      {
+        "name": "Tyres",
+        "type": "TyresType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Laps",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Percentage",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPercentage",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "StartLapNumber",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EndLapNumber",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "EndLapRaw",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "Item.DriverFeatures": {
+    "className": "DriverFeatureInfo",
+    "properties": [
+      {
+        "name": "DriverFeature",
+        "type": "DriverFeatures",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "Abbreviation",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Name",
+        "type": "string",
         "isCollection": false,
         "isComplex": false
       }
@@ -3558,6 +3698,35 @@
       {
         "name": "IsSinglePenalty",
         "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      }
+    ]
+  },
+  "LayoutInfo": {
+    "className": "LayoutInfo",
+    "properties": [
+      {
+        "name": "RenderType",
+        "type": "RenderType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "RenderDataType",
+        "type": "RenderDataType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "RenderVersion",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "SpecificCaptionType",
+        "type": "string",
         "isCollection": false,
         "isComplex": false
       }

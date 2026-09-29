@@ -1,0 +1,42 @@
+{
+  "className": "LayoutInfo",
+  "namespace": "RacingLeagueTools.SharedLibrary.Models.Themes",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "RenderType",
+      "type": "RenderType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RenderType property"
+    },
+    {
+      "name": "RenderDataType",
+      "type": "RenderDataType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "RenderDataType property"
+    },
+    {
+      "name": "RenderVersion",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RenderVersion property"
+    },
+    {
+      "name": "SpecificCaptionType",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SpecificCaptionType property"
+    }
+  ]
+}

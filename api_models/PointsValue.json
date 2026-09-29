@@ -1,0 +1,74 @@
+{
+  "className": "PointsValue",
+  "namespace": "",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "IntValue",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "IntValue property"
+    },
+    {
+      "name": "RawValue",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RawValue property"
+    },
+    {
+      "name": "FloatValue",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FloatValue property"
+    },
+    {
+      "name": "StringValue",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "StringValue property"
+    },
+    {
+      "name": "ZeroEmptyStringValue",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ZeroEmptyStringValue property"
+    },
+    {
+      "name": "LocalizedStringValue",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LocalizedStringValue property"
+    },
+    {
+      "name": "ZeroEmptyLocalizedStringValue",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ZeroEmptyLocalizedStringValue property"
+    },
+    {
+      "name": "Value",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Value property"
+    }
+  ]
+}

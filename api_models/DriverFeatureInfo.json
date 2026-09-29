@@ -1,0 +1,34 @@
+{
+  "className": "DriverFeatureInfo",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "DriverFeature",
+      "type": "DriverFeatures",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "DriverFeature property"
+    },
+    {
+      "name": "Abbreviation",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Abbreviation property"
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Name property"
+    }
+  ]
+}

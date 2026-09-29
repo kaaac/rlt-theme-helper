@@ -1,0 +1,66 @@
+{
+  "className": "RatingValue",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "StringValue",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "StringValue property"
+    },
+    {
+      "name": "ValueOutOf10",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ValueOutOf10 property"
+    },
+    {
+      "name": "ValueOutOf100",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ValueOutOf100 property"
+    },
+    {
+      "name": "ValueOutOf1",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "ValueOutOf1 property"
+    },
+    {
+      "name": "Level",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Level property"
+    },
+    {
+      "name": "IsDefined",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether defined"
+    },
+    {
+      "name": "Value",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Value property"
+    }
+  ]
+}

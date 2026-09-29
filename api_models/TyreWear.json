@@ -1,0 +1,42 @@
+{
+  "className": "TyreWear",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "IntValue",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "IntValue property"
+    },
+    {
+      "name": "FloatValue",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "FloatValue property"
+    },
+    {
+      "name": "PercentValue",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PercentValue property"
+    },
+    {
+      "name": "IsHaveValue",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether have value"
+    }
+  ]
+}
