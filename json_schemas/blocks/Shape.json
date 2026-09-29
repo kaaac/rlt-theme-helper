@@ -18,7 +18,7 @@
                 "type": "object",
                 "properties": {
                     "ShapeType": {
-                        "description": "Type of shape (ellipse currently not works properly)",
+                        "description": "Type of shape",
                         "anyOf": [
                             {
                                 "type": "string",
@@ -35,6 +35,29 @@
                     "Fill": {
                         "type": "string",
                         "description": "Color"
+                    },
+                    "Rotation": {
+                        "description": "Rotates the shape clockwise, in degrees",
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "RotateAroundCenter": {
+                        "description": "If true, rotates the shape around its center",
+                        "default": false,
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
                     }
                 }
             }

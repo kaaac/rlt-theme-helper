@@ -32,10 +32,19 @@
                 "$ref": "Component.json"
               },
               {
+                "$ref": "Dock_Stack.json"
+              },
+              {
+                "$ref": "Grid.json"
+              },
+              {
                 "$ref": "Image.json"
               },
               {
                 "$ref": "Items.json"
+              },
+              {
+                "$ref": "Itemstack.json"
               },
               {
                 "$ref": "Shape.json"
@@ -423,6 +432,39 @@
                     },
                     {
                       "$ref": "common.json"
+                    }
+                  ]
+                },
+                "MultiColumnLimit": {
+                  "description": "Maximum number of items to display in multicolumn",
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
+                },
+                "MultiColumnIndexStart": {
+                  "description": "Start index for multicolumn items",
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
+                },
+                "MultiColumnIndexEnd": {
+                  "description": "End index for multicolumn items",
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
                     }
                   ]
                 }

@@ -2,55 +2,206 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-        "BlockType":              { "$ref" : "BlockType.json" },
-        "Name":                   { "$ref" : "Name.json" },
-        "RenderIf":               { "$ref" : "RenderIf.json" },
-        "Opacity":                { "$ref" : "Opacity.json" },
-        "Width":                  { "$ref" : "Width.json" },
-        "Height":                 { "$ref" : "Height.json" },
-        "MaxWidth":               { "$ref" : "MaxWidth.json" },
-        "MaxHeight":              { "$ref" : "MaxHeight.json" },
-        "StretchWidth":           { "$ref" : "StretchWidth.json" },
-        "StretchHeight":          { "$ref" : "StretchWidth.json"},
-        "HorizontalAlignment":    { "$ref" : "HorizontalAlignment.json" },
-        "VerticalAlignment":      { "$ref" : "VerticalAlignment.json" },
-        "Padding":                { "$ref" : "Padding.json"},
-        "Margin":                 { "$ref" : "Margin.json" },
-        "MarginLeft":             { "$ref" : "Outer_Inner.json",
-                                    "description": "Left margin of the block" },
-        "MarginTop":              { "$ref" : "Outer_Inner.json",
-                                    "description": "Top margin of the block" },
-        "MarginRight":            { "$ref" : "Outer_Inner.json",
-                                    "description": "Right margin of the block" },
-        "MarginBottom":           { "$ref" : "Outer_Inner.json",
-                                    "description": "Bottom margin of the block" },
-        "PaddingLeft":            { "$ref" : "Outer_Inner.json",
-                                    "description": "Left padding of the block" },
-        "PaddingTop":             { "$ref" : "Outer_Inner.json",
-                                    "description": "Top padding of the block" },
-        "PaddingRight":           { "$ref" : "Outer_Inner.json",
-                                    "description": "Right padding of the block" },
-        "PaddingBottom":          { "$ref" : "Outer_Inner.json",
-                                    "description": "Bottom padding of the block" },
-        "Background":             { "$ref" : "../includes/color.json" },
-        "BackgroundImage":        { "$ref" : "BackgroundImage.json"},
-        "UseBackgroundCrop":      { "$ref" : "UseBackgroundCrop.json"},
-        "BackgroundImageOpacity": { "$ref" : "BackgroundImageOpacity.json"},
-        "GridRow":                { "$ref" : "GridRow.json"},
-        "GridCol":                { "$ref" : "GridCol.json"},
-        "Colorize":               { "$ref" : "ColorizeOptions.json"},
-        "ColorizeBackground":     { "$ref" : "ColorizeOptions.json"},
-        "Triggers":               { "$ref" : "Triggers.json"},
-        "Source":                 { "$ref" : "Source.json"},
-        "FontName":               { "$ref" : "FontName.json"},
-        "FontSize":               { "$ref" : "FontSize.json"},
-        "Foreground":             { "$ref" : "Foreground.json"},
-        "Orientation":            { "$ref" : "Orientation.json"},
-        "Spacing":                { "$ref" : "Spacing.json"},
-        "Style" :                 { "$ref" : "Style.json"},
-        "WidthPercent":           { "$ref" : "WidthPercent.json",
-                                    "description": "Determines the percentage of the width of the parent block's available space. A value of 100 is equivalent to setting StretchWidth to true"},
-        "HeightPercent":          { "$ref" : "WidthPercent.json",
-                                    "description": "Determines the percentage of the height of the parent block's available space. A value of 100 is equivalent to setting StretchHeight to true"}
+        "BlockType": {
+            "$ref": "BlockType.json"
+        },
+        "Name": {
+            "$ref": "Name.json"
+        },
+        "RenderIf": {
+            "$ref": "RenderIf.json"
+        },
+        "Opacity": {
+            "$ref": "Opacity.json"
+        },
+        "Width": {
+            "$ref": "Width.json"
+        },
+        "Height": {
+            "$ref": "Height.json"
+        },
+        "MaxWidth": {
+            "$ref": "MaxWidth.json"
+        },
+        "MaxHeight": {
+            "$ref": "MaxHeight.json"
+        },
+        "StretchWidth": {
+            "$ref": "StretchWidth.json"
+        },
+        "StretchHeight": {
+            "$ref": "StretchHeight.json"
+        },
+        "HorizontalAlignment": {
+            "$ref": "HorizontalAlignment.json"
+        },
+        "VerticalAlignment": {
+            "$ref": "VerticalAlignment.json"
+        },
+        "Padding": {
+            "$ref": "Padding.json"
+        },
+        "Margin": {
+            "$ref": "Margin.json"
+        },
+        "MarginLeft": {
+            "$ref": "Outer_Inner.json",
+            "description": "Left margin of the block"
+        },
+        "MarginTop": {
+            "$ref": "Outer_Inner.json",
+            "description": "Top margin of the block"
+        },
+        "MarginRight": {
+            "$ref": "Outer_Inner.json",
+            "description": "Right margin of the block"
+        },
+        "MarginBottom": {
+            "$ref": "Outer_Inner.json",
+            "description": "Bottom margin of the block"
+        },
+        "PaddingLeft": {
+            "$ref": "Outer_Inner.json",
+            "description": "Left padding of the block"
+        },
+        "PaddingTop": {
+            "$ref": "Outer_Inner.json",
+            "description": "Top padding of the block"
+        },
+        "PaddingRight": {
+            "$ref": "Outer_Inner.json",
+            "description": "Right padding of the block"
+        },
+        "PaddingBottom": {
+            "$ref": "Outer_Inner.json",
+            "description": "Bottom padding of the block"
+        },
+        "Background": {
+            "$ref": "../includes/color.json"
+        },
+        "BackgroundImage": {
+            "$ref": "BackgroundImage.json"
+        },
+        "UseBackgroundCrop": {
+            "$ref": "UseBackgroundCrop.json",
+            "description": "Whether the background image should be cropped. Legacy: prefer BackgroundImageFitMode (UseBackgroundCrop: true without BackgroundImageFitMode is treated as Cover)"
+        },
+        "BackgroundImageOpacity": {
+            "$ref": "BackgroundImageOpacity.json"
+        },
+        "GridRow": {
+            "$ref": "GridRow.json"
+        },
+        "GridCol": {
+            "$ref": "GridCol.json"
+        },
+        "Colorize": {
+            "$ref": "ColorizeOptions.json"
+        },
+        "ColorizeBackground": {
+            "$ref": "ColorizeOptions.json"
+        },
+        "Triggers": {
+            "$ref": "Triggers.json"
+        },
+        "Source": {
+            "$ref": "Source.json"
+        },
+        "FontName": {
+            "$ref": "FontName.json"
+        },
+        "FontSize": {
+            "$ref": "FontSize.json"
+        },
+        "Foreground": {
+            "$ref": "Foreground.json"
+        },
+        "Orientation": {
+            "$ref": "Orientation.json"
+        },
+        "Spacing": {
+            "$ref": "Spacing.json"
+        },
+        "Style": {
+            "$ref": "Style.json"
+        },
+        "WidthPercent": {
+            "$ref": "WidthPercent.json",
+            "description": "Determines the percentage of the width of the parent block's available space. A value of 100 is equivalent to setting StretchWidth to true"
+        },
+        "HeightPercent": {
+            "$ref": "WidthPercent.json",
+            "description": "Determines the percentage of the height of the parent block's available space. A value of 100 is equivalent to setting StretchHeight to true"
+        },
+        "RenderForce": {
+            "description": "Forces rendering even if conditions are not met",
+            "anyOf": [
+                {
+                    "type": "boolean"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "MinWidth": {
+            "description": "Minimum width in pixels",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "MinHeight": {
+            "description": "Minimum height in pixels",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "DefaultBackgroundImage": {
+            "type": "string",
+            "description": "Default image path used if retrieving the BackgroundImage fails"
+        },
+        "BackgroundImageFitMode": {
+            "description": "Background image fit mode: Stretch (default), Cover (scale and crop overflow), Contain (scale to fit, may leave bars), None (original size). Respects HorizontalAlignment and VerticalAlignment.",
+            "default": "Stretch",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "Stretch",
+                        "Cover",
+                        "Contain",
+                        "None"
+                    ]
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "PositionZ": {
+            "description": "Z-index for child blocks of stack, canvas and dock (limited support)",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "Vars": {
+            "$ref": "Vars.json",
+            "description": "Local block variables. Inherited hierarchically and overrides higher-level variables."
+        }
     }
 }

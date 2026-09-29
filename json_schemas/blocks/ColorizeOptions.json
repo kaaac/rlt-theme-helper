@@ -28,7 +28,7 @@
             ]
         },
         "AlphaCompositionMode": {
-            "description": "Can be empty/null. Default value: (SrcATop)",
+            "description": "Composition mode. Can be empty/null. Default: SrcAtop",
             "anyOf": [
                 {
                     "type": "string",
@@ -67,6 +67,26 @@
                         "Lighten",
                         "Overlay",
                         "HardLight"
+                    ]
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "ColorImage": {
+            "type": "string",
+            "description": "Relative path to a PNG image used as a color overlay or a layer mask (Color is used if not specified)"
+        },
+        "ColorImageMode": {
+            "description": "How the ColorImage is applied: Alpha (draws image over source), Luminance (uses image as a layer mask). Default: Luminance",
+            "default": "Luminance",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "Alpha",
+                        "Luminance"
                     ]
                 },
                 {

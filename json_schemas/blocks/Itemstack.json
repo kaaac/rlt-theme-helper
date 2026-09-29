@@ -221,6 +221,9 @@
           "type": "object",
           "$ref": "Component_single.json"
         }
+      },
+      "PanelOptions": {
+        "$ref": "PanelOptions.json"
       }
     }
   }

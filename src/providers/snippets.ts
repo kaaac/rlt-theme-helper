@@ -14,7 +14,7 @@ const snippets: Record<string, Snippet> = {
     Canvas: {
         body: [
             '{',
-            '\t"BlockType" : "Canvas",',
+            '\t"BlockType" : "canvas",',
             '\t"Items" : [',
             '\t\t$1',
             '\t]',
@@ -26,16 +26,25 @@ const snippets: Record<string, Snippet> = {
             '{',
             '\t"Enabled" : true,',
             '\t"Color" : "$1",',
-            '\t"BlendPercentage" : "$2"',
+            '\t"BlendPercentage" : ${2:50}',
             '}'
         ]
+    },
+    "Colorize - image mask" : {
+        body: [
+            '{',
+            '\t"Enabled" : true,',
+            '\t"ColorImage" : "$1",',
+            '\t"ColorImageMode" : "${2|Luminance,Alpha|}"',
+            '}'
+        ],
+        description: "Colorize with an image overlay or layer mask"
     },
     "Component - create" : {
         body: [
             '{',
             '\t"ComponentName" : "$1",',
-            '\t"BlockType" : "$2",',
-            '\t$3',
+            '\t"BlockType" : "$2"$3',
             '}'
         ],
         description: "Create new component"
@@ -53,12 +62,33 @@ const snippets: Record<string, Snippet> = {
         body: [
             '{',
             '\t"BlockType" : "dock",',
-            '\t"Orientation" : "$1",',
+            '\t"Orientation" : "${1|Horizontal,Vertical|}",',
             '\t"Items" : [',
             '\t\t$2',
             '\t]',
             '}'
         ]
+    },
+    Grid : {
+        body: [
+            '{',
+            '\t"BlockType" : "grid",',
+            '\t"GridOptions" : {',
+            '\t\t"Rows" : [',
+            '\t\t\t{ "Height" : ${1:100} },',
+            '\t\t\t{ "IsStretchHeight" : true }',
+            '\t\t],',
+            '\t\t"Cols" : [',
+            '\t\t\t{ "Width" : ${2:100} },',
+            '\t\t\t{ "IsStretchWidth" : true }',
+            '\t\t]',
+            '\t},',
+            '\t"Items" : [',
+            '\t\t$3',
+            '\t]',
+            '}'
+        ],
+        description: "Grid with rows and columns (children use GridRow / GridCol)"
     },
     Image: {
         body: [
@@ -75,7 +105,7 @@ const snippets: Record<string, Snippet> = {
         body: [
             '{',
             '\t"BlockType" : "itemstack",',
-            '\t"Orientation" : "$1",',
+            '\t"Orientation" : "${1|Horizontal,Vertical|}",',
             '\t"ItemStackOptions" : {',
             '\t\t"ItemSource" : "$2",',
             '\t\t"ItemTemplate" : $3',
@@ -83,12 +113,35 @@ const snippets: Record<string, Snippet> = {
             '}'
         ]
     },
+    "Layout Description" : {
+        body: [
+            '{',
+            '\t"LayoutName" : "$1",',
+            '\t"RenderType" : "${2|RaceResults,QualResults,CombinedQualResults,DriverStandings,TeamStandings,Lineups,Calendar,DriverSessionStatistics,DriverSeasonStatistics,DriverSession,DriverInfo,PenaltySeasonStatistics,PenaltyItem,PenaltyItems,DeepRatingsSeason,Teammates,TeamStandingsMultiseason,TeamStatistics,TeamsStatistics,DriverStatistics,DriversStatistics,TrackStatistics,TracksStatistics|}",',
+            '\t"RenderVersion" : ${3:1},',
+            '\t"RenderCaption" : "$4"',
+            '}'
+        ],
+        description: "layout_description.json"
+    },
+    Localization : {
+        body: [
+            '{',
+            '\t"Id" : "${1:en-US}",',
+            '\t"Name" : "${2:English}",',
+            '\t"Strings" : {',
+            '\t\t"$3" : "$4"',
+            '\t}',
+            '}'
+        ],
+        description: "Localization file (localizations/*.json)"
+    },
     "Public Property" : {
         body: [
             '{',
             '\t"Name" : "$1",',
             '\t"PublicName" : "$2",',
-            '\t"Type" : "$3",',
+            '\t"Type" : "$3"',
             '}'
         ]
     },
@@ -97,7 +150,7 @@ const snippets: Record<string, Snippet> = {
             '{',
             '\t"BlockType" : "shape",',
             '\t"ShapeOptions" : {',
-            '\t\t"ShapeType" : "rectangle",',
+            '\t\t"ShapeType" : "${1|rectangle,ellipse|}",',
             '\t\t"Fill" : "$2"',
             '\t}',
             '}'
@@ -117,7 +170,7 @@ const snippets: Record<string, Snippet> = {
         body: [
             '{',
             '\t"StyleName" : "$1",',
-            '\t"BlockType" : "$2",',
+            '\t"BlockType" : "$2"',
             '}'
         ]
     },
@@ -139,7 +192,7 @@ const snippets: Record<string, Snippet> = {
         body: [
             '{',
             '\t"Header" : "$1",',
-            '\t"Template" : $2,',
+            '\t"Template" : $2',
             '}'
         ]
     },
@@ -147,9 +200,10 @@ const snippets: Record<string, Snippet> = {
         body: [
             '{',
             '\t"MultiColumnHeadersSource" : "$1",',
-            '\t"MultiColumnItemsSource" : $2,',
+            '\t"MultiColumnItemsSource" : "$2",',
             '\t"MultiColumnHeaderTemplate" : $3,',
-            '\t"Template" : $4,',
+            '\t"MultiColumnLimit" : ${4:10},',
+            '\t"Template" : $5',
             '}'
         ]
     },
@@ -164,12 +218,11 @@ const snippets: Record<string, Snippet> = {
     "Theme Description" : {
         body: [
             '{',
-            '\t"Name" : "$1",',
-            '\t"Author" : "$2",',
-            '\t"ThemeId" : "$3",',
+            '\t"ThemeId" : "$1",',
+            '\t"Name" : "$2",',
+            '\t"Author" : "$3"',
             '}'
         ],
-        
     },
     "Theme Link" : {
         body : [
@@ -179,24 +232,39 @@ const snippets: Record<string, Snippet> = {
             '}'
         ]
     },
+    "Trigger - external" : {
+        body: [
+            '{',
+            '\t"TriggerName" : "$1",',
+            '\t"Condition" : "$2",',
+            '\t"Setters" : [',
+            '\t\t{',
+            '\t\t\t"Property" : "$3",',
+            '\t\t\t"Value" : "$4"',
+            '\t\t}',
+            '\t]',
+            '}'
+        ],
+        description: "Named trigger for triggers/ files, used with \"Trigger\": \"name\""
+    },
     "Trigger - single" : {
         body: [
             '{',
             '\t"Condition" : "$1",',
-            '\t"Setters" :',
-            '\t[',
+            '\t"Setters" : [',
             '\t\t{',
             '\t\t\t"Property" : "$2",',
-            '\t\t\t"Value" : "$3",',
+            '\t\t\t"Value" : "$3"',
             '\t\t}',
+            '\t]',
             '}'
         ]
     },
     "Trigger - Setter" : {
         body: [
             '{',
-            '\t"Property" : "$2",',
-            '\t"Value" : "$3",',
+            '\t"Property" : "$1",',
+            '\t"Value" : "$2"',
             '}',
         ]
     }
