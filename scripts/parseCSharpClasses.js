@@ -67,10 +67,10 @@ class CSharpParser {
     extractClasses(content, namespace, sourcePath) {
         const classes = [];
         
-        // Match class declarations - handle multiline format
-        // Matches: public class ClassName : BaseClass
+        // Match class, struct and record declarations - handle multiline format
+        // Matches: public class ClassName : BaseClass, public readonly struct Name, public record Name
         // Then finds the opening brace and extracts everything until matching closing brace
-        const classHeaderRegex = /public\s+(?:sealed\s+)?(?:abstract\s+)?class\s+(\w+)(?:\s*:\s*([\w\s,<>]+))?/g;
+        const classHeaderRegex = /public\s+(?:(?:sealed|abstract|static|partial|readonly)\s+)*(?:class|struct|record(?:\s+(?:class|struct))?)\s+(\w+)(?:\s*:\s*([\w\s,<>]+))?/g;
         
         let match;
         while ((match = classHeaderRegex.exec(content)) !== null) {

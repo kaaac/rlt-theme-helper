@@ -1,7 +1,12 @@
 {
-  "generated": "2026-03-06T08:05:42.651Z",
-  "totalClasses": 79,
+  "generated": "2026-09-29T21:32:24.070Z",
+  "totalClasses": 87,
   "classes": {
+    "DriverFeatureInfo": {
+      "file": "DriverFeatureInfo.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 3
+    },
     "EventFormat": {
       "file": "EventFormat.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
@@ -17,6 +22,11 @@
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
       "propertyCount": 3
     },
+    "LayoutInfo": {
+      "file": "LayoutInfo.json",
+      "namespace": "RacingLeagueTools.SharedLibrary.Models.Themes",
+      "propertyCount": 4
+    },
     "MulticlassConfiguration": {
       "file": "MulticlassConfiguration.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
@@ -25,6 +35,11 @@
     "NamedRenderData": {
       "file": "NamedRenderData.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 8
+    },
+    "PointsValue": {
+      "file": "PointsValue.json",
+      "namespace": "",
       "propertyCount": 8
     },
     "RacingClassFactor": {
@@ -37,10 +52,30 @@
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
       "propertyCount": 8
     },
+    "RatingValue": {
+      "file": "RatingValue.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
+      "propertyCount": 7
+    },
     "BaseRenderData": {
       "file": "BaseRenderData.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
       "propertyCount": 0
+    },
+    "TyreStintInfo": {
+      "file": "TyreStintInfo.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 11
+    },
+    "TyreTypeInfo": {
+      "file": "TyreTypeInfo.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 3
+    },
+    "TyreWear": {
+      "file": "TyreWear.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+      "propertyCount": 4
     },
     "CarClassRenderData": {
       "file": "CarClassRenderData.json",
@@ -146,6 +181,11 @@
       "file": "DriversStatisticsMultiseasonRenderData.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason",
       "propertyCount": 5
+    },
+    "TyresStint": {
+      "file": "TyresStint.json",
+      "namespace": "",
+      "propertyCount": 7
     },
     "LeagueCategoryRenderData": {
       "file": "LeagueCategoryRenderData.json",
@@ -400,6 +440,7 @@
   },
   "namespaces": {
     "RacingLeagueTools.FlexRenderer.Models.RenderObjects": [
+      "DriverFeatureInfo",
       "EventFormat",
       "EventSessionDescription",
       "EventSessionPreset",
@@ -408,6 +449,9 @@
       "RacingClassFactor",
       "RacingClassInfo",
       "BaseRenderData",
+      "TyreStintInfo",
+      "TyreTypeInfo",
+      "TyreWear",
       "DriverRenderHost",
       "LeagueRenderData",
       "LeagueRoleRenderData",
@@ -428,6 +472,18 @@
       "ValueStatisticsColumnRenderData",
       "ValueStatisticsRenderData"
     ],
+    "RacingLeagueTools.SharedLibrary.Models.Themes": [
+      "LayoutInfo"
+    ],
+    "": [
+      "PointsValue",
+      "DriverRenderData",
+      "TyresStint",
+      "PenaltyItemRenderData"
+    ],
+    "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base": [
+      "RatingValue"
+    ],
     "RacingLeagueTools.FlexRenderer.Models": [
       "CarClassRenderData",
       "CarRenderData",
@@ -447,10 +503,6 @@
       "StandingsSeasonRenderData",
       "TeamEventRenderData",
       "TeamSeasonRenderData"
-    ],
-    "": [
-      "DriverRenderData",
-      "PenaltyItemRenderData"
     ],
     "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DeepRatingsSeason": [
       "DeepRatingsSeasonRenderData"

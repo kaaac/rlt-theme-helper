@@ -1,0 +1,98 @@
+{
+  "className": "TyreStintInfo",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Tyres",
+      "type": "TyreType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Tyres property"
+    },
+    {
+      "name": "TyresInfo",
+      "type": "TyreTypeInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TyresInfo property"
+    },
+    {
+      "name": "Laps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Laps property"
+    },
+    {
+      "name": "IsPercentage",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether percentage"
+    },
+    {
+      "name": "Percentage",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Percentage property"
+    },
+    {
+      "name": "PercentageFloat",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PercentageFloat property"
+    },
+    {
+      "name": "StartLapNumber",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "StartLapNumber property"
+    },
+    {
+      "name": "EndLapNumber",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "EndLapNumber property"
+    },
+    {
+      "name": "EndLapRaw",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "EndLapRaw property"
+    },
+    {
+      "name": "WearAtStart",
+      "type": "TyreWear",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "WearAtStart property"
+    },
+    {
+      "name": "WearAtEnd",
+      "type": "TyreWear",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "WearAtEnd property"
+    }
+  ]
+}

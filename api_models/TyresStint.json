@@ -1,0 +1,66 @@
+{
+  "className": "TyresStint",
+  "namespace": "",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Tyres",
+      "type": "TyresType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Tyres property"
+    },
+    {
+      "name": "Laps",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Laps property"
+    },
+    {
+      "name": "Percentage",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Percentage property"
+    },
+    {
+      "name": "IsPercentage",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether percentage"
+    },
+    {
+      "name": "StartLapNumber",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "StartLapNumber property"
+    },
+    {
+      "name": "EndLapNumber",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "EndLapNumber property"
+    },
+    {
+      "name": "EndLapRaw",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "EndLapRaw property"
+    }
+  ]
+}
