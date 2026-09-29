@@ -1,13 +1,13 @@
 const vscode = require('vscode');
-const getGlobalVars = require('./getGlobalVars');
+const { getThemeContext } = require('../core/themeContext');
 
 class GlobalVarsCompletionProvider {
-	provideCompletionItems(document, position, token, context){
-		const linePrefix = document.lineAt(position).text.substr(0, position.character);
+	provideCompletionItems(document, position){
+		const linePrefix = document.lineAt(position).text.substring(0, position.character);
 		if (!linePrefix.endsWith('"{')){
 			return undefined;
 		}
-		const globalVars = getGlobalVars();
+		const globalVars = getThemeContext(document).getGlobalVars();
 		const completionItems = [];
 
 		for(const key in globalVars){

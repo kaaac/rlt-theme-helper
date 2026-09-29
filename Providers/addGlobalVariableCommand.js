@@ -1,39 +1,29 @@
 const vscode = require('vscode');
 const path = require('path');
 const fs = require('fs');
-const removeCommentsFromJSON = require('./removeCommentsFromJSON');
+const jsonc = require('jsonc-parser');
+const { getThemeContext } = require('../core/themeContext');
+const { parseJsonTree } = require('../core/json');
 
 /**
  * Command to add a new global variable
- * Inserts variable reference at cursor position and opens global_vars.json
+ * Inserts variable reference at cursor position and adds the variable to global_vars.json
+ * (comments and formatting of global_vars.json are preserved)
  */
 async function addGlobalVariable() {
     const editor = vscode.window.activeTextEditor;
-    
     if (!editor) {
         vscode.window.showErrorMessage('No active editor found');
         return;
     }
 
-    // Get the workspace folder
-    const workspaceFolders = vscode.workspace.workspaceFolders;
-    if (!workspaceFolders) {
-        vscode.window.showErrorMessage('No workspace folder found');
-        return;
-    }
+    const globalVarsPath = getThemeContext(editor.document).globalVarsPath;
 
-    const folderPath = workspaceFolders[0].uri.fsPath;
-    const globalVarsPath = path.join(folderPath, 'globals', 'global_vars.json');
-
-    // Get selected text (if any)
+    // Selected text (without quotes) becomes the variable value
     const selection = editor.selection;
-    const selectedText = editor.document.getText(selection);
     const hasSelection = !selection.isEmpty;
-    
-    // Remove quotes from selected text if present
-    const defaultValue = hasSelection ? selectedText.replace(/^["']|["']$/g, '') : '';
+    const defaultValue = hasSelection ? editor.document.getText(selection).replace(/^["']|["']$/g, '') : '';
 
-    // Ask for variable name
     const variableName = await vscode.window.showInputBox({
         prompt: 'Enter global variable name',
         placeHolder: 'e.g., PrimaryColor, Theme.Background',
@@ -47,131 +37,72 @@ async function addGlobalVariable() {
             return null;
         }
     });
-
     if (!variableName) {
         return; // User cancelled
     }
 
-    // Insert or replace with variable reference
     const variableReference = `{${variableName}}`;
-    
     await editor.edit(editBuilder => {
         if (hasSelection) {
-            // Replace selection with variable reference
             editBuilder.replace(selection, variableReference);
         } else {
-            // Insert at cursor position
             editBuilder.insert(editor.selection.active, variableReference);
         }
     });
 
-    // Ensure globals directory exists
-    const globalsDir = path.dirname(globalVarsPath);
-    if (!fs.existsSync(globalsDir)) {
-        fs.mkdirSync(globalsDir, { recursive: true });
+    if (!fs.existsSync(globalVarsPath)) {
+        fs.mkdirSync(path.dirname(globalVarsPath), { recursive: true });
+        fs.writeFileSync(globalVarsPath, '{\n}\n', 'utf-8');
     }
 
-    // Read or create global_vars.json
-    let globalVars = {};
-    let hasComments = false;
-    let originalContent = '';
-    
-    if (fs.existsSync(globalVarsPath)) {
-        try {
-            originalContent = fs.readFileSync(globalVarsPath, 'utf-8');
-            
-            try {
-                globalVars = JSON.parse(originalContent);
-            } catch (error) {
-                // Try removing comments
-                hasComments = true;
-                const contentWithoutComments = removeCommentsFromJSON(originalContent);
-                globalVars = JSON.parse(contentWithoutComments);
-            }
-        } catch (error) {
-            vscode.window.showErrorMessage(`Failed to parse global_vars.json: ${error.message}`);
-            return;
-        }
-    }
+    const document = await vscode.workspace.openTextDocument(globalVarsPath);
+    const propertyPath = variableName.split('.');
+    const text = document.getText();
 
-    // Add new variable with empty value or selected text
-    setNestedProperty(globalVars, variableName, defaultValue);
-
-    // Write back to file
+    let edits;
     try {
-        const newContent = JSON.stringify(globalVars, null, 2);
-        fs.writeFileSync(globalVarsPath, newContent, 'utf-8');
-        
-        if (hasComments) {
-            vscode.window.showWarningMessage(
-                'Comments were removed from global_vars.json during the update.',
-                'OK'
-            );
-        }
+        edits = jsonc.modify(text, propertyPath, defaultValue, { formattingOptions: detectFormatting(text) });
     } catch (error) {
-        vscode.window.showErrorMessage(`Failed to write global_vars.json: ${error.message}`);
+        vscode.window.showErrorMessage(`Failed to add '${variableName}' to global_vars.json: ${error.message}`);
         return;
     }
 
-    // Open global_vars.json
-    const document = await vscode.workspace.openTextDocument(globalVarsPath);
-    const globalVarsEditor = await vscode.window.showTextDocument(document, vscode.ViewColumn.Beside);
+    const workspaceEdit = new vscode.WorkspaceEdit();
+    for (const edit of edits) {
+        const range = new vscode.Range(document.positionAt(edit.offset), document.positionAt(edit.offset + edit.length));
+        workspaceEdit.replace(document.uri, range, edit.content);
+    }
+    await vscode.workspace.applyEdit(workspaceEdit);
+    await document.save();
 
-    // Find the position of the new variable and place cursor inside the quotes
-    const text = globalVarsEditor.document.getText();
-    const searchPattern = new RegExp(`"${escapeRegex(variableName)}"\\s*:\\s*"([^"]*)"`);
-    const match = searchPattern.exec(text);
-    
-    if (match) {
-        const valueStart = match.index + match[0].indexOf('"', match[0].indexOf(':')) + 1;
-        const valueEnd = valueStart + match[1].length;
-        
-        const startPos = globalVarsEditor.document.positionAt(valueStart);
-        const endPos = globalVarsEditor.document.positionAt(valueEnd);
-        
-        // Select the value so user can immediately start typing or see what was inserted
-        globalVarsEditor.selection = new vscode.Selection(startPos, endPos);
-        globalVarsEditor.revealRange(
-            new vscode.Range(startPos, endPos),
-            vscode.TextEditorRevealType.InCenter
-        );
+    // Show global_vars.json with the new value selected
+    const globalVarsEditor = await vscode.window.showTextDocument(document, vscode.ViewColumn.Beside);
+    const valueNode = jsonc.findNodeAtLocation(parseJsonTree(document.getText()), propertyPath);
+    if (valueNode) {
+        // Inside the quotes
+        const start = document.positionAt(valueNode.offset + 1);
+        const end = document.positionAt(valueNode.offset + valueNode.length - 1);
+        globalVarsEditor.selection = new vscode.Selection(start, end);
+        globalVarsEditor.revealRange(new vscode.Range(start, end), vscode.TextEditorRevealType.InCenter);
     }
 
-    const message = hasSelection 
+    const message = hasSelection
         ? `Global variable '${variableName}' added with value: ${defaultValue}`
         : `Global variable '${variableName}' added successfully!`;
-    
     vscode.window.showInformationMessage(message);
 }
 
 /**
- * Set a nested property in an object using dot notation
- * @param {Object} obj 
- * @param {string} path 
- * @param {any} value 
+ * Keep the file's existing indentation style.
+ * @param {string} text
  */
-function setNestedProperty(obj, path, value) {
-    const parts = path.split('.');
-    let current = obj;
-    
-    for (let i = 0; i < parts.length - 1; i++) {
-        const part = parts[i];
-        if (!current[part] || typeof current[part] !== 'object') {
-            current[part] = {};
-        }
-        current = current[part];
+function detectFormatting(text) {
+    const indent = text.match(/^([ \t]+)\S/m);
+    const eol = text.includes('\r\n') ? '\r\n' : '\n';
+    if (indent && indent[1].startsWith('\t')) {
+        return { insertSpaces: false, tabSize: 4, eol };
     }
-    
-    current[parts[parts.length - 1]] = value;
-}
-
-/**
- * Escape special regex characters
- * @param {string} str 
- * @returns {string}
- */
-function escapeRegex(str) {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return { insertSpaces: true, tabSize: indent ? indent[1].length : 2, eol };
 }
 
 module.exports = addGlobalVariable;
