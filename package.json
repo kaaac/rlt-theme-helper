@@ -17,7 +17,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartup",
+    "workspaceContains:**/theme_description.json",
     "onLanguage:json"
   ],
   "main": "./extension.js",
