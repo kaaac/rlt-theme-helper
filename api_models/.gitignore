@@ -1,8 +1,0 @@
-# Ignore temporary downloaded files
-.temp/
-
-# Keep generated models
-!*.json
-!index.json
-!mapping.json
-!autocomplete.json
