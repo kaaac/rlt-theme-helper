@@ -1,5 +1,15 @@
 # Change Log
 
+## [Unreleased]
+
+### 🔧 Technical Changes
+
+- Extension no longer activates on every VS Code startup — only in workspaces containing `theme_description.json` or when a JSON file is opened
+- Smaller VSIX package — development files (scripts, docs, CI, notes, source icons) are excluded
+- Release workflow now builds the `.vsix` with `vsce` instead of zipping the repository
+- Removed unused code (`completionProvider.js`, `SnippetCompletionProvider`)
+- Fixed typos in data converter descriptions
+
 ## [0.5.1] - 2026-03-06
 
 ### ✨ New Features

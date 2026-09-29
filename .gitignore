@@ -6,8 +6,10 @@ test
 docs/SCREENSHOTS.md
 docs/images/README.md
 
-# Scripts folder - separate git repo
-scripts/
+# Generator temp downloads (scripts/generate.js)
+.temp/
+
+# Local notes, not part of the repo
 DISCORD_POST.md
 RELEASE_NOTES_CLASS_PROVIDER.md
 dev-area/
