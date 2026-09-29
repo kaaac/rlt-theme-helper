@@ -2,36 +2,69 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "if": {
-      "properties": { "BlockType": { "const": "image" } }
+        "properties": {
+            "BlockType": {
+                "const": "image"
+            }
+        }
     },
     "then": {
-      "properties": {
-        "ImageOptions": {
-          "type": "object",
-          "properties": {
-            "Path": {
-              "type": "string",
-              "description": "Path to the image"
-            },
-            "HorizontalAlignment": {
-              "type": "string",
-              "enum": ["Left", "Center", "Right"],
-              "description": "Horizontal alignment of the image"
-            },
-            "VerticalAlignment": {
-              "type": "string",
-              "enum": ["Top", "Center", "Bottom"],
-              "description": "Vertical alignment of the image"
-            },
-            "Opacity": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 100,
-              "description": "Opacity of the image (0-100)"
+        "properties": {
+            "ImageOptions": {
+                "type": "object",
+                "properties": {
+                    "Path": {
+                        "type": "string",
+                        "description": "Path to the image"
+                    },
+                    "HorizontalAlignment": {
+                        "description": "Horizontal alignment of the image",
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "Left",
+                                    "Center",
+                                    "Right"
+                                ]
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "VerticalAlignment": {
+                        "description": "Vertical alignment of the image",
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "Top",
+                                    "Center",
+                                    "Bottom"
+                                ]
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "Opacity": {
+                        "description": "Opacity of the image (0-100)",
+                        "anyOf": [
+                            {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 100
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    }
+                },
+                "description": "Options for the image block"
             }
-          },
-          "description": "Options for the image block"
         }
-      }
     }
-  }
+}

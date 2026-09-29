@@ -1,6 +1,17 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "string",
-    "enum": ["Top", "Center", "Bottom"],
-    "description": "Vertical alignment of the block"
+    "description": "Vertical alignment of the block",
+    "anyOf": [
+        {
+            "type": "string",
+            "enum": [
+                "Top",
+                "Center",
+                "Bottom"
+            ]
+        },
+        {
+            "$ref": "../includes/expression.json"
+        }
+    ]
 }

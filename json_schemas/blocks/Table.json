@@ -52,16 +52,37 @@
             ]
           },
           "HeaderHeight": {
-            "type": "integer",
-            "description": "Height of the table headers"
+            "description": "Height of the table headers",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           },
           "RowHeight": {
-            "type": "integer",
-            "description": "Height of the table rows"
+            "description": "Height of the table rows",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           },
           "RowCount": {
-            "type": "integer",
-            "description": "Number of rows in the table"
+            "description": "Number of rows in the table",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           },
           "ColSpacing": {
             "description": "Spacing between columns",
@@ -88,12 +109,26 @@
             ]
           },
           "SeparatorSpace": {
-            "type": "integer",
-            "description": "Additional space if column is separator"
+            "description": "Additional space if column is separator",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           },
           "GroupSpaceReduction": {
-            "type": "integer",
-            "description": "Space reduction between columns with the same GroupId"
+            "description": "Space reduction between columns with the same GroupId",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           },
           "SortMember": {
             "type": "string",
@@ -132,8 +167,15 @@
             "description": "Value of the property by which the collection will be filtered"
           },
           "Reverse": {
-            "type": "boolean",
-            "description": "Whether the collection elements should be reversed"
+            "description": "Whether the collection elements should be reversed",
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           },
           "Limit": {
             "description": "Limiting the number of items in the collection",
@@ -185,12 +227,26 @@
             "description": "Required index of the collection (will consist only of one item by specified index)"
           },
           "TakeItemsFirst": {
-            "type": "integer",
-            "description": "Specifies the number of the first items of the collection to be included"
+            "description": "Specifies the number of the first items of the collection to be included",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           },
           "TakeItemsLast": {
-            "type": "integer",
-            "description": "Specifies the number of the last items of the collection to be included"
+            "description": "Specifies the number of the last items of the collection to be included",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           },
           "CollectionPart": {
             "type": "string",
@@ -202,28 +258,63 @@
               "type": "object",
               "properties": {
                 "Width": {
-                  "type": "integer",
-                  "description": "Width of the specific column"
+                  "description": "Width of the specific column",
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 },
                 "MarginLeft": {
-                  "type": "integer",
-                  "description": "Left margin of the column"
+                  "description": "Left margin of the column",
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 },
                 "MarginRight": {
-                  "type": "integer",
-                  "description": "Right margin of the column"
+                  "description": "Right margin of the column",
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 },
                 "IsStretchWidth": {
-                  "type": "boolean",
-                  "description": "Indicates whether all available space should be filled (by width)"
+                  "description": "Indicates whether all available space should be filled (by width)",
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 },
                 "Header": {
                   "type": "string",
                   "description": "Text for header template"
                 },
                 "RenderIf": {
-                  "type": "boolean",
-                  "description": "Specifies whether the column should be rendered"
+                  "description": "Specifies whether the column should be rendered",
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 },
                 "Template": {
                   "type": "object",

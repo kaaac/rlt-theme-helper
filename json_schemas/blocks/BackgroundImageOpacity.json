@@ -1,6 +1,13 @@
 {
-    "type": "integer",
-    "minimum": 0,
-    "maximum": 100,
-    "description": "Opacity of the background image (0-100)"
+    "description": "Opacity of the background image (0-100)",
+    "anyOf": [
+        {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+        },
+        {
+            "$ref": "../includes/expression.json"
+        }
+    ]
 }

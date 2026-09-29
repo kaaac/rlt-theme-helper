@@ -1,48 +1,68 @@
 {
     "type": "object",
     "properties": {
-      "IsEnabled": {
-        "type": "boolean",
-        "description": "Enable colorization based on rating value"
-      },
-      "Level": {
-        "oneOf": [
-          {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 100
-          },
-          {
-            "type" : "string",
-            "pattern" : "^{.*}$"
-          },
-          {
-            "type" : "string",
-            "pattern" : "^<.*>$"
-          }
-        ],
-        "description": "Rating level (0-100) to determine color"
-      },
-      "GradientStops": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "Color": {
-              "type": "string",
-              "description": "Color"
-            },
-            "Offset": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 100,
-              "description": "Offset (0-100)"
-            }
-          },
-          "required": ["Color", "Offset"]
+        "IsEnabled": {
+            "description": "Enable colorization based on rating value",
+            "anyOf": [
+                {
+                    "type": "boolean"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
         },
-        "description": "Gradient stop list for custom color assignment algorithm"
-      }
+        "Level": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                {
+                    "type": "string",
+                    "pattern": "^{.*}$"
+                },
+                {
+                    "type": "string",
+                    "pattern": "^<.*>$"
+                }
+            ],
+            "description": "Rating level (0-100) to determine color"
+        },
+        "GradientStops": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Color": {
+                        "type": "string",
+                        "description": "Color"
+                    },
+                    "Offset": {
+                        "description": "Offset (0-100)",
+                        "anyOf": [
+                            {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 100
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Color",
+                    "Offset"
+                ]
+            },
+            "description": "Gradient stop list for custom color assignment algorithm"
+        }
     },
-    "required": ["IsEnabled", "Level"]
+    "required": [
+        "IsEnabled",
+        "Level"
+    ]
 }

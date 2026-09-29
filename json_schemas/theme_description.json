@@ -16,8 +16,8 @@
           "description": "Author of the Theme - required"
       },
       "Version" : {
-          "type": "string",
-          "pattern" : "^\\d+(\\.\\d+){2}$"
+        "type": "string",
+        "description": "Version of the theme (optional). Recommended format: \"1.0.0\""
       },
       "DefaultLocalizationId" : {
         "type" : "string",

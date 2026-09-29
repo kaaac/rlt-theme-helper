@@ -1,16 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "oneOf": [
+    "anyOf": [
         {
             "type": "string",
             "enum": ["Left", "Right", "Center"],
             "description": "Predefined horizontal alignment values"
         },
-        {
-            "type": "string",
-            "pattern": "^<[^>]+>$",
-            "description": "Variable placeholder in format <VariableName>"
-        }
+        { "$ref": "../includes/expression.json" }
     ],
-    "description": "Horizontal alignment of the block. Can be a predefined value (Left, Right, Center) or a variable placeholder like <HoriAlign>"
+    "description": "Horizontal alignment of the block. Can be a predefined value (Left, Right, Center), an expression {Var} or a public property <HoriAlign>"
 }

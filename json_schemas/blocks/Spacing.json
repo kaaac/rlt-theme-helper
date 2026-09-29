@@ -1,4 +1,11 @@
 {
-    "type": "integer",
-    "description": "Spacing of the block"
+    "description": "Spacing of the block",
+    "anyOf": [
+        {
+            "type": "integer"
+        },
+        {
+            "$ref": "../includes/expression.json"
+        }
+    ]
 }

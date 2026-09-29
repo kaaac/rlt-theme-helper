@@ -2,28 +2,42 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "if": {
-      "anyOf": [
-        {"properties": { "BlockType": { "const": "shape" } }}
-      ]
-    },
-    "then": {
-      "properties": {
-        "ShapeOptions": {
-          "type": "object",
-            "properties": {
-                "ShapeType": {
-                    "type": "string" ,
-                    "enum" : [
-                        "rectangle", "ellipse"
-                    ],
-                    "description": "Type of shape (ellipse currently not works properly)"
-                },
-                "Fill" : {
-                    "type" : "string",
-                    "description" : "Color"
+        "anyOf": [
+            {
+                "properties": {
+                    "BlockType": {
+                        "const": "shape"
+                    }
                 }
             }
-          }
+        ]
+    },
+    "then": {
+        "properties": {
+            "ShapeOptions": {
+                "type": "object",
+                "properties": {
+                    "ShapeType": {
+                        "description": "Type of shape (ellipse currently not works properly)",
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "rectangle",
+                                    "ellipse"
+                                ]
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "Fill": {
+                        "type": "string",
+                        "description": "Color"
+                    }
+                }
+            }
         }
     }
-  }
+}
