@@ -2,7 +2,22 @@
 
 ## [Unreleased]
 
+### 🐛 Bug Fixes
+
+- **Completions work while typing** - Component/Style/Trigger and `Item.` suggestions no longer disappear when the file is temporarily invalid JSON
+- **Tolerant JSON parsing** - trailing commas and `//` inside strings (e.g. URLs) no longer break global variables, localizations or completions
+- **One broken file no longer disables completions** - an invalid file in `styles/`, `triggers/` or `components/` is skipped instead of breaking suggestions for the whole theme
+- **Multi-theme workspaces** - the theme is detected from the edited file (nearest `theme_description.json`), so opening a folder with several themes works
+- **`Item.` in nested tables** - suggestions use the nearest `ItemsSource`, `Item` inside an `ItemSource` expression refers to the outer item, and bindings like `<{Var.Path}>` or `{Path, Converter=...}` are resolved
+- Style suggestions no longer include component names from `Components` arrays
+- Inlay hints: no duplicate hints for nested variables, no `[object Object]` values, hints refresh after editing `global_vars.json` or localizations
+- **Add Global Variable** keeps comments and formatting of `global_vars.json` (and can be undone)
+
 ### 🔧 Technical Changes
+
+- New `core/` modules: theme context with cached global variables, localizations and name indexes (invalidated by a file watcher), shared variable/color resolution, `jsonc-parser` based JSON handling
+- `Component`, `Style` and `Trigger` completion merged into one `NameCompletionProvider`
+- `ItemPropertyCompletionProvider` simplified (syntax tree instead of manual path search, no per-keystroke logging)
 
 - Extension no longer activates on every VS Code startup — only in workspaces containing `theme_description.json` or when a JSON file is opened
 - Smaller VSIX package — development files (scripts, docs, CI, notes, source icons) are excluded

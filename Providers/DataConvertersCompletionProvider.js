@@ -38,8 +38,8 @@ const dataConverters = [
 ];
 
 class DataConvertersCompletionProvider {
-    provideCompletionItems(document, position, token, context){
-        const linePrefix = document.lineAt(position).text.substr(0, position.character);
+    provideCompletionItems(document, position){
+        const linePrefix = document.lineAt(position).text.substring(0, position.character);
 
         if(!linePrefix.endsWith('Converter=')){
             return undefined;

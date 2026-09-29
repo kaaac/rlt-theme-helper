@@ -32,16 +32,16 @@
         "title": "RLT: Add Global Variable"
       }
     ],
-    "keybindings" : [
+    "keybindings": [
       {
-        "command" : "rlt-theme-helper.showSnippets",
-        "key" : "ctrl+k ctrl+s",
-        "when" : "editorTextFocus"
+        "command": "rlt-theme-helper.showSnippets",
+        "key": "ctrl+k ctrl+s",
+        "when": "editorTextFocus"
       },
       {
-        "command" : "rlt-theme-helper.addGlobalVariable",
-        "key" : "ctrl+k ctrl+v",
-        "when" : "editorTextFocus && editorLangId == json"
+        "command": "rlt-theme-helper.addGlobalVariable",
+        "key": "ctrl+k ctrl+v",
+        "when": "editorTextFocus && editorLangId == json"
       }
     ],
     "jsonValidation": [
@@ -90,61 +90,61 @@
         "url": "./json_schemas/text_options_deprecated.json"
       }
     ],
-    "icons" :{
+    "icons": {
       "rlt-iconbar-A": {
         "description": "RLT Theme Icon for status bar",
         "default": {
           "fontPath": "./font/font_rlt_mod.ttf",
-          "fontCharacter": "\u0041"
+          "fontCharacter": "A"
         }
       },
       "rlt-iconbar-B": {
         "description": "RLT Theme Icon for status bar",
         "default": {
           "fontPath": "./font/font_rlt_mod.ttf",
-          "fontCharacter": "\u0042"
+          "fontCharacter": "B"
         }
       },
       "rlt-iconbar-C": {
         "description": "RLT Theme Icon for status bar",
         "default": {
           "fontPath": "./font/font_rlt_mod.ttf",
-          "fontCharacter": "\u0043"
+          "fontCharacter": "C"
         }
       },
       "rlt-iconbar-D": {
         "description": "RLT Theme Icon for status bar",
         "default": {
           "fontPath": "./font/font_rlt_mod.ttf",
-          "fontCharacter": "\u0044"
+          "fontCharacter": "D"
         }
       },
       "rlt-iconbar-E": {
         "description": "RLT Theme Icon for status bar",
         "default": {
           "fontPath": "./font/font_rlt_mod.ttf",
-          "fontCharacter": "\u0045"
+          "fontCharacter": "E"
         }
       },
       "rlt-iconbar-F": {
         "description": "RLT Theme Icon for status bar",
         "default": {
           "fontPath": "./font/font_rlt_mod.ttf",
-          "fontCharacter": "\u0046"
+          "fontCharacter": "F"
         }
       },
       "rlt-iconbar-G": {
         "description": "RLT Theme Icon for status bar",
         "default": {
           "fontPath": "./font/font_rlt_mod.ttf",
-          "fontCharacter": "\u0047"
+          "fontCharacter": "G"
         }
       },
       "rlt-iconbar-H": {
         "description": "RLT Theme Icon for status bar",
         "default": {
           "fontPath": "./font/font_rlt_mod.ttf",
-          "fontCharacter": "\u0048"
+          "fontCharacter": "H"
         }
       }
     }
@@ -163,5 +163,8 @@
     "@vscode/test-electron": "^2.3.9",
     "eslint": "^8.57.0",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
   }
 }
