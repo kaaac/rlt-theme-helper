@@ -100,6 +100,25 @@ describe('JSON schemas', () => {
             assertInvalid('schema_layer.json', { BlockRoot: { BlockType: 'stack', Spacing: 'wide' } });
         });
 
+        it('accept documented block and options properties', () => {
+            assertValid('schema_layer.json', {
+                BlockRoot: {
+                    BlockType: 'stack',
+                    RenderForce: true, MinWidth: 100, MinHeight: '{H}', PositionZ: 2,
+                    DefaultBackgroundImage: 'bg.png', BackgroundImageFitMode: 'Cover',
+                    Vars: { Color: '#FFFFFFFF' },
+                    PanelOptions: { Orientation: 'Vertical', VerticalDirection: 'BottomToTop', Spacing: 4 },
+                    Colorize: { Enabled: true, ColorImage: 'mask.png', ColorImageMode: 'Alpha' },
+                    Items: [
+                        { BlockType: 'image', ImageOptions: { Path: 'a.png', DefaultPath: 'b.png', Rotation: 90, RotateAroundCenter: true } },
+                        { BlockType: 'shape', ShapeOptions: { ShapeType: 'ellipse', Rotation: 45, RotateAroundCenter: true } },
+                        { BlockType: 'table', TableOptions: { ItemsSource: '{Session.Drivers}', Columns: [{ MultiColumnLimit: 5, MultiColumnIndexStart: 0, MultiColumnIndexEnd: '<End>' }] } }
+                    ]
+                }
+            });
+            assertInvalid('schema_layer.json', { BlockRoot: { BlockType: 'stack', BackgroundImageFitMode: 'Fill' } });
+        });
+
         it('accept grid rows and columns without all fields', () => {
             assertValid('schema_layer.json', {
                 BlockRoot: { BlockType: 'grid', GridOptions: { Rows: [{ IsStretchHeight: true }], Cols: [{ Width: 100 }] } }

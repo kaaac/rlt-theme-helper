@@ -131,7 +131,7 @@ export class ThemeContext {
             const description = readJsonFile(path.join(this.root, THEME_MARKER));
             const defaultId = description && isPlainObject(description.value) ? description.value.DefaultLocalizationId : null;
             const byId = typeof defaultId === 'string'
-                ? files.find(file => isPlainObject(file.value) && file.value.ID === defaultId)
+                ? files.find(file => isPlainObject(file.value) && file.value.Id === defaultId)
                 : undefined;
             chosen = byId
                 || files.find(file => file.name.toLowerCase() === 'english.json')

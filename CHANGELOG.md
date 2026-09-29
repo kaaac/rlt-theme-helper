@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### 💡 Completion, converters and snippets
+
+- **New block properties** (Flex Renderer manual): `RenderForce`, `MinWidth`, `MinHeight`, `PositionZ`, `Vars`, `DefaultBackgroundImage`, `BackgroundImageFitMode` (`UseBackgroundCrop` marked as legacy), `PanelOptions` for stack/dock/itemstack
+- **Options**: `ImageOptions.DefaultPath`, `Rotation` and `RotateAroundCenter` for images and shapes, `ColorizeOptions.ColorImage` / `ColorImageMode`, table column `MultiColumnLimit` / `MultiColumnIndexStart` / `MultiColumnIndexEnd`; header templates get stack, dock, grid and itemstack properties
+- **Data converters**: `NumberIsZero`, `NumberIsNotZero`, `NumberToSignedString`, `GetStringLength`, `MaxStringLength`; every converter shows its description, parameter type and an example
+- **Snippets**: fixed `Canvas` block type, `BlendPercentage` as a number, unclosed `Setters` array in `Trigger - single`, trailing commas in 7 snippets; new `Grid`, `Layout Description`, `Localization`, `Trigger - external`, `Colorize - image mask` snippets and choices for enum values
+- **Localization**: the default localization from `DefaultLocalizationId` is now found by its `Id` field (previously always fell back to `english.json`)
+
 ### 🔮 Data completion (Renderer API v0.9.8)
 
 - **API models updated to v0.9.8** - 14 new classes (team multiseason statistics, `LapInfo`, `DisplayNamePart`, `TeamSeasonChampionshipDetails`, ...) and new properties, e.g. driver `DisplayName` / `FirstName` / `LastName` / `Gender`, session `MostLapsLedDriver` / `Date`, driver session `Laps`, `Lap0`–`Lap5`, `Stint0`–`Stint4`, track `Type` / `Layout`, event `Name` / `EventType`

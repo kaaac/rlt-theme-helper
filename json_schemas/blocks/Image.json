@@ -61,6 +61,33 @@
                                 "$ref": "../includes/expression.json"
                             }
                         ]
+                    },
+                    "DefaultPath": {
+                        "type": "string",
+                        "description": "Used if retrieving an image from Path fails"
+                    },
+                    "Rotation": {
+                        "description": "Rotates the image clockwise, in degrees (values beyond -360/360 are supported)",
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "RotateAroundCenter": {
+                        "description": "If true, rotates the image around its center",
+                        "default": false,
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
                     }
                 },
                 "description": "Options for the image block"

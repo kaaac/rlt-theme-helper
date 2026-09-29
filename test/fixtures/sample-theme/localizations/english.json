@@ -1,5 +1,6 @@
 {
-    "ID": "en-US",
+    "Id": "en-US",
+    "Name": "English",
     "Strings": {
         "TITLE": "Results"
     }

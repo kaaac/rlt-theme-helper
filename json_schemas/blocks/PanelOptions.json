@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "Panel options of stack, dock and itemstack blocks",
+    "properties": {
+        "Orientation": { "$ref": "Orientation.json" },
+        "HorizontalDirection": {
+            "description": "Horizontal direction of inner blocks",
+            "anyOf": [
+                { "type": "string", "enum": ["LeftToRight", "RightToLeft"] },
+                { "$ref": "../includes/expression.json" }
+            ]
+        },
+        "VerticalDirection": {
+            "description": "Vertical direction of inner blocks",
+            "anyOf": [
+                { "type": "string", "enum": ["TopToBottom", "BottomToTop"] },
+                { "$ref": "../includes/expression.json" }
+            ]
+        },
+        "Spacing": { "$ref": "Spacing.json" }
+    }
+}

@@ -1,5 +1,6 @@
 {
-    "ID": "pl-PL",
+    "Id": "pl-PL",
+    "Name": "Polski",
     "Strings": {
         "TITLE": "Wyniki",
         "ACCENT": "#FF00FF00",
