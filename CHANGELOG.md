@@ -1,6 +1,12 @@
 # Change Log
 
-## [Unreleased]
+## [0.6.0] - 2026-09-30
+
+### ⌨️ Keyboard shortcuts changed
+
+- **RLT: Show Snippets** is now `Ctrl+Alt+R S` (was `Ctrl+K Ctrl+S`, which is VS Code's own *Keyboard Shortcuts* shortcut)
+- **RLT: Add Global Variable** is now `Ctrl+Alt+R V` (was `Ctrl+K Ctrl+V`)
+- Both work in JSON editors only. To bring back the old keys, assign them in *File → Preferences → Keyboard Shortcuts* (search for *RLT*)
 
 ### 💡 Completion, converters and snippets
 
