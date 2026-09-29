@@ -1,25 +1,28 @@
 {
+	"root": true,
 	"env": {
-		"browser": false,
-		"commonjs": true,
-		"es6": true,
+		"es2022": true,
 		"node": true,
 		"mocha": true
 	},
+	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaVersion": 2022,
-		"ecmaFeatures": {
-			"jsx": true
-		},
 		"sourceType": "module"
 	},
-	"rules": {
-		"no-const-assign": "warn",
-		"no-this-before-super": "warn",
-		"no-undef": "warn",
-		"no-unreachable": "warn",
-		"no-unused-vars": "warn",
-		"constructor-super": "warn",
-		"valid-typeof": "warn"
-	}
+	"plugins": ["@typescript-eslint"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"ignorePatterns": ["out", "dist", "node_modules", "api_models", "json_schemas"],
+	"overrides": [
+		{
+			"files": ["*.js"],
+			"rules": {
+				"@typescript-eslint/no-var-requires": "off",
+				"@typescript-eslint/no-require-imports": "off"
+			}
+		}
+	]
 }

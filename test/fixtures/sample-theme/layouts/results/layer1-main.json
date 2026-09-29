@@ -1,0 +1,14 @@
+{
+    "BlockRoot": {
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Session.Drivers}",
+            "Columns": [
+                {
+                    "Header": "[TITLE]",
+                    "Template": { "BlockType": "component", "Component": "DriverRow" }
+                }
+            ]
+        }
+    }
+}

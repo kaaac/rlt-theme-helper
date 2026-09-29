@@ -13,13 +13,18 @@
 - Inlay hints: no duplicate hints for nested variables, no `[object Object]` values, hints refresh after editing `global_vars.json` or localizations
 - **Add Global Variable** keeps comments and formatting of `global_vars.json` (and can be undone)
 - **Missing API models** - the model generator now also reads C# `struct` and `record` types, adding `TyresStint`, `TyreStintInfo`, `TyreTypeInfo`, `TyreWear`, `DriverFeatureInfo`, `LayoutInfo`, `PointsValue` and `RatingValue` — `Item.` completion now works for stints and driver features, and `LayoutInfo.` completion works
+- **Color swatches for variables** - a `{Variable}` that was the only variable in a multi-line JSON object got no color swatch
+- **Nested variables** - `{Colors.{TeamName}}` is now resolved (the nested reference at the end of the expression was cut off)
+- **Component/Style/Trigger completion on one line** - also works when other properties precede the key on the same line, e.g. `{ "BlockType": "text", "Style": "`
 
 ### 🔧 Technical Changes
 
+- **TypeScript** - sources moved to `src/` and migrated to strict TypeScript, bundled with esbuild into `dist/extension.js` (`jsonc-parser` included, smaller VSIX)
+- **Unit tests** - mocha tests for core modules and all providers, running in node against a sample theme in `test/fixtures` (`npm test`)
+- **CI** - lint, typecheck, tests and build on every pull request
 - New `core/` modules: theme context with cached global variables, localizations and name indexes (invalidated by a file watcher), shared variable/color resolution, `jsonc-parser` based JSON handling
 - `Component`, `Style` and `Trigger` completion merged into one `NameCompletionProvider`
 - `ItemPropertyCompletionProvider` simplified (syntax tree instead of manual path search, no per-keystroke logging)
-
 - Extension no longer activates on every VS Code startup — only in workspaces containing `theme_description.json` or when a JSON file is opened
 - Smaller VSIX package — development files (scripts, docs, CI, notes, source icons) are excluded
 - Release workflow now builds the `.vsix` with `vsce` instead of zipping the repository

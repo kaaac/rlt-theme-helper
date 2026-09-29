@@ -1,0 +1,16 @@
+{
+    // Comments and trailing commas are allowed
+    "Primary": "#FF112233",
+    "Website": "http://example.com/results",
+    "TeamName": "Red",
+    "Colors": {
+        "Red": "FFFF0000"
+    },
+    "Theme": {
+        "Background": "10,20,30"
+    },
+    "Nested": {
+        "Object": { "Deep": "value" }
+    },
+    "HeaderPadding": "10,10,10,10",
+}

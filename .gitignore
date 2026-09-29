@@ -1,13 +1,20 @@
 node_modules
-.vscode-test/
 *.vsix
 .vscode/
-test
 docs/SCREENSHOTS.md
 docs/images/README.md
 
+# Build output
+dist/
+out/
+
 # Generator temp downloads (scripts/generate.js)
 .temp/
+
+# Local manual test data (unit tests use test/fixtures)
+test/color-picker-test.json
+test/globals/
+test/localizations/
 
 # Local notes, not part of the repo
 DISCORD_POST.md

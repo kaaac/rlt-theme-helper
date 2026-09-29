@@ -1,16 +1,16 @@
-const vscode = require('vscode');
-const path = require('path');
-const fs = require('fs');
-const jsonc = require('jsonc-parser');
-const { getThemeContext } = require('../core/themeContext');
-const { parseJsonTree } = require('../core/json');
+import * as vscode from 'vscode';
+import * as path from 'path';
+import * as fs from 'fs';
+import * as jsonc from 'jsonc-parser';
+import { getThemeContext } from '../core/themeContext';
+import { parseJsonTree } from '../core/json';
 
 /**
  * Command to add a new global variable
  * Inserts variable reference at cursor position and adds the variable to global_vars.json
  * (comments and formatting of global_vars.json are preserved)
  */
-async function addGlobalVariable() {
+export async function addGlobalVariable(): Promise<void> {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
         vscode.window.showErrorMessage('No active editor found');
@@ -27,15 +27,7 @@ async function addGlobalVariable() {
     const variableName = await vscode.window.showInputBox({
         prompt: 'Enter global variable name',
         placeHolder: 'e.g., PrimaryColor, Theme.Background',
-        validateInput: (value) => {
-            if (!value) {
-                return 'Variable name cannot be empty';
-            }
-            if (!/^[a-zA-Z0-9._]+$/.test(value)) {
-                return 'Variable name can only contain letters, numbers, dots, and underscores';
-            }
-            return null;
-        }
+        validateInput: validateVariableName
     });
     if (!variableName) {
         return; // User cancelled
@@ -57,13 +49,12 @@ async function addGlobalVariable() {
 
     const document = await vscode.workspace.openTextDocument(globalVarsPath);
     const propertyPath = variableName.split('.');
-    const text = document.getText();
 
-    let edits;
+    let edits: jsonc.Edit[];
     try {
-        edits = jsonc.modify(text, propertyPath, defaultValue, { formattingOptions: detectFormatting(text) });
+        edits = createVariableEdits(document.getText(), propertyPath, defaultValue);
     } catch (error) {
-        vscode.window.showErrorMessage(`Failed to add '${variableName}' to global_vars.json: ${error.message}`);
+        vscode.window.showErrorMessage(`Failed to add '${variableName}' to global_vars.json: ${(error as Error).message}`);
         return;
     }
 
@@ -77,7 +68,8 @@ async function addGlobalVariable() {
 
     // Show global_vars.json with the new value selected
     const globalVarsEditor = await vscode.window.showTextDocument(document, vscode.ViewColumn.Beside);
-    const valueNode = jsonc.findNodeAtLocation(parseJsonTree(document.getText()), propertyPath);
+    const tree = parseJsonTree(document.getText());
+    const valueNode = tree && jsonc.findNodeAtLocation(tree, propertyPath);
     if (valueNode) {
         // Inside the quotes
         const start = document.positionAt(valueNode.offset + 1);
@@ -92,11 +84,27 @@ async function addGlobalVariable() {
     vscode.window.showInformationMessage(message);
 }
 
+export function validateVariableName(value: string): string | null {
+    if (!value) {
+        return 'Variable name cannot be empty';
+    }
+    if (!/^[a-zA-Z0-9._]+$/.test(value)) {
+        return 'Variable name can only contain letters, numbers, dots, and underscores';
+    }
+    return null;
+}
+
+/**
+ * Edits that set `propertyPath` to `value` in global_vars.json text, keeping comments and indentation.
+ */
+export function createVariableEdits(text: string, propertyPath: string[], value: string): jsonc.Edit[] {
+    return jsonc.modify(text, propertyPath, value, { formattingOptions: detectFormatting(text) });
+}
+
 /**
  * Keep the file's existing indentation style.
- * @param {string} text
  */
-function detectFormatting(text) {
+function detectFormatting(text: string): jsonc.FormattingOptions {
     const indent = text.match(/^([ \t]+)\S/m);
     const eol = text.includes('\r\n') ? '\r\n' : '\n';
     if (indent && indent[1].startsWith('\t')) {
@@ -104,5 +112,3 @@ function detectFormatting(text) {
     }
     return { insertSpaces: true, tabSize: indent ? indent[1].length : 2, eol };
 }
-
-module.exports = addGlobalVariable;

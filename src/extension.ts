@@ -1,20 +1,17 @@
-const vscode = require('vscode');
-const { registerThemeWatcher } = require('./core/themeContext');
-const GlobalVarsCompletionProvider = require('./Providers/GlobalVarsCompletionProvider');
-const DataConvertersCompletionProvider = require('./Providers/DataConvertersCompletionProvider');
-const NameCompletionProvider = require('./Providers/NameCompletionProvider');
-const ItemPropertyCompletionProvider = require('./Providers/ItemPropertyCompletionProvider');
-const ColorPickerProvider = require('./Providers/ColorPickerProvider');
-const GlobalVarsInlayHintsProvider = require('./Providers/GlobalVarsInlayHintsProvider');
-const { showSnippets } = require('./Providers/SnippetCommandProvider');
-const addGlobalVariable = require('./Providers/addGlobalVariableCommand');
+import * as vscode from 'vscode';
+import { registerThemeWatcher } from './core/themeContext';
+import { GlobalVarsCompletionProvider } from './providers/GlobalVarsCompletionProvider';
+import { DataConvertersCompletionProvider } from './providers/DataConvertersCompletionProvider';
+import { NameCompletionProvider } from './providers/NameCompletionProvider';
+import { ItemPropertyCompletionProvider } from './providers/ItemPropertyCompletionProvider';
+import { ColorPickerProvider } from './providers/ColorPickerProvider';
+import { GlobalVarsInlayHintsProvider } from './providers/GlobalVarsInlayHintsProvider';
+import { showSnippets } from './providers/SnippetCommandProvider';
+import { addGlobalVariable } from './providers/addGlobalVariableCommand';
 
-const JSON_FILES = { scheme: 'file', language: 'json' };
+const JSON_FILES: vscode.DocumentSelector = { scheme: 'file', language: 'json' };
 
-/**
- * @param {vscode.ExtensionContext} context
- */
-function activate(context) {
+export function activate(context: vscode.ExtensionContext): void {
 	registerThemeWatcher(context);
 
 	const providers = [
@@ -27,7 +24,7 @@ function activate(context) {
 	}
 
 	// Item.Property completion is triggered on '.'
-	const itemPropertyProvider = new ItemPropertyCompletionProvider();
+	const itemPropertyProvider = new ItemPropertyCompletionProvider(context.asAbsolutePath('api_models'));
 	context.subscriptions.push(
 		vscode.languages.registerCompletionItemProvider(JSON_FILES, itemPropertyProvider, '.'),
 		itemPropertyProvider
@@ -46,22 +43,25 @@ function activate(context) {
 	registerStatusBar(context);
 }
 
+interface JsonValidation {
+	fileMatch?: string | string[];
+}
+
 /**
  * Status bar item telling whether the active JSON file is covered by one of the extension's schemas.
- * @param {vscode.ExtensionContext} context
  */
-function registerStatusBar(context) {
+function registerStatusBar(context: vscode.ExtensionContext): void {
 	const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
 	statusBarItem.text = '$(rlt-iconbar-G)  RLT';
 	context.subscriptions.push(statusBarItem);
 
-	const jsonValidation = context.extension.packageJSON.contributes.jsonValidation || [];
+	const jsonValidation: JsonValidation[] = context.extension.packageJSON.contributes.jsonValidation || [];
 	const schemaPatterns = jsonValidation
 		.flatMap(schema => Array.isArray(schema.fileMatch) ? schema.fileMatch : [schema.fileMatch])
-		.filter(Boolean)
+		.filter((fileMatch): fileMatch is string => Boolean(fileMatch))
 		.map(globToRegExp);
 
-	const refresh = (editor) => {
+	const refresh = (editor: vscode.TextEditor | undefined) => {
 		if (!editor || editor.document.languageId !== 'json') {
 			statusBarItem.hide();
 			return;
@@ -91,9 +91,8 @@ function registerStatusBar(context) {
 /**
  * Convert a jsonValidation fileMatch glob to a RegExp matching the end of a file path.
  * Supports `**`, `*` and `?`; matches both `/` and `\` separators.
- * @param {string} glob
  */
-function globToRegExp(glob) {
+export function globToRegExp(glob: string): RegExp {
 	const separator = '[\\\\/]';
 	let source = '';
 	for (let i = 0; i < glob.length; i++) {
@@ -119,11 +118,4 @@ function globToRegExp(glob) {
 	return new RegExp(`(?:^|${separator})${source}$`, 'i');
 }
 
-// This method is called when your extension is deactivated
-function deactivate() {}
-
-module.exports = {
-	activate,
-	deactivate,
-	globToRegExp
-};
+export function deactivate(): void {}

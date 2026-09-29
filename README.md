@@ -183,6 +183,30 @@ Current scope: **RLT Themes 0.9.6**
 
 Found a bug or have a feature request? Please open an issue on [GitHub](https://github.com/kaaac/rlt-theme-helper).
 
+### Development
+
+```bash
+npm install
+npm run build        # bundle src/ into dist/extension.js
+npm run watch        # rebuild on change
+npm test             # unit tests (sample theme in test/fixtures)
+npm run lint
+npm run typecheck
+npm run generate:models   # regenerate api_models/ from the RLT Renderer API
+```
+
+Press `F5` (or `Ctrl+F5` without debugger) in VS Code to start an Extension Development Host.
+
+| Path | Contents |
+|---|---|
+| `src/extension.ts` | activation, provider registration, status bar |
+| `src/core/` | theme context (theme root, cached global vars / localizations / name indexes), JSON, variables, colors |
+| `src/providers/` | completion, color picker, inlay hints, commands |
+| `test/` | mocha unit tests, `vscode` API mock, sample theme fixture |
+| `api_models/` | generated API models used by `Item.` completion |
+| `json_schemas/` | JSON schemas for theme files |
+| `scripts/` | API model generator |
+
 ## 📝 License
 
 See [LICENSE.md](LICENSE.md) for details.

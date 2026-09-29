@@ -1,7 +1,19 @@
-const vscode = require('vscode');
-const { getThemeContext } = require('../core/themeContext');
-const { resolveGlobalVariable, resolveLocalizationKey } = require('../core/variables');
-const { isColorValue, isLayoutName, parseHexDigits, parseRgb, parseColorValue } = require('../core/colors');
+import * as vscode from 'vscode';
+import { getThemeContext } from '../core/themeContext';
+import { resolveGlobalVariable, resolveLocalizationKey } from '../core/variables';
+import { isColorValue, isLayoutName, parseHexDigits, parseRgb, parseColorValue } from '../core/colors';
+
+/** Where in a regex match the color value is, and its parsed color */
+interface ColorMatch {
+    offset: number;
+    length: number;
+    color: vscode.Color | null;
+}
+
+interface ColorPattern {
+    regex: RegExp;
+    parse: (match: RegExpExecArray) => ColorMatch | null;
+}
 
 /**
  * Color Picker Provider for RLT Theme Helper
@@ -12,19 +24,14 @@ const { isColorValue, isLayoutName, parseHexDigits, parseRgb, parseColorValue } 
  * - R,G,B,A (comma-separated RGBA)
  * - Global variables and localization keys that resolve to colors
  */
-class ColorPickerProvider {
+export class ColorPickerProvider implements vscode.DocumentColorProvider {
 
-    /**
-     * Provide all color decorations for the document
-     * @param {vscode.TextDocument} document
-     * @returns {vscode.ProviderResult<vscode.ColorInformation[]>}
-     */
-    provideDocumentColors(document) {
-        const colors = [];
+    provideDocumentColors(document: vscode.TextDocument): vscode.ColorInformation[] {
+        const colors: vscode.ColorInformation[] = [];
         const text = document.getText();
         const theme = getThemeContext(document);
 
-        const patterns = [
+        const patterns: ColorPattern[] = [
             // #AARRGGBB (8 chars) - RLT format with alpha first
             {
                 regex: /#[0-9a-fA-F]{8}\b/g,
@@ -60,9 +67,10 @@ class ColorPickerProvider {
                     return { offset: match[0].indexOf(value, match[1].length + 2), length: value.length, color: parseRgb(value) };
                 }
             },
-            // Global variables that might contain colors
+            // Global variables that might contain colors: {Var}, {{Var}}, {Var{Nested}}
+            // (variables live inside JSON strings, so they never span quotes or lines)
             {
-                regex: /\{([a-zA-Z0-9._]+)\}|\{\{([^}]+)\}\}|\{([^}]*\{[^}]+\}[^}]*)\}/g,
+                regex: /\{([a-zA-Z0-9._]+)\}|\{\{([^}"\n]+)\}\}|\{([^}"\n]*\{[^}"\n]+\}[^}"\n]*)\}/g,
                 parse: (match) => {
                     const expression = match[1] || match[2] || match[3];
                     if (!expression || isLayoutName(expression)) return null;
@@ -80,7 +88,7 @@ class ColorPickerProvider {
         ];
 
         for (const pattern of patterns) {
-            let match;
+            let match: RegExpExecArray | null;
             while ((match = pattern.regex.exec(text)) !== null) {
                 const result = pattern.parse(match);
                 if (!result || !result.color) {
@@ -98,20 +106,14 @@ class ColorPickerProvider {
     /**
      * Color of a whole `{var}` / `[Key]` match when its resolved value is a color.
      */
-    resolvedColor(match, resolvedValue) {
+    private resolvedColor(match: RegExpExecArray, resolvedValue: string | null): ColorMatch | null {
         if (!resolvedValue || !isColorValue(resolvedValue)) {
             return null;
         }
         return { offset: 0, length: match[0].length, color: parseColorValue(resolvedValue) };
     }
 
-    /**
-     * Provide color presentations (formats) for the color picker
-     * @param {vscode.Color} color
-     * @param {{ document: vscode.TextDocument, range: vscode.Range }} context
-     * @returns {vscode.ProviderResult<vscode.ColorPresentation[]>}
-     */
-    provideColorPresentations(color, context) {
+    provideColorPresentations(color: vscode.Color, context: { document: vscode.TextDocument, range: vscode.Range }): vscode.ColorPresentation[] {
         const originalText = context.document.getText(context.range);
 
         // Global variables and localization keys are read-only here
@@ -123,40 +125,38 @@ class ColorPickerProvider {
         const prefix = originalText.startsWith('#') ? '#' : '';
         const formats = [
             // #AARRGGBB (RLT format with alpha first), without # in Color/Foreground/Background properties
-            prefix + this.colorToHexAlphaFirst(color),
-            opaque && prefix + this.colorToHex(color),
-            this.colorToRGBA(color),
-            opaque && this.colorToRGB(color)
+            prefix + colorToHexAlphaFirst(color),
+            opaque && prefix + colorToHex(color),
+            colorToRGBA(color),
+            opaque && colorToRGB(color)
         ];
 
-        return formats.filter(Boolean).map(label => new vscode.ColorPresentation(label));
-    }
-
-    // === FORMATTERS ===
-
-    toHexByte(value) {
-        return Math.round(value * 255).toString(16).padStart(2, '0').toUpperCase();
-    }
-
-    /** AARRGGBB (RLT format - alpha first) */
-    colorToHexAlphaFirst(color) {
-        return this.toHexByte(color.alpha) + this.colorToHex(color);
-    }
-
-    /** RRGGBB */
-    colorToHex(color) {
-        return this.toHexByte(color.red) + this.toHexByte(color.green) + this.toHexByte(color.blue);
-    }
-
-    /** R,G,B,A */
-    colorToRGBA(color) {
-        return `${this.colorToRGB(color)},${Math.round(color.alpha * 255)}`;
-    }
-
-    /** R,G,B */
-    colorToRGB(color) {
-        return [color.red, color.green, color.blue].map(value => Math.round(value * 255)).join(',');
+        return formats.filter((label): label is string => Boolean(label)).map(label => new vscode.ColorPresentation(label));
     }
 }
 
-module.exports = ColorPickerProvider;
+// === FORMATTERS ===
+
+function toHexByte(value: number): string {
+    return Math.round(value * 255).toString(16).padStart(2, '0').toUpperCase();
+}
+
+/** AARRGGBB (RLT format - alpha first) */
+export function colorToHexAlphaFirst(color: vscode.Color): string {
+    return toHexByte(color.alpha) + colorToHex(color);
+}
+
+/** RRGGBB */
+export function colorToHex(color: vscode.Color): string {
+    return toHexByte(color.red) + toHexByte(color.green) + toHexByte(color.blue);
+}
+
+/** R,G,B,A */
+export function colorToRGBA(color: vscode.Color): string {
+    return `${colorToRGB(color)},${Math.round(color.alpha * 255)}`;
+}
+
+/** R,G,B */
+export function colorToRGB(color: vscode.Color): string {
+    return [color.red, color.green, color.blue].map(value => Math.round(value * 255)).join(',');
+}

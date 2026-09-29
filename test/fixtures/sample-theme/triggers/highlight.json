@@ -1,0 +1,5 @@
+{
+    "TriggerName": "Highlight",
+    "Condition": "{Item.IsFastestLap}",
+    "Setters": [ { "Property": "Foreground", "Value": "{Primary}" } ]
+}

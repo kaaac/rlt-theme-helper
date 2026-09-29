@@ -1,4 +1,9 @@
-const snippets = {
+export interface Snippet {
+    body: string[];
+    description?: string;
+}
+
+const snippets: Record<string, Snippet> = {
     BlockRoot: {
         body: [
             '{',
@@ -197,4 +202,4 @@ const snippets = {
     }
 };
 
-module.exports = snippets;
+export default snippets;
