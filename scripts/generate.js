@@ -11,7 +11,7 @@ const CONFIG = {
     github: {
         owner: 'vlad-men',
         repo: 'RacingLeagueTools_RendererAPI',
-        branch: '8a24c30df370295b7a8e3ff2a63c011db6aefe03', // specific commit
+        branch: 'cd7a546423c5aea550079f9c52a8bb223b779164', // commit "v0.9.8" (the API repo has no tags)
         directories: [
             'Base',
             'Championship',
@@ -25,6 +25,7 @@ const CONFIG = {
             'Standings',
             'Statistics',
             'TeamStandingsMultiseason',
+            'TeamStatisticsMultiseason',
             'Teammates',
             'TrackStatisticsMultiseason'
         ]

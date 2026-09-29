@@ -7,12 +7,84 @@
   },
   "properties": [
     {
-      "name": "RealName",
+      "name": "FirstName",
       "type": "string",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "RealName property"
+      "description": "FirstName property"
+    },
+    {
+      "name": "LastName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LastName property"
+    },
+    {
+      "name": "DisplayName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DisplayName property"
+    },
+    {
+      "name": "DisplayNameParts",
+      "type": "DisplayNamePart",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "DisplayNameParts property"
+    },
+    {
+      "name": "DisplayNamePart1",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DisplayNamePart1 property"
+    },
+    {
+      "name": "DisplayNamePart2",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DisplayNamePart2 property"
+    },
+    {
+      "name": "IsDisplayNameMultiPart",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether display name multi part"
+    },
+    {
+      "name": "BirthYear",
+      "type": "number",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "BirthYear property"
+    },
+    {
+      "name": "Gender",
+      "type": "Gender",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Gender property"
+    },
+    {
+      "name": "ControllerType",
+      "type": "ControllerType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "ControllerType property"
     },
     {
       "name": "InGameName",
@@ -96,7 +168,7 @@
     },
     {
       "name": "RaceNumber",
-      "type": "number",
+      "type": "string",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
@@ -133,6 +205,14 @@
       "isCollection": true,
       "isComplex": true,
       "description": "DriverFeatures property"
+    },
+    {
+      "name": "RealName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RealName property"
     },
     {
       "name": "PrimaryDriverFeature",

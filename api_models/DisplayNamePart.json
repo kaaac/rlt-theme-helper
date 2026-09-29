@@ -1,0 +1,26 @@
+{
+  "className": "DisplayNamePart",
+  "namespace": "",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Token",
+      "type": "DisplayNameToken",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Token property"
+    },
+    {
+      "name": "Value",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Value property"
+    }
+  ]
+}

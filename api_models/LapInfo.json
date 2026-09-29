@@ -1,0 +1,210 @@
+{
+  "className": "LapInfo",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "LapNumber",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LapNumber property"
+    },
+    {
+      "name": "LapTime",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "LapTimeMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value in milliseconds"
+    },
+    {
+      "name": "Sector1",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Sector1 property"
+    },
+    {
+      "name": "Sector1Ms",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Sector1Ms property"
+    },
+    {
+      "name": "Sector2",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Sector2 property"
+    },
+    {
+      "name": "Sector2Ms",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Sector2Ms property"
+    },
+    {
+      "name": "Sector3",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Sector3 property"
+    },
+    {
+      "name": "Sector3Ms",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Sector3Ms property"
+    },
+    {
+      "name": "Tyres",
+      "type": "TyreType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Tyres property"
+    },
+    {
+      "name": "TyresInfo",
+      "type": "TyreTypeInfo",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "TyresInfo property"
+    },
+    {
+      "name": "IsLapValid",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether lap valid"
+    },
+    {
+      "name": "IsSector1Valid",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether sector1 valid"
+    },
+    {
+      "name": "IsSector2Valid",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether sector2 valid"
+    },
+    {
+      "name": "IsSector3Valid",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether sector3 valid"
+    },
+    {
+      "name": "IsPersonalBest",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether personal best"
+    },
+    {
+      "name": "IsSessionFastest",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether session fastest"
+    },
+    {
+      "name": "StintNumber",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "StintNumber property"
+    },
+    {
+      "name": "LapInStint",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LapInStint property"
+    },
+    {
+      "name": "IsStintStart",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether stint start"
+    },
+    {
+      "name": "IsStintEnd",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether stint end"
+    },
+    {
+      "name": "DeltaToPreviousLap",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DeltaToPreviousLap property"
+    },
+    {
+      "name": "DeltaToPreviousLapMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DeltaToPreviousLapMs property"
+    },
+    {
+      "name": "DeltaToPersonalBest",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DeltaToPersonalBest property"
+    },
+    {
+      "name": "DeltaToPersonalBestMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DeltaToPersonalBestMs property"
+    }
+  ]
+}

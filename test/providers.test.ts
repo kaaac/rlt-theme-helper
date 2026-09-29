@@ -86,8 +86,40 @@ describe('ItemPropertyCompletionProvider', () => {
         assert.ok(names.includes('Position'));
     });
 
-    it('completes root objects', () => {
+    it('resolves ParentItem to the item of the outer iteration', () => {
+        const names = complete('layouts/results/new.json',
+            '{ "TableOptions": { "ItemsSource": "{Session.Drivers}" }, "Items": [ { "ItemStackOptions": { "ItemSource": "{Item.Stints}", "ItemTemplate": { "Source": "{ParentItem.|');
+        assert.ok(names.includes('Position'));
+        assert.ok(names.includes('Stints'));
+    });
+
+    it('resolves relative sources through the outer item class', () => {
+        const names = complete('layouts/results/new.json',
+            '{ "TableOptions": { "ItemsSource": "{Session.Drivers}" }, "Items": [ { "ItemStackOptions": { "ItemSource": "{Item.Stints}", "ItemTemplate": { "ItemStackOptions": { "ItemSource": "{Item.LapDetails}", "ItemTemplate": { "Source": "{Item.|');
+        assert.ok(names.length > 0);
+        assert.ok(!names.includes('LapDetails'));
+    });
+
+    it('follows the source chain of a component used in a nested iteration', () => {
+        const names = complete('components/stint_cell.json', '{ "ComponentName": "StintCell", "Source": "{Item.|}" }');
+        assert.ok(names.includes('Laps'));
+        assert.ok(names.includes('LapDetails'));
+    });
+
+    it('completes root objects, including multiseason statistics', () => {
         assert.ok(complete('layouts/results/new.json', '{ "Source": "{Session.|}" }').includes('Track'));
+        assert.ok(complete('layouts/results/new.json', '{ "Source": "{DriverStatistics.|}" }').includes('SeasonsCount'));
+    });
+
+    it('picks the class of DriverInfo from the layout RenderType', () => {
+        const inDriverSession = complete('layouts/driver_session/layer1.json', '{ "Source": "{DriverInfo.|}" }');
+        assert.ok(inDriverSession.length > 0);
+        assert.ok(!inDriverSession.includes('DriverSeason'));
+        assert.ok(complete('layouts/results/new.json', '{ "Source": "{DriverInfo.|}" }').includes('DriverSeason'));
+    });
+
+    it('does not treat ParentItem as a root object', () => {
+        assert.deepStrictEqual(complete('layouts/results/new.json', '{ "Source": "{MySession.|}" }'), []);
     });
 
     it('returns nothing without an ItemsSource', () => {

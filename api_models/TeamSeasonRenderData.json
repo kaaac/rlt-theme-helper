@@ -319,6 +319,14 @@
       "description": "Drivers property"
     },
     {
+      "name": "ChampionshipDetails",
+      "type": "TeamSeasonChampionshipDetails",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "ChampionshipDetails property"
+    },
+    {
       "name": "Driver0",
       "type": "DriverSeasonRenderData",
       "isNullable": false,

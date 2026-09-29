@@ -1,0 +1,82 @@
+{
+  "className": "TeamStatMultiseasonParticipationDetails",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "SeasonsParticipated",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonsParticipated property"
+    },
+    {
+      "name": "TotalEvents",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalEvents property"
+    },
+    {
+      "name": "TotalRaces",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalRaces property"
+    },
+    {
+      "name": "TotalMajorRaces",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalMajorRaces property"
+    },
+    {
+      "name": "TotalQuals",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalQuals property"
+    },
+    {
+      "name": "TotalMajorQuals",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalMajorQuals property"
+    },
+    {
+      "name": "TotalRacesFinished",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TotalRacesFinished property"
+    },
+    {
+      "name": "RaceCompletionRatePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "RaceCompletionRatePercent property"
+    },
+    {
+      "name": "EventCompletionRatePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "EventCompletionRatePercent property"
+    }
+  ]
+}

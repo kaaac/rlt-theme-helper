@@ -1,0 +1,106 @@
+{
+  "className": "TeamStatMultiseasonRosterEntry",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStatisticsMultiseason.Details",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Driver",
+      "type": "DriverRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Driver property"
+    },
+    {
+      "name": "IsPrimaryLineup",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether primary lineup"
+    },
+    {
+      "name": "SeasonsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of seasons"
+    },
+    {
+      "name": "MajorRacesCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of major races"
+    },
+    {
+      "name": "Points",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Points property"
+    },
+    {
+      "name": "Wins",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Wins property"
+    },
+    {
+      "name": "Podiums",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Podiums property"
+    },
+    {
+      "name": "Poles",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Poles property"
+    },
+    {
+      "name": "DnfCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of dnf"
+    },
+    {
+      "name": "DsqCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of dsq"
+    },
+    {
+      "name": "BestRacePosition",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "PointsSharePercent",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PointsSharePercent property"
+    }
+  ]
+}

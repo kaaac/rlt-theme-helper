@@ -7,6 +7,15 @@
                 {
                     "Header": "[TITLE]",
                     "Template": { "BlockType": "component", "Component": "DriverRow" }
+                },
+                {
+                    "Template": {
+                        "BlockType": "itemstack",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Item.Stints}",
+                            "ItemTemplate": { "BlockType": "component", "Component": "StintCell" }
+                        }
+                    }
                 }
             ]
         }

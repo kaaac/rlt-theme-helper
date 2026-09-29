@@ -1,13 +1,45 @@
 {
-  "className": "DriverMultiseasonPositionsDetails",
-  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.DriverStatisticsMultiseason.Details",
+  "className": "TeamStatisticsMultiseasonSeasonEntry",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.TeamStatisticsMultiseason",
   "inheritance": {
-    "base": null,
+    "base": "BaseRenderData",
     "interfaces": []
   },
   "properties": [
     {
-      "name": "BestRacePosition",
+      "name": "Season",
+      "type": "SeasonRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Season property"
+    },
+    {
+      "name": "SeasonName",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "SeasonName property"
+    },
+    {
+      "name": "IsParticipated",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether participated"
+    },
+    {
+      "name": "Points",
+      "type": "PointsValue",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Points property"
+    },
+    {
+      "name": "Position",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
@@ -15,15 +47,7 @@
       "description": "Position value"
     },
     {
-      "name": "WorstRacePosition",
-      "type": "number",
-      "isNullable": false,
-      "isCollection": false,
-      "isComplex": false,
-      "description": "Position value"
-    },
-    {
-      "name": "AverageRacePosition",
+      "name": "PositionString",
       "type": "string",
       "isNullable": false,
       "isCollection": false,
@@ -31,28 +55,20 @@
       "description": "Position as formatted string"
     },
     {
-      "name": "RaceP1",
+      "name": "Wins",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "RaceP1 property"
+      "description": "Wins property"
     },
     {
-      "name": "RaceP2",
+      "name": "Podiums",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "RaceP2 property"
-    },
-    {
-      "name": "RaceP3",
-      "type": "number",
-      "isNullable": false,
-      "isCollection": false,
-      "isComplex": false,
-      "description": "RaceP3 property"
+      "description": "Podiums property"
     },
     {
       "name": "Top5",
@@ -71,31 +87,7 @@
       "description": "Top10 property"
     },
     {
-      "name": "TotalRaceFinishes",
-      "type": "number",
-      "isNullable": false,
-      "isCollection": false,
-      "isComplex": false,
-      "description": "TotalRaceFinishes property"
-    },
-    {
-      "name": "AverageGridPosition",
-      "type": "string",
-      "isNullable": false,
-      "isCollection": false,
-      "isComplex": false,
-      "description": "Position as formatted string"
-    },
-    {
-      "name": "AveragePositionChange",
-      "type": "string",
-      "isNullable": false,
-      "isCollection": false,
-      "isComplex": false,
-      "description": "Position as formatted string"
-    },
-    {
-      "name": "BestQualPosition",
+      "name": "BestRacePosition",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
@@ -103,12 +95,12 @@
       "description": "Position value"
     },
     {
-      "name": "WorstQualPosition",
-      "type": "number",
+      "name": "AverageRacePosition",
+      "type": "string",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "Position value"
+      "description": "Position as formatted string"
     },
     {
       "name": "AverageQualPosition",
@@ -119,36 +111,76 @@
       "description": "Position as formatted string"
     },
     {
-      "name": "QualP1",
+      "name": "RacesCount",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "QualP1 property"
+      "description": "Number of races"
     },
     {
-      "name": "QualP2",
+      "name": "EventsCount",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "QualP2 property"
+      "description": "Number of events"
     },
     {
-      "name": "QualP3",
-      "type": "number",
+      "name": "PointsChange",
+      "type": "PointsValue",
       "isNullable": false,
       "isCollection": false,
-      "isComplex": false,
-      "description": "QualP3 property"
+      "isComplex": true,
+      "description": "PointsChange property"
     },
     {
-      "name": "FrontRowStarts",
+      "name": "WinsChange",
       "type": "number",
       "isNullable": false,
       "isCollection": false,
       "isComplex": false,
-      "description": "FrontRowStarts property"
+      "description": "WinsChange property"
+    },
+    {
+      "name": "PodiumsChange",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "PodiumsChange property"
+    },
+    {
+      "name": "Top5Change",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Top5Change property"
+    },
+    {
+      "name": "Top10Change",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Top10Change property"
+    },
+    {
+      "name": "RacesCountChange",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of races change"
+    },
+    {
+      "name": "IsSeasonCompleted",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether season completed"
     }
   ]
 }

@@ -93,6 +93,14 @@
       "isCollection": false,
       "isComplex": true,
       "description": "WearAtEnd property"
+    },
+    {
+      "name": "LapDetails",
+      "type": "LapInfo",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "LapDetails property"
     }
   ]
 }

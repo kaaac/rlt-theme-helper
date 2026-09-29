@@ -22,6 +22,15 @@ class SchemaGenerator {
             fs.mkdirSync(this.outputDir, { recursive: true });
         }
 
+        // Remove models of classes that no longer exist in the API
+        const generated = new Set(classes.map(cls => `${cls.className}.json`));
+        for (const file of fs.readdirSync(this.outputDir)) {
+            if (file.endsWith('.json') && !generated.has(file) && !['mapping.json', 'index.json', 'autocomplete.json'].includes(file)) {
+                fs.unlinkSync(path.join(this.outputDir, file));
+                console.log(`  🗑 removed ${file}`);
+            }
+        }
+
         // Generate schema for each class
         for (const cls of classes) {
             this.generateClassSchema(cls);
@@ -136,8 +145,10 @@ class SchemaGenerator {
             'Driver.Features': 'DriverFeatureInfo',
             'Driver.LeagueRoles': 'LeagueRoleRenderData',
             'Team.Drivers': 'DriverRenderObject',
-            'Driver.Stints': 'TyresStint',
-            'Item.Stints': 'TyresStint',
+            'Driver.Stints': 'TyreStintInfo',
+            'Item.Stints': 'TyreStintInfo',
+            'Item.Laps': 'LapInfo',
+            'Item.LapDetails': 'LapInfo',
             'Item.DriverFeatures': 'DriverFeatureInfo',
             'Item.LeagueRoles': 'LeagueRoleRenderData',
             'League.Categories': 'LeagueCategoryRenderData',
@@ -156,7 +167,16 @@ class SchemaGenerator {
             'DriverInfo': 'DriverRenderHost', // Universal driver info host (Championship)
             'Penalty': 'PenaltyItemRenderData',
             'Penalties': 'EventPenaltiesRenderHost', // can also be SeasonPenaltiesRenderHost
-            'LayoutInfo': 'LayoutInfo'
+            'LayoutInfo': 'LayoutInfo',
+            'DeepRatings': 'DeepRatingsSeasonRenderData',
+            'Teammates': 'TeammatesSeasonRenderData',
+            'TeamStandingsMultiseason': 'TeamStandingsMultiseasonRenderData',
+            'TeamStatistics': 'TeamStatisticsMultiseasonRenderData',
+            'TeamsStatistics': 'TeamsStatisticsMultiseasonRenderData',
+            'DriverStatistics': 'DriverStatisticsMultiseasonRenderData',
+            'DriversStatistics': 'DriversStatisticsMultiseasonRenderData',
+            'TrackStatistics': 'TrackStatisticsMultiseasonRenderData',
+            'TracksStatistics': 'TracksStatisticsMultiseasonRenderData'
         };
 
         // Try to auto-detect more mappings based on class names

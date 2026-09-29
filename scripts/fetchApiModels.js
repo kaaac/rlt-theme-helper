@@ -24,6 +24,11 @@ class GitHubFetcher {
                     'Accept': 'application/vnd.github.v3+json'
                 }
             };
+            // Optional token raises the API rate limit
+            const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+            if (token) {
+                options.headers.Authorization = `Bearer ${token}`;
+            }
 
             https.get(url, options, (res) => {
                 let data = '';
@@ -73,48 +78,35 @@ class GitHubFetcher {
     }
 
     /**
-     * List all files in a directory recursively
+     * List all C# files of the repository at the ref, with a single API request
      */
-    async listFilesRecursive(dirPath = '') {
-        const url = `${this.baseUrl}/contents/${dirPath}?ref=${this.branch}`;
-        const contents = await this.fetchJson(url);
-        
-        let files = [];
-
-        for (const item of contents) {
-            if (item.type === 'file' && item.name.endsWith('.cs')) {
-                files.push({
-                    path: item.path,
-                    name: item.name,
-                    size: item.size
-                });
-            } else if (item.type === 'dir') {
-                // Recursively fetch files from subdirectories
-                const subFiles = await this.listFilesRecursive(item.path);
-                files = files.concat(subFiles);
-            }
+    async listCSharpFiles() {
+        const tree = await this.fetchJson(`${this.baseUrl}/git/trees/${this.branch}?recursive=1`);
+        if (tree.truncated) {
+            throw new Error('Repository tree listing was truncated by GitHub');
         }
-
-        return files;
+        return tree.tree
+            .filter(item => item.type === 'blob' && item.path.endsWith('.cs'))
+            .map(item => ({ path: item.path, name: path.posix.basename(item.path), size: item.size }));
     }
 
     /**
-     * Download all C# files from specified directories
+     * Download all C# files from specified directories.
+     * Throws when a directory is missing or a file can't be downloaded, so a partial download never produces models.
      */
     async downloadCSharpFiles(directories, outputDir) {
-        console.log(`📥 Fetching C# files from ${this.owner}/${this.repo}...`);
-        
+        console.log(`📥 Fetching C# files from ${this.owner}/${this.repo}@${this.branch}...`);
+
+        const repositoryFiles = await this.listCSharpFiles();
         const allFiles = [];
 
         for (const dir of directories) {
-            console.log(`  📂 Scanning directory: ${dir}`);
-            try {
-                const files = await this.listFilesRecursive(dir);
-                console.log(`     Found ${files.length} C# files`);
-                allFiles.push(...files);
-            } catch (error) {
-                console.warn(`     ⚠️  Could not access directory ${dir}: ${error.message}`);
+            const files = repositoryFiles.filter(file => file.path.startsWith(`${dir}/`));
+            if (files.length === 0) {
+                throw new Error(`Directory ${dir} not found or has no C# files`);
             }
+            console.log(`  📂 ${dir}: ${files.length} C# files`);
+            allFiles.push(...files);
         }
 
         console.log(`\n📦 Total files to download: ${allFiles.length}`);
@@ -148,10 +140,10 @@ class GitHubFetcher {
                     outputPath: outputPath
                 });
 
-                // Rate limiting - be nice to GitHub API
+                // Rate limiting - be nice to GitHub
                 await new Promise(resolve => setTimeout(resolve, 100));
             } catch (error) {
-                console.error(`     ❌ Failed to download ${file.path}: ${error.message}`);
+                throw new Error(`Failed to download ${file.path}: ${error.message}`);
             }
         }
 

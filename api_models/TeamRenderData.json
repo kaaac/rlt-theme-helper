@@ -23,6 +23,14 @@
       "description": "Abbreviation property"
     },
     {
+      "name": "UniqueId",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "UniqueId property"
+    },
+    {
       "name": "Origin",
       "type": "string",
       "isNullable": false,

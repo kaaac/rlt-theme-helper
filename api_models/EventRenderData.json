@@ -7,6 +7,22 @@
   },
   "properties": [
     {
+      "name": "Name",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Name property"
+    },
+    {
+      "name": "EventType",
+      "type": "EventType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "EventType property"
+    },
+    {
       "name": "Track",
       "type": "TrackRenderData",
       "isNullable": false,
@@ -40,6 +56,14 @@
     },
     {
       "name": "Position",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "ChampionshipPosition",
       "type": "number",
       "isNullable": false,
       "isCollection": false,

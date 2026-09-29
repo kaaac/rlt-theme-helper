@@ -87,8 +87,8 @@ const CONFIG = {
     github: {
         owner: 'vlad-men',
         repo: 'RacingLeagueTools_RendererAPI',
-        branch: '7cf9f3c8b796f1a196370b9d511e0c7806b989ec',
-        directories: ['Session', 'Driver', 'Team', 'Car', ...]
+        branch: 'cd7a546423c5aea550079f9c52a8bb223b779164', // commit "v0.9.8"
+        directories: ['Base', 'Championship', 'Session', ...]
     },
     output: {
         modelsDir: path.join(__dirname, '..', 'api_models')
@@ -99,9 +99,9 @@ const CONFIG = {
 ## Komponenty generatora
 
 ### 1. fetchApiModels.js
-- Pobiera pliki `.cs` z GitHub przez API
-- Wspiera rekurencyjne przechodzenie folderów
-- Rate limiting dla API GitHub
+- Listę plików `.cs` pobiera jednym zapytaniem do GitHub API (drzewo repo), same pliki z `raw.githubusercontent.com`
+- Opcjonalny token w `GITHUB_TOKEN` / `GH_TOKEN` podnosi limit zapytań API (np. `GH_TOKEN=$(gh auth token) npm run generate:models`)
+- Przerywa generowanie, gdy brakuje katalogu albo któryś plik się nie pobierze — częściowe pobranie nigdy nie nadpisuje modeli
 
 ### 2. parseCSharpClasses.js
 - Parsuje klasy C# (regex-based)
@@ -111,7 +111,8 @@ const CONFIG = {
 
 ### 3. generateModelSchemas.js
 - Generuje schematy JSON dla każdej klasy
-- Tworzy `mapping.json` z mapowaniami
+- Tworzy `mapping.json` z mapowaniami (obiekty główne z `data-objects.md` + ręczne mapowania ItemsSource)
+- Usuwa modele klas, których nie ma już w API
 - Generuje `index.json` z indeksem klas
 - Tworzy `autocomplete.json` dla providerów
 
@@ -125,13 +126,13 @@ const CONFIG = {
 - Generator obecnie znajduje się w tym repo, ale zostanie przeniesiony do prywatnego repozytorium
 - Wygenerowane pliki JSON pozostaną w `api_models/` w tym repozytorium
 - Generator jest uruchamiany ręcznie gdy API się zmieni
-- Używa konkretnego commita z GitHub (7cf9f3c8...) dla stabilności
+- Używa konkretnego commita z GitHub dla stabilności (repo API nie ma tagów)
 
 ## Aktualizacja modeli
 
 Gdy RacingLeagueTools API się zmieni:
 
-1. Zaktualizuj `branch` w konfiguracji (nowy commit hash)
+1. Zaktualizuj `branch` w konfiguracji (hash commita nowej wersji) i listę `directories`, jeśli doszły nowe katalogi
 2. Uruchom `npm run generate:models`
 3. Zcommituj nowe/zmienione pliki w `api_models/`
 
