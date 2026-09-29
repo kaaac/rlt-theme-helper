@@ -65,8 +65,9 @@ Get intelligent autocomplete for `Item.*` properties based on your `ItemsSource`
 
 **Supported Patterns:**
 
-- `{Item.` - Autocomplete based on detected `ItemsSource` in parent blocks or layouts
-- `{Session.`, `{Event.`, `{DriverInfo.` - Direct root object access without `Item`
+- `{Item.` - Autocomplete based on the nearest `ItemsSource` in parent blocks, or on the component's usage in layouts
+- `{ParentItem.` - Item of the outer iteration in nested tables and item stacks
+- `{Session.`, `{Standings.`, `{DriverStatistics.`, ... - All root objects of the Flex Renderer data model
 - `{Item.Team.Nation.Code}` - Full nested navigation with autocomplete at each level
 - `{Item.Driver0.Name}` - Collection indexing support (Driver0, Driver1, etc.)
 
@@ -76,7 +77,8 @@ Get intelligent autocomplete for `Item.*` properties based on your `ItemsSource`
 - 📦 Works in components - automatically finds `ItemsSource` from layout usage
 - 🔗 Shows inherited properties from base classes
 - 📝 Rich documentation with property types (string, int, bool, collections)
-- 🌐 Supports 46 API classes with 1000+ properties
+- 🌐 Based on 101 classes of the RLT Renderer API v0.9.8
+- 🧭 `DriverInfo` and `Penalties` follow the layout's `RenderType`
 - 📊 Context info display - see which object type you're working with
 
 **Coverage:**
@@ -93,15 +95,15 @@ Boost your productivity with convenient keyboard shortcuts:
 
 | Shortcut | Command | Description |
 |----------|---------|-------------|
-| `Ctrl+K Ctrl+S` | Show RLT Snippets | Opens quick pick menu with code snippets |
-| `Ctrl+K Ctrl+V` | Add Global Variable | Smart variable insertion and creation |
+| `Ctrl+Alt+R S` | Show RLT Snippets | Opens quick pick menu with code snippets (JSON files) |
+| `Ctrl+Alt+R V` | Add Global Variable | Smart variable insertion and creation (JSON files) |
 
 #### Add Global Variable Command
 
 **With text selected:**
 
 1. Select text (e.g., `#FF5733`)
-2. Press `Ctrl+K Ctrl+V`
+2. Press `Ctrl+Alt+R V`
 3. Enter variable name (e.g., `PrimaryColor`)
 4. Selection is replaced with `{PrimaryColor}`
 5. `globals/global_vars.json` is created/updated with value `#FF5733`
@@ -109,30 +111,34 @@ Boost your productivity with convenient keyboard shortcuts:
 
 **Without selection:**
 
-1. Press `Ctrl+K Ctrl+V`
+1. Press `Ctrl+Alt+R V`
 2. Enter variable name
 3. `{VariableName}` is inserted at cursor
 4. Variable created in `global_vars.json` with empty value
 
 **Customize Shortcuts:**
 
-1. Press `Ctrl+K Ctrl+S` to open Keyboard Shortcuts
-2. Search for "rlt-theme-helper"
+1. Open *File → Preferences → Keyboard Shortcuts*
+2. Search for "RLT"
 3. Click any keybinding to customize
 
 ### 📝 Code Snippets
 
-Place your cursor where you want to insert a block and press `Ctrl+K Ctrl+S` to choose from available snippets. Navigate through placeholders using `Tab`.
+Place your cursor where you want to insert a block and press `Ctrl+Alt+R S` to choose from available snippets. Navigate through placeholders using `Tab`.
 
 **Available Snippets:**
 
 - 📦 BlockRoot
 - 🖼️ Canvas
 - 🎨 ColorizeBackground
+- 🎭 Colorize image mask
 - 🧩 Component (create & use)
 - ⚓ Dock
+- 🔲 Grid
 - 🖼️ Image
 - 📚 ItemStack
+- 📐 Layout Description
+- 🌍 Localization
 - 🔧 Public Property
 - ⬜ Shape
 - 📚 Stack
@@ -140,7 +146,7 @@ Place your cursor where you want to insert a block and press `Ctrl+K Ctrl+S` to 
 - 📊 Table & Table Columns
 - 📝 Text
 - 🎭 Theme Description & Link
-- ⚡ Triggers & Setters
+- ⚡ Triggers & Setters (incl. external trigger)
 
 ### ✅ JSON Validation & IntelliSense
 
@@ -151,6 +157,7 @@ Comprehensive JSON schema validation with detailed property hints for:
 - 🌍 **Variables** - Global and public variables
 - 📐 **Layouts** - Layout and theme descriptions
 - 🌏 **Localizations** - Localization file validation
+- 🧮 Expressions (`{...}`) and public properties (`<...>`) accepted in all block properties
 
 ### 🔍 Completion Providers
 
@@ -160,7 +167,7 @@ Smart auto-completion for:
 - **Component Names** - Available components in your theme with clickable links to source files
 - **Style Names** - Defined styles with clickable links to source files
 - **Trigger Names** - Available triggers in your theme with clickable links to source files
-- **Data Converters** - Built-in converter functions
+- **Data Converters** - all 38 documented converters with parameter type and example
 
 **Enhanced Documentation:**
 - 🔗 Clickable links to source files for Components, Styles, and Triggers
@@ -171,13 +178,13 @@ Smart auto-completion for:
 
 ## 🚀 Getting Started
 
-1. Install the extension from VS Code Marketplace
+1. Install the extension from the VS Code Marketplace or Open VSX
 2. Open your RLT theme workspace
 3. Start editing JSON files - features activate automatically!
 
 ## 📖 Version Support
 
-Current scope: **RLT Themes 0.9.6**
+Current scope: **RLT 0.9.9** (Renderer API v0.9.8)
 
 ## 🤝 Contributing
 

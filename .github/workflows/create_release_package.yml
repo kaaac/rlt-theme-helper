@@ -1,16 +1,19 @@
-name: Create Release package
+name: Release
 
 on:
   release:
     types:
-      - created
+      - published
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
+
+    env:
+      VSIX: rlt-theme-helper-${{ github.event.release.tag_name }}.vsix
 
     steps:
       - uses: actions/checkout@v4
@@ -23,10 +26,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Package extension
-        run: npx --yes @vscode/vsce package --out rlt-theme-helper-${{ github.event.release.tag_name }}.vsix
+      - name: Check release tag matches package.json version
+        run: |
+          VERSION="v$(node -p "require('./package.json').version")"
+          if [ "$VERSION" != "${{ github.event.release.tag_name }}" ]; then
+            echo "::error::Release tag ${{ github.event.release.tag_name }} does not match package.json version $VERSION"
+            exit 1
+          fi
 
+      - name: Test
+        run: npm test
+
+      - name: Package extension
+        run: npx --yes @vscode/vsce package --out "$VSIX"
+
+      # VS Code Marketplace and Open VSX: upload this VSIX manually
       - name: Upload VSIX as release asset
         uses: softprops/action-gh-release@v2
         with:
-          files: rlt-theme-helper-*.vsix
+          files: ${{ env.VSIX }}
