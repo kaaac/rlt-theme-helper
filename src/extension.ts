@@ -8,6 +8,7 @@ import { ColorPickerProvider } from './providers/ColorPickerProvider';
 import { GlobalVarsInlayHintsProvider } from './providers/GlobalVarsInlayHintsProvider';
 import { DefinitionProvider } from './providers/DefinitionProvider';
 import { ReferenceHoverProvider } from './providers/ReferenceHoverProvider';
+import { registerThemeDiagnostics } from './providers/ThemeDiagnostics';
 import { showSnippets } from './providers/SnippetCommandProvider';
 import { addGlobalVariable } from './providers/addGlobalVariableCommand';
 
@@ -45,6 +46,7 @@ export function activate(context: vscode.ExtensionContext): void {
 		vscode.commands.registerCommand('rlt-theme-helper.addGlobalVariable', addGlobalVariable)
 	);
 
+	registerThemeDiagnostics(context);
 	registerStatusBar(context);
 }
 

@@ -2,7 +2,7 @@ import type * as vscode from 'vscode';
 import * as path from 'path';
 import * as jsonc from 'jsonc-parser';
 import { getThemeContext } from './themeContext';
-import { enclosingObjects, isPlainObject } from './json';
+import { enclosingObjects, findOwnKey, isPlainObject } from './json';
 import { findChildDirectory, resourceLevels } from './resources';
 
 export type VariableLevel = 'Block' | 'Public' | 'Localization' | 'Layer' | 'Layout' | 'Theme' | 'Global';
@@ -98,22 +98,28 @@ export function mergeVariables(sources: VariableSource[]): Record<string, unknow
     return [...sources].reverse().reduce<Record<string, unknown>>((merged, source) => deepMerge(merged, source.values), {});
 }
 
-function hasOwn(object: unknown, key: string): boolean {
-    return isPlainObject(object) && Object.prototype.hasOwnProperty.call(object, key);
-}
-
 /**
- * Highest priority source defining `key` (flat key "Theme.Background" or dot path), with the JSON path inside it
+ * Highest priority source defining `key` (flat key "Theme.Background" or dot path), with the JSON path inside it.
+ * Keys match ignoring letter case when there is no exact match.
  */
 export function findVariableSource(sources: VariableSource[], key: string): { source: VariableSource, jsonPath: string[] } | null {
     for (const source of sources) {
-        if (hasOwn(source.values, key)) {
-            return { source, jsonPath: [key] };
+        const flatKey = findOwnKey(source.values, key);
+        if (flatKey !== undefined) {
+            return { source, jsonPath: [flatKey] };
         }
-        const parts = key.split('.');
+        const jsonPath: string[] = [];
         let current: unknown = source.values;
-        if (parts.every(part => hasOwn(current, part) && (current = (current as Record<string, unknown>)[part], true))) {
-            return { source, jsonPath: parts };
+        for (const part of key.split('.')) {
+            const partKey = findOwnKey(current, part);
+            if (partKey === undefined) {
+                break;
+            }
+            jsonPath.push(partKey);
+            current = (current as Record<string, unknown>)[partKey];
+        }
+        if (jsonPath.length === key.split('.').length) {
+            return { source, jsonPath };
         }
     }
     return null;

@@ -5,6 +5,11 @@
             "PublicName": "Show winner",
             "Type": "Boolean",
             "DefaultValue": true
+        },
+        {
+            "Name": "NoDefault",
+            "PublicName": "Property without a default value",
+            "Type": "Boolean"
         }
     ]
 }

@@ -66,6 +66,20 @@ export class Location {
     constructor(readonly uri: Uri, readonly range: Position | Range) { }
 }
 
+export class WorkspaceEdit {
+    readonly replacements: { uri: Uri, range: Range, text: string }[] = [];
+    replace(uri: Uri, range: Range, text: string): void { this.replacements.push({ uri, range, text }); }
+}
+
+export class CodeAction {
+    edit?: WorkspaceEdit;
+    diagnostics?: unknown[];
+    isPreferred?: boolean;
+    constructor(readonly title: string, readonly kind?: string) { }
+}
+
+export const CodeActionKind = { QuickFix: 'quickfix' };
+
 export class SnippetString {
     constructor(readonly value: string) { }
 }

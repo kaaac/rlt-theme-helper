@@ -1,15 +1,12 @@
 import { Localization } from './themeContext';
+import { findOwnKey } from './json';
 
 const NESTED_VARIABLE = /\{([a-zA-Z0-9._]+)\}/g;
 const MAX_NESTING = 10;
 
-function hasOwn(object: object, key: string): boolean {
-    return Object.prototype.hasOwnProperty.call(object, key);
-}
-
 /**
  * Look up a primitive value by key: first as a flat key ("Theme.Background"), then as a dot path.
- * Objects are not values, they return null.
+ * Keys match ignoring letter case when there is no exact match. Objects are not values, they return null.
  */
 function lookupValue(source: unknown, key: string): string | null {
     if (!source || typeof source !== 'object') {
@@ -17,16 +14,17 @@ function lookupValue(source: unknown, key: string): string | null {
     }
 
     let value: unknown;
-    if (hasOwn(source, key)) {
-        value = (source as Record<string, unknown>)[key];
+    const flatKey = findOwnKey(source, key);
+    if (flatKey !== undefined) {
+        value = (source as Record<string, unknown>)[flatKey];
     } else {
         value = source;
         for (const part of key.split('.')) {
-            if (value && typeof value === 'object' && hasOwn(value, part)) {
-                value = (value as Record<string, unknown>)[part];
-            } else {
+            const partKey = findOwnKey(value, part);
+            if (partKey === undefined) {
                 return null;
             }
+            value = (value as Record<string, unknown>)[partKey];
         }
     }
 

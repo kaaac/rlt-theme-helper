@@ -1,7 +1,8 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
-import { readJsonFile, describeParseError, isPlainObject } from './json';
+import * as jsonc from 'jsonc-parser';
+import { readJsonFile, describeParseError, isPlainObject, parseJsonTree } from './json';
 import { scanNameDirectory, scanNameFile, NameIndex } from './names';
 
 const THEME_MARKER = 'theme_description.json';
@@ -78,6 +79,57 @@ export class ThemeContext {
         return this.cached(location, `names|${property}|${scope}`, () => location.endsWith('.json')
             ? scanNameFile(location, this.root, property, scope)
             : scanNameDirectory(location, this.root, property, scope));
+    }
+
+    /** True when the root is a real theme (has theme_description.json), not a fallback folder */
+    get isTheme(): boolean {
+        return fs.existsSync(path.join(this.root, THEME_MARKER));
+    }
+
+    /**
+     * Variable names declared where their value can't be resolved statically:
+     * keys of any `Vars` / `ComponentOptions.Vars` object (component parameters passed at usage)
+     * and variables set by triggers (`Var` / `ComponentVar`), across the whole theme.
+     */
+    getDeclaredVariableNames(): Set<string> {
+        return this.cached(this.root, 'declared-vars', () => {
+            const names = new Set<string>();
+            const visit = (node: jsonc.Node | undefined): void => {
+                if (!node) return;
+                if (node.type === 'property') {
+                    const [key, value] = node.children || [];
+                    if (key?.value === 'Vars' && value?.type === 'object') {
+                        for (const property of value.children || []) {
+                            names.add(property.children?.[0]?.value);
+                        }
+                    } else if ((key?.value === 'Var' || key?.value === 'ComponentVar') && value?.type === 'string') {
+                        names.add(value.value);
+                    }
+                }
+                node.children?.forEach(visit);
+            };
+            const scan = (dir: string) => {
+                let entries: fs.Dirent[];
+                try {
+                    entries = fs.readdirSync(dir, { withFileTypes: true });
+                } catch {
+                    return;
+                }
+                for (const entry of entries) {
+                    const fullPath = path.join(dir, entry.name);
+                    if (entry.isDirectory()) {
+                        scan(fullPath);
+                    } else if (entry.name.endsWith('.json')) {
+                        const file = readJsonFile(fullPath);
+                        if (file) {
+                            visit(parseJsonTree(file.text));
+                        }
+                    }
+                }
+            };
+            scan(this.root);
+            return names;
+        });
     }
 
     /** Variable files in a `vars` directory (any subfolder, root object of key-value pairs) */
@@ -194,15 +246,18 @@ export class ThemeContext {
         return path.join(this.root, PUBLIC_PROPERTIES);
     }
 
-    /** Default values of public properties (globals/public_properties.json) by property name */
+    /**
+     * Public properties (globals/public_properties.json) by name, with their default value
+     * (null when the property has no DefaultValue — it's still a defined variable)
+     */
     getPublicPropertyDefaults(): Record<string, unknown> {
         return this.cached(this.publicPropertiesPath, 'public', () => {
             const file = readJsonFile(this.publicPropertiesPath);
             const properties = file && isPlainObject(file.value) && Array.isArray(file.value.Properties) ? file.value.Properties : [];
             const defaults: Record<string, unknown> = {};
             for (const property of properties) {
-                if (isPlainObject(property) && typeof property.Name === 'string' && 'DefaultValue' in property) {
-                    defaults[property.Name] = property.DefaultValue;
+                if (isPlainObject(property) && typeof property.Name === 'string') {
+                    defaults[property.Name] = 'DefaultValue' in property ? property.DefaultValue : null;
                 }
             }
             return defaults;

@@ -98,6 +98,12 @@ Names and variables are looked up in the same order as the renderer:
 - **Styles, components, triggers** - enclosing blocks → layer folder → layout folder → theme
 - **Variables** - block `Vars` → public properties → localization `Vars` → layer / layout / theme `vars/` → `global_vars.json`
 
+### ⚠️ Warnings
+
+Unknown style, component and trigger names and `{Variables}` are underlined as warnings. When a similar name exists, a quick fix (`Ctrl+.`) offers to change it - e.g. `DarkBleu` → `DarkBlue`.
+
+To avoid false alarms, expressions, sort/filter members, component parameters passed in `ComponentOptions.Vars`, variables set by triggers and names differing only in letter case are not reported. Warnings can be turned off with the `rltThemeHelper.diagnostics.enabled` setting.
+
 ### ⌨️ Keyboard Shortcuts
 
 Boost your productivity with convenient keyboard shortcuts:

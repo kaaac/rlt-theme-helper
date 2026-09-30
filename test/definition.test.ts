@@ -33,6 +33,11 @@ describe('Go to definition', () => {
             '{\n  "Styles": [ { "StyleName": "Inline" } ],\n  "Items": [ { "Style": "Inl|ine" } ]\n}'), 'layouts/results/new.json:2');
     });
 
+    it('falls back to names differing only in letter case', () => {
+        assert.strictEqual(definition('layouts/results/new.json', '{ "Style": "hea|der" }'), 'styles/common.json:2');
+        assert.strictEqual(definition('layouts/results/new.json', '{ "Color": "{prim|ary}" }'), 'globals/global_vars.json:3');
+    });
+
     it('returns nothing for unknown names and other properties', () => {
         assert.strictEqual(definition('layouts/results/new.json', '{ "Style": "Miss|ing" }'), null);
         assert.strictEqual(definition('layouts/results/new.json', '{ "Name": "Hea|der" }'), null);
