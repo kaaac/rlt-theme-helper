@@ -26,7 +26,7 @@ export async function addGlobalVariable(): Promise<void> {
 
     const variableName = await vscode.window.showInputBox({
         prompt: 'Enter global variable name',
-        placeHolder: 'e.g., PrimaryColor, Theme.Background',
+        placeHolder: 'e.g., PrimaryColor, ThemeBackground',
         validateInput: validateVariableName
     });
     if (!variableName) {
@@ -48,7 +48,7 @@ export async function addGlobalVariable(): Promise<void> {
     }
 
     const document = await vscode.workspace.openTextDocument(globalVarsPath);
-    const propertyPath = variableName.split('.');
+    const propertyPath = [variableName];
 
     let edits: jsonc.Edit[];
     try {
@@ -88,8 +88,9 @@ export function validateVariableName(value: string): string | null {
     if (!value) {
         return 'Variable name cannot be empty';
     }
-    if (!/^[a-zA-Z0-9._]+$/.test(value)) {
-        return 'Variable name can only contain letters, numbers, dots, and underscores';
+    // variables.md: variable names must not contain spaces or dots
+    if (!/^[a-zA-Z0-9_]+$/.test(value)) {
+        return 'Variable name can only contain letters, numbers and underscores';
     }
     return null;
 }

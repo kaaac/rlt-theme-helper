@@ -210,17 +210,18 @@ describe('Global variable and converter completion', () => {
 });
 
 describe('Add Global Variable', () => {
-    it('adds nested variables, keeping comments and tab indentation', () => {
-        const text = '{\n\t// team colors\n\t"Primary": "#FF0000",\n\t"Theme": {\n\t\t"Bg": "000000"\n\t}\n}\n';
-        const result = jsonc.applyEdits(text, createVariableEdits(text, ['Theme', 'Accent'], '00FF00'));
+    it('adds a variable, keeping comments and tab indentation', () => {
+        const text = '{\n\t// team colors\n\t"Primary": "#FF0000"\n}\n';
+        const result = jsonc.applyEdits(text, createVariableEdits(text, ['Accent'], '00FF00'));
         assert.ok(result.includes('// team colors'));
-        assert.ok(result.includes('\t\t"Accent": "00FF00"'));
+        assert.ok(result.includes('\t"Accent": "00FF00"'));
     });
 
-    it('validates variable names', () => {
-        assert.strictEqual(validateVariableName('Theme.Background_2'), null);
+    it('validates variable names (no spaces or dots)', () => {
+        assert.strictEqual(validateVariableName('ThemeBackground_2'), null);
         assert.ok(validateVariableName(''));
         assert.ok(validateVariableName('has space'));
+        assert.ok(validateVariableName('Theme.Background'));
     });
 });
 

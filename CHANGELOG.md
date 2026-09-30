@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### ✅ Validation for all theme resource files
+
+- **Style files** (`styles/` at theme, layout and layer level, any subfolder, and theme-level `styles.json`) are validated as full blocks: all block properties and `*Options`, `StyleName` / `StyleBasedOn`. A single-style file may omit `StyleName`; in style arrays and inline `Styles` it is required.
+- **Trigger files** (`triggers/` folders): one trigger or an array of triggers
+- **Variable files** (`vars/` folders, same rules as `global_vars.json`): string, number or boolean values, names without dots
+- **Layers stored in folders** (`layer*/<file>.json`) get the layer schema like `layer*.json` files
+- **Add Global Variable** no longer accepts dots in names (variable names must not contain spaces or dots) and always creates a plain key
+
 ### 🧭 Go to definition and hover
 
 - **Go to definition** (`F12`, `Ctrl+Click`, *Peek Definition*) for `Style`, `StyleBasedOn`, `Component` and `Trigger` values, `{Variables}`, `<PublicProperties>` and `[LocalizationKeys]`, jumping to the exact line of the definition

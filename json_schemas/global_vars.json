@@ -1,11 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
+  "description": "Variables (globals/global_vars.json or vars/ folders): key-value pairs",
+  "propertyNames": {
+    "pattern": "^[^.]+$",
+    "errorMessage": "Variable names must not contain dots (a dot is a path separator in expressions)"
+  },
   "additionalProperties": {
-      "oneOf": [
-        { "type": "string" },
-        { "type": "boolean" },
-        { "type": "integer" }
-      ]
-    }
+    "type": ["string", "number", "boolean", "null"]
+  }
 }
