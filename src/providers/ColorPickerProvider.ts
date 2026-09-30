@@ -2,6 +2,8 @@ import * as vscode from 'vscode';
 import { getThemeContext } from '../core/themeContext';
 import { resolveGlobalVariable, resolveLocalizationKey } from '../core/variables';
 import { isColorValue, isLayoutName, parseHexDigits, parseRgb, parseColorValue } from '../core/colors';
+import { parseJsonTree } from '../core/json';
+import { DocumentVariables } from '../core/variableScope';
 
 /** Where in a regex match the color value is, and its parsed color */
 interface ColorMatch {
@@ -30,6 +32,7 @@ export class ColorPickerProvider implements vscode.DocumentColorProvider {
         const colors: vscode.ColorInformation[] = [];
         const text = document.getText();
         const theme = getThemeContext(document);
+        const variables = new DocumentVariables(document, parseJsonTree(text));
 
         const patterns: ColorPattern[] = [
             // #AARRGGBB (8 chars) - RLT format with alpha first
@@ -74,7 +77,7 @@ export class ColorPickerProvider implements vscode.DocumentColorProvider {
                 parse: (match) => {
                     const expression = match[1] || match[2] || match[3];
                     if (!expression || isLayoutName(expression)) return null;
-                    return this.resolvedColor(match, resolveGlobalVariable(expression, theme.getGlobalVars()));
+                    return this.resolvedColor(match, resolveGlobalVariable(expression, variables.valuesAt(match.index)));
                 }
             },
             // Localization keys that might contain colors [Key]

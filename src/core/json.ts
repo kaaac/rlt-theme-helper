@@ -80,6 +80,30 @@ export function describeParseError(errors: jsonc.ParseError[], text: string): st
     return `${jsonc.printParseErrorCode(error.error)} at line ${line}`;
 }
 
+export interface TextPosition {
+    line: number;
+    character: number;
+}
+
+/**
+ * Line and character of an offset in a text
+ */
+export function positionAtOffset(text: string, offset: number): TextPosition {
+    const before = text.substring(0, offset);
+    const line = before.split('\n').length - 1;
+    return { line, character: offset - (before.lastIndexOf('\n') + 1) };
+}
+
+/**
+ * Position of the property at `jsonPath` (e.g. ['Colors', 'Red']) inside `root`, or null
+ */
+export function positionOfPath(text: string, jsonPath: jsonc.JSONPath, root: jsonc.Node | undefined = parseJsonTree(text)): TextPosition | null {
+    const node = root && jsonc.findNodeAtLocation(root, jsonPath);
+    // Point at the property key rather than its value
+    const target = node?.parent?.type === 'property' ? node.parent : node;
+    return target ? positionAtOffset(text, target.offset) : null;
+}
+
 export function isPlainObject(value: unknown): value is Record<string, unknown> {
     return typeof value === 'object' && value !== null && !Array.isArray(value);
 }

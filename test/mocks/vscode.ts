@@ -58,6 +58,14 @@ export class InlayHint {
     constructor(readonly position: Position, readonly label: string, readonly kind?: number) { }
 }
 
+export class Hover {
+    constructor(readonly contents: MarkdownString, readonly range?: Range) { }
+}
+
+export class Location {
+    constructor(readonly uri: Uri, readonly range: Position | Range) { }
+}
+
 export class SnippetString {
     constructor(readonly value: string) { }
 }

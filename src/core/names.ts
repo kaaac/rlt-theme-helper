@@ -1,66 +1,114 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { readJsonFile, isPlainObject } from './json';
+import * as jsonc from 'jsonc-parser';
+import { parseJsonTree, positionAtOffset } from './json';
 
 export interface NameEntry {
     name: string;
-    /** 'Global', 'Local', '... (Styles property)' or 'Path reference' */
+    /** Where the name is defined: 'Local', 'Layer', 'Layout', 'Theme', optionally '... (Styles property)' or 'Path reference' */
     details: string;
     /** File path relative to the theme root */
     source: string;
-    definition?: Record<string, unknown>;
+    /** Absolute path of the defining file */
+    fsPath: string;
+    /** Position of the name value (for path references: start of the file) */
+    line: number;
+    character: number;
+    definition?: unknown;
     isPath?: boolean;
 }
 
 export type NameIndex = Map<string, NameEntry>;
 
-/**
- * Collect every string value of `property` (e.g. StyleName, TriggerName, ComponentName) from a parsed JSON value.
- * For StyleName, styles defined inline in a `Styles` array are labelled separately.
- * The first occurrence of a name wins.
- */
-export function collectNames(json: unknown, property: string, source: string, scope: 'Global' | 'Local', names: NameIndex): void {
-    const add = (name: string, details: string, definition: Record<string, unknown>) => {
-        if (!names.has(name)) {
-            names.set(name, { name, details, source, definition });
-        }
-    };
+export interface FileInfo {
+    fsPath: string;
+    /** Path relative to the theme root */
+    source: string;
+    text: string;
+}
 
-    const walk = (node: unknown): void => {
-        if (Array.isArray(node)) {
-            node.forEach(walk);
-            return;
-        }
-        if (!isPlainObject(node)) {
-            return;
-        }
-        for (const [key, value] of Object.entries(node)) {
-            if (key === property && typeof value === 'string') {
-                add(value, scope, node);
-            } else if (key === 'Styles' && property === 'StyleName' && Array.isArray(value)) {
-                for (const style of value) {
-                    if (isPlainObject(style) && typeof style[property] === 'string') {
-                        add(style[property] as string, `${scope} (Styles property)`, style);
-                    }
-                }
-                walk(value);
-            } else {
-                walk(value);
-            }
-        }
-    };
-
-    walk(json);
+function propertyValue(objectNode: jsonc.Node, key: string): jsonc.Node | undefined {
+    const property = objectNode.children?.find(child => child.children?.[0]?.value === key);
+    return property?.children?.[1];
 }
 
 /**
- * Scan a theme directory (e.g. `styles/`) recursively and index all names defined there.
- * Files that hold a single object can also be referenced by path (`/folder/file`).
+ * Collect every string value of `property` (e.g. StyleName, TriggerName, ComponentName) from a syntax tree.
+ * For StyleName, styles defined inline in a `Styles` array are labelled separately.
+ * The first occurrence of a name wins.
+ */
+export function collectNames(tree: jsonc.Node | undefined, property: string, file: FileInfo, scope: string, names: NameIndex): void {
+    const add = (valueNode: jsonc.Node, details: string, definitionNode: jsonc.Node) => {
+        const name = valueNode.value as string;
+        if (!names.has(name)) {
+            names.set(name, { name, details, source: file.source, fsPath: file.fsPath, ...positionAtOffset(file.text, valueNode.offset), definition: jsonc.getNodeValue(definitionNode) });
+        }
+    };
+
+    const walk = (node: jsonc.Node | undefined, inlineStyles: boolean): void => {
+        if (!node) return;
+        if (node.type === 'object') {
+            const nameNode = propertyValue(node, property);
+            if (nameNode?.type === 'string') {
+                add(nameNode, inlineStyles ? `${scope} (Styles property)` : scope, node);
+            }
+            for (const child of node.children || []) {
+                const [key, value] = child.children || [];
+                walk(value, key?.value === 'Styles' && property === 'StyleName');
+            }
+        } else if (node.type === 'array') {
+            node.children?.forEach(child => walk(child, inlineStyles));
+        }
+    };
+
+    walk(tree, false);
+}
+
+/**
+ * Names defined in `Styles` / `Components` arrays of the blocks enclosing a position (nearest block first).
+ */
+export function collectEnclosingDefinitions(enclosing: jsonc.Node[], arrayKey: string, property: string, file: FileInfo, names: NameIndex): void {
+    for (const objectNode of enclosing) {
+        const definitions = propertyValue(objectNode, arrayKey);
+        for (const item of definitions?.type === 'array' ? definitions.children || [] : []) {
+            const nameNode = item.type === 'object' ? propertyValue(item, property) : undefined;
+            if (nameNode?.type === 'string' && !names.has(nameNode.value)) {
+                names.set(nameNode.value, {
+                    name: nameNode.value, details: `Local (${arrayKey} property)`, source: file.source, fsPath: file.fsPath,
+                    ...positionAtOffset(file.text, nameNode.offset), definition: jsonc.getNodeValue(item)
+                });
+            }
+        }
+    }
+}
+
+function readFileInfo(fsPath: string, themeRoot: string): FileInfo | null {
+    try {
+        return { fsPath, source: path.relative(themeRoot, fsPath).replace(/\\/g, '/'), text: fs.readFileSync(fsPath, 'utf8') };
+    } catch {
+        return null;
+    }
+}
+
+/**
+ * Index names defined in one JSON file (e.g. theme-level styles.json).
+ */
+export function scanNameFile(fsPath: string, themeRoot: string, property: string, scope: string): NameIndex {
+    const names: NameIndex = new Map();
+    const file = readFileInfo(fsPath, themeRoot);
+    if (file) {
+        collectNames(parseJsonTree(file.text), property, file, scope, names);
+    }
+    return names;
+}
+
+/**
+ * Scan a resource directory (e.g. `<layout>/styles/`) recursively and index all names defined there.
+ * Files that hold a single object can also be referenced by path (`/folder/file`, relative to the directory).
  * Unreadable files are skipped, they don't break the whole index.
  */
-export function scanNameDirectory(themeRoot: string, dirName: string, property: string): NameIndex {
+export function scanNameDirectory(baseDir: string, themeRoot: string, property: string, scope: string): NameIndex {
     const names: NameIndex = new Map();
-    const baseDir = path.join(themeRoot, dirName);
 
     const scan = (dir: string): void => {
         let entries: fs.Dirent[];
@@ -78,20 +126,23 @@ export function scanNameDirectory(themeRoot: string, dirName: string, property: 
             if (!entry.isFile() || path.extname(entry.name) !== '.json') {
                 continue;
             }
-            const file = readJsonFile(fullPath);
+            const file = readFileInfo(fullPath, themeRoot);
             if (!file) {
                 continue;
             }
-            const source = path.relative(themeRoot, fullPath).replace(/\\/g, '/');
+            const tree = parseJsonTree(file.text);
 
-            if (isPlainObject(file.value)) {
+            if (tree?.type === 'object') {
                 const reference = '/' + path.relative(baseDir, fullPath).replace(/\\/g, '/').replace(/\.json$/, '');
                 if (!names.has(reference)) {
-                    names.set(reference, { name: reference, details: 'Path reference', source, isPath: true });
+                    names.set(reference, {
+                        name: reference, details: `${scope} path reference`, source: file.source, fsPath: fullPath,
+                        line: 0, character: 0, definition: jsonc.getNodeValue(tree), isPath: true
+                    });
                 }
             }
 
-            collectNames(file.value, property, source, 'Global', names);
+            collectNames(tree, property, file, scope, names);
         }
     };
 

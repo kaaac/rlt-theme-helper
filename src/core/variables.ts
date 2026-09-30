@@ -41,13 +41,21 @@ function lookupValue(source: unknown, key: string): string | null {
  * including nested references like `{Colors.{Team}}`.
  */
 export function resolveGlobalVariable(expression: string, globalVars: Record<string, unknown>): string | null {
+    return lookupValue(globalVars, variableKey(expression, globalVars));
+}
+
+/**
+ * Variable name an expression refers to after substituting nested references:
+ * `Colors.{Team}` with Team = "Red" -> "Colors.Red"
+ */
+export function variableKey(expression: string, variables: Record<string, unknown>): string {
     let resolved = stripOuterBraces(expression);
     const pattern = new RegExp(NESTED_VARIABLE.source, 'g');
     let match: RegExpExecArray | null;
     let iterations = 0;
 
     while ((match = pattern.exec(resolved)) !== null && iterations < MAX_NESTING) {
-        const nestedValue = lookupValue(globalVars, match[1]);
+        const nestedValue = lookupValue(variables, match[1]);
         if (nestedValue !== null) {
             resolved = resolved.replace(match[0], nestedValue);
             pattern.lastIndex = 0;
@@ -55,7 +63,7 @@ export function resolveGlobalVariable(expression: string, globalVars: Record<str
         iterations++;
     }
 
-    return lookupValue(globalVars, resolved);
+    return resolved;
 }
 
 /**

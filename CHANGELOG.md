@@ -1,5 +1,17 @@
 # Change Log
 
+## [Unreleased]
+
+### 🧭 Go to definition and hover
+
+- **Go to definition** (`F12`, `Ctrl+Click`, *Peek Definition*) for `Style`, `StyleBasedOn`, `Component` and `Trigger` values, `{Variables}`, `<PublicProperties>` and `[LocalizationKeys]`, jumping to the exact line of the definition
+- **Hover** on style, component and trigger names: where the name is defined (enclosing block, layer, layout or theme), a link to the file, the definition, and the `StyleBasedOn` chain of styles; tells when a name is not found
+
+### 🔎 Renderer lookup order
+
+- **Styles, components and triggers** are looked up like the renderer does: enclosing blocks' `Styles` / `Components` → layer folder → layout folder → theme (including theme-level `styles.json`). Completion shows the level (`Local`, `Layer`, `Layout`, `Theme`) and only offers inline definitions from enclosing blocks.
+- **Variables** follow the documented priority: block `Vars` → public property defaults → localization `Vars` → layer / layout / theme `vars/` folders → `global_vars.json`. Inlay hints, color swatches and variable completion now show values from block `Vars` and the other levels (previously only `global_vars.json`), and tooltips name the source.
+
 ## [0.6.0] - 2026-09-30
 
 ### ⌨️ Keyboard shortcuts changed

@@ -1,8 +1,10 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import { getThemeContext, onDidChangeTheme } from '../core/themeContext';
-import { resolveGlobalVariable, resolveLocalizationKey } from '../core/variables';
+import { resolveGlobalVariable, resolveLocalizationKey, variableKey } from '../core/variables';
 import { isColorValue } from '../core/colors';
+import { parseJsonTree } from '../core/json';
+import { DocumentVariables, describeSource, findVariableSource } from '../core/variableScope';
 
 // Patterns for variable references
 // (variables live inside JSON strings, so they never span quotes or lines)
@@ -32,6 +34,7 @@ export class GlobalVarsInlayHintsProvider implements vscode.InlayHintsProvider {
         const seen = new Set<string>();
         const text = document.getText();
         const theme = getThemeContext(document);
+        const variables = new DocumentVariables(document, parseJsonTree(text));
 
         for (const source of PATTERNS) {
             const pattern = new RegExp(source.source, 'g');
@@ -55,10 +58,22 @@ export class GlobalVarsInlayHintsProvider implements vscode.InlayHintsProvider {
                 }
 
                 const isLocalization = fullMatch.startsWith('[');
-                const localization = isLocalization ? theme.getLocalization() : null;
-                const resolvedValue = isLocalization
-                    ? resolveLocalizationKey(match[1], localization)
-                    : resolveGlobalVariable(match[1], theme.getGlobalVars());
+                let resolvedValue: string | null;
+                let filePath: string | undefined;
+                let fileName: string;
+                if (isLocalization) {
+                    const localization = theme.getLocalization();
+                    resolvedValue = resolveLocalizationKey(match[1], localization);
+                    filePath = localization?.path;
+                    fileName = 'localization file';
+                } else {
+                    // Block Vars, vars/ folders and global_vars.json, as the renderer resolves them
+                    const values = variables.valuesAt(startOffset);
+                    resolvedValue = resolveGlobalVariable(match[1], values);
+                    const found = findVariableSource(variables.sourcesAt(startOffset), variableKey(match[1], values));
+                    filePath = found?.source.fsPath;
+                    fileName = found ? describeSource(found.source) : 'variables';
+                }
 
                 if (resolvedValue === null) {
                     continue;
@@ -74,8 +89,6 @@ export class GlobalVarsInlayHintsProvider implements vscode.InlayHintsProvider {
                 const hint = new vscode.InlayHint(hintPosition, formatHintLabel(resolvedValue), vscode.InlayHintKind.Type);
                 hint.paddingLeft = true;
 
-                const filePath = isLocalization ? localization?.path : theme.globalVarsPath;
-                const fileName = isLocalization ? 'localization file' : 'global_vars.json';
                 const tooltip = new vscode.MarkdownString();
                 tooltip.appendMarkdown(`**Resolved from ${fileName}:**\n\n\`${resolvedValue}\`\n\n`);
                 if (filePath) {

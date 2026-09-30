@@ -2,15 +2,22 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
 import { readJsonFile, describeParseError, isPlainObject } from './json';
-import { scanNameDirectory, NameIndex } from './names';
+import { scanNameDirectory, scanNameFile, NameIndex } from './names';
 
 const THEME_MARKER = 'theme_description.json';
 const GLOBAL_VARS = 'globals/global_vars.json';
 const LOCALIZATIONS = 'localizations';
+const PUBLIC_PROPERTIES = 'globals/public_properties.json';
 
 export interface Localization {
     path: string;
     strings: Record<string, unknown>;
+    vars: Record<string, unknown>;
+}
+
+export interface VariableFile {
+    fsPath: string;
+    values: Record<string, unknown>;
 }
 
 function isInside(fsPath: string, root: string): boolean {
@@ -26,7 +33,8 @@ export class ThemeContext {
     readonly rootUri: vscode.Uri;
     private globalVars: Record<string, unknown> | undefined;
     private localization: Localization | null | undefined;
-    private readonly nameIndexes = new Map<string, NameIndex>();
+    /** Cached indexes of resource directories/files, invalidated when a file inside `location` changes */
+    private readonly resourceCache = new Map<string, { location: string, value: unknown }>();
 
     constructor(readonly root: string) {
         this.rootUri = vscode.Uri.file(root);
@@ -60,15 +68,44 @@ export class ThemeContext {
         return this.localization;
     }
 
-    /** Names defined in a theme directory, e.g. ('styles', 'StyleName') */
-    getNameIndex(dirName: string, property: string): NameIndex {
-        const key = `${dirName}/${property}`;
-        let index = this.nameIndexes.get(key);
-        if (!index) {
-            index = scanNameDirectory(this.root, dirName, property);
-            this.nameIndexes.set(key, index);
-        }
-        return index;
+    /**
+     * Names defined in a resource directory (e.g. `<layout>/styles`) or a single file (theme-level `styles.json`)
+     * @param location absolute directory or .json file path
+     * @param property defining property, e.g. 'StyleName'
+     * @param scope label of the resource level, e.g. 'Theme'
+     */
+    getNameIndex(location: string, property: string, scope: string): NameIndex {
+        return this.cached(location, `names|${property}|${scope}`, () => location.endsWith('.json')
+            ? scanNameFile(location, this.root, property, scope)
+            : scanNameDirectory(location, this.root, property, scope));
+    }
+
+    /** Variable files in a `vars` directory (any subfolder, root object of key-value pairs) */
+    getVariableFiles(dir: string): VariableFile[] {
+        return this.cached(dir, 'vars', () => {
+            const files: VariableFile[] = [];
+            const scan = (current: string) => {
+                let entries: fs.Dirent[];
+                try {
+                    entries = fs.readdirSync(current, { withFileTypes: true });
+                } catch {
+                    return;
+                }
+                for (const entry of entries) {
+                    const fullPath = path.join(current, entry.name);
+                    if (entry.isDirectory()) {
+                        scan(fullPath);
+                    } else if (entry.name.endsWith('.json')) {
+                        const file = readJsonFile(fullPath);
+                        if (file && isPlainObject(file.value)) {
+                            files.push({ fsPath: fullPath, values: file.value });
+                        }
+                    }
+                }
+            };
+            scan(dir);
+            return files;
+        });
     }
 
     /** Drop cached data affected by a change of `fsPath` */
@@ -82,11 +119,21 @@ export class ThemeContext {
         if (topDir === LOCALIZATIONS || relative === THEME_MARKER) {
             this.localization = undefined;
         }
-        for (const key of this.nameIndexes.keys()) {
-            if (key.startsWith(`${topDir}/`)) {
-                this.nameIndexes.delete(key);
+        for (const [key, entry] of this.resourceCache) {
+            if (fsPath === entry.location || isInside(fsPath, entry.location)) {
+                this.resourceCache.delete(key);
             }
         }
+    }
+
+    private cached<T>(location: string, kind: string, load: () => T): T {
+        const key = `${kind}|${location}`;
+        let entry = this.resourceCache.get(key);
+        if (!entry) {
+            entry = { location, value: load() };
+            this.resourceCache.set(key, entry);
+        }
+        return entry.value as T;
     }
 
     private loadGlobalVars(): Record<string, unknown> {
@@ -139,7 +186,27 @@ export class ThemeContext {
         }
 
         const strings = isPlainObject(chosen.value) && isPlainObject(chosen.value.Strings) ? chosen.value.Strings : {};
-        return { path: chosen.path, strings };
+        const vars = isPlainObject(chosen.value) && isPlainObject(chosen.value.Vars) ? chosen.value.Vars : {};
+        return { path: chosen.path, strings, vars };
+    }
+
+    get publicPropertiesPath(): string {
+        return path.join(this.root, PUBLIC_PROPERTIES);
+    }
+
+    /** Default values of public properties (globals/public_properties.json) by property name */
+    getPublicPropertyDefaults(): Record<string, unknown> {
+        return this.cached(this.publicPropertiesPath, 'public', () => {
+            const file = readJsonFile(this.publicPropertiesPath);
+            const properties = file && isPlainObject(file.value) && Array.isArray(file.value.Properties) ? file.value.Properties : [];
+            const defaults: Record<string, unknown> = {};
+            for (const property of properties) {
+                if (isPlainObject(property) && typeof property.Name === 'string' && 'DefaultValue' in property) {
+                    defaults[property.Name] = property.DefaultValue;
+                }
+            }
+            return defaults;
+        });
     }
 }
 

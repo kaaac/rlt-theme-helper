@@ -6,6 +6,8 @@ import { NameCompletionProvider } from './providers/NameCompletionProvider';
 import { ItemPropertyCompletionProvider } from './providers/ItemPropertyCompletionProvider';
 import { ColorPickerProvider } from './providers/ColorPickerProvider';
 import { GlobalVarsInlayHintsProvider } from './providers/GlobalVarsInlayHintsProvider';
+import { DefinitionProvider } from './providers/DefinitionProvider';
+import { ReferenceHoverProvider } from './providers/ReferenceHoverProvider';
 import { showSnippets } from './providers/SnippetCommandProvider';
 import { addGlobalVariable } from './providers/addGlobalVariableCommand';
 
@@ -32,7 +34,10 @@ export function activate(context: vscode.ExtensionContext): void {
 
 	context.subscriptions.push(
 		vscode.languages.registerColorProvider(JSON_FILES, new ColorPickerProvider()),
-		vscode.languages.registerInlayHintsProvider(JSON_FILES, new GlobalVarsInlayHintsProvider())
+		vscode.languages.registerInlayHintsProvider(JSON_FILES, new GlobalVarsInlayHintsProvider()),
+		// Go to definition (F12 / Ctrl+Click) and hover for styles, components, triggers and variables
+		vscode.languages.registerDefinitionProvider(JSON_FILES, new DefinitionProvider()),
+		vscode.languages.registerHoverProvider(JSON_FILES, new ReferenceHoverProvider())
 	);
 
 	context.subscriptions.push(

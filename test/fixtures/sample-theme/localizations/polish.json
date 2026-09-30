@@ -5,4 +5,7 @@
         "TITLE": "Wyniki",
         "ACCENT": "#FF00FF00",
     },
+    "Vars": {
+        "LocVar": "z lokalizacji"
+    },
 }

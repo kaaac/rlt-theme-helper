@@ -34,7 +34,7 @@ Click on the color box next to any color value to open an interactive color pick
 
 ### 💡 Global Variables Inline Hints
 
-See resolved values of your variables directly in the editor as grayed-out inline hints - no need to constantly check `global_vars.json`!
+See resolved values of your variables directly in the editor as grayed-out inline hints - no need to constantly check where a variable is defined!
 
 **Supported Variable Formats:**
 
@@ -88,6 +88,15 @@ Session, Season, Standings, Championship, Statistics, Penalties, League roles, a
 ![ItemPropertyAutocompleteExample](docs/images/ItemPropertyAutocompleteExample.png)
 
 ![RootPropertyAutocompleteExample](docs/images/RootPropertyAutocompleteExample.png)
+
+### 🧭 Go to Definition & Hover
+
+`Ctrl+Click` (or `F12`) on a style, component or trigger name, a `{Variable}`, `<PublicProperty>` or `[LocalizationKey]` to jump to its definition. Hover over a style, component or trigger name to see where it's defined, its definition and - for styles - the `StyleBasedOn` chain.
+
+Names and variables are looked up in the same order as the renderer:
+
+- **Styles, components, triggers** - enclosing blocks → layer folder → layout folder → theme
+- **Variables** - block `Vars` → public properties → localization `Vars` → layer / layout / theme `vars/` → `global_vars.json`
 
 ### ⌨️ Keyboard Shortcuts
 
