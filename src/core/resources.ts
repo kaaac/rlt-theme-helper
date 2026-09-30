@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as jsonc from 'jsonc-parser';
 import { getThemeContext, ThemeContext } from './themeContext';
-import { enclosingObjects, parseJsonTree } from './json';
+import { enclosingObjects, getIgnoringCase, parseJsonTree } from './json';
 import { collectEnclosingDefinitions, collectNames, FileInfo, NameEntry, NameIndex } from './names';
 
 export type ResourceLevel = 'Layer' | 'Layout' | 'Theme';
@@ -125,5 +125,5 @@ export function referenceAt(text: string, offset: number, tree = parseJsonTree(t
  * Definition of a referenced name, following the renderer's lookup order
  */
 export function resolveReference(document: vscode.TextDocument, reference: Reference, tree = parseJsonTree(document.getText())): NameEntry | null {
-    return availableNames(document, reference.kind, reference.offset, tree).get(reference.name) ?? null;
+    return getIgnoringCase(availableNames(document, reference.kind, reference.offset, tree), reference.name) ?? null;
 }

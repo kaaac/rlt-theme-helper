@@ -22,6 +22,16 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "RLT Theme Helper",
+      "properties": {
+        "rltThemeHelper.diagnostics.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show warnings for unknown style, component and trigger names and variables in theme files."
+        }
+      }
+    },
     "commands": [
       {
         "command": "rlt-theme-helper.showSnippets",

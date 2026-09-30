@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### ⚠️ Warnings for unknown names
+
+- **Unknown `Style`, `StyleBasedOn`, `Component`, `Trigger` names and `{Variables}`** are underlined as warnings in theme files, with a **"Change to '…'" quick fix** when a similar name exists (e.g. `DarkBleu` → `DarkBlue`)
+- Conservative, to avoid false alarms: expressions, sort/filter members (`OrderBy`, `SortMember`, `FilterMember`), data roots (`Item`, `Session`, …), component parameters passed in `ComponentOptions.Vars`, variables set by triggers and names differing only in letter case are not reported
+- Only in theme folders (with `theme_description.json`); can be turned off with the `rltThemeHelper.diagnostics.enabled` setting
+- **Letter case**: go to definition, hover and variable values also find names that differ only in letter case, as published themes rely on it
+- Public properties without a `DefaultValue` are recognized as variables
+
 ### ✅ Validation for all theme resource files
 
 - **Style files** (`styles/` at theme, layout and layer level, any subfolder, and theme-level `styles.json`) are validated as full blocks: all block properties and `*Options`, `StyleName` / `StyleBasedOn`. A single-style file may omit `StyleName`; in style arrays and inline `Styles` it is required.

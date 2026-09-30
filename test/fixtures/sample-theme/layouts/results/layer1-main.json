@@ -6,7 +6,13 @@
             "Columns": [
                 {
                     "Header": "[TITLE]",
-                    "Template": { "BlockType": "component", "Component": "DriverRow" }
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "DriverRow",
+                        "ComponentOptions": {
+                            "Vars": { "RowParam": "{Item.Position}" }
+                        }
+                    }
                 },
                 {
                     "Template": {

@@ -104,6 +104,38 @@ export function positionOfPath(text: string, jsonPath: jsonc.JSONPath, root: jso
     return target ? positionAtOffset(text, target.offset) : null;
 }
 
+/**
+ * Key of `object` matching `key`: exact first, then ignoring letter case (the renderer resolves names case-insensitively
+ * in practice — published themes reference e.g. "FIA_penalty_separator" defined as "fia_penalty_separator").
+ */
+export function findOwnKey(object: unknown, key: string): string | undefined {
+    if (!isPlainObject(object)) {
+        return undefined;
+    }
+    if (Object.prototype.hasOwnProperty.call(object, key)) {
+        return key;
+    }
+    const lower = key.toLowerCase();
+    return Object.keys(object).find(candidate => candidate.toLowerCase() === lower);
+}
+
+/**
+ * Map entry matching `key`: exact first, then ignoring letter case
+ */
+export function getIgnoringCase<T>(map: Map<string, T>, key: string): T | undefined {
+    const exact = map.get(key);
+    if (exact !== undefined) {
+        return exact;
+    }
+    const lower = key.toLowerCase();
+    for (const [candidate, value] of map) {
+        if (candidate.toLowerCase() === lower) {
+            return value;
+        }
+    }
+    return undefined;
+}
+
 export function isPlainObject(value: unknown): value is Record<string, unknown> {
     return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
