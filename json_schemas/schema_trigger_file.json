@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "External triggers file (triggers/ folder at theme, layout or layer level): one trigger or an array of triggers",
+  "oneOf": [
+    {
+      "$ref": "blocks/TriggerItem.json"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "blocks/TriggerItem.json"
+      }
+    }
+  ]
+}

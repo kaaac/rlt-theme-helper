@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Styles file (styles/ folder at theme, layout or layer level, or theme-level styles.json): one style or an array of styles",
+  "oneOf": [
+    {
+      "$ref": "blocks/Style_definition.json"
+    },
+    {
+      "type": "array",
+      "items": {
+        "allOf": [
+          { "$ref": "blocks/Style_definition.json" }
+        ],
+        "required": ["StyleName"]
+      }
+    }
+  ]
+}

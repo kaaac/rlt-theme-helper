@@ -1,32 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "oneOf": [
-      {
-        "type": "object",
-        "properties": {
-          "StyleName" : {
-            "type" : "string"
-          },
-          "StyleBasedOn": {
-            "type" : "string"
-          }
-        },
+    "type": "array",
+    "description": "Styles available to all child blocks",
+    "items": {
+        "allOf": [
+            { "$ref": "Style_definition.json" }
+        ],
         "required": ["StyleName"]
-      },
-      {
-        "type": "array",
-        "items" : {
-          "type" : "object",
-          "properties" : {
-            "StyleName" : {
-              "type" : "string"
-            },
-            "StyleBasedOn": {
-              "type" : "string"
-            }
-          },
-          "required": ["StyleName"]
-        }
-      }
-    ]
-  }
+    }
+}

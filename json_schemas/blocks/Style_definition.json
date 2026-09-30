@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "Style: a block whose properties are applied to blocks that reference it (\"Style\": \"name\")",
+    "allOf": [
+        { "$ref": "Component_block.json" }
+    ],
+    "properties": {
+        "StyleName": {
+            "type": "string",
+            "description": "Name of the style. Required unless the style is a single-style file referenced by path (\"/folder/file\")"
+        },
+        "StyleBasedOn": {
+            "type": "string",
+            "description": "Name or path of the parent style. The parent must be defined higher in the lookup hierarchy"
+        }
+    }
+}

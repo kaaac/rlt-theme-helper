@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import Ajv, { ValidateFunction } from 'ajv';
 import { parseJson } from '../src/core/json';
+import { globToRegExp } from '../src/extension';
 import { REPO_ROOT } from './helpers';
 
 const SCHEMAS = path.join(REPO_ROOT, 'json_schemas');
@@ -135,6 +136,45 @@ describe('JSON schemas', () => {
                     ]
                 }
             });
+        });
+    });
+
+    describe('resource files', () => {
+        it('style files: one style (name optional) or an array of named styles, with block properties', () => {
+            assertValid('schema_style_file.json', { BlockType: 'text', TextOptions: { FontSize: 12 }, StyleBasedOn: 'Base' });
+            assertValid('schema_style_file.json', [{ StyleName: 'Header', BlockType: 'text', FontSize: 20 }]);
+            assertInvalid('schema_style_file.json', [{ BlockType: 'text' }]);
+            assertInvalid('schema_style_file.json', { StyleName: 'Bad', BlockType: 'text', TextOptions: { FontStyle: 'Heavy' } });
+        });
+
+        it('inline Styles of blocks require names', () => {
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'stack', Styles: [{ StyleName: 'Row', BlockType: 'stack', Spacing: 4 }] } });
+            assertInvalid('schema_layer.json', { BlockRoot: { BlockType: 'stack', Styles: [{ BlockType: 'stack' }] } });
+        });
+
+        it('trigger files: one trigger or an array of triggers', () => {
+            assertValid('schema_trigger_file.json', { TriggerName: 'Highlight', Condition: '{Item.IsFastest}', Property: 'Opacity', Value: 50 });
+            assertValid('schema_trigger_file.json', [{ TriggerName: 'A', Condition: true, Setters: [{ Property: 'Opacity', Value: 50 }] }]);
+            assertInvalid('schema_trigger_file.json', { TriggerName: 'A', Unknown: 1 });
+        });
+
+        it('variable files: primitive values, names without dots', () => {
+            assertValid('global_vars.json', { Primary: '#FF112233', Size: 12.5, Enabled: true, 'GridRed Bull': 1 });
+            assertInvalid('global_vars.json', { 'Theme.Background': '000000' });
+            assertInvalid('global_vars.json', { Colors: { Red: 'FF0000' } });
+        });
+
+        it('are mapped to theme folders at any level', () => {
+            const pkg = parseJson(fs.readFileSync(path.join(REPO_ROOT, 'package.json'), 'utf8')).value as { contributes: { jsonValidation: { fileMatch: string | string[], url: string }[] } };
+            const schemaFor = (filePath: string) => pkg.contributes.jsonValidation
+                .find(entry => ([] as string[]).concat(entry.fileMatch).some(glob => globToRegExp(glob).test(filePath)))?.url;
+            assert.strictEqual(schemaFor('/theme/styles/text/base.json'), './json_schemas/schema_style_file.json');
+            assert.strictEqual(schemaFor('/theme/styles.json'), './json_schemas/schema_style_file.json');
+            assert.strictEqual(schemaFor('/theme/layouts/results/styles/a.json'), './json_schemas/schema_style_file.json');
+            assert.strictEqual(schemaFor('/theme/layouts/results/layer2-overlay/triggers/t.json'), './json_schemas/schema_trigger_file.json');
+            assert.strictEqual(schemaFor('/theme/layouts/results/vars/v.json'), './json_schemas/global_vars.json');
+            assert.strictEqual(schemaFor('/theme/layouts/results/layer2-overlay/main.json'), './json_schemas/schema_layer.json');
+            assert.strictEqual(schemaFor('/theme/layouts/results/layer1-main.json'), './json_schemas/schema_layer.json');
         });
     });
 

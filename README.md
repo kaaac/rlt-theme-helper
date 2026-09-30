@@ -161,9 +161,11 @@ Place your cursor where you want to insert a block and press `Ctrl+Alt+R S` to c
 
 Comprehensive JSON schema validation with detailed property hints for:
 
-- 📄 **Layer files** (`layer.json`) - Block structure validation
+- 📄 **Layers** (`layer*.json` and `layer*/<file>.json`) - Block structure validation
 - 🧩 **Components** - Component definition validation
-- 🌍 **Variables** - Global and public variables
+- 💅 **Styles** (`styles/` at any level, `styles.json`) - Styles validated as full blocks
+- ⚡ **Triggers** (`triggers/` folders) - One trigger or a list of triggers
+- 🌍 **Variables** - `global_vars.json`, `vars/` folders and public properties
 - 📐 **Layouts** - Layout and theme descriptions
 - 🌏 **Localizations** - Localization file validation
 - 🧮 Expressions (`{...}`) and public properties (`<...>`) accepted in all block properties
