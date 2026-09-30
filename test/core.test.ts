@@ -5,7 +5,7 @@ import { collectNames, scanNameDirectory, NameIndex } from '../src/core/names';
 import { resolveGlobalVariable, resolveLocalizationKey } from '../src/core/variables';
 import { isColorValue, isLayoutName, parseColorValue, parseHexDigits, parseRgb } from '../src/core/colors';
 import { findThemeRoot, getThemeContext, handleFileChange } from '../src/core/themeContext';
-
+import { resourceLevels } from '../src/core/resources';
 import { SAMPLE_THEME, themeUri } from './helpers';
 
 describe('core/json', () => {
@@ -36,31 +36,40 @@ describe('core/json', () => {
 });
 
 describe('core/names', () => {
-    it('collects names, inline styles labelled separately, first occurrence wins', () => {
+    const collect = (value: unknown, property: string) => {
+        const text = JSON.stringify(value, null, 2);
         const names: NameIndex = new Map();
-        const json = {
+        collectNames(parseJsonTree(text), property, { fsPath: 'C:/theme/file.json', source: 'file.json', text }, 'Local', names);
+        return { names, text };
+    };
+
+    it('collects names with positions, inline styles labelled separately, first occurrence wins', () => {
+        const { names, text } = collect({
             StyleName: 'Outer',
             Styles: [{ StyleName: 'Inline' }],
             Items: [{ StyleName: 'Outer' }, { StyleName: 'Nested' }]
-        };
-        collectNames(json, 'StyleName', 'file.json', 'Local', names);
+        }, 'StyleName');
         assert.deepStrictEqual([...names.keys()], ['Outer', 'Inline', 'Nested']);
         assert.strictEqual(names.get('Inline')?.details, 'Local (Styles property)');
+        const inline = names.get('Inline');
+        assert.ok(inline);
+        assert.strictEqual(text.split('\n')[inline.line].substring(inline.character), '"Inline"');
     });
 
     it('does not mix component names into style names', () => {
-        const names: NameIndex = new Map();
-        collectNames({ Components: [{ ComponentName: 'Row', StyleName: 'RowStyle' }] }, 'StyleName', 'f.json', 'Local', names);
+        const { names } = collect({ Components: [{ ComponentName: 'Row', StyleName: 'RowStyle' }] }, 'StyleName');
         assert.deepStrictEqual([...names.keys()], ['RowStyle']);
     });
 
-    it('scans a theme directory, adds path references and survives a broken file', () => {
-        const names = scanNameDirectory(SAMPLE_THEME, 'styles', 'StyleName');
+    it('scans a resource directory, adds path references and survives a broken file', () => {
+        const names = scanNameDirectory(path.join(SAMPLE_THEME, 'styles'), SAMPLE_THEME, 'StyleName', 'Theme');
         for (const expected of ['TextBase', 'Header', 'Small', '/text/base']) {
             assert.ok(names.has(expected), `missing ${expected}`);
         }
         assert.strictEqual(names.get('/text/base')?.isPath, true);
         assert.strictEqual(names.get('Header')?.source, 'styles/common.json');
+        assert.strictEqual(names.get('Header')?.details, 'Theme');
+        assert.strictEqual(names.get('Header')?.line, 1);
         // Array files can't be referenced by path
         assert.ok(!names.has('/common'));
     });
@@ -89,7 +98,7 @@ describe('core/variables', () => {
     });
 
     it('resolves localization keys', () => {
-        const localization = { path: 'x.json', strings: { TITLE: 'Results', Group: { Key: 'Nested' } } };
+        const localization = { path: 'x.json', strings: { TITLE: 'Results', Group: { Key: 'Nested' } }, vars: {} };
         assert.strictEqual(resolveLocalizationKey('TITLE', localization), 'Results');
         assert.strictEqual(resolveLocalizationKey('Group.Key', localization), 'Nested');
         assert.strictEqual(resolveLocalizationKey('TITLE', null), null);
@@ -146,12 +155,22 @@ describe('core/themeContext', () => {
 
     it('caches name indexes and invalidates them per directory', () => {
         const theme = getThemeContext(themeUri('x.json'));
-        const styles = theme.getNameIndex('styles', 'StyleName');
-        const triggers = theme.getNameIndex('triggers', 'TriggerName');
-        assert.strictEqual(theme.getNameIndex('styles', 'StyleName'), styles);
+        const stylesDir = path.join(SAMPLE_THEME, 'styles');
+        const triggersDir = path.join(SAMPLE_THEME, 'triggers');
+        const styles = theme.getNameIndex(stylesDir, 'StyleName', 'Theme');
+        const triggers = theme.getNameIndex(triggersDir, 'TriggerName', 'Theme');
+        assert.strictEqual(theme.getNameIndex(stylesDir, 'StyleName', 'Theme'), styles);
 
         handleFileChange(themeUri('styles', 'common.json'));
-        assert.notStrictEqual(theme.getNameIndex('styles', 'StyleName'), styles);
-        assert.strictEqual(theme.getNameIndex('triggers', 'TriggerName'), triggers);
+        assert.notStrictEqual(theme.getNameIndex(stylesDir, 'StyleName', 'Theme'), styles);
+        assert.strictEqual(theme.getNameIndex(triggersDir, 'TriggerName', 'Theme'), triggers);
+    });
+
+    it('lists resource levels: layer folder, layout folder, theme', () => {
+        const theme = getThemeContext(themeUri('x.json'));
+        const levels = (...parts: string[]) => resourceLevels(theme, path.join(SAMPLE_THEME, ...parts)).map(level => `${level.level}:${path.relative(SAMPLE_THEME, level.dir).replace(/\\/g, '/')}`);
+        assert.deepStrictEqual(levels('layouts', 'results', 'layer2-overlay', 'main.json'), ['Layer:layouts/results/layer2-overlay', 'Layout:layouts/results', 'Theme:']);
+        assert.deepStrictEqual(levels('layouts', 'results', 'layer1-main.json'), ['Layout:layouts/results', 'Theme:']);
+        assert.deepStrictEqual(levels('components', 'driver_row.json'), ['Theme:']);
     });
 });

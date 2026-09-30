@@ -1,4 +1,4 @@
 [
-    { "StyleName": "Header", "FontSize": 20 },
-    { "StyleName": "Small", "FontSize": 8 }
+    { "StyleName": "Header", "StyleBasedOn": "TextBase", "FontSize": 20 },
+    { "StyleName": "Small", "StyleBasedOn": "Header", "FontSize": 8 }
 ]

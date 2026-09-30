@@ -1,0 +1,10 @@
+{
+    "Properties": [
+        {
+            "Name": "ShowWinner",
+            "PublicName": "Show winner",
+            "Type": "Boolean",
+            "DefaultValue": true
+        }
+    ]
+}
