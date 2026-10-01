@@ -2,44 +2,62 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "if": {
-      "anyOf": [
-        {"properties": { "BlockType": { "const": "canvas" } }}
-      ]
-    },
-    "then": {
-      "properties": {
-        "Items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-                "PositionY": {
-                  "oneOf": [
-                    { "type": "integer" },
-                    { "type": "string" }
-                  ],
-                  "description": "Indicate coordinate for leftmost coordinate"
-                },
-                "PositionX": {
-                    "oneOf": [
-                      { "type": "integer" },
-                      { "type": "string" }
-                    ],
-                    "description": "Indicate coordinate for leftmost coordinate"
+        "anyOf": [
+            {
+                "properties": {
+                    "BlockType": {
+                        "const": "canvas"
+                    }
                 }
             }
-          }
-        },
-        "Styles" : {
-          "$ref" : "Styles.json"
-        },
-        "Components" : {
-          "type" :"array",
-          "items" : {
-            "type" : "object",
-            "$ref" : "Component_single.json"
-          }
+        ]
+    },
+    "then": {
+        "properties": {
+            "Items": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "PositionY": {
+                            "oneOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ],
+                            "description": "Indicate coordinate for leftmost coordinate"
+                        },
+                        "PositionX": {
+                            "oneOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ],
+                            "description": "Indicate coordinate for leftmost coordinate"
+                        }
+                    }
+                }
+            },
+            "Styles": {
+                "$ref": "Styles.json"
+            },
+            "Components": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "$ref": "Component_single.json"
+                }
+            },
+            "ItemStackOptions": {
+                "$ref": "Itemstack.json#/then/properties/ItemStackOptions",
+                "description": "Repeats ItemTemplate for every item of the collection, all copies drawn at the same place (e.g. one chart line per driver). 0.9.9"
+            }
         }
-      }
     }
-  }
+}

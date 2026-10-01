@@ -202,6 +202,9 @@
         "Vars": {
             "$ref": "Vars.json",
             "description": "Local block variables. Inherited hierarchically and overrides higher-level variables."
+        },
+        "PlotPosition": {
+            "$ref": "PlotPosition.json"
         }
     }
 }
