@@ -441,6 +441,12 @@
         "isComplex": true
       },
       {
+        "name": "LapPositions",
+        "type": "LapPositionInfo",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
         "name": "DriverPointsString",
         "type": "string",
         "isCollection": false,
@@ -2503,6 +2509,90 @@
         "type": "number",
         "isCollection": false,
         "isComplex": false
+      },
+      {
+        "name": "PositionAfterLap",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPositionEstimated",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionChange",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "GapToLeader",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "GapToLeaderMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "GapToAhead",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "GapToAheadMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TyreWear",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsTyreWearRecorded",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPitEntryLap",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPitExitLap",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TrackStatus",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Weather",
+        "type": "WeatherType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsWeatherRecorded",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
       }
     ]
   },
@@ -2656,6 +2746,90 @@
       {
         "name": "DeltaToPersonalBestMs",
         "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionAfterLap",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPositionEstimated",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "PositionChange",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "GapToLeader",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "GapToLeaderMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "GapToAhead",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "GapToAheadMs",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TyreWear",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsTyreWearRecorded",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPitEntryLap",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsPitExitLap",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "TrackStatus",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "Weather",
+        "type": "WeatherType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "IsWeatherRecorded",
+        "type": "boolean",
         "isCollection": false,
         "isComplex": false
       }
@@ -3449,6 +3623,54 @@
         "type": "boolean",
         "isCollection": false,
         "isComplex": false
+      },
+      {
+        "name": "LeaderLapsCount",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "LeadChanges",
+        "type": "number",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "HasLapHistory",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "IsWeatherRecorded",
+        "type": "boolean",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "WeatherHeadline",
+        "type": "WeatherType",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
+        "name": "WeatherHeadlineString",
+        "type": "string",
+        "isCollection": false,
+        "isComplex": false
+      },
+      {
+        "name": "WeatherTimeline",
+        "type": "WeatherPointInfo",
+        "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "SafetyCarPeriods",
+        "type": "TrackStatusPeriodInfo",
+        "isCollection": true,
+        "isComplex": true
       },
       {
         "name": "DriversCount",

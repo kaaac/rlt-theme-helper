@@ -11,7 +11,7 @@ const CONFIG = {
     github: {
         owner: 'vlad-men',
         repo: 'RacingLeagueTools_RendererAPI',
-        branch: 'cd7a546423c5aea550079f9c52a8bb223b779164', // commit "v0.9.8" (the API repo has no tags)
+        branch: 'dc52f27aa0357218da0ba9a37c65daca41030cd6', // TEMPORARY: head of API PR #2 (lap history), switch to the master commit after it is merged
         directories: [
             'Base',
             'Championship',
