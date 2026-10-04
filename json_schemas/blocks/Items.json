@@ -7,7 +7,10 @@
         {"properties": { "BlockType": { "const": "dock" } }},
         {"properties": { "BlockType": { "const": "grid" } }},
         {"properties": { "BlockType": { "const": "canvas" } }}
-      ]
+    ],
+    "required": [
+        "BlockType"
+    ]
     },
     "then": {
       "properties": {

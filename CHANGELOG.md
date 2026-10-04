@@ -1,5 +1,11 @@
 # Change Log
 
+## [Unreleased]
+
+### 🐛 Bug Fixes
+
+- **New blocks no longer show "Missing property Component"** - a block without `BlockType` (e.g. `{}` right after typing it) was treated as a component, and got the property suggestions of every block type. Block-type specific rules now apply only once `BlockType` is set.
+
 ## [0.7.0] - 2026-10-01
 
 ### ⚠️ Warnings for unknown names
