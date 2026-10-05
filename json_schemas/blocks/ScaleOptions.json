@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "Maps data values onto the block (0.9.9). The plotted area is the block minus Inset on every side",
+    "definitions": {
+        "number": { "anyOf": [{ "type": "number" }, { "$ref": "../includes/expression.json" }] },
+        "boolean": { "anyOf": [{ "type": "boolean" }, { "$ref": "../includes/expression.json" }] }
+    },
+    "properties": {
+        "XMin": { "$ref": "#/definitions/number", "description": "X range minimum. Defaults to the range of the data of the shape" },
+        "XMax": { "$ref": "#/definitions/number", "description": "X range maximum. Defaults to the range of the data of the shape" },
+        "YMin": { "$ref": "#/definitions/number", "description": "Y range minimum. Defaults to the range of the data of the shape" },
+        "YMax": { "$ref": "#/definitions/number", "description": "Y range maximum. Defaults to the range of the data of the shape" },
+        "InvertY": { "$ref": "#/definitions/boolean", "description": "If true, the smallest Y is at the top (e.g. position 1 on a lap chart). Defaults to false" },
+        "Inset": { "$ref": "#/definitions/number", "description": "Pixels between the block edge and the plotted area. Use the same value on stacked chart layers so that their scales line up" },
+        "BandX": { "$ref": "#/definitions/boolean", "description": "Category X axis: every whole value from min to max gets its own slot" },
+        "BandY": { "$ref": "#/definitions/boolean", "description": "Category Y axis: every whole value from min to max gets its own slot" }
+    }
+}

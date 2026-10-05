@@ -1,0 +1,66 @@
+{
+  "className": "WeatherPointInfo",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Lap",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Lap property"
+    },
+    {
+      "name": "TimeMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value in milliseconds"
+    },
+    {
+      "name": "Time",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Time value as formatted string"
+    },
+    {
+      "name": "Weather",
+      "type": "WeatherType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Weather property"
+    },
+    {
+      "name": "WeatherString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "WeatherString property"
+    },
+    {
+      "name": "AirTemperature",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "AirTemperature property"
+    },
+    {
+      "name": "TrackTemperature",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TrackTemperature property"
+    }
+  ]
+}

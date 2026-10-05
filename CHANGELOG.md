@@ -1,5 +1,16 @@
 # Change Log
 
+## [Unreleased]
+
+### 📈 Charts and lap history (RLT 0.9.9)
+
+- **Chart shapes**: `ShapeType` `line` and `polyline`, `Stroke` (`StrokeOptions`), `X1` / `Y1` / `X2` / `Y2`, `GapX` / `GapY`, `Points`, `PointX` / `PointY`, `MissingData`, `Smoothing`, `Markers` (`MarkerOptions`) and `Scale` (`ScaleOptions`, incl. band axes)
+- **`PlotPosition`** places a block at a data point of a chart; **canvas** accepts `ItemStackOptions` to repeat a template per item (one line per driver)
+- **Completion** of `PointX` / `PointY` with the properties of the `Points` items (e.g. `Lap`, `Position` of `{Item.LapPositions}`)
+- **Snippets**: `Chart - lines` and `Chart - bars`
+- **API models**: lap history data — `LapPositionInfo`, `WeatherPointInfo`, `TrackStatusPeriodInfo`, per-lap `LapInfo` fields (position, gaps, tyre wear, pit laps, track status, weather), `DriverSessionRenderData.LapPositions`, session `LeaderLapsCount`, `LeadChanges`, `WeatherTimeline`, `SafetyCarPeriods`
+- **API models (0.9.9 preview-3)**: `Season.NextEvent` and `Events.NextEvent`; C# `long` fields (e.g. `TimeMs`) are numbers
+
 ## [0.7.1] - 2026-10-05
 
 ### 🐛 Bug Fixes
