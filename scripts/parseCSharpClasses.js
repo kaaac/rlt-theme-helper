@@ -8,6 +8,10 @@ class CSharpParser {
         this.typeMapping = {
             'string': 'string',
             'int': 'number',
+            'long': 'number',
+            'short': 'number',
+            'uint': 'number',
+            'ulong': 'number',
             'float': 'number',
             'double': 'number',
             'decimal': 'number',

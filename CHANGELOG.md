@@ -9,6 +9,13 @@
 - **Completion** of `PointX` / `PointY` with the properties of the `Points` items (e.g. `Lap`, `Position` of `{Item.LapPositions}`)
 - **Snippets**: `Chart - lines` and `Chart - bars`
 - **API models**: lap history data — `LapPositionInfo`, `WeatherPointInfo`, `TrackStatusPeriodInfo`, per-lap `LapInfo` fields (position, gaps, tyre wear, pit laps, track status, weather), `DriverSessionRenderData.LapPositions`, session `LeaderLapsCount`, `LeadChanges`, `WeatherTimeline`, `SafetyCarPeriods`
+- **API models (0.9.9 preview-3)**: `Season.NextEvent` and `Events.NextEvent`; C# `long` fields (e.g. `TimeMs`) are numbers
+
+## [0.7.1] - 2026-10-05
+
+### 🐛 Bug Fixes
+
+- **New blocks no longer show "Missing property Component"** - a block without `BlockType` (e.g. `{}` right after typing it) was treated as a component, and got the property suggestions of every block type. Block-type specific rules now apply only once `BlockType` is set.
 
 ## [0.7.0] - 2026-10-01
 

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-01T10:13:46.703Z",
+  "generated": "2026-10-05T18:47:48.944Z",
   "totalClasses": 104,
   "classes": {
     "DisplayNamePart": {
@@ -265,7 +265,7 @@
     "EventsSeasonRenderData": {
       "file": "EventsSeasonRenderData.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
-      "propertyCount": 2
+      "propertyCount": 3
     },
     "LineupRenderData": {
       "file": "LineupRenderData.json",
@@ -285,7 +285,7 @@
     "SeasonRenderData": {
       "file": "SeasonRenderData.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models",
-      "propertyCount": 32
+      "propertyCount": 33
     },
     "DriverSessionRenderData": {
       "file": "DriverSessionRenderData.json",

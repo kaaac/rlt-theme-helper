@@ -2,7 +2,14 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "if": {
-      "properties": { "BlockType": { "const": "text" } }
+    "properties": {
+        "BlockType": {
+            "const": "text"
+        }
+    },
+    "required": [
+        "BlockType"
+    ]
     },
     "then" : {
         "properties": {

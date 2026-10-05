@@ -3953,6 +3953,12 @@
         "isComplex": false
       },
       {
+        "name": "NextEvent",
+        "type": "EventRenderData",
+        "isCollection": false,
+        "isComplex": true
+      },
+      {
         "name": "SeasonProgressPercent",
         "type": "number",
         "isCollection": false,
@@ -4134,6 +4140,12 @@
         "name": "EventsIncludingBreaks",
         "type": "EventRenderData",
         "isCollection": true,
+        "isComplex": true
+      },
+      {
+        "name": "NextEvent",
+        "type": "EventRenderData",
+        "isCollection": false,
         "isComplex": true
       }
     ]

@@ -6,7 +6,10 @@
       "BlockType": {
         "const": "itemstack"
       }
-    }
+    },
+    "required": [
+      "BlockType"
+    ]
   },
   "then": {
     "properties": {

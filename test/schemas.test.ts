@@ -230,6 +230,22 @@ describe('JSON schemas', () => {
             assertValid('schema_component.json', [{ ComponentName: 'Row', BlockType: 'stack' }]);
             assertInvalid('schema_component.json', [{ BlockType: 'stack' }]);
         });
+
+        it('do not require Component in a block without BlockType (a block being written)', () => {
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'stack', Items: [{}, { Name: 'new' }] } });
+            assertValid('schema_component.json', {});
+            assertInvalid('schema_layer.json', { BlockRoot: { BlockType: 'stack', Items: [{ BlockType: 'component' }] } });
+        });
+    });
+
+    it('apply BlockType-specific rules only when BlockType is set', () => {
+        // `properties` alone is vacuously true for a missing BlockType, so every such `if` must also require it
+        for (const file of schemaFiles(path.join(SCHEMAS, 'blocks'))) {
+            const condition = JSON.parse(fs.readFileSync(file, 'utf8')).if;
+            if (condition && JSON.stringify(condition).includes('"BlockType"')) {
+                assert.deepStrictEqual(condition.required, ['BlockType'], `${path.basename(file)}: "if" must require BlockType`);
+            }
+        }
     });
 
     describe('theme_description.json', () => {

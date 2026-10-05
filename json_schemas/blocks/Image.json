@@ -6,7 +6,10 @@
             "BlockType": {
                 "const": "image"
             }
-        }
+        },
+        "required": [
+            "BlockType"
+        ]
     },
     "then": {
         "properties": {
