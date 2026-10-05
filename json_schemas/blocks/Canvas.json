@@ -4,7 +4,10 @@
     "if": {
       "anyOf": [
         {"properties": { "BlockType": { "const": "canvas" } }}
-      ]
+    ],
+    "required": [
+        "BlockType"
+    ]
     },
     "then": {
       "properties": {
