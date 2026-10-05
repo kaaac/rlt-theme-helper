@@ -4,6 +4,12 @@ on:
   release:
     types:
       - published
+  # Re-run for an existing release (e.g. to publish it to Open VSX again)
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag, e.g. v0.7.1
+        required: true
 
 permissions:
   contents: write
@@ -15,14 +21,18 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      VSIX: rlt-theme-helper-${{ github.event.release.tag_name }}.vsix
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+      VSIX: rlt-theme-helper-${{ github.event.release.tag_name || inputs.tag }}.vsix
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
 
+      # ovsx with trusted publishing (1.2+) requires Node.js 22
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -31,8 +41,8 @@ jobs:
       - name: Check release tag matches package.json version
         run: |
           VERSION="v$(node -p "require('./package.json').version")"
-          if [ "$VERSION" != "${{ github.event.release.tag_name }}" ]; then
-            echo "::error::Release tag ${{ github.event.release.tag_name }} does not match package.json version $VERSION"
+          if [ "$VERSION" != "$TAG" ]; then
+            echo "::error::Release tag $TAG does not match package.json version $VERSION"
             exit 1
           fi
 
@@ -46,10 +56,11 @@ jobs:
       - name: Upload VSIX as release asset
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ env.TAG }}
           files: ${{ env.VSIX }}
 
       # Trusted publisher configured on open-vsx.org (namespace Kaaac → this repo and workflow file).
       # Pre-releases are only attached to the GitHub release.
       - name: Publish to Open VSX
         if: ${{ !github.event.release.prerelease }}
-        run: npx --yes ovsx publish "$VSIX" --trusted-publishing --skip-duplicate
+        run: npx --yes ovsx@^1.2.0 publish "$VSIX" --trusted-publishing --skip-duplicate
