@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  # Open VSX trusted publishing (OIDC, no access token)
+  id-token: write
 
 jobs:
   release:
@@ -40,8 +42,14 @@ jobs:
       - name: Package extension
         run: npx --yes @vscode/vsce package --out "$VSIX"
 
-      # VS Code Marketplace and Open VSX: upload this VSIX manually
+      # VS Code Marketplace: upload this VSIX manually
       - name: Upload VSIX as release asset
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ env.VSIX }}
+
+      # Trusted publisher configured on open-vsx.org (namespace Kaaac → this repo and workflow file).
+      # Pre-releases are only attached to the GitHub release.
+      - name: Publish to Open VSX
+        if: ${{ !github.event.release.prerelease }}
+        run: npx --yes ovsx publish "$VSIX" --trusted-publishing --skip-duplicate
