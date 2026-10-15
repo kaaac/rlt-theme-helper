@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "Marks drawn on every point of a polyline (0.9.9)",
+    "properties": {
+        "Shape": {
+            "description": "Marker shape. Defaults to ellipse",
+            "anyOf": [{ "type": "string", "enum": ["ellipse", "rectangle"] }, { "$ref": "../includes/expression.json" }]
+        },
+        "Size": {
+            "description": "Marker size in pixels. Defaults to 6",
+            "anyOf": [{ "type": "number" }, { "$ref": "../includes/expression.json" }]
+        },
+        "Fill": { "$ref": "../includes/color.json", "description": "Marker fill. Defaults to the line color" },
+        "Stroke": { "$ref": "StrokeOptions.json", "description": "Marker outline" }
+    }
+}

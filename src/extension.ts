@@ -26,10 +26,10 @@ export function activate(context: vscode.ExtensionContext): void {
 		context.subscriptions.push(vscode.languages.registerCompletionItemProvider(JSON_FILES, provider, '"'));
 	}
 
-	// Item.Property completion is triggered on '.'
+	// Item.Property completion is triggered on '.', polyline PointX / PointY values on '"'
 	const itemPropertyProvider = new ItemPropertyCompletionProvider(context.asAbsolutePath('api_models'));
 	context.subscriptions.push(
-		vscode.languages.registerCompletionItemProvider(JSON_FILES, itemPropertyProvider, '.'),
+		vscode.languages.registerCompletionItemProvider(JSON_FILES, itemPropertyProvider, '.', '"'),
 		itemPropertyProvider
 	);
 

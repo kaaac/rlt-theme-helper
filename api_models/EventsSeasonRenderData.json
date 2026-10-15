@@ -21,6 +21,14 @@
       "isCollection": true,
       "isComplex": true,
       "description": "EventsIncludingBreaks property"
+    },
+    {
+      "name": "NextEvent",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "NextEvent property"
     }
   ]
 }

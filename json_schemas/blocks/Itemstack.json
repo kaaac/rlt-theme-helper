@@ -210,6 +210,18 @@
           "CollectionPart": {
             "type": "string",
             "description": "Specify the part of the collection to be used (for example: '1/3' will be used only first third of the collection, '3/3' will be used only last third of the collection)"
+          },
+          "DistinctMember": {
+            "type": "string",
+            "description": "Item's property name: keeps the first item for each distinct value (case-insensitive, nested paths like CarClass.Name). 0.9.9"
+          },
+          "ExcludeFilterMember": {
+            "type": "string",
+            "description": "Item's property name: removes items whose value equals ExcludeFilterMemberValue. Applied after sorting, before IndexStart and Limit. 0.9.9"
+          },
+          "ExcludeFilterMemberValue": {
+            "type": "string",
+            "description": "Value to exclude. When omitted, items with an empty or missing value are removed. 0.9.9"
           }
         },
         "additionalProperties": false,

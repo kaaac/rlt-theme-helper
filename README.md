@@ -162,6 +162,7 @@ Place your cursor where you want to insert a block and press `Ctrl+Alt+R S` to c
 - 📝 Text
 - 🎭 Theme Description & Link
 - ⚡ Triggers & Setters (incl. external trigger)
+- 📈 Charts (lines & bars)
 
 ### ✅ JSON Validation & IntelliSense
 
@@ -174,6 +175,7 @@ Comprehensive JSON schema validation with detailed property hints for:
 - 🌍 **Variables** - `global_vars.json`, `vars/` folders and public properties
 - 📐 **Layouts** - Layout and theme descriptions
 - 🌏 **Localizations** - Localization file validation
+- 📈 **Charts** - line / polyline shapes, scales, markers and `PlotPosition` (RLT 0.9.9)
 - 🧮 Expressions (`{...}`) and public properties (`<...>`) accepted in all block properties
 
 ### 🔍 Completion Providers

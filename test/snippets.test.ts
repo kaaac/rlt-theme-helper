@@ -5,13 +5,17 @@ import { DATA_CONVERTER_NAMES } from '../src/providers/DataConvertersCompletionP
 /**
  * Snippet body as it looks right after insertion with default values:
  * choices -> first option, ${n:default} -> default, value placeholders -> null, other placeholders -> nothing.
+ * `\}` is an escaped brace inside a default value.
  */
 function expand(body: string[]): string {
+    const ESCAPED_BRACE = '\u0000';
     return body.join('\n')
+        .replace(/\\\}/g, ESCAPED_BRACE)
         .replace(/\$\{\d+\|([^,|]*)[^}]*\}/g, '$1')
         .replace(/\$\{\d+:([^}]*)\}/g, '$1')
         .replace(/:\s*\$\d+/g, ': null')
-        .replace(/\$\d+/g, '');
+        .replace(/\$\d+/g, '')
+        .split(ESCAPED_BRACE).join('}');
 }
 
 describe('Snippets', () => {

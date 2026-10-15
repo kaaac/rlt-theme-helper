@@ -139,6 +139,82 @@ describe('JSON schemas', () => {
         });
     });
 
+    describe('RLT 0.9.9 block options', () => {
+        it('accept BorderRadius as one value, four values or per corner', () => {
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'stack', BorderRadius: 12, Items: [
+                { BlockType: 'image', BorderRadius: '12, 0, 12, 0' },
+                { BlockType: 'stack', BorderRadiusTL: 8, BorderRadiusBR: '{Radius}' }
+            ] } });
+            assertInvalid('schema_layer.json', { BlockRoot: { BlockType: 'stack', BorderRadius: '12, 0' } });
+        });
+
+        it('accept DistinctMember and ExcludeFilterMember in item stacks and tables', () => {
+            const filters = { DistinctMember: 'CarClass.Name', ExcludeFilterMember: 'DriverPoints.Value', ExcludeFilterMemberValue: '0' };
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'itemstack', ItemStackOptions: { ItemSource: '{Session.Drivers}', ...filters } } });
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'table', TableOptions: { ItemsSource: '{Session.Drivers}', ...filters } } });
+        });
+
+        it('accept table column groups (documented example)', () => {
+            assertValid('schema_layer.json', { BlockRoot: {
+                BlockType: 'table',
+                TableOptions: {
+                    ItemsSource: '{Events.Events}', ColCount: 2, RowCount: 5, ColGroupSpacing: 24,
+                    Columns: [{ WidthStretch: true, Template: { BlockType: 'text', Source: '{ItemIndex, Converter=NumberAdd, Parameter=1}. {Item.Name}' } }]
+                }
+            } });
+        });
+
+        it('accept WidthStretch in grid and table columns, the old IsStretchWidth still validates', () => {
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'grid', GridOptions: { Cols: [{ WidthStretch: true }, { IsStretchWidth: false, Width: 100 }] } } });
+        });
+    });
+
+    describe('charts (0.9.9)', () => {
+        it('accept the documented line chart and bar chart examples', () => {
+            // Examples from block-types-and-block-options.md (Charts)
+            assertValid('schema_layer.json', { BlockRoot: {
+                BlockType: 'canvas',
+                ItemStackOptions: {
+                    ItemSource: '{Session.Drivers}',
+                    Reverse: true,
+                    ItemTemplate: {
+                        BlockType: 'shape', Width: 1400, Height: 720,
+                        ShapeOptions: {
+                            ShapeType: 'polyline', Points: '{Item.LapPositions}', PointX: 'Lap', PointY: 'Position',
+                            Scale: { XMin: 0, XMax: '{Session.LeaderLapsCount}', YMin: 1, YMax: '{Session.DriversCount}', InvertY: true, Inset: 18 },
+                            Stroke: { Color: '{Item.Team.Color}', Thickness: 4, LineJoin: 'round' },
+                            Markers: { Shape: 'ellipse', Size: 6 }, MissingData: 'connect', Smoothing: 'curve'
+                        }
+                    }
+                }
+            } });
+            assertValid('schema_layer.json', { BlockRoot: {
+                BlockType: 'canvas',
+                ItemStackOptions: {
+                    ItemSource: '{Session.Drivers}',
+                    ItemTemplate: {
+                        BlockType: 'canvas',
+                        Items: [
+                            { BlockType: 'shape', Width: 900, Height: 200, ShapeOptions: {
+                                ShapeType: 'rectangle', X1: '{ItemIndex}', X2: '{ItemIndex}', Y1: 0, Y2: '{Item.DriverPoints.FloatValue}', GapX: 8, Fill: '{Item.Team.Color}',
+                                Scale: { XMin: 0, XMax: '{Session.DriversCount, Converter=NumberSubtract, Parameter=1}', YMin: 0, YMax: 30, BandX: true } } },
+                            { BlockType: 'text', Source: '{Item.DriverPoints.Value}', PlotPosition: {
+                                X: '{ItemIndex}', Y: '{Item.DriverPoints.FloatValue}', AreaWidth: 900, AreaHeight: 200, AnchorY: 'Bottom', OffsetY: -4,
+                                Scale: { XMin: 0, XMax: 10, YMin: 0, YMax: 30, BandX: true } } }
+                        ]
+                    }
+                }
+            } });
+        });
+
+        it('reject invalid chart values', () => {
+            const shape = (options: object) => ({ BlockRoot: { BlockType: 'shape', ShapeOptions: options } });
+            assertInvalid('schema_layer.json', shape({ ShapeType: 'triangle' }));
+            assertInvalid('schema_layer.json', shape({ ShapeType: 'line', Stroke: { DashStyle: 'wavy' } }));
+            assertInvalid('schema_layer.json', shape({ ShapeType: 'polyline', MissingData: 'skip' }));
+        });
+    });
+
     describe('resource files', () => {
         it('style files: one style (name optional) or an array of named styles, with block properties', () => {
             assertValid('schema_style_file.json', { BlockType: 'text', TextOptions: { FontSize: 12 }, StyleBasedOn: 'Base' });

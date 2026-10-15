@@ -591,6 +591,14 @@
       "description": "RacingClass property"
     },
     {
+      "name": "LapPositions",
+      "type": "LapPositionInfo",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "LapPositions property"
+    },
+    {
       "name": "DriverPointsString",
       "type": "string",
       "isNullable": false,

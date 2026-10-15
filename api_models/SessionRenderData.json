@@ -503,6 +503,70 @@
       "description": "Indicates whether virtual session"
     },
     {
+      "name": "LeaderLapsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of leader laps"
+    },
+    {
+      "name": "LeadChanges",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "LeadChanges property"
+    },
+    {
+      "name": "HasLapHistory",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "HasLapHistory property"
+    },
+    {
+      "name": "IsWeatherRecorded",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether weather recorded"
+    },
+    {
+      "name": "WeatherHeadline",
+      "type": "WeatherType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "WeatherHeadline property"
+    },
+    {
+      "name": "WeatherHeadlineString",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "WeatherHeadlineString property"
+    },
+    {
+      "name": "WeatherTimeline",
+      "type": "WeatherPointInfo",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "WeatherTimeline property"
+    },
+    {
+      "name": "SafetyCarPeriods",
+      "type": "TrackStatusPeriodInfo",
+      "isNullable": false,
+      "isCollection": true,
+      "isComplex": true,
+      "description": "SafetyCarPeriods property"
+    },
+    {
       "name": "DriversCount",
       "type": "number",
       "isNullable": false,

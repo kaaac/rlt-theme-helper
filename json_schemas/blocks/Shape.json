@@ -21,13 +21,15 @@
                 "type": "object",
                 "properties": {
                     "ShapeType": {
-                        "description": "Type of shape",
+                        "description": "Type of shape. line and polyline: 0.9.9",
                         "anyOf": [
                             {
                                 "type": "string",
                                 "enum": [
                                     "rectangle",
-                                    "ellipse"
+                                    "ellipse",
+                                    "line",
+                                    "polyline"
                                 ]
                             },
                             {
@@ -37,7 +39,7 @@
                     },
                     "Fill": {
                         "type": "string",
-                        "description": "Color"
+                        "description": "Fill color of rectangle and ellipse"
                     },
                     "Rotation": {
                         "description": "Rotates the shape clockwise, in degrees",
@@ -61,6 +63,126 @@
                                 "$ref": "../includes/expression.json"
                             }
                         ]
+                    },
+                    "Stroke": {
+                        "$ref": "StrokeOptions.json",
+                        "description": "Outline of rectangle and ellipse, the line itself for line and polyline"
+                    },
+                    "X1": {
+                        "description": "line: x of the start point (pixels, or data units with Scale). rectangle/ellipse with Scale: data range the shape covers",
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "Y1": {
+                        "description": "line: y of the start point (pixels, or data units with Scale). rectangle/ellipse with Scale: data range the shape covers",
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "X2": {
+                        "description": "line: x of the end point (pixels, or data units with Scale). rectangle/ellipse with Scale: data range the shape covers",
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "Y2": {
+                        "description": "line: y of the end point (pixels, or data units with Scale). rectangle/ellipse with Scale: data range the shape covers",
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "GapX": {
+                        "description": "rectangle/ellipse with Scale: pixels left empty between neighbouring bars (horizontally)",
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "GapY": {
+                        "description": "rectangle/ellipse with Scale: pixels left empty between neighbouring bars (vertically)",
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "Points": {
+                        "type": "string",
+                        "description": "polyline: data access expression for the collection of points, e.g. {Item.LapPositions}"
+                    },
+                    "PointX": {
+                        "type": "string",
+                        "description": "polyline: point property holding X. Defaults to X; the item index is used when the value is missing"
+                    },
+                    "PointY": {
+                        "type": "string",
+                        "description": "polyline: point property holding Y. Defaults to Y; an empty value is a missing point"
+                    },
+                    "MissingData": {
+                        "description": "polyline: break (default) splits the line at a missing point, connect joins its neighbours",
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "break",
+                                    "connect"
+                                ]
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "Smoothing": {
+                        "description": "polyline: none (default) or curve (smooth curve through every point)",
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "none",
+                                    "curve"
+                                ]
+                            },
+                            {
+                                "$ref": "../includes/expression.json"
+                            }
+                        ]
+                    },
+                    "Markers": {
+                        "$ref": "MarkerOptions.json",
+                        "description": "polyline: marks drawn on every point"
+                    },
+                    "Scale": {
+                        "$ref": "ScaleOptions.json",
+                        "description": "Maps data values onto the block. Without it line uses pixels and polyline fits its own data"
                     }
                 }
             }

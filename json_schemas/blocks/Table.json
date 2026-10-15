@@ -86,7 +86,7 @@
             ]
           },
           "RowCount": {
-            "description": "Number of rows in the table",
+            "description": "Number of rows. With ColCount, the number of rows in each column group",
             "anyOf": [
               {
                 "type": "integer"
@@ -303,7 +303,7 @@
                   ]
                 },
                 "IsStretchWidth": {
-                  "description": "Indicates whether all available space should be filled (by width)",
+                  "description": "Deprecated name, use WidthStretch",
                   "anyOf": [
                     {
                       "type": "boolean"
@@ -311,7 +311,8 @@
                     {
                       "$ref": "../includes/expression.json"
                     }
-                  ]
+                  ],
+                  "deprecated": true
                 },
                 "Header": {
                   "type": "string",
@@ -470,10 +471,55 @@
                       "$ref": "../includes/expression.json"
                     }
                   ]
+                },
+                "WidthStretch": {
+                  "description": "If true, fills available horizontal space",
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ]
                 }
               }
             },
             "description": "List of TableColumnDefinition"
+          },
+          "DistinctMember": {
+            "type": "string",
+            "description": "Item's property name: keeps the first item for each distinct value (case-insensitive, nested paths like CarClass.Name). 0.9.9"
+          },
+          "ExcludeFilterMember": {
+            "type": "string",
+            "description": "Item's property name: removes items whose value equals ExcludeFilterMemberValue. Applied after sorting, before IndexStart and Limit. 0.9.9"
+          },
+          "ExcludeFilterMemberValue": {
+            "type": "string",
+            "description": "Value to exclude. When omitted, items with an empty or missing value are removed. 0.9.9"
+          },
+          "ColCount": {
+            "description": "Number of column groups placed side by side; items fill the first group top to bottom, then the next one. 0.9.9",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
+          },
+          "ColGroupSpacing": {
+            "description": "Additional space between column groups. 0.9.9",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "../includes/expression.json"
+              }
+            ]
           }
         },
         "additionalProperties": false

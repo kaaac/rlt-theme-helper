@@ -21,6 +21,56 @@ const snippets: Record<string, Snippet> = {
             '}'
         ],
     },
+    "Chart - lines" : {
+        body: [
+            '{',
+            '\t"BlockType" : "canvas",',
+            '\t"ItemStackOptions" : {',
+            '\t\t"ItemSource" : "${1:{Session.Drivers\\}}",',
+            '\t\t"ItemTemplate" : {',
+            '\t\t\t"BlockType" : "shape",',
+            '\t\t\t"Width" : ${2:1400},',
+            '\t\t\t"Height" : ${3:720},',
+            '\t\t\t"ShapeOptions" : {',
+            '\t\t\t\t"ShapeType" : "polyline",',
+            '\t\t\t\t"Points" : "${4:{Item.LapPositions\\}}",',
+            '\t\t\t\t"PointX" : "${5:Lap}",',
+            '\t\t\t\t"PointY" : "${6:Position}",',
+            '\t\t\t\t"Scale" : { "InvertY" : ${7:true}, "Inset" : ${8:18} },',
+            '\t\t\t\t"Stroke" : { "Color" : "${9:{Item.Team.Color\\}}", "Thickness" : ${10:4}, "LineJoin" : "round" }',
+            '\t\t\t}',
+            '\t\t}',
+            '\t}',
+            '}'
+        ],
+        description: "Line chart: one polyline per item drawn on a canvas (0.9.9)"
+    },
+    "Chart - bars" : {
+        body: [
+            '{',
+            '\t"BlockType" : "canvas",',
+            '\t"ItemStackOptions" : {',
+            '\t\t"ItemSource" : "${1:{Session.Drivers\\}}",',
+            '\t\t"ItemTemplate" : {',
+            '\t\t\t"BlockType" : "shape",',
+            '\t\t\t"Width" : ${2:900},',
+            '\t\t\t"Height" : ${3:200},',
+            '\t\t\t"ShapeOptions" : {',
+            '\t\t\t\t"ShapeType" : "rectangle",',
+            '\t\t\t\t"X1" : "{ItemIndex}",',
+            '\t\t\t\t"X2" : "{ItemIndex}",',
+            '\t\t\t\t"Y1" : 0,',
+            '\t\t\t\t"Y2" : "${4:{Item.DriverPoints.FloatValue\\}}",',
+            '\t\t\t\t"GapX" : ${5:8},',
+            '\t\t\t\t"Fill" : "${6:{Item.Team.Color\\}}",',
+            '\t\t\t\t"Scale" : { "XMin" : 0, "XMax" : "${7:{Session.DriversCount, Converter=NumberSubtract, Parameter=1\\}}", "YMin" : 0, "YMax" : ${8:30}, "BandX" : true }',
+            '\t\t\t}',
+            '\t\t}',
+            '\t}',
+            '}'
+        ],
+        description: "Bar chart: one rectangle per item on a band X axis (0.9.9)"
+    },
     ColorizeBackground : {
         body: [
             '{',

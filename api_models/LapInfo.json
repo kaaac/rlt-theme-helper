@@ -205,6 +205,118 @@
       "isCollection": false,
       "isComplex": false,
       "description": "DeltaToPersonalBestMs property"
+    },
+    {
+      "name": "PositionAfterLap",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "IsPositionEstimated",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether position estimated"
+    },
+    {
+      "name": "PositionChange",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "GapToLeader",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "GapToLeader property"
+    },
+    {
+      "name": "GapToLeaderMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "GapToLeaderMs property"
+    },
+    {
+      "name": "GapToAhead",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "GapToAhead property"
+    },
+    {
+      "name": "GapToAheadMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "GapToAheadMs property"
+    },
+    {
+      "name": "TyreWear",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TyreWear property"
+    },
+    {
+      "name": "IsTyreWearRecorded",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether tyre wear recorded"
+    },
+    {
+      "name": "IsPitEntryLap",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether pit entry lap"
+    },
+    {
+      "name": "IsPitExitLap",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether pit exit lap"
+    },
+    {
+      "name": "TrackStatus",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "TrackStatus property"
+    },
+    {
+      "name": "Weather",
+      "type": "WeatherType",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "Weather property"
+    },
+    {
+      "name": "IsWeatherRecorded",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether weather recorded"
     }
   ]
 }

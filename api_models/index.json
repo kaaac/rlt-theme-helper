@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-29T22:29:40.728Z",
-  "totalClasses": 101,
+  "generated": "2026-10-05T18:47:48.944Z",
+  "totalClasses": 104,
   "classes": {
     "DisplayNamePart": {
       "file": "DisplayNamePart.json",
@@ -27,10 +27,25 @@
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
       "propertyCount": 3
     },
+    "LapPositionInfo": {
+      "file": "LapPositionInfo.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
+      "propertyCount": 3
+    },
+    "WeatherPointInfo": {
+      "file": "WeatherPointInfo.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
+      "propertyCount": 7
+    },
+    "TrackStatusPeriodInfo": {
+      "file": "TrackStatusPeriodInfo.json",
+      "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
+      "propertyCount": 7
+    },
     "LapInfo": {
       "file": "LapInfo.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
-      "propertyCount": 25
+      "propertyCount": 39
     },
     "LayoutInfo": {
       "file": "LayoutInfo.json",
@@ -250,7 +265,7 @@
     "EventsSeasonRenderData": {
       "file": "EventsSeasonRenderData.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects",
-      "propertyCount": 2
+      "propertyCount": 3
     },
     "LineupRenderData": {
       "file": "LineupRenderData.json",
@@ -270,12 +285,12 @@
     "SeasonRenderData": {
       "file": "SeasonRenderData.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models",
-      "propertyCount": 32
+      "propertyCount": 33
     },
     "DriverSessionRenderData": {
       "file": "DriverSessionRenderData.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models",
-      "propertyCount": 89
+      "propertyCount": 90
     },
     "DriverSessionRenderHost": {
       "file": "DriverSessionRenderHost.json",
@@ -285,7 +300,7 @@
     "SessionRenderData": {
       "file": "SessionRenderData.json",
       "namespace": "RacingLeagueTools.FlexRenderer.Models",
-      "propertyCount": 66
+      "propertyCount": 74
     },
     "DriverSeasonChampionshipDetails": {
       "file": "DriverSeasonChampionshipDetails.json",
@@ -550,6 +565,9 @@
       "ValueStatisticsRenderData"
     ],
     "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base": [
+      "LapPositionInfo",
+      "WeatherPointInfo",
+      "TrackStatusPeriodInfo",
       "LapInfo",
       "RatingValue"
     ],

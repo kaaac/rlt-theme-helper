@@ -24,7 +24,7 @@ const DATA_ROOTS = new Set([
 ]);
 
 // In these properties `{X}` is a member of the collection items, not a variable
-const MEMBER_PROPERTIES = /^(SortMember|OrderBy\d*|OrderByDescending\d*|FilterMember)$/;
+const MEMBER_PROPERTIES = /^(SortMember|OrderBy\d*|OrderByDescending\d*|FilterMember|ExcludeFilterMember|DistinctMember)$/;
 
 // A single variable name in braces (no dots, converters or nested expressions)
 const VARIABLE = /\{([A-Za-z_][A-Za-z0-9_ ]*)\}/g;

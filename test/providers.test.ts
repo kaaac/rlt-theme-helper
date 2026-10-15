@@ -118,6 +118,18 @@ describe('ItemPropertyCompletionProvider', () => {
         assert.ok(complete('layouts/results/new.json', '{ "Source": "{DriverInfo.|}" }').includes('DriverSeason'));
     });
 
+    it('completes Item in a canvas repeated with ItemStackOptions (charts)', () => {
+        const names = complete('layouts/results/new.json',
+            '{ "BlockType": "canvas", "ItemStackOptions": { "ItemSource": "{Session.Drivers}", "ItemTemplate": { "BlockType": "shape", "ShapeOptions": { "Points": "{Item.|');
+        assert.ok(names.includes('LapPositions'));
+    });
+
+    it('completes polyline PointX / PointY with the properties of the Points items', () => {
+        const names = complete('layouts/results/new.json',
+            '{ "BlockType": "canvas", "ItemStackOptions": { "ItemSource": "{Session.Drivers}", "ItemTemplate": { "BlockType": "shape", "ShapeOptions": { "Points": "{Item.LapPositions}", "PointX": "|" } } } }');
+        assert.deepStrictEqual(names, ['Lap', 'Position', 'IsEstimated']);
+    });
+
     it('does not treat ParentItem as a root object', () => {
         assert.deepStrictEqual(complete('layouts/results/new.json', '{ "Source": "{MySession.|}" }'), []);
     });

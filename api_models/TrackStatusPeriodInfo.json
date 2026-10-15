@@ -1,0 +1,66 @@
+{
+  "className": "TrackStatusPeriodInfo",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Kind",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Kind property"
+    },
+    {
+      "name": "IsVirtual",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether virtual"
+    },
+    {
+      "name": "StartLap",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "StartLap property"
+    },
+    {
+      "name": "EndLap",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "EndLap property"
+    },
+    {
+      "name": "DurationMs",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "DurationMs property"
+    },
+    {
+      "name": "Duration",
+      "type": "string",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Duration property"
+    },
+    {
+      "name": "LapsCount",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Number of laps"
+    }
+  ]
+}

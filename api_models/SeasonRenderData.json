@@ -135,6 +135,14 @@
       "description": "Indicates whether standings show reserves"
     },
     {
+      "name": "NextEvent",
+      "type": "EventRenderData",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": true,
+      "description": "NextEvent property"
+    },
+    {
       "name": "SeasonProgressPercent",
       "type": "number",
       "isNullable": false,

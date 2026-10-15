@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "Places a child block of a canvas at a data point of a chart instead of PositionX / PositionY (0.9.9). When X, Y or the area size is missing, PositionX and PositionY are used",
+    "definitions": {
+        "number": { "anyOf": [{ "type": "number" }, { "$ref": "../includes/expression.json" }] }
+    },
+    "properties": {
+        "X": { "$ref": "#/definitions/number", "description": "Data value on the X axis" },
+        "Y": { "$ref": "#/definitions/number", "description": "Data value on the Y axis" },
+        "AreaWidth": { "$ref": "#/definitions/number", "description": "Width of the chart shapes in pixels" },
+        "AreaHeight": { "$ref": "#/definitions/number", "description": "Height of the chart shapes in pixels" },
+        "Scale": { "$ref": "ScaleOptions.json" },
+        "AnchorX": {
+            "description": "Which point of the block sits on the data point horizontally. Defaults to Center",
+            "anyOf": [{ "type": "string", "enum": ["Left", "Center", "Right"] }, { "$ref": "../includes/expression.json" }]
+        },
+        "AnchorY": {
+            "description": "Which point of the block sits on the data point vertically. Defaults to Center",
+            "anyOf": [{ "type": "string", "enum": ["Top", "Center", "Bottom"] }, { "$ref": "../includes/expression.json" }]
+        },
+        "OffsetX": { "$ref": "#/definitions/number", "description": "Shifts the block horizontally, in pixels" },
+        "OffsetY": { "$ref": "#/definitions/number", "description": "Shifts the block vertically, in pixels" }
+    }
+}

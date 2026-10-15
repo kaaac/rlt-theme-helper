@@ -96,9 +96,14 @@ export class ItemPropertyCompletionProvider implements vscode.CompletionItemProv
 
     provideCompletionItems(document: vscode.TextDocument, position: vscode.Position): vscode.CompletionItem[] | undefined {
         const linePrefix = document.lineAt(position).text.substring(0, position.character);
+        const itemMatch = linePrefix.match(ITEM_PATH);
+        const rootMatch = itemMatch ? null : linePrefix.match(this.rootObjectPath);
+        const pointMatch = itemMatch || rootMatch ? false : /"Point[XY]"\s*:\s*"[^"{]*$/.test(linePrefix);
+        if (!itemMatch && !rootMatch && !pointMatch) {
+            return undefined;
+        }
         const renderType = findRenderType(document);
 
-        const itemMatch = linePrefix.match(ITEM_PATH);
         if (itemMatch) {
             // Item -> nearest items source, ParentItem -> the one around it
             const sources = this.findItemsSources(document, position);
@@ -110,13 +115,29 @@ export class ItemPropertyCompletionProvider implements vscode.CompletionItemProv
             return this.completePath(itemMatch[1], className, `🔗 Source: \`${sources[index]}\``);
         }
 
-        const rootMatch = linePrefix.match(this.rootObjectPath);
         if (rootMatch) {
             const rootObject = rootMatch[1].split('.')[0];
             return this.completePath(rootMatch[1], this.rootClass(rootObject, renderType), `🌐 Root Object: \`${rootObject}\``);
         }
 
-        return undefined;
+        // Polyline PointX / PointY: property names of the items of "Points"
+        return this.completePointMembers(document, position, renderType);
+    }
+
+    /**
+     * Properties of the point items of the enclosing polyline's `Points` collection (e.g. Lap, Position of LapPositions)
+     */
+    private completePointMembers(document: vscode.TextDocument, position: vscode.Position, renderType: string | null): vscode.CompletionItem[] | undefined {
+        const objects = enclosingObjects(parseJsonTree(document.getText()), document.offsetAt(position));
+        const points = objects.map(objectNode => stringNodeAt(objectNode, ['Points'])).find(Boolean);
+        if (!points) {
+            return undefined;
+        }
+        const binding = cleanBindingExpression(points.value);
+        const className = this.resolveSource([binding, ...this.findItemsSources(document, position)], 0, renderType);
+        const items = className ? this.getPropertiesForClass(className, `📦 **${className}**\n\n🔗 Points: \`${binding}\``) : undefined;
+        // Only values can be plotted, not nested objects
+        return items?.filter(item => item.kind !== vscode.CompletionItemKind.Class && item.kind !== vscode.CompletionItemKind.Enum);
     }
 
     /**

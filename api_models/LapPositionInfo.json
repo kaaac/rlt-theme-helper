@@ -1,0 +1,34 @@
+{
+  "className": "LapPositionInfo",
+  "namespace": "RacingLeagueTools.FlexRenderer.Models.RenderObjects.Base",
+  "inheritance": {
+    "base": null,
+    "interfaces": []
+  },
+  "properties": [
+    {
+      "name": "Lap",
+      "type": "number",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Lap property"
+    },
+    {
+      "name": "Position",
+      "type": "number",
+      "isNullable": true,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Position value"
+    },
+    {
+      "name": "IsEstimated",
+      "type": "boolean",
+      "isNullable": false,
+      "isCollection": false,
+      "isComplex": false,
+      "description": "Indicates whether estimated"
+    }
+  ]
+}

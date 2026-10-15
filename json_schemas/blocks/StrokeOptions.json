@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "Line of a line/polyline shape, or outline of a rectangle/ellipse (0.9.9)",
+    "properties": {
+        "Color": { "$ref": "../includes/color.json", "description": "Line color. Defaults to white" },
+        "Thickness": {
+            "description": "Line thickness in pixels. Defaults to 1",
+            "anyOf": [{ "type": "number" }, { "$ref": "../includes/expression.json" }]
+        },
+        "Opacity": {
+            "description": "0 to 1, multiplied with the color alpha. Defaults to 1",
+            "anyOf": [{ "type": "number", "minimum": 0, "maximum": 1 }, { "$ref": "../includes/expression.json" }]
+        },
+        "DashStyle": {
+            "description": "Dash style. Defaults to solid",
+            "anyOf": [{ "type": "string", "enum": ["solid", "dash", "dot", "dashdot", "dashdotdot"] }, { "$ref": "../includes/expression.json" }]
+        },
+        "DashPattern": {
+            "type": "string",
+            "description": "Custom dash pattern in line thicknesses, e.g. \"6,2,1,2\". Overrides DashStyle"
+        },
+        "LineCap": {
+            "description": "Line ends. Defaults to butt",
+            "anyOf": [{ "type": "string", "enum": ["butt", "round", "square"] }, { "$ref": "../includes/expression.json" }]
+        },
+        "LineJoin": {
+            "description": "Line corners. Defaults to miter",
+            "anyOf": [{ "type": "string", "enum": ["miter", "round", "bevel"] }, { "$ref": "../includes/expression.json" }]
+        }
+    }
+}
