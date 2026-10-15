@@ -68,7 +68,19 @@
                   ]
                 },
                 "IsStretchWidth": {
-                  "description": "Indicates whether all available space should be filled (by width)",
+                  "description": "Deprecated name, use WidthStretch",
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "$ref": "../includes/expression.json"
+                    }
+                  ],
+                  "deprecated": true
+                },
+                "WidthStretch": {
+                  "description": "If true, fills available horizontal space (only one column can be true)",
                   "anyOf": [
                     {
                       "type": "boolean"

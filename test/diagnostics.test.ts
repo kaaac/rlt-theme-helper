@@ -47,7 +47,7 @@ describe('Theme diagnostics', () => {
 
     it('skips members in sort and filter properties', () => {
         assert.deepStrictEqual(problems('layouts/results/new.json',
-            '{ "ItemStackOptions": { "SortMember": "{Points}", "OrderBy": "{Position}", "OrderByDescending2": "{Wins}", "FilterMember": "{IsReserve}" } }'), []);
+            '{ "ItemStackOptions": { "SortMember": "{Points}", "OrderBy": "{Position}", "OrderByDescending2": "{Wins}", "FilterMember": "{IsReserve}", "DistinctMember": "{CarClass}", "ExcludeFilterMember": "{Rank}" } }'), []);
     });
 
     it('ignores JSON files outside a theme', () => {

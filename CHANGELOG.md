@@ -11,6 +11,13 @@
 - **API models**: lap history data — `LapPositionInfo`, `WeatherPointInfo`, `TrackStatusPeriodInfo`, per-lap `LapInfo` fields (position, gaps, tyre wear, pit laps, track status, weather), `DriverSessionRenderData.LapPositions`, session `LeaderLapsCount`, `LeadChanges`, `WeatherTimeline`, `SafetyCarPeriods`
 - **API models (0.9.9 preview-3)**: `Season.NextEvent` and `Events.NextEvent`; C# `long` fields (e.g. `TimeMs`) are numbers
 
+### 🧱 More RLT 0.9.9 block options
+
+- **`BorderRadius`** (one value or `"top-left, top-right, bottom-right, bottom-left"`) and `BorderRadiusTL` / `TR` / `BR` / `BL` for rounded corners
+- **`DistinctMember`**, **`ExcludeFilterMember`** and **`ExcludeFilterMemberValue`** in item stacks and tables (previously reported as errors); their values are item members, not variables, so they're not checked by the unknown-variable warnings
+- **Table column groups**: `ColCount` and `ColGroupSpacing`
+- **`WidthStretch`** for grid and table columns: the schema suggested `IsStretchWidth`, while themes (incl. the default theme) use `WidthStretch` as the docs now say; `IsStretchWidth` is marked deprecated
+
 ## [0.7.1] - 2026-10-05
 
 ### 🐛 Bug Fixes

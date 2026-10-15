@@ -205,6 +205,65 @@
         },
         "PlotPosition": {
             "$ref": "PlotPosition.json"
+        },
+        "BorderRadius": {
+            "description": "Rounds the corners of the block (background, padding area and nested blocks), in pixels: one value for all corners (12) or \"top-left, top-right, bottom-right, bottom-left\" (\"12, 0, 12, 0\"). 0.9.9",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "string",
+                    "pattern": "^\\s*\\d+(\\s*,\\s*\\d+){3}\\s*$"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "BorderRadiusTL": {
+            "description": "Top-left corner radius in pixels. Has priority over BorderRadius. 0.9.9",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "BorderRadiusTR": {
+            "description": "Top-right corner radius in pixels. Has priority over BorderRadius. 0.9.9",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "BorderRadiusBR": {
+            "description": "Bottom-right corner radius in pixels. Has priority over BorderRadius. 0.9.9",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
+        },
+        "BorderRadiusBL": {
+            "description": "Bottom-left corner radius in pixels. Has priority over BorderRadius. 0.9.9",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "$ref": "../includes/expression.json"
+                }
+            ]
         }
     }
 }

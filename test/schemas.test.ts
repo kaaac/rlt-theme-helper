@@ -139,6 +139,36 @@ describe('JSON schemas', () => {
         });
     });
 
+    describe('RLT 0.9.9 block options', () => {
+        it('accept BorderRadius as one value, four values or per corner', () => {
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'stack', BorderRadius: 12, Items: [
+                { BlockType: 'image', BorderRadius: '12, 0, 12, 0' },
+                { BlockType: 'stack', BorderRadiusTL: 8, BorderRadiusBR: '{Radius}' }
+            ] } });
+            assertInvalid('schema_layer.json', { BlockRoot: { BlockType: 'stack', BorderRadius: '12, 0' } });
+        });
+
+        it('accept DistinctMember and ExcludeFilterMember in item stacks and tables', () => {
+            const filters = { DistinctMember: 'CarClass.Name', ExcludeFilterMember: 'DriverPoints.Value', ExcludeFilterMemberValue: '0' };
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'itemstack', ItemStackOptions: { ItemSource: '{Session.Drivers}', ...filters } } });
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'table', TableOptions: { ItemsSource: '{Session.Drivers}', ...filters } } });
+        });
+
+        it('accept table column groups (documented example)', () => {
+            assertValid('schema_layer.json', { BlockRoot: {
+                BlockType: 'table',
+                TableOptions: {
+                    ItemsSource: '{Events.Events}', ColCount: 2, RowCount: 5, ColGroupSpacing: 24,
+                    Columns: [{ WidthStretch: true, Template: { BlockType: 'text', Source: '{ItemIndex, Converter=NumberAdd, Parameter=1}. {Item.Name}' } }]
+                }
+            } });
+        });
+
+        it('accept WidthStretch in grid and table columns, the old IsStretchWidth still validates', () => {
+            assertValid('schema_layer.json', { BlockRoot: { BlockType: 'grid', GridOptions: { Cols: [{ WidthStretch: true }, { IsStretchWidth: false, Width: 100 }] } } });
+        });
+    });
+
     describe('charts (0.9.9)', () => {
         it('accept the documented line chart and bar chart examples', () => {
             // Examples from block-types-and-block-options.md (Charts)
