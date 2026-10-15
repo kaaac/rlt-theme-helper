@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [0.8.0] - 2026-10-15
 
 ### 📈 Charts and lap history (RLT 0.9.9)
 
