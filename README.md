@@ -77,7 +77,7 @@ Get intelligent autocomplete for `Item.*` properties based on your `ItemsSource`
 - 📦 Works in components - automatically finds `ItemsSource` from layout usage
 - 🔗 Shows inherited properties from base classes
 - 📝 Rich documentation with property types (string, int, bool, collections)
-- 🌐 Based on 101 classes of the RLT Renderer API v0.9.8
+- 🌐 Based on 104 classes of the RLT Renderer API 0.9.9
 - 🧭 `DriverInfo` and `Penalties` follow the layout's `RenderType`
 - 📊 Context info display - see which object type you're working with
 
@@ -203,7 +203,7 @@ Smart auto-completion for:
 
 ## 📖 Version Support
 
-Current scope: **RLT 0.9.9** (Renderer API v0.9.8)
+Current scope: **RLT 0.9.9** (Renderer API 0.9.9)
 
 ## 🤝 Contributing
 
